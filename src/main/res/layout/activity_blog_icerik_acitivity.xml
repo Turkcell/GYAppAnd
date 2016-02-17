@@ -1,0 +1,93 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#2196F3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtBaslik"
+                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:text=""
+                style="@style/mobilIcerikBaslik"
+                android:textColor="@color/beyaz"
+                />
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/mobilIcerikBaslik"
+            android:textSize="12sp"
+            android:id="@+id/txtYorum"
+            android:text="Yorumlar"
+            android:textColor="@color/beyaz"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+            />
+
+        <TextView
+            android:id="@+id/yazarID"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:visibility="gone"
+
+            />
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f2ca43"
+        android:padding="5dp"
+android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/avatar"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            android:id="@+id/yazarIsim"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/beyaz"
+            style="@style/mobilIcerikBaslik"
+
+            />
+
+    </LinearLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/blogDetay"
+
+
+
+        />
+
+</LinearLayout>
+
+

@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/tool_bar_back"
+        layout="@layout/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"></LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/ust_bosluk_yukseklik"
+            android:background="@color/ColorPrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/defaultimage"
+                app:border_width="3dp"
+                app:border_color="@color/tabDefault"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/adSoyad"
+                android:textSize="25sp"
+                android:textColor="@color/beyaz"
+                style="@style/mobilIcerikBaslik"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/egitimkep"/>
+
+                <TextView
+                    android:id="@+id/universite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    style="@style/mobilIcerikBaslik"
+                    android:textColor="@color/beyaz"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="3dp"/>
+
+                <ImageView
+
+                    android:layout_width="10dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/konum"
+                    android:layout_marginLeft="6dp"/>
+
+                <TextView
+                    android:id="@+id/konum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    style="@style/mobilIcerikBaslik"
+                    android:textColor="@color/beyaz"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="3dp"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tabDefault"
+            android:id="@+id/tabsBlog"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#dde0e3">
+
+        </LinearLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_marginTop="3dp"
+            android:id="@+id/pagerProfil"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            ></android.support.v4.view.ViewPager>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="#fff5f7f7"
+    android:padding="10dp">
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_marginLeft="5dp"
+    android:gravity="center_vertical"
+    android:textColor="#ff6c6c6c"
+    android:textSize="15sp"
+    android:textStyle="bold"
+    android:background="#fff5f7f7"
+    android:focusable="false"
+   />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Geleceği Yazanlar</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Açıldı.</string>
+    <string name="drawer_close">Kapandı.</string>
+    <string name="ne_ogrenebilirim">Ne öğrenebilirim?</string>
+    <string name="android">Android Dünyası</string>
+    <string name="ios">IOS Dünyası</string>
+    <string name="windows">Windows Phone Dünyası</string>
+    <string name="scratch">Scratch Dünyası</string>
+    <string name="appinventor">App Inventor Dünyası</string>
+    <string name="arduino">Arduino Dünyası</string>
+    <string name="web">Web</string>
+    <string name="oyun">Oyun</string>
+
+    <string name="profilID">id</string>
+
+
+    <string name="ios101">81</string>
+    <string name="ios201">82</string>
+    <string name="ios301">92</string>
+    <string name="ios401">93</string>
+    <string name="android101">94</string>
+    <string name="android201">95</string>
+    <string name="android301">96</string>
+    <string name="android401">97</string>
+    <string name="win101">98</string>
+    <string name="win201">99</string>
+    <string name="web101">21062</string>
+    <string name="web201">21063</string>
+    <string name="web301">23339</string>
+    <string name="web401">28510</string>
+    <string name="web302">23841</string>
+    <string name="oyun101">12690</string>
+    <string name="oyun201">12710</string>
+    <string name="inventor101">23976</string>
+    <string name="inventor201">24319</string>
+    <string name="inventor301">24730</string>
+    <string name="scratch101">24418</string>
+    <string name="scratch201">24669</string>
+    <string name="arduino101">24101</string>
+    <string name="arduino201">25543</string>
+    <string name="arduino301">25547</string>
+    <string name="arduino401">25542</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_egitim_baslik">EgitimBaslikActivity</string>
+    <string name="title_activity_egitim_icerik">EgitimIcerikActivity</string>
+    <string name="title_activity_profil_acitivity">ProfilAcitivity</string>
+    <string name="title_activity_profil">ProfilActivity</string>
+    <string name="title_activity_arama">Arama Sayfası</string>
+    <string name="title_activity_yorum">YorumActivity</string>
+    <string name="title_activity_etkinlik_icerik">EtkinlikIcerikActivity</string>
+    <string name="title_activity_blog_icerik_acitivity">BlogIcerikAcitivity</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ColorPrimary">#3fb0e8</color>
+    <color name="ColorPrimaryDark">#ff4190c9</color>
+    <color name="tabsScrollColor">#fff5f49b</color>
+    <color name="tabDefault">#f2ca43</color>
+    <color name="androidYesili">#a5c845</color>
+    <color name="iosSiyahi">#4c5b6a</color>
+    <color name="solMenuSiyah">#333f4f</color>
+    <color name="windowsMavisi">#3fbaf9</color>
+    <color name="scratch_turuncu">#f7a750</color>
+    <color name="app_inventor_kirmizi">#e06b60</color>
+    <color name="webRengi">#f16529</color>
+    <color name="oyunRengi">#722791</color>
+    <color name="gri">#ff8c8f8c</color>
+    <color name="gri_siyah">#3d4455</color>
+    <color name="koyu_mavi">#7AB2C3</color>
+    <color name="drawer_color_selected">#437ab2c3</color>
+    <color name="beyaz">#fff</color>
+    <color name="arduino">#15979C</color>
+
+
+    <color name="accent_dark">#ff2929</color>
+    <color name="accent">#ff5252</color>
+    <color name="secondary_text">#727272</color>
+
+    <color name="facebookNormal">#43609B</color>
+    <color name="twitterNormal">#55ACEE</color>
+    <color name="youtubeNormal">#DF2826</color>
+    <color name="linkedinNormal">#0077B5</color>
+    <color name="blogNormal">#fffff16e</color>
+
+
+    <color name="facebookKoyu">#ff333b66</color>
+    <color name="twitterKoyu">#ff427cab</color>
+    <color name="youtubeKoyu">#ffb42321</color>
+    <color name="linkedinKoyu">#ff025e99</color>
+    <color name="blogKoyu">#ffe5d768</color>
+
+</resources>

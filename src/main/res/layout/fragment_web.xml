@@ -1,0 +1,469 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.WebFragment"
+    tools:layout="@layout/fragment_web"
+    android:padding="@dimen/sol_margin_olcu_onbes"
+    android:paddingBottom="0dp"
+    android:background="@color/beyaz"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_marginLeft="@dimen/margin_bes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/mobilIcerikBaslik"
+            android:text="@string/ne_ogrenebilirim"/>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!---WEB -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                    android:id="@+id/web"
+                    >
+                    <ImageView
+                        android:layout_width="@dimen/ellilikOlcu"
+                        android:layout_height="@dimen/ellilikOlcu"
+                        android:src="@drawable/webprogramlamaicon"/>
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/margin_bes"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/mobilIcerikBaslik"
+                        android:text="@string/web"
+                        android:textColor="@color/webRengi"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="@dimen/ellilikOlcu"
+                            android:layout_height="@dimen/ellilikOlcu"
+                            android:src="@drawable/asagiok"
+                            android:id="@+id/websagok"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!--Alt Icerik-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/layout_web_icerik"
+                    android:visibility="visible"
+                    >
+
+                    <!---web 101-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:id="@+id/layout_web_101"
+                        >
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/yesildaire"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/mobilIcerikBaslik"
+                            android:textSize="@dimen/text_size_onyedi"
+                            android:text="101:HTML\nSeviye:Başlangıç"
+                            android:textColor="@color/gri_siyah"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:src="@drawable/asagiikon"
+                                android:id="@+id/asagi_image_101_web"
+                                android:layout_toLeftOf="@+id/icon_kep_101_web"
+                                android:layout_centerVertical="true"
+                                />
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:id="@+id/icon_kep_101_web"
+                                android:src="@drawable/kepikon"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--web 101 alt baslık-->
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/egitimal_web_101"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Başlangıç seviyesi derslerde Web programlamanın temeli olan HTML'i öğreniyoruz."
+                            android:textColor="@color/gri_siyah"/>
+
+                        <ImageView
+                            android:layout_marginTop="-15dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:src="@drawable/egitimial"
+                            android:id="@+id/egitimial_web_101_button"/>
+                    </LinearLayout>
+
+                    <!---web 201-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:id="@+id/layout_web_201"
+
+                        >
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/saridaire"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/mobilIcerikBaslik"
+                            android:textSize="@dimen/text_size_onyedi"
+                            android:text="201:HTML5-CSS\nSeviye:Başlangıç"
+                            android:textColor="@color/gri_siyah"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:src="@drawable/asagiikon"
+                                android:id="@+id/asagi_image_201_web"
+                                android:layout_toLeftOf="@+id/icon_kep_201_web"
+                                android:layout_centerVertical="true"
+                                />
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:id="@+id/icon_kep_201_web"
+                                android:src="@drawable/kepikon"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!--web 201 alt baslık-->
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/egitimal_web_201"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Bu başlangıç seviyesi derslerimizde HTML5 ve CSS ile bilgimizi bir adım öteye taşıyoruz."
+                            android:textColor="@color/gri_siyah"/>
+
+                        <ImageView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:src="@drawable/egitimial"
+                            android:id="@+id/egitimial_web_201_button"/>
+                    </LinearLayout>
+
+                    <!---web 301-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:id="@+id/layout_web_301"
+
+                        >
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/turuncudaire"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/mobilIcerikBaslik"
+                            android:textSize="@dimen/text_size_onyedi"
+                            android:text="301:JavaScript\nSeviye:Orta"
+                            android:textColor="@color/gri_siyah"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:src="@drawable/asagiikon"
+                                android:id="@+id/asagi_image_301_android"
+                                android:layout_toLeftOf="@+id/icon_kep_301_web"
+                                android:layout_centerVertical="true"
+                                />
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:id="@+id/icon_kep_301_web"
+                                android:src="@drawable/kepikon"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--web 301 alt baslık-->
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/egitimal_web_301"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Web programlama eğitimimizin orta seviyesinde, JavaScript öğreniyoruz."
+                            android:textColor="@color/gri_siyah"/>
+
+                        <ImageView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:src="@drawable/egitimial"
+                            android:id="@+id/egitimial_web_301_button"/>
+                    </LinearLayout>
+
+                    <!---web 302-->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:id="@+id/layout_web_302"
+
+                        >
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/kirmizidaire"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/mobilIcerikBaslik"
+                            android:textSize="@dimen/text_size_onyedi"
+                            android:text="302:JQuery\nSeviye:Orta"
+                            android:textColor="@color/gri_siyah"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:src="@drawable/asagiikon"
+                                android:id="@+id/asagi_image_302_web"
+                                android:layout_toLeftOf="@+id/icon_kep_302_web"
+                                android:layout_centerVertical="true"
+                                />
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:id="@+id/icon_kep_302_web"
+                                android:src="@drawable/kepikon"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--web 302 alt baslık-->
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/egitimal_web_302"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Web programlama eğitimimizin orta seviyesinde, JQuery öğreniyoruz."
+                            android:textColor="@color/gri_siyah"/>
+
+                        <ImageView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:src="@drawable/egitimial"
+                            android:id="@+id/egitimial_web_302_button"/>
+                    </LinearLayout>
+
+                    <!---web 401-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:id="@+id/layout_web_401"
+
+                        >
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/kirmizidaire"
+                            />
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/mobilIcerikBaslik"
+                            android:textSize="@dimen/text_size_onyedi"
+                            android:text="401:Node.js\nSeviye:İleri"
+                            android:textColor="@color/gri_siyah"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:src="@drawable/asagiikon"
+                                android:id="@+id/asagi_image_401_web"
+                                android:layout_toLeftOf="@+id/icon_kep_401_web"
+                                android:layout_centerVertical="true"
+                                />
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:id="@+id/icon_kep_401_web"
+                                android:src="@drawable/kepikon"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--web 401 alt baslık-->
+                    <LinearLayout
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/egitimal_web_401"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Web programlama eğitimimizin ileri seviyesinde, Node.js öğreniyoruz."
+                            android:textColor="@color/gri_siyah"/>
+
+                        <ImageView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:src="@drawable/egitimial"
+                            android:id="@+id/egitimial_web_401_button"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="sol_menu_imageview_olcu">25dp</dimen>
+    <dimen name="sol_margin_olcu_onbes">15dp</dimen>
+    <dimen name="margin_bes">5dp</dimen>
+    <dimen name="sol_margin_olcu_on">10dp</dimen>
+    <dimen name="text_size_onyedi">17sp</dimen>
+    <dimen name="text_size_yirmibes">25sp</dimen>
+    <dimen name="ellilikOlcu">50dp</dimen>
+    <dimen name="yuzlukOlcu">100dp</dimen>
+    <dimen name="sol_menu_genislik">250dp</dimen>
+    <dimen name="ust_bosluk_yukseklik">160.5dp</dimen>
+    <dimen name="tab_yukseklik">36dp</dimen>
+<!--Profil Sayfa Ölçüleri-->
+    <dimen name="seviye_daireler">35dp</dimen>
+</resources>

@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:paddingTop="3dp"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/avatar_layout"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/simge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:border_width="2dp"
+            app:border_color="#3b8ce2"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/tarih"
+        android:textSize="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/isimsoyisim"
+        android:textSize="15dp"
+
+        android:textColor="#3b8ce2"
+        android:layout_alignTop="@+id/avatar_layout"
+        android:layout_toRightOf="@+id/avatar_layout"
+        android:layout_toEndOf="@+id/avatar_layout" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yorum"
+
+        android:layout_below="@+id/isimsoyisim"
+        android:layout_toRightOf="@+id/avatar_layout"
+        android:layout_toEndOf="@+id/avatar_layout" />
+
+
+</RelativeLayout>

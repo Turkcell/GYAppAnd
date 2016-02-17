@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="4dp">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/profilID"
+    android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blogID"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Tasarım"
+            android:id="@+id/categories"
+            android:layout_gravity="right"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/profilLayout"
+            android:layout_marginTop="10dp"
+            >
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="5dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                app:border_width="1dp"
+                app:border_color="#f5f7f5"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cansu Uludağ"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/profilIsim"
+                        android:textColor="#55a3d0"
+                        />
+
+
+                    <TextView
+
+                        android:layout_toRightOf="@id/profilLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:text="15 Temmuz 2015"
+                        android:textSize="11dp"
+                        android:paddingTop="5dp"
+                        android:id="@+id/blogTarih"
+                        android:textColor="#615d64"
+                        android:paddingLeft="10dp"
+                        android:layout_centerVertical="true"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="350dp"
+                    android:layout_height="1dp"
+                    android:background="#99bab5c0"></LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"
+
+                android:id="@+id/image"
+                android:layout_centerVertical="true" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image"
+                android:layout_toEndOf="@+id/image">
+
+                <TextView
+
+                    android:id="@+id/itemBaslik"
+                    android:text="Elveda Eclipse,Merhaba Android Studio!"
+                    android:textColor="#55a3d0"
+                    android:textSize="18sp"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:layout_weight="0.22" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/itemOzet"
+                    android:text="Geleceği Yazanlar Android eğitim içerikleri, Android Studio 1.2.2 ile uyumlu hale getirdi..."
+                    android:textColor="#ff808080"
+                    android:textSize="13sp"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.TextAppearance.AppCompat.Body2"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.turkcell.gelecegiyazanlar.ActivityPaketi.EgitimIcerikActivity"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar2"
+        layout="@layout/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#fff2ca43"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="centerCrop"
+            app:border_width="1dp"
+            app:border_color="#ff747474"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7dp"
+            />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/yazar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <WebView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/web"/>
+
+
+</LinearLayout>

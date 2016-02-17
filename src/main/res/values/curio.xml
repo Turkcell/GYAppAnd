@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_url">https://curio.turkcell.com.tr/api/v2/</string>
+    <string name="api_key">b0e51b70f96711e493ede1fa6b390fea</string>
+    <string name="tracking_code">5DSWWU2F</string>
+    <string name="gcm_senderId">983304469433</string>
+    <bool name="auto_push_registration">true</bool>
+    <integer name="session_timeout">50</integer>
+    <bool name="periodic_dispatch_enabled">false</bool>
+    <integer name="dispatch_period">5</integer>
+    <integer name="max_cached_activity_count">1000</integer>
+    <bool name="logging_enabled">true</bool>
+</resources>

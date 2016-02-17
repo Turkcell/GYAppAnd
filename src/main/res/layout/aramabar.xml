@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/beyaz"
+    android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+   >
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="text"
+        android:textColor="@color/ColorPrimary"
+        android:hint="Ara.."
+        android:padding="3dp"
+        android:textColorHint="#ff999999"
+        android:background="@drawable/arama_background"/>
+
+    <ImageView
+        android:id="@+id/btnAra"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="-30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arama" />
+
+</LinearLayout>
+</android.support.v7.widget.Toolbar>

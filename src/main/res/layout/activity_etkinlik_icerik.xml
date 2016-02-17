@@ -1,0 +1,51 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbaretkinlik"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#2196F3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtBaslik"
+            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:text=""
+            style="@style/mobilIcerikBaslik"
+            android:textColor="@color/beyaz"
+            />
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/mobilIcerikBaslik"
+            android:textSize="12sp"
+            android:id="@+id/txtYorum"
+            android:text="Yorumlar"
+            android:textColor="@color/beyaz"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"/>
+</RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/etkinlikDetay"
+        android:layout_below="@+id/toolbaretkinlik"
+        />
+</RelativeLayout>
+</LinearLayout>

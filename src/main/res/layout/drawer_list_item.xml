@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="fill_parent"
+    android:layout_height="@dimen/ellilikOlcu"
+    android:background="@android:color/transparent"
+    android:padding="3dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
+        android:layout_width="@dimen/sol_menu_imageview_olcu"
+        android:layout_height="@dimen/sol_menu_imageview_olcu"
+        android:id="@+id/icon"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/solMenuSiyah"
+        android:id="@+id/drawerText"
+        android:text="text"
+        android:textSize="@dimen/text_size_onyedi"/>
+
+</LinearLayout>

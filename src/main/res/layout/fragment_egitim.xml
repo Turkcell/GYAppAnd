@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#dde0e3">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height=".2dp"
+        android:background="#fff"></LinearLayout>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/ust_bosluk_yukseklik"
+    android:background="@color/ColorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/ustekran">
+
+    <ImageView
+        android:id="@+id/logo_ust_ekran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/ic_launcher"/>
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/tabDefault"
+    android:gravity="center_horizontal"
+    >
+
+    <com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon
+        android:id="@+id/tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tab_yukseklik"
+        android:elevation="1dp"
+        android:background="@android:color/transparent"
+        android:fillViewport="false" />
+
+</LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_marginTop="3dp"
+        android:id="@+id/pager"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        ></android.support.v4.view.ViewPager>
+
+</LinearLayout>

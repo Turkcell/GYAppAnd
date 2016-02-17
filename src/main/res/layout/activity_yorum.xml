@@ -1,0 +1,33 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  tools:context=".MainActivity"
+    android:paddingTop="3dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="3dp"
+    android:orientation="vertical">
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/liste"
+        android:elevation="3dp"
+        android:divider="#f2fcff"
+        android:dividerHeight="2dp"
+        >
+
+    </ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yorumyok"
+        android:textSize="25dp"
+        android:textColor="#a4000000"
+        android:text="Henüz Yorum Yapılmamış"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+
+        />
+
+</LinearLayout>
