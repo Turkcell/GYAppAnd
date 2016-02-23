@@ -1,8 +1,14 @@
 # Geleceği Yazanlar Android Uygulaması
 
+Bu proje 7 üniversite öğrencisinin bir araya gelip Android öğrenerek kısa zamanda geliştirdiği bir android uygulamasıdır.
+
+Projenin amacı Geleceği Yazanlar üyelerinin Android uygulamasıyla platformdaki içeriklere daha rahat ulaşmasını sağlamaktır.
+Proje ile ilgili hata ve eksikliklerin düzeltilip, projenin daha da geliştirilmesi için burada paylaşıyoruz.
+Geliştirilmesine katkıda bulunan herkese teşekkürler.
+
 ####Fragment Yapısı
 
-Öncelikle uygulamamızı Android Studio IDE’si ile geliştirdiğimizi belirtmek isterim.Uygulama sayfa düzeni açısından Activityler ve Fragmentlar olarak hiyerarşik bir yapıdadır.
+Öncelikle uygulamamızı Android Studio IDE’si ile geliştirildi. Uygulama sayfa düzeni açısından Activityler ve Fragmentlar olarak hiyerarşik bir yapıdadır.
 
 İlk açılan sayfamız MainActivitydir. Fakat içerisinde EğitimFragment adında bir fragment dönüyor. Bu fragment ise kendi içerisinde tablar ile geçiş yaparak dönen 3 farklı eğitim kategorisi fragmentlarını döndürmektedir. Bunlar ise; Mobil,Oyun ve Web Fragmentlarıdır.
 
