@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.turkcell.gelecegiyazanlar.AnimasyonPaketi.ZoomluGecis;
+
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon;
@@ -17,7 +17,7 @@ import com.turkcell.gelecegiyazanlar.AdapterVeListenerPaketi.ViewPagerAdapter;
 
 
 /**
- * Eğitim sayfasının fragment ı
+ * EÃ°itim sayfasÃ½nÃ½n fragment Ã½
  */
 public class EgitimFragment extends Fragment {
 
@@ -41,23 +41,23 @@ public class EgitimFragment extends Fragment {
 
         ust_logo=(ImageView)rootView.findViewById(R.id.logo_ust_ekran);
 
-        //Baslangıc resmi
+        //BaslangÃ½c resmi
         ust_logo.setImageResource(R.drawable.mobil_ust_logo);
 
-        // Başlıkları,tab sayısını adapterda tanımlar
+        // BaÃ¾lÃ½klarÃ½,tab sayÃ½sÃ½nÃ½ adapterda tanÃ½mlar
         adapter =  new ViewPagerAdapter(getFragmentManager(),Titles,Numboftabs);
 
 
         pager = (ViewPager) rootView.findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
-        // Tabların görünüm menüsü
+        // TablarÃ½n gÃ¶rÃ¼nÃ¼m menÃ¼sÃ¼
         tabs = (SlidingTabLayoutIcon) rootView.findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(true); // tabların düzenlenebilir olmasını sağlar
+        tabs.setDistributeEvenly(true); // tablarÃ½n dÃ¼zenlenebilir olmasÃ½nÃ½ saÃ°lar
 
       tabs.setSelectedIndicatorColors(getResources().getColor(R.color.selector));
 
-        // pagerı tablara bağladık.
+        // pagerÃ½ tablara baÃ°ladÃ½k.
         tabs.setViewPager(pager);
 
         resimDegisikligiTabDinleyici();
@@ -66,7 +66,7 @@ public class EgitimFragment extends Fragment {
     }
 
     /**
-     * Resim değişikliği sağlar..
+     * Resim deÃ°iÃ¾ikliÃ°i saÃ°lar..
      */
     public void resimDegisikligiTabDinleyici(){
         tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
