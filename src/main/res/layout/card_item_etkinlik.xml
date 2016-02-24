@@ -28,7 +28,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#88000000"
+        android:background="@color/seffaf_koyu_renk"
         android:layout_gravity="bottom">
     <TextView
 
@@ -101,19 +101,19 @@
             android:id="@+id/kalan_gun"
             android:text="-"
             android:textSize="17sp"
-            android:textColor="@color/beyaz"/>
+            android:textColor="@color/beyaz_renk"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="gün"
             android:textSize="15sp"
-            android:textColor="@color/beyaz"/>
+            android:textColor="@color/beyaz_renk"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="kaldı"
             android:textSize="12sp"
-            android:textColor="@color/beyaz"/>
+            android:textColor="@color/beyaz_renk"/>
 
     </LinearLayout>
 

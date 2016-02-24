@@ -1,6 +1,5 @@
 package com.turkcell.gelecegiyazanlar.FragmentPaketi;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -28,11 +27,11 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.turkcell.gelecegiyazanlar.AppController;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout;
-import com.turkcell.gelecegiyazanlar.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utils.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
 
 import org.json.JSONException;
 import org.json.JSONObject;

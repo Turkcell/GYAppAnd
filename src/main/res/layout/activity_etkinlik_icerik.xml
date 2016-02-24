@@ -11,7 +11,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbaretkinlik"
         android:minHeight="?attr/actionBarSize"
-        android:background="#2196F3"
+        android:background="@color/blog_icerik_arkaplan_renk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:android="http://schemas.android.com/apk/res/android">
@@ -24,7 +24,7 @@
             android:layout_width="250dp"
             android:text=""
             style="@style/mobilIcerikBaslik"
-            android:textColor="@color/beyaz"
+            android:textColor="@color/beyaz_renk"
             />
 
         <TextView
@@ -35,7 +35,7 @@
             android:textSize="12sp"
             android:id="@+id/txtYorum"
             android:text="Yorumlar"
-            android:textColor="@color/beyaz"
+            android:textColor="@color/beyaz_renk"
             android:layout_marginRight="15dp"
             android:layout_centerVertical="true"/>
 </RelativeLayout>

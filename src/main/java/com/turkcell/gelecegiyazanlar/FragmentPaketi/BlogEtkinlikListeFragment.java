@@ -1,14 +1,10 @@
 package com.turkcell.gelecegiyazanlar.FragmentPaketi;
 
 import android.animation.Animator;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,26 +13,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.turkcell.gelecegiyazanlar.AdapterVeListenerPaketi.RecyclerAdapterBlog;
-import com.turkcell.gelecegiyazanlar.AnimasyonPaketi.DerinSayfaDegisimi;
-import com.turkcell.gelecegiyazanlar.AppController;
-import com.turkcell.gelecegiyazanlar.ClassPaketi.Blog;
-import com.turkcell.gelecegiyazanlar.ClassPaketi.Kisi;
+import com.turkcell.gelecegiyazanlar.AdapterListener.RecyclerAdapterBlog;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Model.Blog;
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout;
-import com.turkcell.gelecegiyazanlar.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utils.TarihCevir;
-import com.turkcell.gelecegiyazanlar.Utils.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;

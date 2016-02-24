@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.turkcell.gelecegiyazanlar.FragmentPaketi.AramaFragment"
-    android:background="#dde0e3"
+    android:background="@color/profil_arkaplan_renk"
     >
 
     <ListView
@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:textStyle="bold"
-        android:textColor="#b9b9b9"
+        android:textColor="@color/aramatv_sonuc_renk"
         android:text="EŞLEŞEN SONUÇ BULUNAMADI"
         android:gravity="center"
         android:visibility="gone"

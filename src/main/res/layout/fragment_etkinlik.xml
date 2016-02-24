@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height=".2dp"
-            android:background="#fff"></LinearLayout>
+            android:background="@color/beyaz_renk"></LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="@dimen/ust_bosluk_yukseklik"

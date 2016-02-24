@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/liste"
         android:elevation="3dp"
-        android:divider="#f2fcff"
+        android:divider="@color/yorum_divider_renk"
         android:dividerHeight="2dp"
         >
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/yorumyok"
         android:textSize="25dp"
-        android:textColor="#a4000000"
+        android:textColor="@color/yorum_yazi_renk"
         android:text="Henüz Yorum Yapılmamış"
         android:visibility="invisible"
         android:layout_gravity="center"

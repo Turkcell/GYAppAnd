@@ -19,7 +19,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:border_width="2dp"
-            app:border_color="#3b8ce2"
+            app:border_color="@color/yorum_renk"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/isimsoyisim"
         android:textSize="15dp"
 
-        android:textColor="#3b8ce2"
+        android:textColor="@color/yorum_renk"
         android:layout_alignTop="@+id/avatar_layout"
         android:layout_toRightOf="@+id/avatar_layout"
         android:layout_toEndOf="@+id/avatar_layout" />

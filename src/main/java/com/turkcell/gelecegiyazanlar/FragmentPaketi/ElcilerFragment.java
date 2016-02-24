@@ -1,70 +1,49 @@
 package com.turkcell.gelecegiyazanlar.FragmentPaketi;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.turkcell.gelecegiyazanlar.ActivityPaketi.MainActivity;
-import com.turkcell.gelecegiyazanlar.ActivityPaketi.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
 import com.turkcell.gelecegiyazanlar.R;
 
 
 public class ElcilerFragment extends android.support.v4.app.Fragment {
 
-    LinearLayout ahmedUstem;
-    LinearLayout ahmetAnil;
-    LinearLayout cerenCoskun;
-    LinearLayout dogukanYildirim;
-    LinearLayout gizemYurdagul;
-    LinearLayout abdullahSarikaya;
-    LinearLayout halilOncen;
-    LinearLayout ibrahimHobekkaya;
-    LinearLayout ilkanEngin;
-    LinearLayout ismailArslan;
-    LinearLayout kadirhanEkmekcioglu;
-    LinearLayout oguzBilgener;
-    LinearLayout tanerUtku;
-    LinearLayout tugceGursoy;
-    LinearLayout erenUtku;
-    LinearLayout volkanKilic;
-
+    LinearLayout lyDogukanYildirim;
+    LinearLayout lyGizemYurdagul;
+    LinearLayout lyAbdullahSarikaya;
+    LinearLayout lyKadirhanEkmekcioglu;
+    LinearLayout lyTanerUtku;
+    LinearLayout lyErenUtku;
+    LinearLayout lyVolkanKilic;
+    LinearLayout lyFeyzaOkumus;
     String id;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView=inflater.inflate(R.layout.fragment_elciler, container, false);
+        View rootView=inflater.inflate(R.layout.fragment_gelistiriciler, container, false);
 
 
-        ahmedUstem = (LinearLayout) rootView.findViewById(R.id.ahmedUstem);
-        ahmetAnil = (LinearLayout) rootView.findViewById(R.id.ahmetAnil);
-        cerenCoskun = (LinearLayout) rootView.findViewById(R.id.cerenCoskun);
-        dogukanYildirim = (LinearLayout) rootView.findViewById(R.id.dogukanYildirim);
-        gizemYurdagul = (LinearLayout) rootView.findViewById(R.id.gizemYurdagul);
-        abdullahSarikaya = (LinearLayout) rootView.findViewById(R.id.abdullahSarikaya);
-        halilOncen = (LinearLayout) rootView.findViewById(R.id.halilOncen);
-        ibrahimHobekkaya = (LinearLayout) rootView.findViewById(R.id.ibrahimHobekkaya);
-        ilkanEngin = (LinearLayout) rootView.findViewById(R.id.ilkanEngin);
-        ismailArslan = (LinearLayout) rootView.findViewById(R.id.ismailArslan);
-        kadirhanEkmekcioglu = (LinearLayout)rootView. findViewById(R.id.kadirhanEkmekcioglu);
-        oguzBilgener = (LinearLayout) rootView.findViewById(R.id.oguzBilgener);
-        tanerUtku = (LinearLayout) rootView.findViewById(R.id.tanerUtku);
-        tugceGursoy = (LinearLayout) rootView.findViewById(R.id.tugceGursoy);
-        erenUtku = (LinearLayout)rootView. findViewById(R.id.erenUtku);
-        volkanKilic = (LinearLayout) rootView.findViewById(R.id.volkanKilic);
+        lyFeyzaOkumus = (LinearLayout) rootView.findViewById(R.id.feyza);
+        lyDogukanYildirim = (LinearLayout) rootView.findViewById(R.id.dogukanYildirim);
+        lyGizemYurdagul = (LinearLayout) rootView.findViewById(R.id.gizemYurdagul);
+        lyAbdullahSarikaya = (LinearLayout) rootView.findViewById(R.id.abdullahSarikaya);
+        lyKadirhanEkmekcioglu = (LinearLayout)rootView. findViewById(R.id.kadirhanEkmekcioglu);
+        lyTanerUtku = (LinearLayout) rootView.findViewById(R.id.tanerUtku);
+        lyErenUtku = (LinearLayout)rootView. findViewById(R.id.erenUtku);
+        lyVolkanKilic = (LinearLayout) rootView.findViewById(R.id.volkanKilic);
 
 
-        ahmedUstem.setOnClickListener(new View.OnClickListener() {
+        lyFeyzaOkumus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                id = "7292";
+                id = "59885";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
                 intent.putExtra(getResources().getString(R.string.profilID), id);
@@ -73,30 +52,8 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        ahmetAnil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "15363";
 
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
-
-        cerenCoskun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "29472";
-
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-
-            }
-        });
-
-        dogukanYildirim.setOnClickListener(new View.OnClickListener() {
+        lyDogukanYildirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "21294";
@@ -107,7 +64,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        gizemYurdagul.setOnClickListener(new View.OnClickListener() {
+        lyGizemYurdagul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "36644";
@@ -118,7 +75,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        abdullahSarikaya.setOnClickListener(new View.OnClickListener() {
+        lyAbdullahSarikaya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "17846";
@@ -129,51 +86,9 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        halilOncen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "10880";
 
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
 
-        ibrahimHobekkaya.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "3646";
-
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
-
-        ilkanEngin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "13420";
-
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
-
-        ismailArslan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "30717";
-
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
-
-        kadirhanEkmekcioglu.setOnClickListener(new View.OnClickListener() {
+        lyKadirhanEkmekcioglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "10678";
@@ -184,18 +99,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        oguzBilgener.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "18711";
-
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
-
-        tanerUtku.setOnClickListener(new View.OnClickListener() {
+        lyTanerUtku.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "7934";
@@ -206,18 +110,9 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        tugceGursoy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                id = "7736";
 
-                Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
-                startActivity(intent);
-            }
-        });
 
-        erenUtku.setOnClickListener(new View.OnClickListener() {
+        lyErenUtku.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "35522";
@@ -228,7 +123,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        volkanKilic.setOnClickListener(new View.OnClickListener() {
+        lyVolkanKilic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 id = "2681";

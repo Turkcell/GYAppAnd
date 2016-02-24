@@ -61,7 +61,7 @@
     <!-- White Top color -->
     <item>
         <shape>
-            <solid android:color="@color/beyaz" />
+            <solid android:color="@color/beyaz_renk" />
             <padding
                 android:bottom="4dp"
                 android:left="16dp"

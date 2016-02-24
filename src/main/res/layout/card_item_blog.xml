@@ -52,7 +52,7 @@
                 android:layout_height="50dp"
                 android:scaleType="centerCrop"
                 app:border_width="1dp"
-                app:border_color="#f5f7f5"/>
+                app:border_color="@color/card_blog_border_renk"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -73,7 +73,7 @@
                         android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:id="@+id/profilIsim"
-                        android:textColor="#55a3d0"
+                        android:textColor="@color/card_blog_yazi_renk"
                         />
 
 
@@ -87,7 +87,7 @@
                         android:textSize="11dp"
                         android:paddingTop="5dp"
                         android:id="@+id/blogTarih"
-                        android:textColor="#615d64"
+                        android:textColor="@color/card_blog_tarih_renk"
                         android:paddingLeft="10dp"
                         android:layout_centerVertical="true"
                         />
@@ -98,7 +98,7 @@
                     android:orientation="vertical"
                     android:layout_width="350dp"
                     android:layout_height="1dp"
-                    android:background="#99bab5c0"></LinearLayout>
+                    android:background="@color/blog_item_arkaplan_renk"></LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
@@ -129,7 +129,7 @@
 
                     android:id="@+id/itemBaslik"
                     android:text="Elveda Eclipse,Merhaba Android Studio!"
-                    android:textColor="#55a3d0"
+                    android:textColor="@color/card_blog_yazi_renk"
                     android:textSize="18sp"
                     android:paddingLeft="5dp"
                     android:layout_marginLeft="10dp"
@@ -143,7 +143,7 @@
                     android:layout_centerVertical="true"
                     android:id="@+id/itemOzet"
                     android:text="Geleceği Yazanlar Android eğitim içerikleri, Android Studio 1.2.2 ile uyumlu hale getirdi..."
-                    android:textColor="#ff808080"
+                    android:textColor="@color/blog_item_ozet_renk"
                     android:textSize="13sp"
                     android:paddingLeft="5dp"
                     android:layout_marginLeft="10dp"

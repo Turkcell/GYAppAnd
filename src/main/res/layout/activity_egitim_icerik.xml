@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.turkcell.gelecegiyazanlar.ActivityPaketi.EgitimIcerikActivity"
+    tools:context="com.turkcell.gelecegiyazanlar.Activity.EgitimIcerikActivity"
     android:orientation="vertical">
 
     <include
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#fff2ca43"
+        android:background="@color/tab_default_renk"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         >
@@ -28,7 +28,7 @@
             android:layout_height="48dp"
             android:scaleType="centerCrop"
             app:border_width="1dp"
-            app:border_color="#ff747474"
+            app:border_color="@color/egitim_icerik_border_renk"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="7dp"
             />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="14sp"
-            android:textColor="#fff"
+            android:textColor="@color/beyaz_renk"
             android:textStyle="bold"
             android:layout_gravity="center_vertical" />
     </LinearLayout>

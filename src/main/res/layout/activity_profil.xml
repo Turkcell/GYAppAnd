@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff"
+    android:background="@color/beyaz_renk"
     tools:context=".MainActivity">
 
     <include
@@ -19,7 +19,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#fff"></LinearLayout>
+            android:background="@color/beyaz_renk"></LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="@dimen/ust_bosluk_yukseklik"
@@ -34,7 +34,7 @@
                 android:layout_height="100dp"
                 android:src="@drawable/defaultimage"
                 app:border_width="3dp"
-                app:border_color="@color/tabDefault"/>
+                app:border_color="@color/tab_default_renk"/>
 
 
             <TextView
@@ -43,7 +43,7 @@
                 android:text=""
                 android:id="@+id/adSoyad"
                 android:textSize="25sp"
-                android:textColor="@color/beyaz"
+                android:textColor="@color/beyaz_renk"
                 style="@style/mobilIcerikBaslik"/>
 
             <LinearLayout
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     style="@style/mobilIcerikBaslik"
-                    android:textColor="@color/beyaz"
+                    android:textColor="@color/beyaz_renk"
                     android:textSize="15sp"
                     android:layout_marginLeft="3dp"/>
 
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     style="@style/mobilIcerikBaslik"
-                    android:textColor="@color/beyaz"
+                    android:textColor="@color/beyaz_renk"
                     android:textSize="15sp"
                     android:layout_marginLeft="3dp"/>
 
@@ -97,7 +97,7 @@
         <com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/tabDefault"
+            android:background="@color/tab_default_renk"
             android:id="@+id/tabsBlog"
 
             />
@@ -105,7 +105,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#dde0e3">
+            android:background="@color/profil_arkaplan_renk">
 
         </LinearLayout>
 

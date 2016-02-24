@@ -5,7 +5,7 @@
 android:orientation="horizontal"
     android:paddingBottom="@dimen/sol_margin_olcu_onbes"
     android:paddingTop="@dimen/sol_margin_olcu_onbes"
-    android:background="#fff">
+    android:background="@color/beyaz_renk">
 
     <LinearLayout
         android:layout_width="wrap_content"

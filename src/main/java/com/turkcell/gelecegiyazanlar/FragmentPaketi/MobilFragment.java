@@ -15,7 +15,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.turkcell.gelecegiyazanlar.ActivityPaketi.EgitimBaslikActivity;
+import com.turkcell.gelecegiyazanlar.Activity.EgitimBaslikActivity;
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon;
 import com.turkcell.gelecegiyazanlar.R;
 

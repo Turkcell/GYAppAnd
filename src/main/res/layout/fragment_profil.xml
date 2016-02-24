@@ -22,7 +22,7 @@
         android:layout_marginLeft="35dp"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="#dde0e3"
+        android:background="@color/profil_arkaplan_renk"
         android:id="@+id/hakkindaCizgi"
         android:orientation="horizontal"
         >
@@ -69,7 +69,7 @@
         android:layout_marginLeft="15dp"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="#dde0e3"
+        android:background="@color/profil_arkaplan_renk"
         android:id="@+id/basaribelgeleriCizgi"
         android:orientation="horizontal"
         android:visibility="gone"
@@ -98,7 +98,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -194,7 +194,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -289,7 +289,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -350,7 +350,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -412,7 +412,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -507,7 +507,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -569,7 +569,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -648,7 +648,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#20afbbaf"></LinearLayout>
+                android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -745,9 +745,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|bottom"
-            fab:fab_addButtonColorNormal="@color/tabDefault"
-            fab:fab_addButtonColorPressed="#ffcfa83e"
-            fab:fab_addButtonPlusIconColor="@color/beyaz"
+            fab:fab_addButtonColorNormal="@color/tab_default_renk"
+            fab:fab_addButtonColorPressed="@color/fab_pressed_renk"
+            fab:fab_addButtonPlusIconColor="@color/beyaz_renk"
             fab:fab_addButtonStrokeVisible="false"
             fab:fab_labelStyle="@style/menu_labels_style"
             fab:fab_labelsPosition="left">
@@ -756,9 +756,9 @@
                 android:id="@+id/fab_face"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_colorNormal="@color/facebookNormal"
-                fab:fab_colorPressed="@color/facebookKoyu"
-                fab:fab_plusIconColor="@color/beyaz"
+                fab:fab_colorNormal="@color/facebook_normal_renk"
+                fab:fab_colorPressed="@color/facebook_koyu_renk"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/face_icon"
                 fab:fab_size="mini"
                 fab:fab_title="Facebook" />
@@ -767,9 +767,9 @@
                 android:id="@+id/fab_twitter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_colorNormal="@color/twitterNormal"
-                fab:fab_colorPressed="@color/twitterKoyu"
-                fab:fab_plusIconColor="@color/beyaz"
+                fab:fab_colorNormal="@color/twitter_normal_renk"
+                fab:fab_colorPressed="@color/twitter_koyu_renk"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/twitter_icon"
                 fab:fab_size="mini"
                 fab:fab_title="Twitter" />
@@ -778,9 +778,9 @@
                 android:id="@+id/fab_google"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_colorNormal="@color/youtubeNormal"
-                fab:fab_colorPressed="@color/youtubeKoyu"
-                fab:fab_plusIconColor="@color/beyaz"
+                fab:fab_colorNormal="@color/youtube_normal_renk"
+                fab:fab_colorPressed="@color/youtube_koyu_renk"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/googleplus"
                 fab:fab_size="mini"
                 fab:fab_title="Google Plus" />
@@ -789,9 +789,9 @@
                 android:id="@+id/fab_linkedin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_colorNormal="@color/linkedinNormal"
-                fab:fab_colorPressed="@color/linkedinKoyu"
-                fab:fab_plusIconColor="@color/beyaz"
+                fab:fab_colorNormal="@color/linkedin_normal_renk"
+                fab:fab_colorPressed="@color/linkedin_koyu_renk"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/linkedin"
                 fab:fab_size="mini"
                 fab:fab_title="Linkedin" />

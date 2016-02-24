@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="#dde0e3">
+    android:background="@color/profil_arkaplan_renk">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height=".2dp"
-        android:background="#fff"></LinearLayout>
+        android:background="@color/beyaz_renk"></LinearLayout>
 
 <LinearLayout
     android:layout_width="fill_parent"
@@ -32,7 +32,7 @@
 <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/tabDefault"
+    android:background="@color/tab_default_renk"
     android:gravity="center_horizontal"
     >
 

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon;
-import com.turkcell.gelecegiyazanlar.AdapterVeListenerPaketi.ViewPagerAdapter;
+import com.turkcell.gelecegiyazanlar.AdapterListener.ViewPagerAdapter;
 
 
 /**

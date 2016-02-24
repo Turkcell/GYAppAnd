@@ -1,7 +1,6 @@
 package com.turkcell.gelecegiyazanlar.FragmentPaketi;
 
 import android.animation.Animator;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -13,23 +12,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.turkcell.gelecegiyazanlar.AdapterVeListenerPaketi.RecyclerAdapterEtkinlik;
-import com.turkcell.gelecegiyazanlar.AppController;
-import com.turkcell.gelecegiyazanlar.ClassPaketi.Etkinlik;
-import com.turkcell.gelecegiyazanlar.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.AdapterListener.RecyclerAdapterEtkinlik;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Model.Etkinlik;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utils.TarihCevir;
-import com.turkcell.gelecegiyazanlar.Utils.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,10 +33,8 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class EtkinlikFragment extends android.support.v4.app.Fragment {
 

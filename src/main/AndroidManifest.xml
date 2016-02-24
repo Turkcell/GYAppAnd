@@ -13,14 +13,14 @@
     <uses-permission android:name="com.turkcell.curiosample.permission.C2D_MESSAGE" />
 
     <application
-        android:name=".AppController"
+        android:name=".Configuration.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,42 +30,42 @@
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.EgitimBaslikActivity"
+            android:name=".Activity.EgitimBaslikActivity"
             android:label="Eğitim" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.EgitimIcerikActivity"
+            android:name=".Activity.EgitimIcerikActivity"
             android:label="Eğitim İçerik Sayfası" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.ProfilActivity"
+            android:name=".Activity.ProfilActivity"
             android:label="Profil" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.AramaActivity"
+            android:name=".Activity.AramaActivity"
             android:label="@string/title_activity_arama" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.YorumActivity"
+            android:name=".Activity.YorumActivity"
             android:label="@string/title_activity_yorum" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.EtkinlikIcerikActivity"
+            android:name=".Activity.EtkinlikIcerikActivity"
             android:label="@string/title_activity_etkinlik_icerik" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".ActivityPaketi.BlogIcerikAcitivity"
+            android:name=".Activity.BlogIcerikAcitivity"
             android:label="@string/title_activity_blog_icerik_acitivity" >
         </activity>
 
         <receiver
-            android:name=".PushNotificationBroadcastReceiver"
+            android:name=".Service.PushNotificationBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -74,7 +74,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".PushNotificationIntentService" />
+        <service android:name=".Service.PushNotificationIntentService" />
     </application>
 
 </manifest>

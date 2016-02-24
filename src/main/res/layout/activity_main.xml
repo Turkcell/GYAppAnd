@@ -31,7 +31,7 @@
         <RelativeLayout
             android:layout_gravity="left|start"
             android:layout_width="wrap_content"
-            android:background="#fff"
+            android:background="@color/beyaz_renk"
             android:layout_height="match_parent">
 
             <ListView
@@ -39,8 +39,8 @@
                 android:id="@+id/left_drawer"
                 android:layout_width="@dimen/sol_menu_genislik"
                 android:layout_height="match_parent"
-                android:divider="#e3e3e3"
-                android:background="#ffffffff"
+                android:divider="@color/divider_renk"
+                android:background="@color/beyaz_renk"
                 android:dividerHeight="0.5dp"
                 />
         </RelativeLayout>

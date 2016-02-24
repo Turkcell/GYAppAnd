@@ -2,39 +2,61 @@
 <resources>
     <color name="ColorPrimary">#3fb0e8</color>
     <color name="ColorPrimaryDark">#ff4190c9</color>
-    <color name="tabsScrollColor">#fff5f49b</color>
-    <color name="tabDefault">#f2ca43</color>
-    <color name="androidYesili">#a5c845</color>
-    <color name="iosSiyahi">#4c5b6a</color>
-    <color name="solMenuSiyah">#333f4f</color>
-    <color name="windowsMavisi">#3fbaf9</color>
-    <color name="scratch_turuncu">#f7a750</color>
-    <color name="app_inventor_kirmizi">#e06b60</color>
-    <color name="webRengi">#f16529</color>
-    <color name="oyunRengi">#722791</color>
-    <color name="gri">#ff8c8f8c</color>
-    <color name="gri_siyah">#3d4455</color>
-    <color name="koyu_mavi">#7AB2C3</color>
-    <color name="drawer_color_selected">#437ab2c3</color>
-    <color name="beyaz">#fff</color>
-    <color name="arduino">#15979C</color>
+    <color name="tab_scroll_renk">#fff5f49b</color>
+    <color name="tab_default_renk">#f2ca43</color>
+    <color name="android_yesil_renk">#a5c845</color>
+    <color name="ios_siyah_renk">#4c5b6a</color>
+    <color name="sol_menu_siyah_renk">#333f4f</color>
+    <color name="windows_mavi_renk">#3fbaf9</color>
+    <color name="scratch_turuncu_renk">#f7a750</color>
+    <color name="app_inventor_kirmizi_renk">#e06b60</color>
+    <color name="web_renk">#f16529</color>
+    <color name="oyun_renk">#722791</color>
+    <color name="gri_renk">#ff8c8f8c</color>
+    <color name="gri_siyah_renk">#3d4455</color>
+    <color name="koyu_mavi_renk">#7AB2C3</color>
+    <color name="drawer_secilen_renk">#437ab2c3</color>
+    <color name="beyaz_renk">#fff</color>
+    <color name="arduino_renk">#15979C</color>
+    <color name="arama_arkaplan_renk">#88969696</color>
+    <color name="blog_icerik_arkaplan_renk">#2196F3</color>
+    <color name="egitim_icerik_border_renk">#ff747474</color>
+    <color name="divider_renk">#e3e3e3</color>
+    <color name="profil_arkaplan_renk">#dde0e3</color>
+    <color name="yorum_divider_renk">#f2fcff</color>
+    <color name="yorum_yazi_renk">#a4000000</color>
+    <color name="hint_yazi_renk">#ff999999</color>
+    <color name="card_blog_border_renk">#f5f7f5</color>
+    <color name="card_blog_yazi_renk">#55a3d0</color>
+  <color name="card_blog_tarih_renk">#615d64</color>
+    <color name="blog_item_arkaplan_renk">#99bab5c0</color>
+    <color name="blog_item_ozet_renk">#ff808080</color>
+    <color name="seffaf_koyu_renk">#88000000</color>
+    <color name="aramatv_sonuc_renk">#b9b9b9</color>
+    <color name="fragment_profil_arkaplan_renk">#20afbbaf</color>
+    <color name="fab_pressed_renk">#ffcfa83e</color>
+    <color name="child_renk">#ff6d6d6d</color>
+    <color name="parent_renk">#fff5f7f7</color>
+    <color name="parent_yazi_renk">#ff6c6c6c</color>
+    <color name="yorum_renk">#3b8ce2</color>
 
 
     <color name="accent_dark">#ff2929</color>
     <color name="accent">#ff5252</color>
     <color name="secondary_text">#727272</color>
 
-    <color name="facebookNormal">#43609B</color>
-    <color name="twitterNormal">#55ACEE</color>
-    <color name="youtubeNormal">#DF2826</color>
-    <color name="linkedinNormal">#0077B5</color>
-    <color name="blogNormal">#fffff16e</color>
+    //sosyal medya
+    <color name="facebook_normal_renk">#43609B</color>
+    <color name="twitter_normal_renk">#55ACEE</color>
+    <color name="youtube_normal_renk">#DF2826</color>
+    <color name="linkedin_normal_renk">#0077B5</color>
+    <color name="blog_normal_renk">#fffff16e</color>
 
 
-    <color name="facebookKoyu">#ff333b66</color>
-    <color name="twitterKoyu">#ff427cab</color>
-    <color name="youtubeKoyu">#ffb42321</color>
-    <color name="linkedinKoyu">#ff025e99</color>
-    <color name="blogKoyu">#ffe5d768</color>
+    <color name="facebook_koyu_renk">#ff333b66</color>
+    <color name="twitter_koyu_renk">#ff427cab</color>
+    <color name="youtube_koyu_renk">#ffb42321</color>
+    <color name="linkedin_koyu_renk">#ff025e99</color>
+    <color name="blog_koyu_renk">#ffe5d768</color>
 
 </resources>

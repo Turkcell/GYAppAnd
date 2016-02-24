@@ -17,7 +17,7 @@
         android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/solMenuSiyah"
+        android:textColor="@color/sol_menu_siyah_renk"
         android:id="@+id/drawerText"
         android:text="text"
         android:textSize="@dimen/text_size_onyedi"/>

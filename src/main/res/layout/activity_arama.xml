@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.turkcell.gelecegiyazanlar.ActivityPaketi.AramaActivity"
+    tools:context="com.turkcell.gelecegiyazanlar.Activity.AramaActivity"
     android:orientation="vertical"
-    android:background="@color/beyaz">
+    android:background="@color/beyaz_renk">
 
     <include
         android:id="@+id/tool_bar_ara"
@@ -17,18 +17,18 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="#88969696"></LinearLayout>
+        android:background="@color/arama_arkaplan_renk"></LinearLayout>
 
 
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tabsArama"
-        app:tabTextColor="#fff"
-        app:tabSelectedTextColor="#fff"
+        app:tabTextColor="@color/beyaz_renk"
+        app:tabSelectedTextColor="@color/beyaz_renk"
         app:tabIndicatorColor="@color/selector"
         app:tabGravity="center"
-        android:background="@color/tabDefault"/>
+        android:background="@color/tab_default_renk"/>
 
 
     <android.support.v4.view.ViewPager

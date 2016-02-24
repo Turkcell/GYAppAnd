@@ -5,7 +5,7 @@
     tools:layout="@layout/fragment_web"
     android:padding="@dimen/sol_margin_olcu_onbes"
     android:paddingBottom="0dp"
-    android:background="@color/beyaz"
+    android:background="@color/beyaz_renk"
     >
     <LinearLayout
         android:layout_width="fill_parent"
@@ -51,7 +51,7 @@
                         android:layout_height="wrap_content"
                         style="@style/mobilIcerikBaslik"
                         android:text="@string/oyun"
-                        android:textColor="@color/oyunRengi"/>
+                        android:textColor="@color/oyun_renk"/>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -101,7 +101,7 @@
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
                             android:text="Oyun Geliştirme 101\nSeviye:Başlangıç"
-                            android:textColor="@color/gri_siyah"/>
+                            android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -141,7 +141,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
                             android:text="Bir ürün olarak oyunun hazırlık süreci, tasarım ve oyunda sanat konularını işleyeceğiz."
-                            android:textColor="@color/gri_siyah"/>
+                            android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
                             android:layout_marginTop="-15dp"
@@ -177,7 +177,7 @@
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
                             android:text="Oyun Geliştirme 201\nSeviye:Orta"
-                            android:textColor="@color/gri_siyah"/>
+                            android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -217,7 +217,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
                             android:text="Bu eğitimde oyun geliştirmedeki teknolojiye, gelir modeline ve medya ilişkilerine değineceğiz."
-                            android:textColor="@color/gri_siyah"/>
+                            android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
                             android:layout_gravity="center_horizontal"
