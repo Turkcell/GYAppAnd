@@ -7,7 +7,29 @@ import android.widget.ImageView;
  * Created by user on 10.9.2015.
  */
 public class Blog {
+    
+    String blogID;
+    String profilID;
+    String author;
+    String excerpt;
+    String date;
+    String title;
+    String categories;
+    String avatar;
+    String image;
 
+    public Blog(String title, String date, String author, String excerpt,String categories,String avatar,String image,String profilID,String blogID) {
+        this.author = author;
+        this.excerpt = excerpt;
+        this.date = date;
+        this.title = title;
+        this.categories=categories;
+        this.image=image;
+        this.avatar=avatar;
+        this.profilID=profilID;
+        this.blogID=blogID;
+
+    }
 
     public String getProfilID() {
         return profilID;
@@ -16,8 +38,6 @@ public class Blog {
     public void setProfilID(String profilID) {
         this.profilID = profilID;
     }
-
-    String profilID;
 
     public String getTitle() {
         return title;
@@ -68,27 +88,6 @@ public class Blog {
         this.blogID = blogID;
     }
 
-    String blogID;
-
-    public Blog(String title, String date, String author, String excerpt,String categories,String avatar,String image,String profilID,String blogID) {
-        this.author = author;
-        this.excerpt = excerpt;
-        this.date = date;
-        this.title = title;
-        this.categories=categories;
-        this.image=image;
-        this.avatar=avatar;
-        this.profilID=profilID;
-        this.blogID=blogID;
-
-    }
-
-    String author;
-    String excerpt;
-    String date;
-    String title;
-    String categories;
-
     public String getAvatar() {
         return avatar;
     }
@@ -97,9 +96,6 @@ public class Blog {
         this.avatar = avatar;
     }
 
-
- String avatar;
-
     public String getImage() {
         return image;
     }
@@ -107,12 +103,5 @@ public class Blog {
     public void setImage(String image) {
         this.image = image;
     }
-
-
-    String image;
-
-
-
-
-
+    
 }
