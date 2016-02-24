@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.turkcell.gelecegiyazanlar.AnimasyonPaketi.ZoomluGecis;
-import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon;
 import com.turkcell.gelecegiyazanlar.AdapterVeListenerPaketi.ViewPagerAdapter;
