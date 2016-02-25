@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.AramaFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.AramaFragment;
 
 public class ViewPagerAdapterArama extends FragmentStatePagerAdapter {
 

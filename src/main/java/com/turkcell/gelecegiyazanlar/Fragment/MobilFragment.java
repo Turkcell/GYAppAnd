@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.FragmentPaketi;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 
 

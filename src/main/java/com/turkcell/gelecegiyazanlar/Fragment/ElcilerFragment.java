@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.FragmentPaketi;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;

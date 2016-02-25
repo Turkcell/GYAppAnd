@@ -1,18 +1,14 @@
-package com.turkcell.gelecegiyazanlar.FragmentPaketi;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -26,8 +22,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.turkcell.gelecegiyazanlar.Activity.AramaActivity;
-import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
-import com.turkcell.gelecegiyazanlar.AdapterListener.KullaniciAramaAdapter;
+import com.turkcell.gelecegiyazanlar.AdapterListener.IcerikAramaAdapter;
 import com.turkcell.gelecegiyazanlar.Configuration.AppController;
 import com.turkcell.gelecegiyazanlar.Model.Icerik;
 import com.turkcell.gelecegiyazanlar.Model.Kisi;
@@ -41,9 +36,13 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by asus on 30.9.2015.
+ */
+public class IcerikAramaFragment extends Fragment implements View.OnClickListener,AramaActivity.IArama {
 
-public class AramaFragment extends Fragment implements View.OnClickListener,AramaActivity.IArama {
-
+    //List<Kisi> icerikList = new ArrayList<Kisi>();
+    List<Icerik> icerikList = new ArrayList<Icerik>();
     EditText search;
 
     ImageView btnAra;
@@ -52,63 +51,56 @@ public class AramaFragment extends Fragment implements View.OnClickListener,Aram
 
     Kisi tempKisi;
     //Volley deðiþkenleri
-    JsonArrayRequest jsonArrayRequest,jsonArrayRequestIcerik;
+    JsonArrayRequest jsonArrayRequest;
     JsonObjectRequest jsonObjectRequest;
     RequestQueue requestQueue;
     ImageRequest imageRequest;
-    String urlAramaKullanici,urlIcerik;
-    TabLayout tabs;
-
-    List<Icerik> icerikList = new ArrayList<Icerik>();
-    List<Kisi> kisiList=new ArrayList<Kisi>();
-
+    String url;
     int sayfaNumarasi=1;
 
     YuklenmeEkran ekran ;
-    ViewPager viewPager;
+
     Toolbar toolbar;
 
-    public static AramaFragment newInstance() {
-        return new AramaFragment();
+    public static IcerikAramaFragment newInstance() {
+        return new IcerikAramaFragment();
     }
 
-    public AramaFragment() {
-        // Required empty public constructor
-        Log.d("arama:","Kullanýcý");
+    public IcerikAramaFragment() {
+
+        Log.d("arama:","Icerik");
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-         viewPager=(ViewPager)getActivity().findViewById(R.id.pagerArama);
+
         toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar_ara);
         View rootView= inflater.inflate(R.layout.fragment_arama, container, false);
-        urlAramaKullanici= GYConfiguration.getDomain()+"usersearch/retrieve?keyword=";
-        urlIcerik=GYConfiguration.getDomain()+"contentsearch/retrieve?";
+
+        url = GYConfiguration.getDomain()+"contentsearch/retrieve?";
 
         search=(EditText)toolbar.findViewById(R.id.etSearch);
 
         listView = (ListView) rootView.findViewById(R.id.lvliste);
-
         tvSonuc = (TextView) rootView.findViewById(R.id.tvSonuc);
         btnAra = (ImageView) toolbar.findViewById(R.id.btnAra);
 
         ekran=new YuklenmeEkran(getActivity());
 
 
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (kisiList.get(position) != null) {
-                    Kisi kisi = new Kisi();
-                    kisi.setKullaniciAdi(kisiList.get(position).getKullaniciID());
-                    Intent i=new Intent(getActivity(), ProfilActivity.class);
-                    i.putExtra("id",kisi.getKullaniciAdi());
-                    startActivity(i);
-                }
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                if (icerikList.get(position) != null) {
+//                    Kisi kisi = new Kisi();
+//                    kisi.setKullaniciAdi(icerikList.get(position).getKullaniciID());
+//                    Intent i=new Intent(getActivity(), ProfilActivity.class);
+//                    i.putExtra("id",kisi.getKullaniciAdi());
+//                    startActivity(i);
+//                }
+//            }
+//        });
 
 
         return rootView;
@@ -117,21 +109,20 @@ public class AramaFragment extends Fragment implements View.OnClickListener,Aram
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId()){
             case R.id.btnAra:
-                    String link = (urlAramaKullanici + search.getText()).trim();
-                    link = link.replace(" ", "%20");
-                    Listele(link);
-                    break;
-                }
+                String URL = (url +"keyword="+search.getText()+"&page="+sayfaNumarasi+"&nodeType=article").trim();
+                URL = URL.replace(" ", "%20");
+                Listele(URL);
+                break;
 
+        }
 
     }
 
-    public void Listele(String url){
-
-    ekran.surecBasla();
-
+    public void Listele(String url) {
+        ekran.surecBasla();
+        Log.d("icerikUrl:",url);
 
         jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -139,44 +130,42 @@ public class AramaFragment extends Fragment implements View.OnClickListener,Aram
 
                 ekran.surecDurdur();
 
+                icerikList.clear();
 
 
-                for(int i=0;i<response.length();i++){
+                for (int i = 0; i < response.length(); i++) {
 
-                    final Kisi tempKisi = new Kisi();
+                    final Icerik tempIcerik = new Icerik();
                     try {
-                        if (response.getJSONObject(i).getString("adSoyad")!="null") {
-                            tempKisi.setAdSoyad(response.getJSONObject(i).getString("adSoyad"));
-                            tempKisi.setKullaniciAdi(response.getJSONObject(i).getString("kullaniciAdi"));
-                            tempKisi.setKullaniciID(response.getJSONObject(i).getString("kullaniciID"));
-                            tempKisi.setKullaniciAvatarUrl(response.getJSONObject(i).getString("kullaniciAvatarUrl"));
-                            Log.d("TAG", "onResponse: " + tempKisi.getKullaniciAvatarUrl());
+                        tempIcerik.setNodeID(response.getJSONObject(i).getString("nodeID"));
+                        tempIcerik.setTitle(response.getJSONObject(i).getString("title"));
+                        tempIcerik.setDate(response.getJSONObject(i).getString("date"));
+                        tempIcerik.setNodetype(response.getJSONObject(i).getString("nodetype"));
+                        tempIcerik.setExcerpt(response.getJSONObject(i).getString("excerpt"));
+                        Log.d("TAG", "onResponse: " + tempIcerik.getNodeID());
 
-                                kisiList.add(tempKisi);
+                        icerikList.add(tempIcerik);
 
 
-
-                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.d("TAG",e.toString());
+                        Log.d("TAG", e.toString());
                     }
 
                 }
 
-                KullaniciAramaAdapter adapter = new KullaniciAramaAdapter(getActivity(), kisiList);
+                IcerikAramaAdapter adapter = new IcerikAramaAdapter(getActivity(), icerikList);
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
 
-
                 Log.d("parse islemi bitti:", "girildi");
-                if (kisiList.isEmpty())
+                if (icerikList.isEmpty())
                     tvSonuc.setVisibility(View.VISIBLE);
                 else tvSonuc.setVisibility(View.GONE);
 
             }
-        }, new Response.ErrorListener(){
+        }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -187,7 +176,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener,Aram
 
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
-        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
 
 
@@ -198,7 +187,6 @@ public class AramaFragment extends Fragment implements View.OnClickListener,Aram
     public void onPageActivated() {
         btnAra.setOnClickListener(this);
     }
-}
 
-
+    }
 

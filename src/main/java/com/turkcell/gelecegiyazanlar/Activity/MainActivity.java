@@ -21,11 +21,11 @@ import android.widget.TextView;
 import com.splunk.mint.Mint;
 import com.turkcell.curio.CurioClient;
 import com.turkcell.gelecegiyazanlar.Model.DrawerItems;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.ElcilerFragment;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.BlogFragment;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.EgitimFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.ElcilerFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.BlogFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.EgitimFragment;
 import com.turkcell.gelecegiyazanlar.AdapterListener.ListDrawerAdapter;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.EtkinlikFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.EtkinlikFragment;
 import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
 

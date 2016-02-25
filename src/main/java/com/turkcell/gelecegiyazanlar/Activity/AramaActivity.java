@@ -13,8 +13,8 @@ import android.view.View;
 
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.AdapterListener.ViewPagerAdapterArama;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.AramaFragment;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.IcerikAramaFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.AramaFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.IcerikAramaFragment;
 import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
 

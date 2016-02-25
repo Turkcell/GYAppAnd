@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.MobilFragment;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.OyunFragment;
-import com.turkcell.gelecegiyazanlar.FragmentPaketi.WebFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.MobilFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.OyunFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.WebFragment;
 import com.turkcell.gelecegiyazanlar.R;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
