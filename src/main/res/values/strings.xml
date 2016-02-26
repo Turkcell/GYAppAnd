@@ -16,6 +16,8 @@
     <string name="oyun">Oyun</string>
 
     <string name="profilID">id</string>
+    <string name="internet_uyari">Lütfen Internet Bağlantınızı Kontrol Ediniz.</string>
+    <string name="tamam">Tamam</string>
 
 
     <string name="ios101">81</string>
