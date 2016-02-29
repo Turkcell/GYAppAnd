@@ -36,7 +36,7 @@
     android:gravity="center_horizontal"
     >
 
-    <com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayoutIcon
+    <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon
         android:id="@+id/tabs"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/tab_yukseklik"

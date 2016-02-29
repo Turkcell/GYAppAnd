@@ -30,7 +30,7 @@
     </LinearLayout>
 
 
-<com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayout
+<com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/tab_default_renk"
