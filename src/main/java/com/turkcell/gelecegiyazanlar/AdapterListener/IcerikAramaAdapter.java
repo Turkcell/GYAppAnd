@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.BlogIcerikAcitivity;
-import com.turkcell.gelecegiyazanlar.model.Icerik;
+import com.turkcell.gelecegiyazanlar.Activity.BlogIcerikAcitivity;
+import com.turkcell.gelecegiyazanlar.Model.Icerik;
 
 import java.util.List;
 

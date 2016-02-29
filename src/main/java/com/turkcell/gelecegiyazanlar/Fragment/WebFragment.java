@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.fragment;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.animation.Animator;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.EgitimBaslikActivity;
+import com.turkcell.gelecegiyazanlar.Activity.EgitimBaslikActivity;
 import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayoutIcon;
 
 /**

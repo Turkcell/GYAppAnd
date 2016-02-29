@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.service;
+package com.turkcell.gelecegiyazanlar.Service;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -12,7 +12,7 @@ import android.util.Log;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.MainActivity;
+import com.turkcell.gelecegiyazanlar.Activity.MainActivity;
 
 /**
  * !!!!!

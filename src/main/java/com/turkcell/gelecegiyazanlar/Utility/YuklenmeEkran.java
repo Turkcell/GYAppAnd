@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.utility;
+package com.turkcell.gelecegiyazanlar.Utility;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

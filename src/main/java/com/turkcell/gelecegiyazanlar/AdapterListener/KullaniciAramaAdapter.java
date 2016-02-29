@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.model.Kisi;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Model.Kisi;
 
 import java.util.List;
 

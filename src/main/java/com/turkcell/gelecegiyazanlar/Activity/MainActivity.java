@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.activity;
+package com.turkcell.gelecegiyazanlar.Activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -20,13 +20,13 @@ import android.widget.TextView;
 import com.splunk.mint.Mint;
 import com.turkcell.curio.CurioClient;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.ListDrawerAdapter;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.fragment.BlogFragment;
-import com.turkcell.gelecegiyazanlar.fragment.EgitimFragment;
-import com.turkcell.gelecegiyazanlar.fragment.ElcilerFragment;
-import com.turkcell.gelecegiyazanlar.fragment.EtkinlikFragment;
-import com.turkcell.gelecegiyazanlar.model.DrawerItems;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ListDrawerAdapter;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Fragment.BlogFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.EgitimFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.ElcilerFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.EtkinlikFragment;
+import com.turkcell.gelecegiyazanlar.Model.DrawerItems;
 
 import java.util.ArrayList;
 

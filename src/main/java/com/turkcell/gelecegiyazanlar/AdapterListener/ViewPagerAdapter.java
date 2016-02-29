@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 /**
  * Created by asus on 24.8.2015.
@@ -10,9 +10,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.fragment.MobilFragment;
-import com.turkcell.gelecegiyazanlar.fragment.OyunFragment;
-import com.turkcell.gelecegiyazanlar.fragment.WebFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.MobilFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.OyunFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.WebFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 

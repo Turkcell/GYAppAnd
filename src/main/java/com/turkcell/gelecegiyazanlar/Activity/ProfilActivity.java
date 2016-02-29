@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.activity;
+package com.turkcell.gelecegiyazanlar.Activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -7,8 +7,8 @@ import android.support.v7.widget.Toolbar;
 
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.ViewPagerAdapterProfil;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ViewPagerAdapterProfil;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayout;
 
 public class ProfilActivity extends ActionBarActivity {

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.utility;
+package com.turkcell.gelecegiyazanlar.Utility;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;

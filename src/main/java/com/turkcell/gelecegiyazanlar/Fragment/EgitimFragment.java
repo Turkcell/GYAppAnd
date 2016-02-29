@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.fragment;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.ViewPagerAdapter;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ViewPagerAdapter;
 import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayoutIcon;
 
 

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.activity;
+package com.turkcell.gelecegiyazanlar.Activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.view.View;
 
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.ViewPagerAdapterArama;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.fragment.AramaFragment;
-import com.turkcell.gelecegiyazanlar.fragment.IcerikAramaFragment;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ViewPagerAdapterArama;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Fragment.AramaFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.IcerikAramaFragment;
 
 public class AramaActivity extends AppCompatActivity {
 

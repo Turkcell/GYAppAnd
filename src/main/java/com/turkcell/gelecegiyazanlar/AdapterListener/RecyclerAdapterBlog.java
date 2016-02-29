@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,10 +17,10 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.BlogIcerikAcitivity;
-import com.turkcell.gelecegiyazanlar.activity.ProfilActivity;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.model.Blog;
+import com.turkcell.gelecegiyazanlar.Activity.BlogIcerikAcitivity;
+import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Model.Blog;
 
 import java.util.List;
 

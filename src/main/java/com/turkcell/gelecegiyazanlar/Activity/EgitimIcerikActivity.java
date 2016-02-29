@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.activity;
+package com.turkcell.gelecegiyazanlar.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,9 +19,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
 import com.turkcell.curio.CurioClient;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.model.Egitim;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Model.Egitim;
 
 import org.json.JSONArray;
 import org.json.JSONException;

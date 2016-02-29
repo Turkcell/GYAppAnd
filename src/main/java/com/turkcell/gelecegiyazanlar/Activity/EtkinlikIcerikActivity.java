@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.activity;
+package com.turkcell.gelecegiyazanlar.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,9 +18,9 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;

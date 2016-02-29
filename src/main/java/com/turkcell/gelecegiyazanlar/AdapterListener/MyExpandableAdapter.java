@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.CheckedTextView;
 import android.widget.TextView;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.EgitimIcerikActivity;
+import com.turkcell.gelecegiyazanlar.Activity.EgitimIcerikActivity;
 
 import java.util.ArrayList;
 

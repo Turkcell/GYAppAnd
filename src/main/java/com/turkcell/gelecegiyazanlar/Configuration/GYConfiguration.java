@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.configuration;
+package com.turkcell.gelecegiyazanlar.Configuration;
 
 import android.app.Activity;
 import android.content.Context;

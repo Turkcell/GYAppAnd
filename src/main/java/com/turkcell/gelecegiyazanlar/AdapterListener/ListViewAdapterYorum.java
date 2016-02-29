@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 /**
  * Created by macbook on 9/9/15.
@@ -20,9 +20,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.ProfilActivity;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.model.Yorum;
+import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Model.Yorum;
 
 import java.util.List;
 

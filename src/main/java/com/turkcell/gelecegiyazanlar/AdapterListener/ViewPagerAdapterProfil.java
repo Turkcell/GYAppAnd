@@ -1,11 +1,11 @@
-package com.turkcell.gelecegiyazanlar.adapterlistener;
+package com.turkcell.gelecegiyazanlar.Adapterlistener;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.turkcell.gelecegiyazanlar.fragment.ProfilFragment;
+import com.turkcell.gelecegiyazanlar.Fragment.ProfilFragment;
 
 public class ViewPagerAdapterProfil extends FragmentStatePagerAdapter {
 

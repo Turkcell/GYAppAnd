@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.fragment;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.activity.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
 
 
 public class ElcilerFragment extends android.support.v4.app.Fragment {

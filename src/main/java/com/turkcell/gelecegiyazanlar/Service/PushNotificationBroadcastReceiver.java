@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.service;
+package com.turkcell.gelecegiyazanlar.Service;
 
 import android.app.Activity;
 import android.content.ComponentName;

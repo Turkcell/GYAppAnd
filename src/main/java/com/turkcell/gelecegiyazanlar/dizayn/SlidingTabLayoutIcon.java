@@ -9,7 +9,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.turkcell.gelecegiyazanlar.adapterlistener.ViewPagerAdapter;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ViewPagerAdapter;
 
 /**
  * Created by asus on 1.9.2015.

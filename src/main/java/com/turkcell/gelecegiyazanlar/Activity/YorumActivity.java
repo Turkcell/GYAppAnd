@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.activity;
+package com.turkcell.gelecegiyazanlar.Activity;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -16,12 +16,12 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.ListViewAdapterYorum;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.model.Yorum;
-import com.turkcell.gelecegiyazanlar.utility.TarihCevir;
-import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ListViewAdapterYorum;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Model.Yorum;
+import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;

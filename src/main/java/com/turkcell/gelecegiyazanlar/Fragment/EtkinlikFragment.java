@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.fragment;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.animation.Animator;
 import android.graphics.Bitmap;
@@ -20,12 +20,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.RecyclerAdapterEtkinlik;
-import com.turkcell.gelecegiyazanlar.configuration.AppController;
-import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.model.Etkinlik;
-import com.turkcell.gelecegiyazanlar.utility.TarihCevir;
-import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.RecyclerAdapterEtkinlik;
+import com.turkcell.gelecegiyazanlar.Configuration.AppController;
+import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.Model.Etkinlik;
+import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;

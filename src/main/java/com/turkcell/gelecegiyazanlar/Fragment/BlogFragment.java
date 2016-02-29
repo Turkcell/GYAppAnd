@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.fragment;
+package com.turkcell.gelecegiyazanlar.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlistener.ViewPagerAdapterBlogEtkinlik;
+import com.turkcell.gelecegiyazanlar.Adapterlistener.ViewPagerAdapterBlogEtkinlik;
 import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayout;
 
 

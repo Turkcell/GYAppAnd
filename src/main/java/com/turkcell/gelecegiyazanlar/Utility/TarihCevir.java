@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.utility;
+package com.turkcell.gelecegiyazanlar.Utility;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

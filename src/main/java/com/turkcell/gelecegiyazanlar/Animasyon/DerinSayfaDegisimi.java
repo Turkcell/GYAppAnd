@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.animasyon;
+package com.turkcell.gelecegiyazanlar.Animasyon;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

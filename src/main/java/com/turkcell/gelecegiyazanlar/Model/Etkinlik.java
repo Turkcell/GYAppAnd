@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.model;
+package com.turkcell.gelecegiyazanlar.Model;
 
 /**
  * Created by dyildirim76 on 10.09.2015.

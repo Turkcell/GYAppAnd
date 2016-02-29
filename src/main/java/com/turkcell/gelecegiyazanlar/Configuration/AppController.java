@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.configuration;
+package com.turkcell.gelecegiyazanlar.Configuration;
 
 import android.app.Application;
 import android.text.TextUtils;
@@ -8,7 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.splunk.mint.Mint;
-import com.turkcell.gelecegiyazanlar.utility.LruBitmapCache;
+import com.turkcell.gelecegiyazanlar.Utility.LruBitmapCache;
 
 public class AppController extends Application {
 
