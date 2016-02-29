@@ -118,7 +118,6 @@
     <orderEntry type="library" exported="" name="mediarouter-v7-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-cast-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-gcm-7.8.0" level="project" />
-    <orderEntry type="library" exported="" name="mail" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="curiosdk" level="project" />
     <orderEntry type="library" exported="" name="play-services-games-7.8.0" level="project" />

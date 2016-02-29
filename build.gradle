@@ -9,6 +9,18 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    repositories {
+        maven {
+            url "https://mint.splunk.com/gradle/"
+        }
+    }
+}
+
 android {
     compileSdkVersion 22
     buildToolsVersion "23.0.0 rc2"
