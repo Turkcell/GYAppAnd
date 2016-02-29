@@ -5,15 +5,15 @@ package com.turkcell.gelecegiyazanlar.model;
  */
 public class Blog {
 
-    String author;
-    String excerpt;
-    String date;
-    String title;
-    String categories;
-    String blogID;
-    String profilID;
-    String avatar;
-    String image;
+    private String author;
+    private String excerpt;
+    private String date;
+    private String title;
+    private String categories;
+    private String blogID;
+    private String profilID;
+    private String avatar;
+    private String image;
 
     public Blog(String title, String date, String author, String excerpt, String categories, String avatar, String image, String profilID, String blogID) {
         this.author = author;

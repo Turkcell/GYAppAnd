@@ -6,12 +6,12 @@ package com.turkcell.gelecegiyazanlar.model;
 public class Etkinlik {
 
 
-    String nodeID;
-    String title;
-    String startDate;
-    String endDate;
-    String sonBasvuruTarihi;
-    String kalanGun;
+    private String nodeID;
+    private String title;
+    private String startDate;
+    private String endDate;
+    private String sonBasvuruTarihi;
+    private String kalanGun;
     private String image;
 
     public Etkinlik() {
