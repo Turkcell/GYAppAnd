@@ -1,14 +1,16 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by macbook on 9/9/15.
- */
+
 public class Yorum {
+
+    public static final String YORUM_ID = "yorumID";
+
     private String adsoyad;
     private String yorum;
     private String foto;
     private String tarih;
     private String id;
+
 
     public Yorum(String adsoyad, String yorum, String foto, String tarih, String id) {
 

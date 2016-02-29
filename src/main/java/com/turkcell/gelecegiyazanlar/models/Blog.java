@@ -1,9 +1,9 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by user on 10.9.2015.
- */
+
 public class Blog {
+
+    public static final String BLOG_ID = "blogID";
 
     private String author;
     private String excerpt;
@@ -14,6 +14,7 @@ public class Blog {
     private String profilID;
     private String avatar;
     private String image;
+
 
     public Blog(String title, String date, String author, String excerpt, String categories, String avatar, String image, String profilID, String blogID) {
         this.author = author;

@@ -1,8 +1,6 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by asus on 30.9.2015.
- */
+
 public class Icerik {
     private String nodeID, title, date, nodetype, excerpt;
 

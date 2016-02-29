@@ -1,10 +1,10 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by dyildirim76 on 10.09.2015.
- */
+
 public class Etkinlik {
 
+
+    public static final String ETKINLIK_ID = "etkinlikID";
 
     private String nodeID;
     private String title;
@@ -13,6 +13,7 @@ public class Etkinlik {
     private String sonBasvuruTarihi;
     private String kalanGun;
     private String image;
+
 
     public Etkinlik() {
 

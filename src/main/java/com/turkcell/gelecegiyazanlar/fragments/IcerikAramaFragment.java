@@ -62,14 +62,15 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
 
     Toolbar toolbar;
 
-    public static IcerikAramaFragment newInstance() {
-        return new IcerikAramaFragment();
-    }
-
     public IcerikAramaFragment() {
 
         Log.d("arama:","Icerik");
     }
+
+    public static IcerikAramaFragment newInstance() {
+        return new IcerikAramaFragment();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -96,7 +97,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
 //                    Kisi kisi = new Kisi();
 //                    kisi.setKullaniciAdi(icerikList.get(position).getKullaniciID());
 //                    Intent i=new Intent(getActivity(), ProfilActivity.class);
-//                    i.putExtra("id",kisi.getKullaniciAdi());
+//                    i.putExtra(Kisi.PROFIL_ID,kisi.getKullaniciAdi());
 //                    startActivity(i);
 //                }
 //            }

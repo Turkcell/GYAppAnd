@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.EgitimIcerikActivity;
+import com.turkcell.gelecegiyazanlar.models.Egitim;
 
 import java.util.ArrayList;
 
@@ -61,8 +62,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
             public void onClick(View v) {
 
                 Intent i = new Intent(activity, EgitimIcerikActivity.class);
-                i.putExtra("nodeIDEgitim", nodeChild.getText().toString());
-                i.putExtra("nodeTitle", textView.getText().toString());
+                i.putExtra(Egitim.NODE_ID_EGITIM, nodeChild.getText().toString());
+                i.putExtra(Egitim.NODE_TITLE, textView.getText().toString());
                 activity.startActivity(i);
             }
         });
@@ -71,8 +72,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(activity, EgitimIcerikActivity.class);
-                i.putExtra("nodeIDEgitim", nodeChild.getText().toString());
-                i.putExtra("nodeTitle", textView.getText().toString());
+                i.putExtra(Egitim.NODE_ID_EGITIM, nodeChild.getText().toString());
+                i.putExtra(Egitim.NODE_TITLE, textView.getText().toString());
                 activity.startActivity(i);
             }
         });

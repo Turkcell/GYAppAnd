@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
+import com.turkcell.gelecegiyazanlar.models.Egitim;
 
 
 /**
@@ -252,141 +253,141 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
 
             case R.id.egitimial_android_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Android 101");
-                i.putExtra("color", "android");
-                i.putExtra("nodeID", getResources().getString(R.string.android101));
+                i.putExtra(Egitim.TITLE_TAG, "Android 101");
+                i.putExtra(Egitim.COLOR_TAG, "android");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.android101));
                 startActivity(i);
                 break;
             case R.id.egitimial_android_201_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Android 201");
-                i.putExtra("color", "android");
-                i.putExtra("nodeID", getResources().getString(R.string.android201));
+                i.putExtra(Egitim.TITLE_TAG, "Android 201");
+                i.putExtra(Egitim.COLOR_TAG, "android");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.android201));
                 startActivity(i);
                 break;
             case R.id.egitimial_android_301_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Android 301");
-                i.putExtra("color", "android");
-                i.putExtra("nodeID", getResources().getString(R.string.android301));
+                i.putExtra(Egitim.TITLE_TAG, "Android 301");
+                i.putExtra(Egitim.COLOR_TAG, "android");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.android301));
                 startActivity(i);
                 break;
             case R.id.egitimial_android_401_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Android 401");
-                i.putExtra("color", "android");
-                i.putExtra("nodeID", getResources().getString(R.string.android401));
+                i.putExtra(Egitim.TITLE_TAG, "Android 401");
+                i.putExtra(Egitim.COLOR_TAG, "android");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.android401));
                 startActivity(i);
                 break;
 
             case R.id.egitimial_ios_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "IOS 101");
-                i.putExtra("color", "ios");
-                i.putExtra("nodeID", getResources().getString(R.string.ios101));
+                i.putExtra(Egitim.TITLE_TAG, "IOS 101");
+                i.putExtra(Egitim.COLOR_TAG, "ios");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.ios101));
                 startActivity(i);
                 break;
             case R.id.egitimial_ios_201_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "IOS 201");
-                i.putExtra("color", "ios");
-                i.putExtra("nodeID", getResources().getString(R.string.ios201));
+                i.putExtra(Egitim.TITLE_TAG, "IOS 201");
+                i.putExtra(Egitim.COLOR_TAG, "ios");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.ios201));
                 startActivity(i);
                 break;
             case R.id.egitimial_ios_301_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "IOS 301");
-                i.putExtra("color", "ios");
-                i.putExtra("nodeID", getResources().getString(R.string.ios301));
+                i.putExtra(Egitim.TITLE_TAG, "IOS 301");
+                i.putExtra(Egitim.COLOR_TAG, "ios");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.ios301));
                 startActivity(i);
                 break;
             case R.id.egitimial_ios_401_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "IOS 401");
-                i.putExtra("color", "ios");
-                i.putExtra("nodeID", getResources().getString(R.string.ios401));
+                i.putExtra(Egitim.TITLE_TAG, "IOS 401");
+                i.putExtra(Egitim.COLOR_TAG, "ios");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.ios401));
                 startActivity(i);
                 break;
 
             case R.id.egitimial_windows_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Windows Phone 101");
-                i.putExtra("color", "win");
-                i.putExtra("nodeID", getResources().getString(R.string.win101));
+                i.putExtra(Egitim.TITLE_TAG, "Windows Phone 101");
+                i.putExtra(Egitim.COLOR_TAG, "win");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.win101));
                 startActivity(i);
                 break;
             case R.id.egitimial_windows_201_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Windows Phone 201");
-                i.putExtra("color", "win");
-                i.putExtra("nodeID", getResources().getString(R.string.win201));
+                i.putExtra(Egitim.TITLE_TAG, "Windows Phone 201");
+                i.putExtra(Egitim.COLOR_TAG, "win");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.win201));
                 startActivity(i);
                 break;
 
             case R.id.egitimial_appinventor_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "App Inventor 101");
-                i.putExtra("color", "app");
-                i.putExtra("nodeID", getResources().getString(R.string.inventor101));
+                i.putExtra(Egitim.TITLE_TAG, "App Inventor 101");
+                i.putExtra(Egitim.COLOR_TAG, "app");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.inventor101));
                 startActivity(i);
                 break;
             case R.id.egitimial_appinventor_201_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "App Inventor 201");
-                i.putExtra("color", "app");
-                i.putExtra("nodeID", getResources().getString(R.string.inventor201));
+                i.putExtra(Egitim.TITLE_TAG, "App Inventor 201");
+                i.putExtra(Egitim.COLOR_TAG, "app");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.inventor201));
                 startActivity(i);
                 break;
             case R.id.egitimial_appinventor_301_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "App Inventor 301");
-                i.putExtra("color", "app");
-                i.putExtra("nodeID", getResources().getString(R.string.inventor301));
+                i.putExtra(Egitim.TITLE_TAG, "App Inventor 301");
+                i.putExtra(Egitim.COLOR_TAG, "app");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.inventor301));
                 startActivity(i);
                 break;
 
             case R.id.egitimial_arduino_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Arduino 101");
-                i.putExtra("color", "arduino");
-                i.putExtra("nodeID", getResources().getString(R.string.arduino101));
+                i.putExtra(Egitim.TITLE_TAG, "Arduino 101");
+                i.putExtra(Egitim.COLOR_TAG, "arduino");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.arduino101));
                 startActivity(i);
                 break;
             case R.id.egitimial_arduino_201_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Arduino 201");
-                i.putExtra("color", "arduino");
-                i.putExtra("nodeID", getResources().getString(R.string.arduino201));
+                i.putExtra(Egitim.TITLE_TAG, "Arduino 201");
+                i.putExtra(Egitim.COLOR_TAG, "arduino");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.arduino201));
                 startActivity(i);
                 break;
             case R.id.egitimial_arduino_301_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Arduino 301");
-                i.putExtra("color", "arduino");
-                i.putExtra("nodeID", getResources().getString(R.string.arduino301));
+                i.putExtra(Egitim.TITLE_TAG, "Arduino 301");
+                i.putExtra(Egitim.COLOR_TAG, "arduino");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.arduino301));
                 startActivity(i);
                 break;
             case R.id.egitimial_arduino_401_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Arduino 401");
-                i.putExtra("color", "arduino");
-                i.putExtra("nodeID", getResources().getString(R.string.arduino401));
+                i.putExtra(Egitim.TITLE_TAG, "Arduino 401");
+                i.putExtra(Egitim.COLOR_TAG, "arduino");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.arduino401));
                 startActivity(i);
                 break;
 
 
             case R.id.egitimial_scratch_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Scratch 101");
-                i.putExtra("color", "scratch");
-                i.putExtra("nodeID", getResources().getString(R.string.scratch101));
+                i.putExtra(Egitim.TITLE_TAG, "Scratch 101");
+                i.putExtra(Egitim.COLOR_TAG, "scratch");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.scratch101));
                 startActivity(i);
                 break;
             case R.id.egitimial_scratch_201_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Scratch 201");
-                i.putExtra("color", "scratch");
-                i.putExtra("nodeID", getResources().getString(R.string.scratch201));
+                i.putExtra(Egitim.TITLE_TAG, "Scratch 201");
+                i.putExtra(Egitim.COLOR_TAG, "scratch");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.scratch201));
                 startActivity(i);
                 break;
 

@@ -31,6 +31,7 @@ import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
+import com.turkcell.gelecegiyazanlar.models.Kisi;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
 import org.json.JSONException;
@@ -168,7 +169,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
 
 
         Bundle extra=getActivity().getIntent().getExtras();
-        id=extra.getString("id");
+        id = extra.getString(Kisi.PROFIL_ID);
 
 tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
     @Override

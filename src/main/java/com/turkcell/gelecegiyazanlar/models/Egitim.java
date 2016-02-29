@@ -1,9 +1,15 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by asus on 9.9.2015.
- */
+
 public class Egitim {
+
+
+    public static final String NODE_ID = "nodeID";
+    public static final String TITLE_TAG = "title";
+    public static final String COLOR_TAG = "color";
+    public static final String NODE_ID_EGITIM = "nodeIDEgitim";
+    public static final String NODE_TITLE = "nodeTitle";
+
 
     private String yazar;
     private String yazarAvatar;

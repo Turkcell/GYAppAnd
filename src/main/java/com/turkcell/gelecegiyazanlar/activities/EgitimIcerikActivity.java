@@ -22,6 +22,7 @@ import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.models.Egitim;
+import com.turkcell.gelecegiyazanlar.models.Kisi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,7 +63,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EgitimIcerikActivity.this, ProfilActivity.class);
-                i.putExtra("id", authorID);
+                i.putExtra(Kisi.PROFIL_ID, authorID);
                 startActivity(i);
             }
         });
@@ -71,8 +72,8 @@ public class EgitimIcerikActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.tool_bar2);
         setSupportActionBar(toolbar);
         Bundle extras = getIntent().getExtras();
-        dugumID = extras.getString("nodeIDEgitim");
-        dugumBaslik = extras.getString("nodeTitle");
+        dugumID = extras.getString(Egitim.NODE_ID_EGITIM);
+        dugumBaslik = extras.getString(Egitim.NODE_TITLE);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

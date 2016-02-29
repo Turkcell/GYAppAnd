@@ -164,7 +164,7 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
         public void onClick(View v) {
             Log.d("tag:", blogsID.getText().toString());
             Intent i = new Intent(v.getContext(), BlogIcerikAcitivity.class);
-            i.putExtra("blogID", blogsID.getText());
+            i.putExtra(Blog.BLOG_ID, blogsID.getText());
             v.getContext().startActivity(i);
         }
     }

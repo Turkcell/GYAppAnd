@@ -91,17 +91,15 @@ public class BlogEtkinlikListeFragment extends Fragment {
                 itemList.clear();
                 switch (position) {
                     case 0:
-                        Log.d("log1", "gy");
                         Listele(718, 0);
                         Scroll(718);
                         break;
                     case 1:
-                        Log.d("log2", "mobildeyim");
                         Listele(31, 0);
                         Scroll(31);
                         break;
                     case 2:
-                        Log.d("log3", "android");
+
                         Listele(29, 0);
                         Scroll(29);
 

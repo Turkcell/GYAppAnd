@@ -136,7 +136,7 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
         @Override
         public void onClick(View v) {
             Intent i = new Intent(v.getContext(), EtkinlikIcerikActivity.class);
-            i.putExtra("etkinlikID", profilid.getText());
+            i.putExtra(Etkinlik.ETKINLIK_ID, profilid.getText());
             v.getContext().startActivity(i);
         }
     }

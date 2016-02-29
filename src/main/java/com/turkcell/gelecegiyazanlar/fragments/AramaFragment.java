@@ -104,7 +104,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
                     Kisi kisi = new Kisi();
                     kisi.setKullaniciAdi(kisiList.get(position).getKullaniciID());
                     Intent i = new Intent(getActivity(), ProfilActivity.class);
-                    i.putExtra("id", kisi.getKullaniciAdi());
+                    i.putExtra(Kisi.PROFIL_ID, kisi.getKullaniciAdi());
                     startActivity(i);
                 }
             }

@@ -20,6 +20,8 @@ import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.models.Etkinlik;
+import com.turkcell.gelecegiyazanlar.models.Yorum;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
 import org.json.JSONArray;
@@ -55,13 +57,13 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
         url = GYConfiguration.getDomain() + "etkinlik_content/retrieve?nodeID=";
 
         Bundle extras = getIntent().getExtras();
-        id = extras.getString("etkinlikID");
+        id = extras.getString(Etkinlik.ETKINLIK_ID);
 
         yorum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EtkinlikIcerikActivity.this, YorumActivity.class);
-                i.putExtra("yorumID", id);
+                i.putExtra(Yorum.YORUM_ID, id);
                 startActivity(i);
             }
         });

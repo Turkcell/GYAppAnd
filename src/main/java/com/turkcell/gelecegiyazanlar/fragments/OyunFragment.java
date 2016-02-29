@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
+import com.turkcell.gelecegiyazanlar.models.Egitim;
 
 /**
  * Web Sayfasýnýn Fragmentý
@@ -109,17 +110,17 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.egitimal_oyun_101:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Oyun Geliþtirme 101");
-                i.putExtra("color", "oyun");
-                i.putExtra("nodeID", getResources().getString(R.string.oyun101));
+                i.putExtra(Egitim.TITLE_TAG, "Oyun Geliþtirme 101");
+                i.putExtra(Egitim.COLOR_TAG, "oyun");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.oyun101));
                 startActivity(i);
                 break;
 
             case R.id.egitimal_oyun_201:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Oyun Geliþtirme 201");
-                i.putExtra("color", "oyun");
-                i.putExtra("nodeID", getResources().getString(R.string.oyun201));
+                i.putExtra(Egitim.TITLE_TAG, "Oyun Geliþtirme 201");
+                i.putExtra(Egitim.COLOR_TAG, "oyun");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.oyun201));
                 startActivity(i);
                 break;
 

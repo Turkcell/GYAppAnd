@@ -63,7 +63,7 @@ public class YorumActivity extends ActionBarActivity {
         yorumyok = (TextView) findViewById(R.id.yorumyok);
 
         Bundle bundle = getIntent().getExtras();
-        Nodeid = bundle.getString("yorumID");
+        Nodeid = bundle.getString(Yorum.YORUM_ID);
 
         Goruntule(Nodeid);
 

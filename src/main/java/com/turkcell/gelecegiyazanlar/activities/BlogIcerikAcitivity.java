@@ -21,6 +21,9 @@ import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.models.Blog;
+import com.turkcell.gelecegiyazanlar.models.Kisi;
+import com.turkcell.gelecegiyazanlar.models.Yorum;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
 import org.json.JSONArray;
@@ -57,7 +60,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         yorum = (TextView) findViewById(R.id.txtYorum);
 
         Bundle exras = getIntent().getExtras();
-        nodeID = exras.getString("blogID");
+        nodeID = exras.getString(Blog.BLOG_ID);
         Log.d("xx:", nodeID);
 
 
@@ -65,7 +68,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BlogIcerikAcitivity.this, YorumActivity.class);
-                i.putExtra("yorumID", nodeID);
+                i.putExtra(Yorum.YORUM_ID, nodeID);
                 startActivity(i);
             }
         });
@@ -173,7 +176,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (yazarID.getText() != null) {
                     Intent i = new Intent(BlogIcerikAcitivity.this, ProfilActivity.class);
-                    i.putExtra("id", yazarID.getText());
+                    i.putExtra(Kisi.PROFIL_ID, yazarID.getText());
                     startActivity(i);
                 }
             }

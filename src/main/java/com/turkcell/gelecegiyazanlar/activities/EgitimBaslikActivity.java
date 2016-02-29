@@ -22,6 +22,7 @@ import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.MyExpandableAdapter;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.models.Egitim;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
 import org.json.JSONArray;
@@ -51,9 +52,9 @@ public class EgitimBaslikActivity extends ActionBarActivity {
         setContentView(R.layout.activity_egitim_baslik);
         Mint.initAndStartSession(EgitimBaslikActivity.this, GYConfiguration.SPLUNK_ID);
         Bundle i = getIntent().getExtras();
-        baslik = i.getString("title");
-        renk = i.getString("color");
-        nodeIDbyKategori = i.getString("nodeID");
+        baslik = i.getString(Egitim.TITLE_TAG);
+        renk = i.getString(Egitim.COLOR_TAG);
+        nodeIDbyKategori = i.getString(Egitim.NODE_ID);
         toolbar = (Toolbar) findViewById(R.id.tool_bar2);
         toolbar.setTitle(baslik);
         setSupportActionBar(toolbar);
@@ -107,8 +108,8 @@ public class EgitimBaslikActivity extends ActionBarActivity {
                                         int group_pos, long id) {
 
                 Intent i = new Intent(EgitimBaslikActivity.this, EgitimIcerikActivity.class);
-                i.putExtra("nodeIDEgitim", nodeIDGroup.get(group_pos));
-                i.putExtra("nodeTitle", baslik);
+                i.putExtra(Egitim.NODE_ID_EGITIM, nodeIDGroup.get(group_pos));
+                i.putExtra(Egitim.NODE_TITLE, baslik);
                 startActivity(i);
                 return false;
             }

@@ -1,13 +1,14 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by Eren on 9.9.2015.
- */
+
 public class Kisi {
+
+
+    public static final String PROFIL_ID = "profilID";
 
     private String kullaniciAdi;
     private String kullaniciAvatarUrl;
-    private String AdSoyad;
+    private String adSoyad;
     private String kullaniciID;
 
 
@@ -16,11 +17,11 @@ public class Kisi {
     }
 
     public String getAdSoyad() {
-        return AdSoyad;
+        return adSoyad;
     }
 
     public void setAdSoyad(String adSoyad) {
-        AdSoyad = adSoyad;
+        this.adSoyad = adSoyad;
     }
 
     public String getKullaniciAdi() {

@@ -14,8 +14,8 @@ import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
 public class ProfilActivity extends ActionBarActivity {
 
     public SlidingTabLayout tabs;
-    CharSequence Titles[] = {getString(R.string.profil_baslik_hakkinda), getString(R.string.profil_baslik_basari_belgeleri)};
-    int Numboftabs = 2;
+    CharSequence titles[];
+    int tabSayisi = 2;
 
     ViewPager pager;
     ViewPagerAdapterProfil adapter;
@@ -30,7 +30,10 @@ public class ProfilActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
 
-        adapter = new ViewPagerAdapterProfil(getSupportFragmentManager(), Titles, Numboftabs);
+        titles = new CharSequence[]{getString(R.string.profil_baslik_hakkinda),
+                getString(R.string.profil_baslik_basari_belgeleri)};
+
+        adapter = new ViewPagerAdapterProfil(getSupportFragmentManager(), titles, tabSayisi);
 
         pager = (ViewPager) findViewById(R.id.pagerProfil);
         pager.setAdapter(adapter);

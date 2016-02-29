@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
+import com.turkcell.gelecegiyazanlar.models.Egitim;
 
 /**
  * Web Sayfasýnýn Fragmentý
@@ -160,39 +161,39 @@ public class WebFragment extends Fragment implements View.OnClickListener {
 
             case R.id.egitimal_web_101:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Web Programlama 101");
-                i.putExtra("color", "web");
-                i.putExtra("nodeID", getResources().getString(R.string.web101));
+                i.putExtra(Egitim.TITLE_TAG, "Web Programlama 101");
+                i.putExtra(Egitim.COLOR_TAG, "web");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web101));
                 startActivity(i);
                 break;
             case R.id.egitimal_web_201:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Web Programlama 201");
-                i.putExtra("color", "web");
-                i.putExtra("nodeID", getResources().getString(R.string.web201));
+                i.putExtra(Egitim.TITLE_TAG, "Web Programlama 201");
+                i.putExtra(Egitim.COLOR_TAG, "web");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web201));
                 startActivity(i);
                 break;
             case R.id.egitimal_web_301:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Web Programlama 301");
-                i.putExtra("color", "web");
-                i.putExtra("nodeID", getResources().getString(R.string.web301));
+                i.putExtra(Egitim.TITLE_TAG, "Web Programlama 301");
+                i.putExtra(Egitim.COLOR_TAG, "web");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web301));
                 startActivity(i);
                 break;
 
             case R.id.egitimal_web_302:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Web Programlama 302");
-                i.putExtra("color", "web");
-                i.putExtra("nodeID", getResources().getString(R.string.web302));
+                i.putExtra(Egitim.TITLE_TAG, "Web Programlama 302");
+                i.putExtra(Egitim.COLOR_TAG, "web");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web302));
                 startActivity(i);
                 break;
 
             case R.id.egitimal_web_401:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title", "Web Programlama 401");
-                i.putExtra("color", "web");
-                i.putExtra("nodeID", getResources().getString(R.string.web401));
+                i.putExtra(Egitim.TITLE_TAG, "Web Programlama 401");
+                i.putExtra(Egitim.COLOR_TAG, "web");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web401));
                 startActivity(i);
                 break;
 

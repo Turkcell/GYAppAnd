@@ -1,8 +1,6 @@
 package com.turkcell.gelecegiyazanlar.models;
 
-/**
- * Created by asus on 27.8.2015.
- */
+
 public class DrawerItems {
 
     private int icon;

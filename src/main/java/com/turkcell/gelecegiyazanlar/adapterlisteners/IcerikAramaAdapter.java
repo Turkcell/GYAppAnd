@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.BlogIcerikAcitivity;
+import com.turkcell.gelecegiyazanlar.models.Blog;
 import com.turkcell.gelecegiyazanlar.models.Icerik;
 
 import java.util.List;
@@ -71,7 +72,7 @@ public class IcerikAramaAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(activity, BlogIcerikAcitivity.class);
-                i.putExtra("blogID", icerik.getNodeID());
+                i.putExtra(Blog.BLOG_ID, icerik.getNodeID());
                 activity.startActivity(i);
             }
         });
