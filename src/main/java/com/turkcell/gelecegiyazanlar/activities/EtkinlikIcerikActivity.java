@@ -92,7 +92,7 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
                         }
 
                         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                            Toast.makeText(getApplicationContext(), "Bir hata oluþtu", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.hata_olustu_mesaji, Toast.LENGTH_SHORT).show();
                             ekran.surecDurdur();
                         }
                     });

@@ -3,6 +3,8 @@ package com.turkcell.gelecegiyazanlar.utilities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 
+import com.turkcell.gelecegiyazanlar.R;
+
 /**
  * Created by asus on 16.9.2015.
  */
@@ -16,7 +18,7 @@ public class YuklenmeEkran {
 
     public void surecBasla() {
         pDialog = new ProgressDialog(activity);
-        pDialog.setMessage("Yükleniyor...");
+        pDialog.setMessage(activity.getString(R.string.yukleniyor));
         pDialog.show();
     }
 

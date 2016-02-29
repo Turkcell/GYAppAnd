@@ -38,7 +38,7 @@ public class AramaActivity extends AppCompatActivity {
 
         if (!GYConfiguration.isNetworkAvailable(AramaActivity.this)) {
             final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setMessage(getResources().getString(R.string.internet_uyari));
+            alertDialogBuilder.setMessage(getResources().getString(R.string.internet_baglantinizi_kontrol_edin));
 
             alertDialogBuilder.setPositiveButton(getResources().getString(R.string.tamam), new DialogInterface.OnClickListener() {
                 @Override
@@ -136,9 +136,9 @@ public class AramaActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             String title;
             if (position == 0) {
-                title = "ÝÇERÝKLER";
+                title = getString(R.string.arama_sayfasi_icerikler_baslik);
             } else {
-                title = "KULLANICILAR";
+                title = getString(R.string.arama_sayfasi_kullanicilar_baslik);
             }
             return title;
         }

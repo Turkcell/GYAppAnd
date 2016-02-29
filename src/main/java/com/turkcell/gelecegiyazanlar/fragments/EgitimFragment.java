@@ -24,7 +24,7 @@ public class EgitimFragment extends Fragment {
     android.support.v7.widget.Toolbar toolbar;
     ViewPager pager;
     ViewPagerAdapter adapter;
-    CharSequence Titles[] = {"Mobil", "Web", "Oyun"};
+    CharSequence[] titles;
     int Numboftabs = 3;
     ImageView ust_logo;
 
@@ -37,13 +37,19 @@ public class EgitimFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_egitim, container, false);
 
+        titles = new CharSequence[]{
+                getString(R.string.egitim_kategori_mobil),
+                getString(R.string.egitim_kategori_web),
+                getString(R.string.egitim_kategori_oyun)
+        };
+
         ust_logo = (ImageView) rootView.findViewById(R.id.logo_ust_ekran);
 
         //Baslangýc resmi
         ust_logo.setImageResource(R.drawable.mobil_ust_logo);
 
         // Baþlýklarý,tab sayýsýný adapterda tanýmlar
-        adapter = new ViewPagerAdapter(getFragmentManager(), Titles, Numboftabs);
+        adapter = new ViewPagerAdapter(getFragmentManager(), titles, Numboftabs);
 
 
         pager = (ViewPager) rootView.findViewById(R.id.pager);

@@ -13,10 +13,10 @@ import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
 
 
 public class BlogFragment extends android.support.v4.app.Fragment {
-    Toolbar toolbar;
     public SlidingTabLayout tabs;
-    CharSequence Titles[]={"GELECEÐÝ YAZANLAR","MOBÝL","ANDROID","IOS","WINDOWS PHONE"};
-    int Numboftabs =5;
+    Toolbar toolbar;
+    CharSequence titles[];
+    int Numboftabs = 5;
 
     ViewPager pager;
     ViewPagerAdapterBlogEtkinlik adapter;
@@ -25,12 +25,18 @@ public class BlogFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
-        View rootView= inflater.inflate(R.layout.fragment_blog, container, false);
-
+        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        View rootView = inflater.inflate(R.layout.fragment_blog, container, false);
+        titles = new CharSequence[]{
+                getString(R.string.blog_kategori_gelecegi_yazanlar),
+                getString(R.string.blog_kategori_mobil),
+                getString(R.string.blog_kategori_android),
+                getString(R.string.blog_kategori_ios),
+                getString(R.string.blog_kategori_wp)
+        };
 
         // Baþlýklarý,tab sayýsýný adapterda tanýmlar
-        adapter =  new ViewPagerAdapterBlogEtkinlik(getFragmentManager(),Titles,Numboftabs);
+        adapter = new ViewPagerAdapterBlogEtkinlik(getFragmentManager(), titles, Numboftabs);
 
 
         pager = (ViewPager) rootView.findViewById(R.id.pagerBlog);
@@ -42,8 +48,6 @@ public class BlogFragment extends android.support.v4.app.Fragment {
         tabs.setSelectedIndicatorColors(getResources().getColor(R.color.beyaz_renk));
 
         tabs.setViewPager(pager);
-
-
 
 
         return rootView;

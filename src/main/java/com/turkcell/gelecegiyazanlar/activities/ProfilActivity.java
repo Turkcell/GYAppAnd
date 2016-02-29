@@ -14,7 +14,7 @@ import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
 public class ProfilActivity extends ActionBarActivity {
 
     public SlidingTabLayout tabs;
-    CharSequence Titles[] = {"Hakkýnda", "Baþarý Belgeleri"};
+    CharSequence Titles[] = {getString(R.string.profil_baslik_hakkinda), getString(R.string.profil_baslik_basari_belgeleri)};
     int Numboftabs = 2;
 
     ViewPager pager;

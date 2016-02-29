@@ -16,7 +16,7 @@
     <string name="oyun">Oyun</string>
 
     <string name="profilID">id</string>
-    <string name="internet_uyari">Lütfen Internet Bağlantınızı Kontrol Ediniz.</string>
+    <string name="internet_baglantinizi_kontrol_edin">Lütfen Internet Bağlantınızı Kontrol Ediniz.</string>
     <string name="tamam">Tamam</string>
 
 
@@ -138,4 +138,28 @@
 
     <string name="baslik">Başlık:</string>
     <string name="icerik">İçerik:</string>
+    <string name="hata_olustu_mesaji">Bir Hata Oluştu</string>
+    <string name="arama_sayfasi_icerikler_baslik">İÇERİKLER</string>
+    <string name="arama_sayfasi_kullanicilar_baslik">KULLANICILAR</string>
+    <string name="buton_tamam_metni">Tamam</string>
+    <string name="yukleniyor">Yükleniyor...</string>
+    <string name="sayfa_baslik_egitim">Eğitimler</string>
+    <string name="sayfa_baslik_blog">Blog</string>
+    <string name="sayfa_baslik_etkinlik">Etkinlik</string>
+    <string name="sayfa_baslik_gelistirici">Geliştiriciler</string>
+    <string name="sol_menu_egitim">Eğitim</string>
+    <string name="sol_menu_blog">Blog</string>
+    <string name="sol_menu_etkinlik">Etkinlik</string>
+    <string name="sol_menu_gelistirici">Geliştiriciler</string>
+    <string name="sayfa_baslik_gelecegi_yazanlar">Geleceği Yazanlar</string>
+    <string name="profil_baslik_hakkinda">Hakkında</string>
+    <string name="profil_baslik_basari_belgeleri">Başarı Belgeleri</string>
+    <string name="blog_kategori_gelecegi_yazanlar">GELECEĞİ YAZANLAR</string>
+    <string name="blog_kategori_mobil">MOBİL</string>
+    <string name="blog_kategori_android">ANDROID</string>
+    <string name="blog_kategori_ios">IOS</string>
+    <string name="blog_kategori_wp">WINDOWS PHONE</string>
+    <string name="egitim_kategori_mobil">Mobil</string>
+    <string name="egitim_kategori_web">Web</string>
+    <string name="egitim_kategori_oyun">Oyun</string>
 </resources>

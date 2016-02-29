@@ -7,6 +7,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AlertDialog;
 
+import com.turkcell.gelecegiyazanlar.R;
+
 /**
  * Created by asus on 3.12.2015.
  */
@@ -50,7 +52,7 @@ public class GYConfiguration {
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity);
         alertDialogBuilder.setMessage(message);
 
-        alertDialogBuilder.setPositiveButton("Tamam", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setPositiveButton(activity.getString(R.string.buton_tamam_metni), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
                 arg0.dismiss();
@@ -65,7 +67,7 @@ public class GYConfiguration {
     public static boolean checkInternetConnectionShowDialog(Activity activity) {
 
         if (!isNetworkAvailable(activity)) {
-            showDialog(activity, "Lütfen Internet Baðlantýnýzý Kontrol Ediniz.");
+            showDialog(activity, activity.getString(R.string.internet_baglantinizi_kontrol_edin));
             return false;
         } else {
             return true;

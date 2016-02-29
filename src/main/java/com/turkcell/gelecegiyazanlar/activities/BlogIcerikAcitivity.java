@@ -113,7 +113,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
                         }
 
                         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                            Toast.makeText(getApplicationContext(), "Bir Hata Oluþtu", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),R.string.hata_olustu_mesaji, Toast.LENGTH_SHORT).show();
 
                         }
                     });

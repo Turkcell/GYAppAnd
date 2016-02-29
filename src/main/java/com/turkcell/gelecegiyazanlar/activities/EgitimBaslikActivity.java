@@ -83,9 +83,9 @@ public class EgitimBaslikActivity extends ActionBarActivity {
 
         if (!GYConfiguration.isNetworkAvailable(EgitimBaslikActivity.this)) {
             final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setMessage("Lütfen Internet Baðlantýnýzý Kontrol Ediniz.");
+            alertDialogBuilder.setMessage(R.string.internet_baglantinizi_kontrol_edin);
 
-            alertDialogBuilder.setPositiveButton("Tamam", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setPositiveButton(getString(R.string.buton_tamam_metni), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface arg0, int arg1) {
                     arg0.dismiss();

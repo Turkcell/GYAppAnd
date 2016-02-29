@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private static int save = -1;
     View egitimView;
     android.support.v7.widget.Toolbar toolbar;
-    String mTitle = "Geleceði Yazanlar";
+    String mTitle;
     ArrayList<DrawerItems> drawerList = new ArrayList<>();
     TextView textView;
     private DrawerLayout drawerLayout;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mTitle=getResources().getString(R.string.sayfa_baslik_gelecegi_yazanlar);
         Mint.initAndStartSession(MainActivity.this, GYConfiguration.SPLUNK_ID);
 
         CurioClient.getInstance(this).getPushData(getIntent());
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager ft = getSupportFragmentManager();
                 switch (position) {
                     case 0:
-                        mTitle = "Eðitimler";
+                        mTitle = getString(R.string.sayfa_baslik_egitim);
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new EgitimFragment())
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 1:
-                        mTitle = "Blog";
+                        mTitle = getString(R.string.sayfa_baslik_blog);
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new BlogFragment())
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 2:
-                        mTitle = "Etkinlik";
+                        mTitle = getString(R.string.sayfa_baslik_etkinlik);
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new EtkinlikFragment())
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 3:
-                        mTitle = "Geliþtiriciler";
+                        mTitle = getString(R.string.sayfa_baslik_gelistirici);
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new ElcilerFragment())
@@ -205,10 +205,10 @@ public class MainActivity extends AppCompatActivity {
      * Liste elemanlarýný doldurduk.
      */
     public void Yukle() {
-        drawerList.add(new DrawerItems(R.drawable.egitimicon, "Eðitim"));
-        drawerList.add(new DrawerItems(R.drawable.blogicon, "Blog"));
-        drawerList.add(new DrawerItems(R.drawable.etkinlikicon, "Etkinlik"));
-        drawerList.add(new DrawerItems(R.drawable.gelistiriciicon, "Geliþtiriciler"));
+        drawerList.add(new DrawerItems(R.drawable.egitimicon, getString(R.string.sol_menu_egitim)));
+        drawerList.add(new DrawerItems(R.drawable.blogicon, getString(R.string.sol_menu_blog)));
+        drawerList.add(new DrawerItems(R.drawable.etkinlikicon, getString(R.string.sol_menu_etkinlik)));
+        drawerList.add(new DrawerItems(R.drawable.gelistiriciicon, getString(R.string.sol_menu_gelistirici)));
     }
 
     @Override

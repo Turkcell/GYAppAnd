@@ -24,7 +24,7 @@ public class AppController extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Mint.initAndStartSession(getApplicationContext(), "75ff8154");
+        Mint.initAndStartSession(getApplicationContext(), GYConfiguration.SPLUNK_ID);
         mInstance = this;
     }
 

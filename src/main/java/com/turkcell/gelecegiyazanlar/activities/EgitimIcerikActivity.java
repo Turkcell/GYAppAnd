@@ -98,7 +98,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
 
 
         pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Yükleniyor...");
+        pDialog.setMessage(getString(R.string.yukleniyor));
         pDialog.show();
         Log.d("icerik:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" + dugumID);
         JsonArrayRequest movieReq = new JsonArrayRequest(GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" + dugumID,
