@@ -16,7 +16,7 @@
         android:layout_height="fill_parent"
         android:textStyle="bold"
         android:textColor="@color/aramatv_sonuc_renk"
-        android:text="EŞLEŞEN SONUÇ BULUNAMADI"
+        android:text="@string/sonuc_bulunamadi"
         android:gravity="center"
         android:visibility="gone"
         />

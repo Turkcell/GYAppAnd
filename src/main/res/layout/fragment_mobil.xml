@@ -101,7 +101,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:Android\nSeviye:Başlangıç"
+                            android:text="@string/android_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -141,7 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Başlangıç seviyesi derslerde Android uygulama geliştirme ortamını inceliyoruz."
+                            android:text="@string/android_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -176,7 +176,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:Android\nSeviye:Başlangıç"
+                            android:text="@string/android_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -216,7 +216,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu bölümde basit projelerle Android uygulamaları geliştirmenin temellerini veriyoruz."
+                            android:text="@string/android_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -252,7 +252,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="301:Android\nSeviye:Orta"
+                            android:text="@string/android_301_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -293,7 +293,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu bölümden itibaren Android için mobil uygulama geliştirmenin ilk adımlarını atıyoruz."
+                            android:text="@string/android_301_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -330,7 +330,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="401:Android\nSeviye:İleri"
+                            android:text="@string/android_401_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -371,7 +371,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Artık ileri seviye Android geliştirme sürecine giriyor, uygulamalarımızı hayata geçiriyoruz."
+                            android:text="@string/android_401_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -451,7 +451,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:IOS\nSeviye:Başlangıç"
+                            android:text="@string/ios_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -489,7 +489,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Başlangıç seviyesi derslerde iOS uygulama geliştirme ortamını detaylı olarak inceliyoruz."
+                            android:text="@string/ios_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -526,7 +526,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:IOS\nSeviye:Başlangıç"
+                            android:text="@string/ios_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -566,7 +566,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu bölümde basit projelerle iOS uygulamaları geliştirmenin temellerini veriyoruz."
+                            android:text="@string/ios_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -604,7 +604,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="301:IOS\nSeviye:Orta"
+                            android:text="@string/ios_301_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -645,7 +645,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu bölümden itibaren iOS geliştirme adımlarına giriş yapıyoruz."
+                            android:text="@string/ios_301_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -681,7 +681,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="401:IOS\nSeviye:İleri"
+                            android:text="@string/ios_401_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -723,7 +723,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Artık ileri seviye iOS geliştirme sürecine giriyor, uygulamalarımızı hayata geçiriyoruz."
+                            android:text="@string/ios_401_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -806,7 +806,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:Windows Phone\nSeviye:Başlangıç"
+                            android:text="@string/wp_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -846,7 +846,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu bölümde Windows Phone 8 için uygulama geliştirmeyi anlatacağız. İlk derslerde geliştirme ortamını detaylı olarak inceliyoruz."
+                            android:text="@string/wp_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -882,7 +882,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:Windows Phone\nSeviye:Orta"
+                            android:text="@string/wp_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -922,7 +922,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu bölümde basit projelerle Windows Phone 8 uygulamaları geliştirmenin temellerini öğreniyor, ufak alıştırmalar yapıyoruz."
+                            android:text="@string/wp_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1008,7 +1008,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:Scratch\nSeviye:Başlangıç"
+                            android:text="@string/scratch_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -1048,7 +1048,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Scratch'e giriş yapacağız ve basit uygulamaların nasıl yapıldığını öğreneceğiz."
+                            android:text="@string/scratch_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1085,7 +1085,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:Scratch\nSeviye:Orta"
+                            android:text="@string/scratch_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -1125,7 +1125,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Scratch öğrenmeye örnek projelerle devam edeceğiz."
+                            android:text="@string/scratch_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1209,7 +1209,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:App Inventor\nSeviye:Başlangıç"
+                            android:text="@string/appinventor_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -1249,7 +1249,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="App Inventor'a giriş yapacağız ve basit uygulamaların nasıl yapıldığını öğreneceğiz."
+                            android:text="@string/appinventor_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1286,7 +1286,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:App Inventor\nSeviye:Orta"
+                            android:text="@string/appinventor_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -1326,7 +1326,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="App Inventor ile oyunlar yapmaya başlıyoruz."
+                            android:text="@string/appinventor_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1363,7 +1363,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="301:Android\nSeviye:İleri"
+                            android:text="@string/appinventor_301_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -1404,7 +1404,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="App Inventor ile uygulama geliştirmeye başlıyoruz."
+                            android:text="@string/appinventor_301_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1489,7 +1489,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:Arduino\nSeviye:Başlangıç"
+                            android:text="@string/arduino_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -1529,7 +1529,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Başlangıç seviyesi derslerde Arduino'ya giriş yapıyoruz."
+                            android:text="@string/arduino_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1567,7 +1567,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:Arduino\nSeviye:Başlangıç"
+                            android:text="@string/arduino_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -1606,7 +1606,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Arduino ile yapabileceklerimizi öğreniyoruz."
+                            android:text="@string/arduino_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1644,7 +1644,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="301:Arduino\nSeviye:Orta"
+                            android:text="@string/arduino_301_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -1684,7 +1684,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Arduino bilgimizi örnek uygulamalarla pekiştiriyoruz."
+                            android:text="@string/arduino_301_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -1721,7 +1721,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="401:Arduino\nSeviye:İleri"
+                            android:text="@string/arduino_401_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -1762,7 +1762,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Arduino bilgimizi örnek uygulamalarla pekiştiriyoruz."
+                            android:text="@string/arduino_401_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView

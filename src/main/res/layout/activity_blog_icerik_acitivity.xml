@@ -33,7 +33,7 @@
             style="@style/mobilIcerikBaslik"
             android:textSize="12sp"
             android:id="@+id/txtYorum"
-            android:text="Yorumlar"
+            android:text="@string/yorumlar"
             android:textColor="@color/beyaz_renk"
             android:layout_marginRight="15dp"
             android:layout_centerVertical="true"/>

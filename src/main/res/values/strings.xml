@@ -49,7 +49,7 @@
 
 
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_egitim_baslik">EgitimBaslikActivity</string>
     <string name="title_activity_egitim_icerik">EgitimIcerikActivity</string>
@@ -59,4 +59,83 @@
     <string name="title_activity_yorum">YorumActivity</string>
     <string name="title_activity_etkinlik_icerik">EtkinlikIcerikActivity</string>
     <string name="title_activity_blog_icerik_acitivity">BlogIcerikAcitivity</string>
+    <string name="yorumlar">Yorumlar</string>
+    <string name="yorum_yok_metni">Henüz Yorum Yapılmamış</string>
+    <string name="isim">İsim:</string>
+    <string name="kullanici_adi">Kullanıcı Adı:</string>
+    <string name="tasarim">Tasarım</string>
+    <string name="gun">gün</string>
+    <string name="kaldi">kaldı</string>
+    <string name="sonuc_bulunamadi">Eşleşen Sonuç Bulunamadı</string>
+
+    <!-- Açıklama Metinleri -->
+    <string name="android_101_aciklama">Başlangıç seviyesi derslerde Android uygulama geliştirme ortamını inceliyoruz.</string>
+    <string name="android_201_aciklama">Bu bölümde basit projelerle Android uygulamaları geliştirmenin temellerini veriyoruz.</string>
+    <string name="android_301_aciklama">Bu bölümden itibaren Android için mobil uygulama geliştirmenin ilk adımlarını atıyoruz.</string>
+    <string name="android_401_aciklama">Artık ileri seviye Android geliştirme sürecine giriyor, uygulamalarımızı hayata geçiriyoruz.</string>
+    <string name="ios_101_aciklama">Başlangıç seviyesi derslerde iOS uygulama geliştirme ortamını detaylı olarak inceliyoruz.</string>
+    <string name="ios_201_aciklama">Bu bölümde basit projelerle iOS uygulamaları geliştirmenin temellerini veriyoruz.</string>
+    <string name="ios_301_aciklama">Bu bölümden itibaren iOS geliştirme adımlarına giriş yapıyoruz.</string>
+    <string name="ios_401_aciklama">Artık ileri seviye iOS geliştirme sürecine giriyor, uygulamalarımızı hayata geçiriyoruz.</string>
+    <string name="wp_101_aciklama">Bu bölümde Windows Phone 8 için uygulama geliştirmeyi anlatacağız. İlk derslerde geliştirme ortamını detaylı olarak inceliyoruz.</string>
+    <string name="wp_201_aciklama">Bu bölümde basit projelerle Windows Phone 8 uygulamaları geliştirmenin temellerini öğreniyor, ufak alıştırmalar yapıyoruz.</string>
+    <string name="scratch_101_aciklama">Scratch\'e giriş yapacağız ve basit uygulamaların nasıl yapıldığını öğreneceğiz.</string>
+    <string name="scratch_201_aciklama">Scratch öğrenmeye örnek projelerle devam edeceğiz.</string>
+    <string name="appinventor_101_aciklama">App Inventor\'a giriş yapacağız ve basit uygulamaların nasıl yapıldığını öğreneceğiz.</string>
+    <string name="appinventor_201_aciklama">App Inventor ile oyunlar yapmaya başlıyoruz.</string>
+    <string name="appinventor_301_aciklama">App Inventor ile uygulama geliştirmeye başlıyoruz.</string>
+    <string name="arduino_101_aciklama">Başlangıç seviyesi derslerde Arduino\'ya giriş yapıyoruz.</string>
+    <string name="arduino_201_aciklama">Arduino ile yapabileceklerimizi öğreniyoruz.</string>
+    <string name="arduino_301_aciklama">Arduino bilgimizi örnek uygulamalarla pekiştiriyoruz.</string>
+    <string name="arduino_401_aciklama">Arduino bilgimizi örnek uygulamalarla pekiştiriyoruz.</string>
+    <string name="oyun_101_aciklama">Bir ürün olarak oyunun hazırlık süreci, tasarım ve oyunda sanat konularını işleyeceğiz.</string>
+    <string name="oyun_201_aciklama">Bu eğitimde oyun geliştirmedeki teknolojiye, gelir modeline ve medya ilişkilerine değineceğiz.</string>
+    <string name="nodejs_401_aciklama">Web programlama eğitimimizin ileri seviyesinde, Node.js öğreniyoruz.</string>
+    <string name="jquery_302_aciklama">Web programlama eğitimimizin orta seviyesinde, JQuery öğreniyoruz.</string>
+    <string name="javascript_301_aciklama">Web programlama eğitimimizin orta seviyesinde, JavaScript öğreniyoruz.</string>
+    <string name="html_css_201_aciklama">Bu başlangıç seviyesi derslerimizde HTML5 ve CSS ile bilgimizi bir adım öteye taşıyoruz.</string>
+    <string name="html_101_aciklama">Başlangıç seviyesi derslerde Web programlamanın temeli olan HTML\'i öğreniyoruz.</string>
+
+    <!-- Başlık Metinleri -->
+    <string name="android_101_baslik">101:Android\nSeviye:Başlangıç</string>
+    <string name="android_201_baslik">201:Android\nSeviye:Başlangıç</string>
+    <string name="android_301_baslik">301:Android\nSeviye:Orta</string>
+    <string name="android_401_baslik">401:Android\nSeviye:İleri</string>
+    <string name="ios_101_baslik">101:IOS\nSeviye:Başlangıç</string>
+    <string name="ios_201_baslik">201:IOS\nSeviye:Başlangıç</string>
+    <string name="ios_301_baslik">301:IOS\nSeviye:Orta</string>
+    <string name="ios_401_baslik">401:IOS\nSeviye:İleri</string>
+    <string name="wp_101_baslik">101:Windows Phone\nSeviye:Başlangıç</string>
+    <string name="wp_201_baslik">201:Windows Phone\nSeviye:Orta</string>
+    <string name="scratch_101_baslik">101:Scratch\nSeviye:Başlangıç</string>
+    <string name="scratch_201_baslik">201:Scratch\nSeviye:Orta</string>
+    <string name="appinventor_101_baslik">101:App Inventor\nSeviye:Başlangıç</string>
+    <string name="appinventor_201_baslik">201:App Inventor\nSeviye:Orta</string>
+    <string name="appinventor_301_baslik">301:App Invetor\nSeviye:İleri</string>
+    <string name="arduino_101_baslik">101:Arduino\nSeviye:Başlangıç</string>
+    <string name="arduino_201_baslik">201:Arduino\nSeviye:Başlangıç</string>
+    <string name="arduino_301_baslik">301:Arduino\nSeviye:Orta</string>
+    <string name="arduino_401_baslik">401:Arduino\nSeviye:İleri</string>
+    <string name="oyun_101_baslik">Oyun Geliştirme 101\nSeviye:Başlangıç</string>
+    <string name="oyun_201_baslik">Oyun Geliştirme 201\nSeviye:Orta</string>
+    <string name="html_101_baslik">101:HTML\nSeviye:Başlangıç</string>
+    <string name="html_css_201_baslik">201:HTML5-CSS\nSeviye:Başlangıç</string>
+    <string name="javascript_301_baslik">301:JavaScript\nSeviye:Orta</string>
+    <string name="jquery_302_baslik">302:JQuery\nSeviye:Orta</string>
+    <string name="nodejs_401_baslik">401:Node.js\nSeviye:İleri</string>
+
+
+    <!--  Profil Sertifika İsimleri  -->
+    <string name="android_ismi">Android</string>
+    <string name="ios_ismi">iOS</string>
+    <string name="wp_ismi">Windows Phone</string>
+    <string name="mobil_oyun_ismi">Mobil Oyun</string>
+    <string name="web_programlama_ismi">Web Programlama</string>
+    <string name="scratch_ismi">Scratch</string>
+    <string name="app_inventor_ismi">App Inventor</string>
+    <string name="arduino_ismi">Arduino</string>
+
+
+    <string name="baslik">Başlık:</string>
+    <string name="icerik">İçerik:</string>
 </resources>

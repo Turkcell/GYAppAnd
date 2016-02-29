@@ -33,7 +33,7 @@
     <TextView
 
         android:id="@+id/titleTextView"
-        android:text="Ornek"
+        android:text=""
         android:textColor="@android:color/white"
         android:textSize="15sp"
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
         android:id="@+id/startDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Date Textview"
+        android:text=""
         android:textColor="@android:color/white"
         android:layout_gravity="bottom"
         android:textSize="12sp"
@@ -75,7 +75,7 @@
         android:id="@+id/endDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="End Date Textview"
+        android:text=""
         android:textColor="@android:color/white"
         android:layout_gravity="bottom"
         android:textSize="12sp"
@@ -105,13 +105,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="gün"
+            android:text="@string/gun"
             android:textSize="15sp"
             android:textColor="@color/beyaz_renk"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="kaldı"
+            android:text="@string/kaldi"
             android:textSize="12sp"
             android:textColor="@color/beyaz_renk"/>
 

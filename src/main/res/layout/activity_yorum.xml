@@ -24,7 +24,7 @@
         android:id="@+id/yorumyok"
         android:textSize="25dp"
         android:textColor="@color/yorum_yazi_renk"
-        android:text="Henüz Yorum Yapılmamış"
+        android:text="@string/yorum_yok_metni"
         android:visibility="invisible"
         android:layout_gravity="center"
 

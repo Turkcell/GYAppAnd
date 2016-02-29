@@ -99,7 +99,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="101:HTML\nSeviye:Başlangıç"
+                            android:text="@string/html_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Başlangıç seviyesi derslerde Web programlamanın temeli olan HTML'i öğreniyoruz."
+                            android:text="@string/html_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -175,7 +175,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="201:HTML5-CSS\nSeviye:Başlangıç"
+                            android:text="@string/html_css_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -215,7 +215,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu başlangıç seviyesi derslerimizde HTML5 ve CSS ile bilgimizi bir adım öteye taşıyoruz."
+                            android:text="@string/html_css_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -251,7 +251,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="301:JavaScript\nSeviye:Orta"
+                            android:text="@string/javascript_301_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -292,7 +292,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Web programlama eğitimimizin orta seviyesinde, JavaScript öğreniyoruz."
+                            android:text="@string/javascript_301_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -329,7 +329,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="302:JQuery\nSeviye:Orta"
+                            android:text="@string/jquery_302_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -370,7 +370,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Web programlama eğitimimizin orta seviyesinde, JQuery öğreniyoruz."
+                            android:text="@string/jquery_302_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -406,7 +406,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="401:Node.js\nSeviye:İleri"
+                            android:text="@string/nodejs_401_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -447,7 +447,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Web programlama eğitimimizin ileri seviyesinde, Node.js öğreniyoruz."
+                            android:text="@string/nodejs_401_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView

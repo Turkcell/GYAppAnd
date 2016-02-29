@@ -29,7 +29,7 @@
             android:layout_width="1dp"
             android:layout_height="1dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Tasarım"
+            android:text="@string/tasarim"
             android:id="@+id/categories"
             android:layout_gravity="right"
             android:visibility="invisible" />
@@ -68,7 +68,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cansu Uludağ"
+                        android:text=""
                         android:textSize="15dp"
                         android:textStyle="bold"
                         android:layout_gravity="center_vertical"
@@ -83,7 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
-                        android:text="15 Temmuz 2015"
+                        android:text=""
                         android:textSize="11dp"
                         android:paddingTop="5dp"
                         android:id="@+id/blogTarih"
@@ -128,7 +128,7 @@
                 <TextView
 
                     android:id="@+id/itemBaslik"
-                    android:text="Elveda Eclipse,Merhaba Android Studio!"
+                    android:text=""
                     android:textColor="@color/card_blog_yazi_renk"
                     android:textSize="18sp"
                     android:paddingLeft="5dp"
@@ -142,7 +142,7 @@
                 <TextView
                     android:layout_centerVertical="true"
                     android:id="@+id/itemOzet"
-                    android:text="Geleceği Yazanlar Android eğitim içerikleri, Android Studio 1.2.2 ile uyumlu hale getirdi..."
+                    android:text=""
                     android:textColor="@color/blog_item_ozet_renk"
                     android:textSize="13sp"
                     android:paddingLeft="5dp"

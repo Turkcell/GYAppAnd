@@ -103,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Android"
+                android:text="@string/android_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -199,7 +199,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="iOS"
+                android:text="@string/ios_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -294,7 +294,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Windows Phone"
+                android:text="@string/wp_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -355,7 +355,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mobil Oyun"
+                android:text="@string/mobil_oyun_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -417,7 +417,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Web Programlama"
+                android:text="@string/web_programlama_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -512,7 +512,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Scratch"
+                android:text="@string/scratch_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -574,7 +574,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="App Inventor"
+                android:text="@string/app_inventor_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
@@ -653,7 +653,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Arduino"
+                android:text="@string/arduino_ismi"
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"

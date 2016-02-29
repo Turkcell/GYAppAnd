@@ -35,7 +35,7 @@ android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
         android:textStyle="bold"
-        android:text="İsim:"
+        android:text="@string/isim"
         />
 
     <TextView
@@ -57,7 +57,7 @@ android:orientation="horizontal"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
             android:textStyle="bold"
-            android:text="Kullanıcı Adı:"
+            android:text="@string/kullanici_adi"
             />
         <TextView
             android:id="@+id/tvkullanici"

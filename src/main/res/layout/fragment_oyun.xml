@@ -100,7 +100,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="Oyun Geliştirme 101\nSeviye:Başlangıç"
+                            android:text="@string/oyun_101_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -140,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bir ürün olarak oyunun hazırlık süreci, tasarım ve oyunda sanat konularını işleyeceğiz."
+                            android:text="@string/oyun_101_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
@@ -176,7 +176,7 @@
                             android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
                             android:textSize="@dimen/text_size_onyedi"
-                            android:text="Oyun Geliştirme 201\nSeviye:Orta"
+                            android:text="@string/oyun_201_baslik"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <RelativeLayout
@@ -216,7 +216,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:text="Bu eğitimde oyun geliştirmedeki teknolojiye, gelir modeline ve medya ilişkilerine değineceğiz."
+                            android:text="@string/oyun_201_aciklama"
                             android:textColor="@color/gri_siyah_renk"/>
 
                         <ImageView
