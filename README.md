@@ -1,10 +1,41 @@
 # Geleceği Yazanlar Android Uygulaması
 
-Bu proje 7 üniversite öğrencisinin bir araya gelip Android öğrenerek kısa zamanda geliştirdiği bir android uygulamasıdır.
+![Geleceği Yazanlar Uygulaması](https://gelecegiyazanlar.turkcell.com.tr/sites/default/files/burrrak_0.jpg)
 
-Projenin amacı Geleceği Yazanlar üyelerinin Android uygulamasıyla platformdaki içeriklere daha rahat ulaşmasını sağlamaktır.
-Proje ile ilgili hata ve eksikliklerin düzeltilip, projenin daha da geliştirilmesi için burada paylaşıyoruz.
-Geliştirilmesine katkıda bulunan herkese teşekkürler.
+Uygulamayı Google Play üzerinden indirmek için: https://play.google.com/store/apps/details?id=com.turkcell.gelecegiyazanlar
+
+Bu proje Geleceği Yazanlar elçilerinden 7 üniversite öğrencisinin bir araya gelip Android öğrenerek dört haftada geliştirdiği bir android uygulamasıdır. Projenin amacı Geleceği Yazanlar üyelerinin Android uygulamasıyla platformdaki kullanıcı girişi gerektirmeyen;
+
+•	Eğitimler (Mobil - Web - Oyun)<br />
+•	Etkinlikler<br />
+•	Blog<br />
+•	Profil sayfaları<br />
+•	Site içi arama<br />
+
+sayfalarına daha rahat ulaşmasını sağlamaktır. <br />
+
+Uygulamamızı geliştirirken hafta hafta blog yazıları ile neler yaşadığımızı anlattık;<br />
+
+•	[1. hafta](https://gelecegiyazanlar.turkcell.com.tr/blog/mobil-uygulamamizi-gelistiriyoruz-1.-hafta)<br />
+•	[2. hafta](https://gelecegiyazanlar.turkcell.com.tr/blog/mobil-uygulamamizi-gelistiriyoruz-2.-hafta)<br />
+•	[3. hafta](https://gelecegiyazanlar.turkcell.com.tr/blog/mobil-uygulamamizi-gelistiriyoruz-3.-hafta)<br />
+•	[4. hafta](https://gelecegiyazanlar.turkcell.com.tr/blog/mobil-uygulamamizi-gelistiriyoruz-4.-hafta)<br />
+
+
+####Uygulama geliştiricileri:<br />
+
+•	[Abdullah Sarıkaya](https://gelecegiyazanlar.turkcell.com.tr/kisi/haciabdullahsarikaya): Eğitim sayfası,<br />
+•	[Doğukan Yıldırım](https://gelecegiyazanlar.turkcell.com.tr/kisi/dyildirim76): Etkinlik sayfası,<br />
+•	[Gizem Nur Yurdagül](https://gelecegiyazanlar.turkcell.com.tr/kisi/gizemnuryurdagul): Yorumlar sayfası,<br />
+•	[Kadirhan Ekmekçioğlu](https://gelecegiyazanlar.turkcell.com.tr/kisi/kadirhann21): Blog sayfası,<br />
+•	[Volkan Kılıç](https://gelecegiyazanlar.turkcell.com.tr/kisi/volkankilic): Geliştiriciler sayfası,<br />
+•	[Taner Utku](https://gelecegiyazanlar.turkcell.com.tr/kisi/tanerutku): Profil sayfası,<br />
+•	[Yusuf Eren Utku](https://gelecegiyazanlar.turkcell.com.tr/kisi/yerenutku): Arama sayfası<br />
+
+Proje ile ilgili hata ve eksikliklerin düzeltilip, projenin geliştirilmesi için projeyi GitHub'da paylaşmaya karar verdik. Geliştirilmesine katkıda bulunan herkese teşekkür ederiz.
+
+
+## Projenin Genel Yapısı Hakkında Bilgiler
 
 ####Fragment Yapısı
 
