@@ -1,4 +1,5 @@
-package com.turkcell.gelecegiyazanlar.Fragment;
+package com.turkcell.gelecegiyazanlar.fragment;
+
 import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +13,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.turkcell.gelecegiyazanlar.Activity.EgitimBaslikActivity;
-import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.EgitimBaslikActivity;
+import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayoutIcon;
 
 /**
  * Web Sayfasýnýn Fragmentý
@@ -23,13 +24,13 @@ import com.turkcell.gelecegiyazanlar.R;
 public class OyunFragment extends Fragment implements View.OnClickListener {
 
 
-    LinearLayout ust_layout,oyun,oyunIcerik;
+    LinearLayout ust_layout, oyun, oyunIcerik;
 
 
-    LinearLayout oyun101,oyun101Layout,oyun201,oyun201Layout;
+    LinearLayout oyun101, oyun101Layout, oyun201, oyun201Layout;
 
     SlidingTabLayoutIcon tablar;
-    ImageView oyunSagOk,oyun101AsagiOk,oyun201AsagiOk,egitimiAl101,egitimiAl201;
+    ImageView oyunSagOk, oyun101AsagiOk, oyun201AsagiOk, egitimiAl101, egitimiAl201;
     Toolbar toolbar;
 
 
@@ -37,26 +38,24 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
-        View rootView=inflater.inflate(R.layout.fragment_oyun, container, false);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        View rootView = inflater.inflate(R.layout.fragment_oyun, container, false);
 
-        oyun=(LinearLayout)rootView.findViewById(R.id.oyun);
-        oyunIcerik=(LinearLayout)rootView.findViewById(R.id.layout_oyun_icerik);
-        oyunSagOk=(ImageView)rootView.findViewById(R.id.oyunsagok);
+        oyun = (LinearLayout) rootView.findViewById(R.id.oyun);
+        oyunIcerik = (LinearLayout) rootView.findViewById(R.id.layout_oyun_icerik);
+        oyunSagOk = (ImageView) rootView.findViewById(R.id.oyunsagok);
 
-        oyun101AsagiOk=(ImageView)rootView.findViewById(R.id.asagi_image_101_oyun);
-        oyun101=(LinearLayout)rootView.findViewById(R.id.egitimal_oyun_101);
-        oyun101Layout=(LinearLayout)rootView.findViewById(R.id.layout_oyun_101);
+        oyun101AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_101_oyun);
+        oyun101 = (LinearLayout) rootView.findViewById(R.id.egitimal_oyun_101);
+        oyun101Layout = (LinearLayout) rootView.findViewById(R.id.layout_oyun_101);
 
-        oyun201AsagiOk=(ImageView)rootView.findViewById(R.id.asagi_image_201_oyun);
-        oyun201=(LinearLayout)rootView.findViewById(R.id.egitimal_oyun_201);
-        oyun201Layout=(LinearLayout)rootView.findViewById(R.id.layout_oyun_201);
+        oyun201AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_201_oyun);
+        oyun201 = (LinearLayout) rootView.findViewById(R.id.egitimal_oyun_201);
+        oyun201Layout = (LinearLayout) rootView.findViewById(R.id.layout_oyun_201);
 
 
-
-        ust_layout=(LinearLayout)getActivity().findViewById(R.id.ustekran);
-        tablar=(SlidingTabLayoutIcon)getActivity().findViewById(R.id.tabs);
-
+        ust_layout = (LinearLayout) getActivity().findViewById(R.id.ustekran);
+        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.tabs);
 
 
         oyun.setOnClickListener(this);
@@ -71,13 +70,13 @@ toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
 
     @Override
     public void onClick(View v) {
-        Intent i=null;
+        Intent i = null;
         switch (v.getId()) {
 
             case R.id.oyun:
                 if (oyunIcerik.getVisibility() == View.VISIBLE) {
                     oyunIcerik.setVisibility(View.GONE);
-                   goster();
+                    goster();
                     tablar.setVisibility(View.VISIBLE);
                     oyunSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
                 } else {
@@ -109,21 +108,20 @@ toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
                 }
                 break;
             case R.id.egitimal_oyun_101:
-                i=new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title","Oyun Geliþtirme 101");
-                i.putExtra("color","oyun");
-                i.putExtra("nodeID",getResources().getString(R.string.oyun101));
+                i = new Intent(getActivity(), EgitimBaslikActivity.class);
+                i.putExtra("title", "Oyun Geliþtirme 101");
+                i.putExtra("color", "oyun");
+                i.putExtra("nodeID", getResources().getString(R.string.oyun101));
                 startActivity(i);
                 break;
 
             case R.id.egitimal_oyun_201:
-                i=new Intent(getActivity(), EgitimBaslikActivity.class);
-                i.putExtra("title","Oyun Geliþtirme 201");
-                i.putExtra("color","oyun");
-                i.putExtra("nodeID",getResources().getString(R.string.oyun201));
+                i = new Intent(getActivity(), EgitimBaslikActivity.class);
+                i.putExtra("title", "Oyun Geliþtirme 201");
+                i.putExtra("color", "oyun");
+                i.putExtra("nodeID", getResources().getString(R.string.oyun201));
                 startActivity(i);
                 break;
-
 
 
         }
@@ -154,6 +152,7 @@ toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
                     }
                 }).start();
     }
+
     public void goster() {
         ust_layout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2))
                 .setListener(new Animator.AnimatorListener() {

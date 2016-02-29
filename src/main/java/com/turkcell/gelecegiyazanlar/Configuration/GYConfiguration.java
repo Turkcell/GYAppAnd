@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Configuration;
+package com.turkcell.gelecegiyazanlar.configuration;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,41 +10,42 @@ import android.support.v7.app.AlertDialog;
 /**
  * Created by asus on 3.12.2015.
  */
- enum  Domain {
-    TESTOZGUR,TESTTURKCELL,PRP,PROD
+enum Domain {
+    TESTOZGUR, TESTTURKCELL, PRP, PROD
 };
 
 
-public class GYConfiguration{
+public class GYConfiguration {
 
     //Dinamik
-    static Domain domain=Domain.PROD;
+    static Domain domain = Domain.PROD;
+    public static String SPLUNK_ID="75ff8154";
 
-public static String getDomain(){
+    public static String getDomain() {
 
-    String url = null;
+        String url = null;
 
-    if(domain==Domain.PROD){
-        url="https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
-    }else if(domain==Domain.TESTOZGUR){
-        url="https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
-    }else if(domain==Domain.TESTTURKCELL){
-        url="https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
-    }else if(domain==Domain.PRP){
-        url="https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
+        if (domain == Domain.PROD) {
+            url = "https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
+        } else if (domain == Domain.TESTOZGUR) {
+            url = "https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
+        } else if (domain == Domain.TESTTURKCELL) {
+            url = "https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
+        } else if (domain == Domain.PRP) {
+            url = "https://gelecegiyazanlar.turkcell.com.tr/gypservis/";
+        }
+
+        return url;
     }
 
-return url;
-}
-
     public static boolean isNetworkAvailable(Activity activity) {
-        ConnectivityManager connectivityManager = (ConnectivityManager)activity.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) activity.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager
                 .getActiveNetworkInfo();
         return activeNetworkInfo != null;
     }
 
-    public static void showDialog(Activity activity,String message){
+    public static void showDialog(Activity activity, String message) {
 
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity);
         alertDialogBuilder.setMessage(message);
@@ -61,12 +62,12 @@ return url;
         alertDialog.show();
     }
 
-    public static boolean checkInternetConnectionShowDialog(Activity activity){
+    public static boolean checkInternetConnectionShowDialog(Activity activity) {
 
-        if(!isNetworkAvailable(activity)){
-            showDialog(activity,"Lütfen Internet Baðlantýnýzý Kontrol Ediniz.");
+        if (!isNetworkAvailable(activity)) {
+            showDialog(activity, "Lütfen Internet Baðlantýnýzý Kontrol Ediniz.");
             return false;
-        }else {
+        } else {
             return true;
         }
 

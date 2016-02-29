@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,25 +10,25 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.turkcell.gelecegiyazanlar.Activity.BlogIcerikAcitivity;
-import com.turkcell.gelecegiyazanlar.Model.Icerik;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.BlogIcerikAcitivity;
+import com.turkcell.gelecegiyazanlar.model.Icerik;
 
 import java.util.List;
 
 /**
  * Created by asus on 30.9.2015.
  */
-public class IcerikAramaAdapter  extends BaseAdapter {
-    private LayoutInflater layoutInflater;
-    private List<Icerik> adapterIcerikList;
+public class IcerikAramaAdapter extends BaseAdapter {
     //ImageLoader image= AppController.getInstance().getImageLoader();
     Activity activity;
+    private LayoutInflater layoutInflater;
+    private List<Icerik> adapterIcerikList;
 
-    public IcerikAramaAdapter(Activity activity, List<Icerik> icerikler){
+    public IcerikAramaAdapter(Activity activity, List<Icerik> icerikler) {
         layoutInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         adapterIcerikList = icerikler;
-        this.activity=activity;
+        this.activity = activity;
 
     }
 
@@ -56,22 +56,22 @@ public class IcerikAramaAdapter  extends BaseAdapter {
 //        }
 
 
-        final View view = layoutInflater.inflate(R.layout.icerik_arama_satir,parent,false);
+        final View view = layoutInflater.inflate(R.layout.icerik_arama_satir, parent, false);
         TextView tvbaslik = (TextView) view.findViewById(R.id.tvbaslik);
         TextView tvicerik = (TextView) view.findViewById(R.id.tvicerik);
         //NetworkImageView imageView = (NetworkImageView) view.findViewById(R.id.ivsimge);
 
 
         final Icerik icerik = adapterIcerikList.get(position);
-        tvbaslik.setText( icerik.getTitle());
+        tvbaslik.setText(icerik.getTitle());
         tvicerik.setText(Html.fromHtml(icerik.getExcerpt()));
         //imageView.setImageUrl(icerik.getKullaniciAvatarUrl(),image);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(activity, BlogIcerikAcitivity.class);
-                i.putExtra("blogID",icerik.getNodeID());
+                Intent i = new Intent(activity, BlogIcerikAcitivity.class);
+                i.putExtra("blogID", icerik.getNodeID());
                 activity.startActivity(i);
             }
         });

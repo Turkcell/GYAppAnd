@@ -1,8 +1,8 @@
-package com.turkcell.gelecegiyazanlar.Activity;
+package com.turkcell.gelecegiyazanlar.activity;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -17,10 +17,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +32,8 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
     ImageRequest imageRequest;
     //JsonObjectRequest jsonObjectRequest;
     JsonArrayRequest stringRequest;
-    String txtBaslik ="";
-    TextView title,yorum;
+    String txtBaslik = "";
+    TextView title, yorum;
     String id;
 
     YuklenmeEkran ekran;
@@ -43,21 +43,19 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etkinlik_icerik);
 
-        Mint.initAndStartSession(EtkinlikIcerikActivity.this, "75ff8154");
+        Mint.initAndStartSession(EtkinlikIcerikActivity.this, GYConfiguration.SPLUNK_ID);
 
-ekran=new YuklenmeEkran(EtkinlikIcerikActivity.this);
+        ekran = new YuklenmeEkran(EtkinlikIcerikActivity.this);
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbaretkinlik);
-        title=(TextView)toolbar.findViewById(R.id.txtBaslik);
-        yorum=(TextView)toolbar.findViewById(R.id.txtYorum);
-
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaretkinlik);
+        title = (TextView) toolbar.findViewById(R.id.txtBaslik);
+        yorum = (TextView) toolbar.findViewById(R.id.txtYorum);
 
 
-        url= GYConfiguration.getDomain()+"etkinlik_content/retrieve?nodeID=";
+        url = GYConfiguration.getDomain() + "etkinlik_content/retrieve?nodeID=";
 
-        Bundle extras=getIntent().getExtras();
-        id=extras.getString("etkinlikID");
+        Bundle extras = getIntent().getExtras();
+        id = extras.getString("etkinlikID");
 
         yorum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,17 +66,17 @@ ekran=new YuklenmeEkran(EtkinlikIcerikActivity.this);
             }
         });
 
-Log.d("tag", url + id);
+        Log.d("tag", url + id);
 
-        if(GYConfiguration.checkInternetConnectionShowDialog(EtkinlikIcerikActivity.this)){
+        if (GYConfiguration.checkInternetConnectionShowDialog(EtkinlikIcerikActivity.this)) {
             ekran.surecBasla();
         }
 
-        stringRequest = new JsonArrayRequest(Request.Method.GET, url+id, null, new Response.Listener<JSONArray>() {
+        stringRequest = new JsonArrayRequest(Request.Method.GET, url + id, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                Log.d("json:",response.toString());
+                Log.d("json:", response.toString());
                 WebView webView = (WebView) findViewById(R.id.etkinlikDetay);
                 webView.getSettings().setJavaScriptEnabled(true);
                 try {
@@ -95,10 +93,9 @@ Log.d("tag", url + id);
 
                         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                             Toast.makeText(getApplicationContext(), "Bir hata oluþtu", Toast.LENGTH_SHORT).show();
-                           ekran.surecDurdur();
+                            ekran.surecDurdur();
                         }
                     });
-
 
 
                     txtBaslik = response.getJSONObject(0).getString("title");
@@ -116,11 +113,10 @@ Log.d("tag", url + id);
                     webView.getSettings().setDefaultFontSize(40);
 
 
-
                     //Etkinlik içerik baþlangýç
 
-                    webView.loadData( response.getJSONObject(0).getString("content")
-                            ,"text/html; charset=utf-8",null);
+                    webView.loadData(response.getJSONObject(0).getString("content")
+                            , "text/html; charset=utf-8", null);
                     //Etkinlik içerik bitiþ
 
 

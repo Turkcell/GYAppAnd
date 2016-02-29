@@ -1,10 +1,10 @@
-package com.turkcell.gelecegiyazanlar.Activity;
+package com.turkcell.gelecegiyazanlar.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -18,10 +18,10 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
 import com.turkcell.curio.CurioClient;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Egitim;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.model.Egitim;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,30 +30,26 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EgitimIcerikActivity extends ActionBarActivity {
 
+    final Egitim egitim = new Egitim();
     WebView webIcerik;
     TextView yazarIsim;
     CircleImageView ResimAvatar;
-
-    final Egitim egitim=new Egitim();
-
-    String icerikYazi="",yazarYazi,resimUrl,title;
-
-    private ProgressDialog pDialog;
+    String icerikYazi = "", yazarYazi, resimUrl, title;
     Toolbar toolbar;
-    String dugumID,dugumBaslik,authorID;
+    String dugumID, dugumBaslik, authorID;
     long time;
-
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_egitim_icerik);
 
-        Mint.initAndStartSession(EgitimIcerikActivity.this, "75ff8154");
+        Mint.initAndStartSession(EgitimIcerikActivity.this, GYConfiguration.SPLUNK_ID);
 
-        yazarIsim=(TextView)findViewById(R.id.yazar);
-        webIcerik=(WebView)findViewById(R.id.web);
-        ResimAvatar=(CircleImageView)findViewById(R.id.profile_image);
+        yazarIsim = (TextView) findViewById(R.id.yazar);
+        webIcerik = (WebView) findViewById(R.id.web);
+        ResimAvatar = (CircleImageView) findViewById(R.id.profile_image);
         webIcerik.getSettings().setJavaScriptEnabled(true);
         webIcerik.getSettings().setUseWideViewPort(true);
         webIcerik.getSettings().setSupportZoom(true);
@@ -66,17 +62,17 @@ public class EgitimIcerikActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EgitimIcerikActivity.this, ProfilActivity.class);
-                i.putExtra("id",authorID);
+                i.putExtra("id", authorID);
                 startActivity(i);
             }
         });
 
+
         toolbar = (Toolbar) findViewById(R.id.tool_bar2);
         setSupportActionBar(toolbar);
-        Bundle extras=getIntent().getExtras();
-        dugumID=extras.getString("nodeIDEgitim");
-        dugumBaslik=extras.getString("nodeTitle");
-
+        Bundle extras = getIntent().getExtras();
+        dugumID = extras.getString("nodeIDEgitim");
+        dugumBaslik = extras.getString("nodeTitle");
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -90,49 +86,50 @@ public class EgitimIcerikActivity extends ActionBarActivity {
             }
         });
 
-        if(GYConfiguration.checkInternetConnectionShowDialog(EgitimIcerikActivity.this)){
+        if (GYConfiguration.checkInternetConnectionShowDialog(EgitimIcerikActivity.this)) {
             getEgitimIcerik(dugumID);
         }
 
     }
 
 
-    public void getEgitimIcerik(final String dugumID){
+
+    public void getEgitimIcerik(final String dugumID) {
 
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Yükleniyor...");
         pDialog.show();
-Log.d("icerik:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" + dugumID);
-        JsonArrayRequest movieReq = new JsonArrayRequest(GYConfiguration.getDomain()+"book_content/retrieve?nodeID="+dugumID,
+        Log.d("icerik:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" + dugumID);
+        JsonArrayRequest movieReq = new JsonArrayRequest(GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" + dugumID,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Log.d("json:",GYConfiguration.getDomain()+"book_content/retrieve?nodeID="+dugumID);
+                        Log.d("json:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" + dugumID);
                         hidePDialog();
 
 
                         try {
-                            JSONArray icerikDizi=response.getJSONObject(0).getJSONArray("content");
-                            yazarYazi=response.getJSONObject(0).getString("adSoyad");
-                            title=response.getJSONObject(0).getString("title");
-                            resimUrl=response.getJSONObject(0).getString("authorAvatarUrl");
-                            authorID=response.getJSONObject(0).getString("authorID");
+                            JSONArray icerikDizi = response.getJSONObject(0).getJSONArray("content");
+                            yazarYazi = response.getJSONObject(0).getString("adSoyad");
+                            title = response.getJSONObject(0).getString("title");
+                            resimUrl = response.getJSONObject(0).getString("authorAvatarUrl");
+                            authorID = response.getJSONObject(0).getString("authorID");
                             Log.d("icerikDiziUzunluk:", String.valueOf(icerikDizi.length()));
-                            for (int i=0;i<icerikDizi.length();i++){
-                                icerikYazi+=icerikDizi.getString(i);
+                            for (int i = 0; i < icerikDizi.length(); i++) {
+                                icerikYazi += icerikDizi.getString(i);
                             }
                             egitim.setIcerik(icerikYazi);
                             egitim.setYazar(yazarYazi);
                             toolbar.setTitle(title);
 
-                            if(yazarYazi!=null || icerikYazi!=null){
+                            if (yazarYazi != null || icerikYazi != null) {
                                 ResimGetir();
                                 yazarIsim.setText(egitim.getYazar());
-                                webIcerik.loadDataWithBaseURL("",egitim.getIcerik(),"text/html","UTF-8","");
+                                webIcerik.loadDataWithBaseURL("", egitim.getIcerik(), "text/html", "UTF-8", "");
                             }
                             CurioClient.getInstance(getApplicationContext()).sendEvent("Egitim Ýçerik>" + dugumBaslik, title);
-                            time=System.currentTimeMillis();
+                            time = System.currentTimeMillis();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -142,14 +139,14 @@ Log.d("icerik:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" +
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Error", "Error: " + error.getMessage());
-                Log.d("json:","Giris Yapilamadi");
+                Log.d("json:", "Giris Yapilamadi");
                 hidePDialog();
 
             }
         });
 
         AppController.getInstance().addToRequestQueue(movieReq);
-        Log.d("tite",title+dugumBaslik);
+        Log.d("tite", title + dugumBaslik);
 
     }
 
@@ -160,11 +157,11 @@ Log.d("icerik:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" +
         }
     }
 
-    public void ResimGetir(){
-        ImageRequest image=new ImageRequest(resimUrl, new Response.Listener<Bitmap>() {
+    public void ResimGetir() {
+        ImageRequest image = new ImageRequest(resimUrl, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-                       ResimAvatar.setImageBitmap(response);
+                ResimAvatar.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override
@@ -184,7 +181,7 @@ Log.d("icerik:", GYConfiguration.getDomain() + "book_content/retrieve?nodeID=" +
     @Override
     protected void onStop() {
         super.onStop();
-        CurioClient.getInstance(getApplicationContext()).endEvent("Egitim Ýçerik>"+dugumBaslik,title,System.currentTimeMillis()-time);
+        CurioClient.getInstance(getApplicationContext()).endEvent("Egitim Ýçerik>" + dugumBaslik, title, System.currentTimeMillis() - time);
 
     }
 }

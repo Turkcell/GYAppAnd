@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Model;
+package com.turkcell.gelecegiyazanlar.model;
 
 /**
  * Created by user on 10.9.2015.
@@ -15,16 +15,16 @@ public class Blog {
     String avatar;
     String image;
 
-    public Blog(String title, String date, String author, String excerpt,String categories,String avatar,String image,String profilID,String blogID) {
+    public Blog(String title, String date, String author, String excerpt, String categories, String avatar, String image, String profilID, String blogID) {
         this.author = author;
         this.excerpt = excerpt;
         this.date = date;
         this.title = title;
-        this.categories=categories;
-        this.image=image;
-        this.avatar=avatar;
-        this.profilID=profilID;
-        this.blogID=blogID;
+        this.categories = categories;
+        this.image = image;
+        this.avatar = avatar;
+        this.profilID = profilID;
+        this.blogID = blogID;
 
     }
 
@@ -91,7 +91,6 @@ public class Blog {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
 
 
     public String getImage() {

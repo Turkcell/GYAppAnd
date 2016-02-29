@@ -1,8 +1,12 @@
-package com.turkcell.gelecegiyazanlar.Animasyon;
+package com.turkcell.gelecegiyazanlar.animasyon;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+/**
+ * Bu sýnýftaki kodlar http://developer.android.com/intl/es/training/animation/screen-slide.html sitesinden
+ *   alýnmýþtýr
+ */
 public class DerinSayfaDegisimi implements ViewPager.PageTransformer {
     private static float MIN_SCALE = 0.75f;
 

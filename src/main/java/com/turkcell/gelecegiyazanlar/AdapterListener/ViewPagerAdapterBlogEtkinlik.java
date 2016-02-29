@@ -1,11 +1,11 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.turkcell.gelecegiyazanlar.Fragment.BlogEtkinlikListeFragment;
+import com.turkcell.gelecegiyazanlar.fragment.BlogEtkinlikListeFragment;
 
 public class ViewPagerAdapterBlogEtkinlik extends FragmentStatePagerAdapter {
 
@@ -14,7 +14,7 @@ public class ViewPagerAdapterBlogEtkinlik extends FragmentStatePagerAdapter {
 
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
-    public ViewPagerAdapterBlogEtkinlik(FragmentManager fm,CharSequence mTitles[], int mNumbOfTabsumb) {
+    public ViewPagerAdapterBlogEtkinlik(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
 
         this.Titles = mTitles;

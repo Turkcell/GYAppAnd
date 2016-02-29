@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Model;
+package com.turkcell.gelecegiyazanlar.model;
 
 /**
  * Created by Eren on 9.9.2015.
@@ -11,8 +11,7 @@ public class Kisi {
     private String kullaniciID;
 
 
-
-    public Kisi(){
+    public Kisi() {
 
     }
 
@@ -47,11 +46,6 @@ public class Kisi {
     public void setKullaniciAvatarUrl(String kullaniciAvatarUrl) {
         this.kullaniciAvatarUrl = kullaniciAvatarUrl;
     }
-
-
-
-
-
 
 
 }

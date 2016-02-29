@@ -1,8 +1,9 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 /**
  * Created by macbook on 9/9/15.
  */
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,10 +19,10 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
-import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Yorum;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.model.Yorum;
 
 import java.util.List;
 
@@ -69,8 +70,6 @@ public class ListViewAdapterYorum extends BaseAdapter {
                 (ImageView) satirView.findViewById(R.id.simge);
 
 
-
-
         TextView yorum =
                 (TextView) satirView.findViewById(R.id.yorum);
 
@@ -89,8 +88,8 @@ public class ListViewAdapterYorum extends BaseAdapter {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(v.getContext(), ProfilActivity.class);
-                i.putExtra("id",kisi.getId());
+                Intent i = new Intent(v.getContext(), ProfilActivity.class);
+                i.putExtra("id", kisi.getId());
                 v.getContext().startActivity(i);
             }
         });
@@ -99,12 +98,12 @@ public class ListViewAdapterYorum extends BaseAdapter {
         return satirView;
     }
 
-    public void ResimGoruntule(String resimURL, final ImageView image){
+    public void ResimGoruntule(String resimURL, final ImageView image) {
 
-        ImageRequest im =new ImageRequest(resimURL, new Response.Listener<Bitmap>() {
+        ImageRequest im = new ImageRequest(resimURL, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-               image.setImageBitmap(response);
+                image.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override

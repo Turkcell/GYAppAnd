@@ -1,8 +1,8 @@
-package com.turkcell.gelecegiyazanlar.Activity;
+package com.turkcell.gelecegiyazanlar.activity;
 
 import android.graphics.Bitmap;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
@@ -15,13 +15,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
-import com.turkcell.gelecegiyazanlar.AdapterListener.ListViewAdapterYorum;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Yorum;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
-import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.adapterlistener.ListViewAdapterYorum;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.model.Yorum;
+import com.turkcell.gelecegiyazanlar.utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,9 +32,9 @@ import java.util.List;
 public class YorumActivity extends ActionBarActivity {
 
 
-    final List<Yorum> yorumlar=new ArrayList<Yorum>();
+    final List<Yorum> yorumlar = new ArrayList<Yorum>();
     RequestQueue mRequestQueue;
-    String url ;
+    String url;
 
     String Nodeid;
     JsonArrayRequest request;
@@ -47,23 +47,23 @@ public class YorumActivity extends ActionBarActivity {
 
     YuklenmeEkran ekran;
     TarihCevir tarihCevir;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yorum);
-        Mint.initAndStartSession(YorumActivity.this, "75ff8154");
-        url= GYConfiguration.getDomain()+"yorumlar/retrieve?nodeID=";
+        Mint.initAndStartSession(YorumActivity.this, GYConfiguration.SPLUNK_ID);
+        url = GYConfiguration.getDomain() + "yorumlar/retrieve?nodeID=";
 
-        ekran=new YuklenmeEkran(this);
-        tarihCevir=new TarihCevir();
+        ekran = new YuklenmeEkran(this);
+        tarihCevir = new TarihCevir();
 
         listemiz = (ListView) findViewById(R.id.liste);
 
+        yorumyok = (TextView) findViewById(R.id.yorumyok);
 
-        yorumyok= (TextView) findViewById(R.id.yorumyok);
-
-        Bundle bundle=getIntent().getExtras();
-        Nodeid= bundle.getString("yorumID");
+        Bundle bundle = getIntent().getExtras();
+        Nodeid = bundle.getString("yorumID");
 
         Goruntule(Nodeid);
 
@@ -71,36 +71,34 @@ public class YorumActivity extends ActionBarActivity {
     }
 
 
-    public  void Goruntule(String nodeid){
+    public void Goruntule(String nodeid) {
 
-      ekran.surecBasla();
-        request = new JsonArrayRequest(Request.Method.GET, url+nodeid, null, new Response.Listener<JSONArray>() {
+        ekran.surecBasla();
+        request = new JsonArrayRequest(Request.Method.GET, url + nodeid, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 ekran.surecDurdur();
                 try {
 
 
-                    if(response.length()==0){
+                    if (response.length() == 0) {
                         yorumyok.setVisibility(View.VISIBLE);
 
-                    }
-                    else {
+                    } else {
                         for (int i = 0; i < response.length(); i++) {
                             String isimsoyisim = response.getJSONObject(i).getString("adSoyad");
                             String yorum = response.getJSONObject(i).getString("content");
                             icon = response.getJSONObject(i).getString("authorAvatarUrl");
-                            String tarihVeri=response.getJSONObject(i).getString("date");
-                            String authorID=response.getJSONObject(i).getString("authorID");
+                            String tarihVeri = response.getJSONObject(i).getString("date");
+                            String authorID = response.getJSONObject(i).getString("authorID");
 
-                            Log.d("TAG:",icon);
+                            Log.d("TAG:", icon);
 
 
                             //add to
-                            yorumlar.add(new Yorum(isimsoyisim,yorum, icon,tarihCevir.Cevir(tarihVeri),authorID));
+                            yorumlar.add(new Yorum(isimsoyisim, yorum, icon, tarihCevir.Cevir(tarihVeri), authorID));
 
                         }
-
 
 
                     }

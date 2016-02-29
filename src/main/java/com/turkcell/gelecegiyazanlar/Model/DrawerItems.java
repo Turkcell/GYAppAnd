@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Model;
+package com.turkcell.gelecegiyazanlar.model;
 
 /**
  * Created by asus on 27.8.2015.
@@ -28,8 +28,6 @@ public class DrawerItems {
     public void setText(String text) {
         this.text = text;
     }
-
-
 
 
 }

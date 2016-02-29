@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,20 +9,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
-
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.NetworkImageView;
-import com.turkcell.gelecegiyazanlar.Activity.BlogIcerikAcitivity;
-import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Blog;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.BlogIcerikAcitivity;
+import com.turkcell.gelecegiyazanlar.activity.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.model.Blog;
 
 import java.util.List;
 
@@ -31,17 +29,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-
-    private List<Blog> mItemList;
     Activity activity;
-
+    private List<Blog> mItemList;
 
 
     public RecyclerAdapterBlog(List<Blog> mItemList, Activity activity) {
         this.mItemList = mItemList;
         this.activity = activity;
     }
-
 
 
     @Override
@@ -57,15 +52,15 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
         Blog blog = mItemList.get(position);
         String title = blog.getTitle();
         String date = blog.getDate();
-        String author= blog.getAuthor();
+        String author = blog.getAuthor();
         String excerpt = blog.getExcerpt();
         String categories = blog.getCategories();
         String foto = blog.getImage();
         String avatar = blog.getAvatar();
-        String profilID=blog.getProfilID();
-        String blogID=blog.getBlogID();
+        String profilID = blog.getProfilID();
+        String blogID = blog.getBlogID();
 
-        holder.setItemText(title, date, author, Html.fromHtml(excerpt), categories,profilID,blogID);
+        holder.setItemText(title, date, author, Html.fromHtml(excerpt), categories, profilID, blogID);
         holder.setItemImage(foto);
         holder.setItemAvatar(avatar);
 
@@ -84,13 +79,12 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
         private final TextView mItemTextView4;
         private final TextView mItemTextViewID;
         private final TextView blogsID;
+        ImageLoader imageLoader = AppController.getInstance().getImageLoader();
         private NetworkImageView image;
         private CircleImageView avatar;
 
-        ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-
-        public RecyclerItemViewHolder(final View parent, TextView title, TextView date, TextView author, TextView excerpt, TextView categories, NetworkImageView networkImageView, CircleImageView avatarImage,TextView profilID,TextView blogID) {
+        public RecyclerItemViewHolder(final View parent, TextView title, TextView date, TextView author, TextView excerpt, TextView categories, NetworkImageView networkImageView, CircleImageView avatarImage, TextView profilID, TextView blogID) {
             super(parent);
             parent.setClickable(true);
             parent.setOnClickListener(this);
@@ -102,7 +96,7 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
             mItemTextViewID = profilID;
             image = networkImageView;
             avatar = avatarImage;
-            blogsID=blogID;
+            blogsID = blogID;
 
         }
 
@@ -128,10 +122,10 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
                 }
             });
 
-            return new RecyclerItemViewHolder(parent, title, date, author, excerpt, categories, image, avatar,profileID,blogID);
+            return new RecyclerItemViewHolder(parent, title, date, author, excerpt, categories, image, avatar, profileID, blogID);
         }
 
-        public void setItemText(String title, CharSequence date, CharSequence author, CharSequence excerpt, CharSequence categories,CharSequence profilID,CharSequence blogID) {
+        public void setItemText(String title, CharSequence date, CharSequence author, CharSequence excerpt, CharSequence categories, CharSequence profilID, CharSequence blogID) {
             mItemTextView.setText(title);
             mItemTextView1.setText(date);
             mItemTextView2.setText(author);
@@ -168,12 +162,12 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
 
         @Override
         public void onClick(View v) {
-            Log.d("tag:",blogsID.getText().toString());
-            Intent i=new Intent(v.getContext(), BlogIcerikAcitivity.class);
-            i.putExtra("blogID",blogsID.getText());
+            Log.d("tag:", blogsID.getText().toString());
+            Intent i = new Intent(v.getContext(), BlogIcerikAcitivity.class);
+            i.putExtra("blogID", blogsID.getText());
             v.getContext().startActivity(i);
         }
     }
 
-    }
+}
 

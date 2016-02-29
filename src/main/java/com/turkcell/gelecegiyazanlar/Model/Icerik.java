@@ -1,17 +1,17 @@
-package com.turkcell.gelecegiyazanlar.Model;
+package com.turkcell.gelecegiyazanlar.model;
 
 /**
  * Created by asus on 30.9.2015.
  */
 public class Icerik {
-    private String nodeID,title,date,nodetype,excerpt;
+    private String nodeID, title, date, nodetype, excerpt;
 
     public Icerik() {
-        this.nodeID="";
-        this.title="";
-        this.date="";
-        this.nodetype="";
-        this.excerpt="";
+        this.nodeID = "";
+        this.title = "";
+        this.date = "";
+        this.nodetype = "";
+        this.excerpt = "";
     }
 
     public String getNodeID() {

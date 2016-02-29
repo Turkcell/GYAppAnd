@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Model;
+package com.turkcell.gelecegiyazanlar.model;
 
 /**
  * Created by asus on 9.9.2015.

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Model;
+package com.turkcell.gelecegiyazanlar.model;
 
 /**
  * Created by dyildirim76 on 10.09.2015.
@@ -6,26 +6,26 @@ package com.turkcell.gelecegiyazanlar.Model;
 public class Etkinlik {
 
 
-    private String image;
     String nodeID;
-    String  title;
+    String title;
     String startDate;
     String endDate;
     String sonBasvuruTarihi;
     String kalanGun;
+    private String image;
 
-    public Etkinlik(){
+    public Etkinlik() {
 
     }
 
 
-    public Etkinlik(String nodeID,String title, String startDate, String endDate,String thumbnail,String day) {
+    public Etkinlik(String nodeID, String title, String startDate, String endDate, String thumbnail, String day) {
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.image=thumbnail;
-        this.nodeID=nodeID;
-        this.kalanGun=day;
+        this.image = thumbnail;
+        this.nodeID = nodeID;
+        this.kalanGun = day;
 
     }
 
@@ -81,8 +81,6 @@ public class Etkinlik {
     }
 
 
-
-
     public String getKalanGun() {
         return kalanGun;
     }
@@ -90,8 +88,6 @@ public class Etkinlik {
     public void setKalanGun(String kalanGun) {
         this.kalanGun = kalanGun;
     }
-
-
 
 
 }

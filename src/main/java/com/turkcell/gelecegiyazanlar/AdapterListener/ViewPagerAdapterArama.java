@@ -1,11 +1,11 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.turkcell.gelecegiyazanlar.Fragment.AramaFragment;
+import com.turkcell.gelecegiyazanlar.fragment.AramaFragment;
 
 public class ViewPagerAdapterArama extends FragmentStatePagerAdapter {
 
@@ -27,8 +27,8 @@ public class ViewPagerAdapterArama extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
 
 
-                AramaFragment tab = new AramaFragment();
-                return tab;
+        AramaFragment tab = new AramaFragment();
+        return tab;
 
     }
 

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Utility;
+package com.turkcell.gelecegiyazanlar.utility;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,20 +9,21 @@ import java.util.Date;
 public class TarihCevir {
     long tarih;
     String tarihformat;
-    public TarihCevir(){
+
+    public TarihCevir() {
 
     }
 
-    public String Cevir(String timestamp){
+    public String Cevir(String timestamp) {
 
 
-         tarih= Long.parseLong(timestamp) * 1000;
+        tarih = Long.parseLong(timestamp) * 1000;
 
         java.text.DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date netDate = (new Date(tarih));
 
 
-        tarihformat= sdf.format(netDate);
+        tarihformat = sdf.format(netDate);
 
         return tarihformat;
     }

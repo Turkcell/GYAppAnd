@@ -1,10 +1,10 @@
-package com.turkcell.gelecegiyazanlar.Activity;
+package com.turkcell.gelecegiyazanlar.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,45 +17,40 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import com.splunk.mint.Mint;
 import com.turkcell.curio.CurioClient;
-import com.turkcell.gelecegiyazanlar.Model.DrawerItems;
-import com.turkcell.gelecegiyazanlar.Fragment.ElcilerFragment;
-import com.turkcell.gelecegiyazanlar.Fragment.BlogFragment;
-import com.turkcell.gelecegiyazanlar.Fragment.EgitimFragment;
-import com.turkcell.gelecegiyazanlar.AdapterListener.ListDrawerAdapter;
-import com.turkcell.gelecegiyazanlar.Fragment.EtkinlikFragment;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.adapterlistener.ListDrawerAdapter;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.fragment.BlogFragment;
+import com.turkcell.gelecegiyazanlar.fragment.EgitimFragment;
+import com.turkcell.gelecegiyazanlar.fragment.ElcilerFragment;
+import com.turkcell.gelecegiyazanlar.fragment.EtkinlikFragment;
+import com.turkcell.gelecegiyazanlar.model.DrawerItems;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private static int save = -1;
-
     View egitimView;
     android.support.v7.widget.Toolbar toolbar;
+    String mTitle = "Geleceði Yazanlar";
+    ArrayList<DrawerItems> drawerList = new ArrayList<>();
+    TextView textView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private ListView leftDrawerList;
     private ListDrawerAdapter navigationDrawerAdapter;
-
-    String mTitle="Geleceði Yazanlar";
-    ArrayList<DrawerItems> drawerList=new ArrayList<>();
-
-    private static final String TAG = "MainActivity";
-
-    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Mint.initAndStartSession(MainActivity.this, "75ff8154");
+        Mint.initAndStartSession(MainActivity.this, GYConfiguration.SPLUNK_ID);
 
         CurioClient.getInstance(this).getPushData(getIntent());
 
@@ -65,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-         textView=(TextView)findViewById(R.id.titleCenter);
+        textView = (TextView) findViewById(R.id.titleCenter);
         textView.setText(mTitle);
 
         Log.d("conf", GYConfiguration.getDomain());
@@ -74,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         Yukle();
 
         // Baþlangýç ekran fragmentý
-       FragmentManager ft = getSupportFragmentManager();
+        FragmentManager ft = getSupportFragmentManager();
         ft.beginTransaction()
                 .replace(R.id.fragment, new EgitimFragment())
                 .commit();
@@ -84,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         //Menü Listesi Oluþturma
         leftDrawerList = (ListView) findViewById(R.id.left_drawer);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        navigationDrawerAdapter=new ListDrawerAdapter(drawerList);
+        navigationDrawerAdapter = new ListDrawerAdapter(drawerList);
         leftDrawerList.setAdapter(navigationDrawerAdapter);
         initDrawer();
 
@@ -100,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                 parent.getChildAt(position).setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
 
-                if (save != -1 && save != position){
+                if (save != -1 && save != position) {
                     parent.getChildAt(save).setBackgroundColor(getResources().getColor(android.R.color.white));
                 }
 
@@ -111,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager ft = getSupportFragmentManager();
                 switch (position) {
                     case 0:
-                        mTitle="Eðitimler";
+                        mTitle = "Eðitimler";
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new EgitimFragment())
@@ -119,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 1:
-                        mTitle="Blog";
+                        mTitle = "Blog";
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new BlogFragment())
@@ -127,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 2:
-                        mTitle="Etkinlik";
+                        mTitle = "Etkinlik";
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new EtkinlikFragment())
@@ -135,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 3:
-                        mTitle="Geliþtiriciler";
+                        mTitle = "Geliþtiriciler";
 
                         ft.beginTransaction()
                                 .replace(R.id.fragment, new ElcilerFragment())
@@ -150,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void initDrawer() {
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
@@ -188,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -195,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i=new Intent(MainActivity.this,AramaActivity.class);
+            Intent i = new Intent(MainActivity.this, AramaActivity.class);
             startActivity(i);
             return true;
         }
@@ -205,18 +202,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     *   Liste elemanlarýný doldurduk.
+     * Liste elemanlarýný doldurduk.
      */
-    public void Yukle(){
-        drawerList.add(new DrawerItems(R.drawable.egitimicon,"Eðitim"));
-        drawerList.add(new DrawerItems(R.drawable.blogicon,"Blog"));
-        drawerList.add(new DrawerItems(R.drawable.etkinlikicon,"Etkinlik"));
-        drawerList.add(new DrawerItems(R.drawable.gelistiriciicon,"Geliþtiriciler"));
+    public void Yukle() {
+        drawerList.add(new DrawerItems(R.drawable.egitimicon, "Eðitim"));
+        drawerList.add(new DrawerItems(R.drawable.blogicon, "Blog"));
+        drawerList.add(new DrawerItems(R.drawable.etkinlikicon, "Etkinlik"));
+        drawerList.add(new DrawerItems(R.drawable.gelistiriciicon, "Geliþtiriciler"));
     }
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(Gravity.LEFT)){
+        if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
             drawerLayout.closeDrawers();
         }
     }

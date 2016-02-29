@@ -1,5 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Fragment;
-
+package com.turkcell.gelecegiyazanlar.fragment;
 
 
 import android.animation.Animator;
@@ -15,9 +14,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.turkcell.gelecegiyazanlar.Activity.EgitimBaslikActivity;
-import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayoutIcon;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.EgitimBaslikActivity;
+import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayoutIcon;
 
 
 /**
@@ -459,7 +458,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
             case R.id.ios:
                 if (iosIcerik.getVisibility() == View.VISIBLE) {
                     iosIcerik.setVisibility(View.GONE);
-                  goster();
+                    goster();
                     tablar.setVisibility(View.VISIBLE);
                     iosSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
                 } else {
@@ -526,7 +525,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     winSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
                 } else {
                     winIcerik.setVisibility(View.VISIBLE);
-                   sakla();
+                    sakla();
                     tablar.setVisibility(View.GONE);
                     winSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
 
@@ -739,6 +738,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     }
                 }).start();
     }
+
     public void goster() {
         ust_layout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2))
                 .setListener(new Animator.AnimatorListener() {

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Fragment;
+package com.turkcell.gelecegiyazanlar.fragment;
 
 import android.animation.Animator;
 import android.graphics.Bitmap;
@@ -19,13 +19,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.turkcell.gelecegiyazanlar.AdapterListener.RecyclerAdapterEtkinlik;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Etkinlik;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
-import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.adapterlistener.RecyclerAdapterEtkinlik;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.model.Etkinlik;
+import com.turkcell.gelecegiyazanlar.utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,7 +42,6 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
     Toolbar toolbar;
 
 
-
     JsonArrayRequest request;
     ImageRequest imageRequest;
     Bitmap bitmap;
@@ -51,24 +50,17 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
     String image;
     List<Etkinlik> itemList = new ArrayList<>();
     RecyclerView recyclerView;
-    private LinearLayoutManager layoutManager;
     RecyclerAdapterEtkinlik recyclerAdapterEtkinlik;
-
-    private int index = 0;
-
-    private int maksSize ;
     String formattedDate;
-
-
-   //int current_page=0;
+    //int current_page=0;
     YuklenmeEkran yukleme;
     TarihCevir tarihCevir;
     CollapsingToolbarLayout collapsingToolbarLayout;
-
-
     LinearLayout layout;
-
     LayoutInflater layoutInflater;
+    private LinearLayoutManager layoutManager;
+    private int index = 0;
+    private int maksSize;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,28 +68,28 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
 
 
-        final View rootView= inflater.inflate(R.layout.fragment_etkinlik, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_etkinlik, container, false);
 
 
-        toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
 
 
-        yukleme=new YuklenmeEkran(getActivity());
-        tarihCevir=new TarihCevir();
+        yukleme = new YuklenmeEkran(getActivity());
+        tarihCevir = new TarihCevir();
 
-        layout=(LinearLayout)rootView.findViewById(R.id.layout_ust);
-        layoutManager=new LinearLayoutManager(getActivity());
+        layout = (LinearLayout) rootView.findViewById(R.id.layout_ust);
+        layoutManager = new LinearLayoutManager(getActivity());
 
-        url = GYConfiguration.getDomain()+"etkinlik/retrieve?nitems=10&index=";
+        url = GYConfiguration.getDomain() + "etkinlik/retrieve?nitems=10&index=";
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
 
         SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
-        formattedDate= currentDate.format(todayDate);
+        formattedDate = currentDate.format(todayDate);
 
-        Log.d("time_current:",formattedDate);
+        Log.d("time_current:", formattedDate);
 
 
         Listele(0);
@@ -118,7 +110,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                      */
                 } else if (dy > 0) {
                     layout.animate()
-                            .translationY(-layout.getBottom()-toolbar.getBottom())
+                            .translationY(-layout.getBottom() - toolbar.getBottom())
                             .setInterpolator(new AccelerateInterpolator(2))
                             .setListener(new Animator.AnimatorListener() {
                                 @Override
@@ -128,7 +120,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                  layout.setVisibility(View.GONE);
+                                    layout.setVisibility(View.GONE);
                                 }
 
                                 @Override
@@ -149,49 +141,47 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
         });
 
 
-
-
         return rootView;
     }
 
     /**
      * Etkinlikleri Listele
+     *
      * @param x
      */
-    public void Listele(int x){
+    public void Listele(int x) {
 
 
-        if(GYConfiguration.checkInternetConnectionShowDialog(getActivity())){
+        if (GYConfiguration.checkInternetConnectionShowDialog(getActivity())) {
             yukleme.surecBasla();
         }
 
-        request  = new JsonArrayRequest(Request.Method.GET,url+(1+x), null, new Response.Listener<JSONArray>() {
+        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x), null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                   yukleme.surecDurdur();
+                yukleme.surecDurdur();
 
 
-                for (int i = 0; i < response.length() ; i++) {
+                for (int i = 0; i < response.length(); i++) {
 
                     try {
-                        String title=response.getJSONObject(i).getString("title");
-                        String startDate=response.getJSONObject(i).getString("startDate");
-                        String endDate=response.getJSONObject(i).getString("endDate");
-                        String thumbnail=response.getJSONObject(i).getString("thumbnail");
-                        String nodeID=response.getJSONObject(i).getString("nodeID");
+                        String title = response.getJSONObject(i).getString("title");
+                        String startDate = response.getJSONObject(i).getString("startDate");
+                        String endDate = response.getJSONObject(i).getString("endDate");
+                        String thumbnail = response.getJSONObject(i).getString("thumbnail");
+                        String nodeID = response.getJSONObject(i).getString("nodeID");
 
-                        String gercekBaslamaTarih=tarihCevir.Cevir(startDate);
-                        String gercekBitisTarih=tarihCevir.Cevir(endDate);
+                        String gercekBaslamaTarih = tarihCevir.Cevir(startDate);
+                        String gercekBitisTarih = tarihCevir.Cevir(endDate);
 
 
+                        String kalanGun = Long.toString(Math.abs(farkAl(formattedDate, gercekBaslamaTarih)));
 
-                        String kalanGun=Long.toString(Math.abs(farkAl(formattedDate, gercekBaslamaTarih)));
-
-                        if(farkAl(formattedDate,gercekBaslamaTarih)<=0){
-                            itemList.add(i+maksSize,new Etkinlik(nodeID,title,gercekBaslamaTarih,gercekBitisTarih,thumbnail,kalanGun));
-                        }else {
-                            itemList.add(i+maksSize,new Etkinlik(nodeID,title,gercekBaslamaTarih,gercekBitisTarih,thumbnail,"-"));
+                        if (farkAl(formattedDate, gercekBaslamaTarih) <= 0) {
+                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, kalanGun));
+                        } else {
+                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, "-"));
                         }
 
                     } catch (JSONException e) {
@@ -200,9 +190,9 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                         e.printStackTrace();
                     }
                 }
-                maksSize=itemList.size();
+                maksSize = itemList.size();
                 recyclerAdapterEtkinlik =
-                        new RecyclerAdapterEtkinlik(itemList,getActivity());
+                        new RecyclerAdapterEtkinlik(itemList, getActivity());
 
                 recyclerView.setAdapter(recyclerAdapterEtkinlik);
 
@@ -222,35 +212,36 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
     /**
      * Etkinlikleri daha fazla yükle
+     *
      * @param x
      */
-    public void dahaFazla(int x){
+    public void dahaFazla(int x) {
 
 
         yukleme.surecBasla();
 
-        request  = new JsonArrayRequest(Request.Method.GET,url+(1+x), null, new Response.Listener<JSONArray>() {
+        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x), null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
                 yukleme.surecDurdur();
 
-                for (int i = 0; i < response.length() ; i++) {
+                for (int i = 0; i < response.length(); i++) {
                     try {
-                        String title=response.getJSONObject(i).getString("title");
-                        String startDate=response.getJSONObject(i).getString("startDate");
-                        String endDate=response.getJSONObject(i).getString("endDate");
-                        String thumbnail=response.getJSONObject(i).getString("thumbnail");
-                        String nodeID=response.getJSONObject(i).getString("nodeID");
+                        String title = response.getJSONObject(i).getString("title");
+                        String startDate = response.getJSONObject(i).getString("startDate");
+                        String endDate = response.getJSONObject(i).getString("endDate");
+                        String thumbnail = response.getJSONObject(i).getString("thumbnail");
+                        String nodeID = response.getJSONObject(i).getString("nodeID");
 
-                        String gercekBaslamaTarih=tarihCevir.Cevir(startDate);
-                        String gercekBitisTarih=tarihCevir.Cevir(endDate);
+                        String gercekBaslamaTarih = tarihCevir.Cevir(startDate);
+                        String gercekBitisTarih = tarihCevir.Cevir(endDate);
 
-                        String kalanGun=Long.toString(Math.abs(farkAl(formattedDate, gercekBaslamaTarih)));
-                        if(farkAl(formattedDate,gercekBaslamaTarih)<=0){
-                            itemList.add(i+maksSize,new Etkinlik(nodeID,title,gercekBaslamaTarih,gercekBitisTarih,thumbnail,kalanGun));
-                        }else {
-                            itemList.add(i+maksSize,new Etkinlik(nodeID,title,gercekBaslamaTarih,gercekBitisTarih,thumbnail,"-"));
+                        String kalanGun = Long.toString(Math.abs(farkAl(formattedDate, gercekBaslamaTarih)));
+                        if (farkAl(formattedDate, gercekBaslamaTarih) <= 0) {
+                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, kalanGun));
+                        } else {
+                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, "-"));
                         }
 
                     } catch (JSONException e) {
@@ -260,7 +251,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                     }
                 }
 
-                maksSize=maksSize+10;
+                maksSize = maksSize + 10;
                 recyclerAdapterEtkinlik.notifyDataSetChanged();
 
             }
@@ -276,6 +267,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
         AppController.getInstance().addToRequestQueue(request);
 
     }
+
     public long farkAl(String d1, String d2) throws ParseException {
         Date date1;
         Date date2;
@@ -287,14 +279,13 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
         date2 = dates.parse(d2);
 
 
-
         long difference = date1.getTime() - date2.getTime();
         long differenceDates = difference / (24 * 60 * 60 * 1000);
 
 
         //String dayDifference = Long.toString(differenceDates);
 
-     return differenceDates;
+        return differenceDates;
     }
 
 

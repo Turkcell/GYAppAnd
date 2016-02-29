@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,23 +11,24 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import com.turkcell.gelecegiyazanlar.Activity.EgitimIcerikActivity;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.EgitimIcerikActivity;
 
 import java.util.ArrayList;
 
 public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
     private Activity activity;
-    private ArrayList<Object> childtems,childIdItems;
+    private ArrayList<Object> childtems, childIdItems;
     private LayoutInflater inflater;
-    private ArrayList<String> parentItems, child,nodeIDGroup,childId;
+    private ArrayList<String> parentItems, child, nodeIDGroup, childId;
+    private int lastPosition = -1;
 
-    public MyExpandableAdapter(ArrayList<String> parents, ArrayList<Object> childern,ArrayList<Object> childIdItems,ArrayList<String> nodeIDParent) {
+    public MyExpandableAdapter(ArrayList<String> parents, ArrayList<Object> childern, ArrayList<Object> childIdItems, ArrayList<String> nodeIDParent) {
         this.parentItems = parents;
         this.childtems = childern;
-        this.nodeIDGroup=nodeIDParent;
-        this.childIdItems=childIdItems;
+        this.nodeIDGroup = nodeIDParent;
+        this.childIdItems = childIdItems;
     }
 
     public void setInflater(LayoutInflater inflater, Activity activity) {
@@ -35,12 +36,11 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
         this.activity = activity;
     }
 
-    private int lastPosition = -1;
     @Override
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
         child = (ArrayList<String>) childtems.get(groupPosition);
-        childId=(ArrayList<String>) childIdItems.get(groupPosition);
+        childId = (ArrayList<String>) childIdItems.get(groupPosition);
 
         final TextView textView;
 
@@ -50,22 +50,22 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
         }
 
         textView = (TextView) convertView.findViewById(R.id.textView1);
-       final TextView nodeChild = (TextView) convertView.findViewById(R.id.nodeID);
+        final TextView nodeChild = (TextView) convertView.findViewById(R.id.nodeID);
         textView.setText(child.get(childPosition));
         nodeChild.setText(childId.get(childPosition));
-        Log.d("ifade",childId.get(childPosition)+" "+child.get(childPosition));
+        Log.d("ifade", childId.get(childPosition) + " " + child.get(childPosition));
 
 
-    convertView.setOnClickListener(new OnClickListener() {
-         @Override
-         public void onClick(View v) {
+        convertView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-             Intent i = new Intent(activity, EgitimIcerikActivity.class);
-             i.putExtra("nodeIDEgitim", nodeChild.getText().toString());
-             i.putExtra("nodeTitle", textView.getText().toString());
-             activity.startActivity(i);
-         }
-     });
+                Intent i = new Intent(activity, EgitimIcerikActivity.class);
+                i.putExtra("nodeIDEgitim", nodeChild.getText().toString());
+                i.putExtra("nodeTitle", textView.getText().toString());
+                activity.startActivity(i);
+            }
+        });
 
         textView.setOnClickListener(new OnClickListener() {
             @Override
@@ -90,7 +90,7 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
         ((CheckedTextView) convertView.findViewById(R.id.textView1)).setText(parentItems.get(groupPosition));
         ((CheckedTextView) convertView.findViewById(R.id.textView1)).setChecked(isExpanded);
-        final TextView id=((TextView) convertView.findViewById(R.id.id));
+        final TextView id = ((TextView) convertView.findViewById(R.id.id));
         id.setText(nodeIDGroup.get(groupPosition));
 
 

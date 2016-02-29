@@ -1,11 +1,11 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.turkcell.gelecegiyazanlar.Fragment.ProfilFragment;
+import com.turkcell.gelecegiyazanlar.fragment.ProfilFragment;
 
 public class ViewPagerAdapterProfil extends FragmentStatePagerAdapter {
 
@@ -21,6 +21,7 @@ public class ViewPagerAdapterProfil extends FragmentStatePagerAdapter {
         this.NumbOfTabs = mNumbOfTabsumb;
 
     }
+
 
     //This method return the fragment for the every position in the View Pager
     @Override

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Fragment;
+package com.turkcell.gelecegiyazanlar.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.turkcell.gelecegiyazanlar.Activity.ProfilActivity;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.ProfilActivity;
 
 
 public class ElcilerFragment extends android.support.v4.app.Fragment {
@@ -23,20 +23,21 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
     LinearLayout lyFeyzaOkumus;
     String id;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView=inflater.inflate(R.layout.fragment_gelistiriciler, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_gelistiriciler, container, false);
 
 
         lyFeyzaOkumus = (LinearLayout) rootView.findViewById(R.id.feyza);
         lyDogukanYildirim = (LinearLayout) rootView.findViewById(R.id.dogukanYildirim);
         lyGizemYurdagul = (LinearLayout) rootView.findViewById(R.id.gizemYurdagul);
         lyAbdullahSarikaya = (LinearLayout) rootView.findViewById(R.id.abdullahSarikaya);
-        lyKadirhanEkmekcioglu = (LinearLayout)rootView. findViewById(R.id.kadirhanEkmekcioglu);
+        lyKadirhanEkmekcioglu = (LinearLayout) rootView.findViewById(R.id.kadirhanEkmekcioglu);
         lyTanerUtku = (LinearLayout) rootView.findViewById(R.id.tanerUtku);
-        lyErenUtku = (LinearLayout)rootView. findViewById(R.id.erenUtku);
+        lyErenUtku = (LinearLayout) rootView.findViewById(R.id.erenUtku);
         lyVolkanKilic = (LinearLayout) rootView.findViewById(R.id.volkanKilic);
 
 
@@ -87,7 +88,6 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
         });
 
 
-
         lyKadirhanEkmekcioglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,7 +109,6 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 startActivity(intent);
             }
         });
-
 
 
         lyErenUtku.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +134,6 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
         });
         return rootView;
     }
-
 
 
 }

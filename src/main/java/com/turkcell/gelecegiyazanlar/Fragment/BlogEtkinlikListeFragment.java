@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Fragment;
+package com.turkcell.gelecegiyazanlar.fragment;
 
 import android.animation.Animator;
 import android.graphics.Bitmap;
@@ -19,14 +19,14 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.turkcell.gelecegiyazanlar.AdapterListener.RecyclerAdapterBlog;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Blog;
-import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utility.TarihCevir;
-import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.adapterlistener.RecyclerAdapterBlog;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayout;
+import com.turkcell.gelecegiyazanlar.model.Blog;
+import com.turkcell.gelecegiyazanlar.utility.TarihCevir;
+import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BlogEtkinlikListeFragment extends Fragment{
+public class BlogEtkinlikListeFragment extends Fragment {
 
     JsonArrayRequest request;
 
@@ -45,107 +45,99 @@ public class BlogEtkinlikListeFragment extends Fragment{
 
     List<Blog> itemList = new ArrayList<>();
     RecyclerView recyclerView;
-
-
-    private int index = -1;
     LinearLayout layout;
     Toolbar toolbar;
-
-    private int maksSize ;
     RecyclerAdapterBlog recyclerAdapterBlog;
+    Bitmap avatarIcon;
+    int a = 0;
+    private int index = -1;
+    private int maksSize;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
 
+        ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.pagerBlog);
+        SlidingTabLayout tabLayout = (SlidingTabLayout) getActivity().findViewById(R.id.tabsBlog);
 
-       ViewPager viewPager=(ViewPager)getActivity().findViewById(R.id.pagerBlog);
-        SlidingTabLayout tabLayout=(SlidingTabLayout)getActivity().findViewById(R.id.tabsBlog);
-
-        toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar);
-        layout=(LinearLayout)getActivity().findViewById(R.id.ust_blok);
-        View rootView= inflater.inflate(R.layout.fragment_blog_liste, container, false);
-         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        layout = (LinearLayout) getActivity().findViewById(R.id.ust_blok);
+        View rootView = inflater.inflate(R.layout.fragment_blog_liste, container, false);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        url= GYConfiguration.getDomain()+"article/retrieve?nitems=10&index=";
-        yuklenmeEkran=new YuklenmeEkran(getActivity());
-        tarihCevir=new TarihCevir();
+        url = GYConfiguration.getDomain() + "article/retrieve?nitems=10&index=";
+        yuklenmeEkran = new YuklenmeEkran(getActivity());
+        tarihCevir = new TarihCevir();
 
 
-
-    if(viewPager.getCurrentItem()==0){
-        Listele(718,-1);
-       Scroll(718);
-    }
+        if (viewPager.getCurrentItem() == 0) {
+            Listele(718, -1);
+            Scroll(718);
+        }
         Log.d("log1", String.valueOf(viewPager.getCurrentItem()));
-    tabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        tabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            itemList.clear();
-            switch (position){
-                case 0:
-                    Log.d("log1", "gy");
-                    Listele(718, 0);
-                    Scroll(718);
-                    break;
-                case 1:
-                    Log.d("log2", "mobildeyim");
-                    Listele(31, 0);
-                    Scroll(31);
-                    break;
-                case 2:
-                    Log.d("log3", "android");
-                    Listele(29, 0);
-                     Scroll(29);
-
-                    break;
-                case 3:
-                    Listele(28, 0);
-                    Scroll(28);
-
-                    break;
-                case 4:
-                    Listele(738, 0);
-                      Scroll(738);
-
-                    break;
             }
-        }
 
-        @Override
-        public void onPageScrollStateChanged(int state) {
+            @Override
+            public void onPageSelected(int position) {
+                itemList.clear();
+                switch (position) {
+                    case 0:
+                        Log.d("log1", "gy");
+                        Listele(718, 0);
+                        Scroll(718);
+                        break;
+                    case 1:
+                        Log.d("log2", "mobildeyim");
+                        Listele(31, 0);
+                        Scroll(31);
+                        break;
+                    case 2:
+                        Log.d("log3", "android");
+                        Listele(29, 0);
+                        Scroll(29);
 
-        }
-    });
+                        break;
+                    case 3:
+                        Listele(28, 0);
+                        Scroll(28);
 
+                        break;
+                    case 4:
+                        Listele(738, 0);
+                        Scroll(738);
 
+                        break;
+                }
+            }
 
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
         return rootView;
 
     }
-    Bitmap avatarIcon;
-int a=0;
 
-    public void Listele(int kategori,int x){
+    public void Listele(int kategori, int x) {
 
-        if(GYConfiguration.checkInternetConnectionShowDialog(getActivity())){
+        if (GYConfiguration.checkInternetConnectionShowDialog(getActivity())) {
             yuklenmeEkran.surecBasla();
         }
 
-        Log.d("urlBlog:", url+(1+x)+"&kategoriID="+kategori);
-        request = new JsonArrayRequest(Request.Method.GET, url+(1+x)+"&kategoriID="+kategori, null, new Response.Listener<JSONArray>() {
+        Log.d("urlBlog:", url + (1 + x) + "&kategoriID=" + kategori);
+        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -155,38 +147,36 @@ int a=0;
                 for (int i = 0; i < response.length(); i++) {
 
 
-
                     try {
-                        String blogID=response.getJSONObject(i).getString("id");
+                        String blogID = response.getJSONObject(i).getString("id");
                         String title = response.getJSONObject(i).getString("title");
                         String date = response.getJSONObject(i).getString("date");
                         String author = response.getJSONObject(i).getString("author");
                         String authorUrl = response.getJSONObject(i).getString("authorAvatarUrl");
                         String excerpt = response.getJSONObject(i).getString("excerpt").replace("<p>", "");
-                        excerpt=excerpt.replace("</p>","");
-                        excerpt=excerpt.replace("&nbsp;"," ");
-                        excerpt=excerpt.replace("&#039;", "'");
-                        excerpt=excerpt.replace("&quot;", "\"");
+                        excerpt = excerpt.replace("</p>", "");
+                        excerpt = excerpt.replace("&nbsp;", " ");
+                        excerpt = excerpt.replace("&#039;", "'");
+                        excerpt = excerpt.replace("&quot;", "\"");
                         String categories = response.getJSONObject(i).getString("categories");
-                        String image=response.getJSONObject(i).getString("thumbnail");
-                        String profilID=response.getJSONObject(i).getString("authorID");
+                        String image = response.getJSONObject(i).getString("thumbnail");
+                        String profilID = response.getJSONObject(i).getString("authorID");
 
                         Log.d("tag:", authorUrl);
 
-                        String tarih=tarihCevir.Cevir(date);
+                        String tarih = tarihCevir.Cevir(date);
 
-                            itemList.add(i,new Blog(title, tarih, author, excerpt,categories,authorUrl,image,profilID,blogID));
-
+                        itemList.add(i, new Blog(title, tarih, author, excerpt, categories, authorUrl, image, profilID, blogID));
 
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-                 recyclerAdapterBlog =
+                recyclerAdapterBlog =
                         new RecyclerAdapterBlog(itemList, getActivity());
                 recyclerView.setAdapter(recyclerAdapterBlog);
-                maksSize=itemList.size();
+                maksSize = itemList.size();
                 recyclerAdapterBlog.notifyDataSetChanged();
 
             }
@@ -203,12 +193,12 @@ int a=0;
     }
 
 
-    public void dahaFazla(int kategori,int x){
+    public void dahaFazla(int kategori, int x) {
 
         yuklenmeEkran.surecBasla();
 
-        Log.d("urlDaha:", url+(1+x)+"&kategoriID="+kategori);
-        request = new JsonArrayRequest(Request.Method.GET, url+(1+x)+"&kategoriID="+kategori, null, new Response.Listener<JSONArray>() {
+        Log.d("urlDaha:", url + (1 + x) + "&kategoriID=" + kategori);
+        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -218,36 +208,34 @@ int a=0;
                 for (int i = 0; i < response.length(); i++) {
 
 
-
                     try {
-                        String blogID=response.getJSONObject(i).getString("id");
+                        String blogID = response.getJSONObject(i).getString("id");
                         String title = response.getJSONObject(i).getString("title");
                         String date = response.getJSONObject(i).getString("date");
                         String author = response.getJSONObject(i).getString("author");
                         String authorUrl = response.getJSONObject(i).getString("authorAvatarUrl");
                         String excerpt = response.getJSONObject(i).getString("excerpt").replace("<p>", "");
-                        excerpt=excerpt.replace("</p>","");
-                        excerpt=excerpt.replace("&nbsp;"," ");
-                        excerpt=excerpt.replace("&#039;", "'");
-                        excerpt=excerpt.replace("&quot;", "\"");
+                        excerpt = excerpt.replace("</p>", "");
+                        excerpt = excerpt.replace("&nbsp;", " ");
+                        excerpt = excerpt.replace("&#039;", "'");
+                        excerpt = excerpt.replace("&quot;", "\"");
                         String categories = response.getJSONObject(i).getString("categories");
-                        String image=response.getJSONObject(i).getString("thumbnail");
-                        String profilID=response.getJSONObject(i).getString("authorID");
+                        String image = response.getJSONObject(i).getString("thumbnail");
+                        String profilID = response.getJSONObject(i).getString("authorID");
 
                         Log.d("tag:", authorUrl);
 
-                        String tarih=tarihCevir.Cevir(date);
+                        String tarih = tarihCevir.Cevir(date);
 
                         itemList.add(i + maksSize, new Blog(title, tarih, author, excerpt, categories, authorUrl, image, profilID, blogID));
 
 
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
 
-                maksSize=maksSize+10;
+                maksSize = maksSize + 10;
                 recyclerAdapterBlog.notifyDataSetChanged();
 
 
@@ -264,7 +252,7 @@ int a=0;
 
     }
 
-    public void Scroll(final int kategori){
+    public void Scroll(final int kategori) {
 
         recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -274,14 +262,14 @@ int a=0;
                  */
                 if (!recyclerView.canScrollVertically(1)) {
                     index++;
-                    dahaFazla(kategori,index);
+                    dahaFazla(kategori, index);
 
                     /**
                      * Aþaðý Sürüklendiðinde
                      */
                 } else if (dy > 0) {
                     layout.animate()
-                            .translationY(-layout.getBottom()-toolbar.getBottom())
+                            .translationY(-layout.getBottom() - toolbar.getBottom())
                             .setInterpolator(new AccelerateInterpolator(2))
                             .setListener(new Animator.AnimatorListener() {
                                 @Override
@@ -311,7 +299,6 @@ int a=0;
             }
         });
     }
-
 
 
 }

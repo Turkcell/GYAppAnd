@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Fragment;
+package com.turkcell.gelecegiyazanlar.fragment;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.turkcell.gelecegiyazanlar.AdapterListener.ViewPagerAdapterBlogEtkinlik;
-import com.turkcell.gelecegiyazanlar.DesignEklentileri.SlidingTabLayout;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.adapterlistener.ViewPagerAdapterBlogEtkinlik;
+import com.turkcell.gelecegiyazanlar.dizayn.SlidingTabLayout;
 
 
 public class BlogFragment extends android.support.v4.app.Fragment {

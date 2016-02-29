@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,21 +10,21 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Kisi;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.model.Kisi;
 
 import java.util.List;
 
 /**
  * Created by asus on 17.9.2015.
  */
-public class KullaniciAramaAdapter  extends BaseAdapter {
+public class KullaniciAramaAdapter extends BaseAdapter {
+    ImageLoader image = AppController.getInstance().getImageLoader();
     private LayoutInflater layoutInflater;
     private List<Kisi> adapterKisiList;
-    ImageLoader image= AppController.getInstance().getImageLoader();
 
-    public KullaniciAramaAdapter(Activity activity, List<Kisi> kisiler){
+    public KullaniciAramaAdapter(Activity activity, List<Kisi> kisiler) {
         layoutInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         adapterKisiList = kisiler;
 
@@ -49,21 +49,21 @@ public class KullaniciAramaAdapter  extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if(image==null){
-            image=AppController.getInstance().getImageLoader();
+        if (image == null) {
+            image = AppController.getInstance().getImageLoader();
         }
 
 
-        View view = layoutInflater.inflate(R.layout.arama_satir_layout,parent,false);
+        View view = layoutInflater.inflate(R.layout.arama_satir_layout, parent, false);
         TextView textView = (TextView) view.findViewById(R.id.tvisimsoyisim);
         TextView kullanici = (TextView) view.findViewById(R.id.tvkullanici);
         NetworkImageView imageView = (NetworkImageView) view.findViewById(R.id.ivsimge);
 
 
         Kisi kisi = adapterKisiList.get(position);
-        textView.setText( kisi.getAdSoyad());
-                kullanici.setText(kisi.getKullaniciAdi());
-         imageView.setImageUrl(kisi.getKullaniciAvatarUrl(),image);
+        textView.setText(kisi.getAdSoyad());
+        kullanici.setText(kisi.getKullaniciAdi());
+        imageView.setImageUrl(kisi.getKullaniciAvatarUrl(), image);
 
 
         return view;

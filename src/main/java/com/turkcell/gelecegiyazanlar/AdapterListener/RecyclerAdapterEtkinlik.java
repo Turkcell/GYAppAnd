@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.turkcell.gelecegiyazanlar.Activity.EtkinlikIcerikActivity;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Model.Etkinlik;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.EtkinlikIcerikActivity;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.model.Etkinlik;
 
 import java.util.List;
 
@@ -23,8 +23,8 @@ import java.util.List;
  */
 public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<Etkinlik> mItemList;
     Activity activity;
+    private List<Etkinlik> mItemList;
 
 
     public RecyclerAdapterEtkinlik(List<Etkinlik> mItemList, Activity activity) {
@@ -35,12 +35,10 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
     }
 
 
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.card_item_etkinlik, parent, false);
-
 
 
         return RecyclerItemViewHolder.newInstance(view);
@@ -51,20 +49,19 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
 
         RecyclerItemViewHolder holder = (RecyclerItemViewHolder) viewHolder;
-        Etkinlik etkinlik=mItemList.get(position);
+        Etkinlik etkinlik = mItemList.get(position);
         String titleText = etkinlik.getTitle();
         String startDateTextView = etkinlik.getStartDate();
         String endDateTextView = etkinlik.getEndDate();
         String thumbnail = etkinlik.getImage();
-        String id=etkinlik.getNodeID();
-        String days=etkinlik.getKalanGun();
+        String id = etkinlik.getNodeID();
+        String days = etkinlik.getKalanGun();
 
-        holder.setItemText(titleText, startDateTextView, endDateTextView,id,days);
+        holder.setItemText(titleText, startDateTextView, endDateTextView, id, days);
         holder.setmImageView(thumbnail);
 
 
     }
-
 
 
     @Override
@@ -76,15 +73,15 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
         private final TextView mTitleTextView;
         private final TextView mStartDateTextView;
         private final TextView mEndDateTextView;
+        ImageLoader imageLoader = AppController.getInstance().getImageLoader();
         private NetworkImageView mImageView;
         private TextView profilid;
         private TextView days;
         private LinearLayout layout;
-        ImageLoader imageLoader= AppController.getInstance().getImageLoader();
 
         public RecyclerItemViewHolder(final View parent, TextView titleTextView,
                                       TextView mStartDateTextView, TextView mEndDateTextView,
-                                      NetworkImageView mImageView,TextView id,TextView gun,LinearLayout layout_gun) {
+                                      NetworkImageView mImageView, TextView id, TextView gun, LinearLayout layout_gun) {
 
             super(parent);
             parent.setClickable(true);
@@ -93,9 +90,9 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
             this.mStartDateTextView = mStartDateTextView;
             this.mEndDateTextView = mEndDateTextView;
             this.mImageView = mImageView;
-            this.profilid=id;
-            this.days=gun;
-            this.layout=layout_gun;
+            this.profilid = id;
+            this.days = gun;
+            this.layout = layout_gun;
 
         }
 
@@ -104,49 +101,45 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
             TextView startDateTextView = (TextView) parent.findViewById(R.id.startDateTextView);
             TextView endDateTextView = (TextView) parent.findViewById(R.id.endDateTextView);
             NetworkImageView imageView = (NetworkImageView) parent.findViewById(R.id.imageView);
-            TextView Profilid=(TextView)parent.findViewById(R.id.etkinlikId);
-            TextView kalanGun=(TextView)parent.findViewById(R.id.kalan_gun);
+            TextView Profilid = (TextView) parent.findViewById(R.id.etkinlikId);
+            TextView kalanGun = (TextView) parent.findViewById(R.id.kalan_gun);
 
-            LinearLayout layout=(LinearLayout)parent.findViewById(R.id.layout_gun);
+            LinearLayout layout = (LinearLayout) parent.findViewById(R.id.layout_gun);
 
             return new RecyclerItemViewHolder(parent, titleTextView, startDateTextView,
-                    endDateTextView,imageView,Profilid,kalanGun,layout);
+                    endDateTextView, imageView, Profilid, kalanGun, layout);
         }
-
 
 
         //Burada problem vardi.CharSequence text tek olarak tanımlanmıstı.
         // (CharSequence text,CharSequence texta,CharSequence textb) yaptık.
 
-        public void setItemText(CharSequence text,CharSequence texta,CharSequence textb,CharSequence id,CharSequence kalanGun) {
+        public void setItemText(CharSequence text, CharSequence texta, CharSequence textb, CharSequence id, CharSequence kalanGun) {
             mTitleTextView.setText(text);
             mStartDateTextView.setText(texta);
             mEndDateTextView.setText(textb);
             profilid.setText(id);
-            if(kalanGun.equals("-")){
+            if (kalanGun.equals("-")) {
                 layout.setVisibility(View.GONE);
-            }else layout.setVisibility(View.VISIBLE);
+            } else layout.setVisibility(View.VISIBLE);
             days.setText(kalanGun);
 
         }
 
-        public void setmImageView(String  image){
-            if(imageLoader==null){
-                imageLoader=AppController.getInstance().getImageLoader();
+        public void setmImageView(String image) {
+            if (imageLoader == null) {
+                imageLoader = AppController.getInstance().getImageLoader();
             }
-            mImageView.setImageUrl(image,imageLoader);
+            mImageView.setImageUrl(image, imageLoader);
         }
 
         @Override
         public void onClick(View v) {
-            Intent i=new Intent(v.getContext(), EtkinlikIcerikActivity.class);
-            i.putExtra("etkinlikID",profilid.getText());
+            Intent i = new Intent(v.getContext(), EtkinlikIcerikActivity.class);
+            i.putExtra("etkinlikID", profilid.getText());
             v.getContext().startActivity(i);
         }
     }
-
-
-
 
 
 }

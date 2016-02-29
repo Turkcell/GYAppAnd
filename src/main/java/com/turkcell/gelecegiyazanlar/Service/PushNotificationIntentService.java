@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Service;
+package com.turkcell.gelecegiyazanlar.service;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -11,71 +11,71 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
-import com.turkcell.gelecegiyazanlar.Activity.MainActivity;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.activity.MainActivity;
 
 /**
  * !!!!!
- *
+ * <p>
  * Important: This is just a sample reference implementation.
- *
+ * <p>
  * Please DO NOT copy and paste this class and code to your real life projects,
  * since it may cause issues on your project.
- *
+ * <p>
  * Please write your own code and implementation.
- *
+ * <p>
  * !!!!!
  */
 public class PushNotificationIntentService extends IntentService {
 
-	private int notificationId;
-	private NotificationManager notificationManager;
+    private int notificationId;
+    private NotificationManager notificationManager;
 
-	public PushNotificationIntentService() {
-		super("PushNotificationIntentService");
-	}
+    public PushNotificationIntentService() {
+        super("PushNotificationIntentService");
+    }
 
-	@Override
-	protected void onHandleIntent(Intent intent) {
-		Bundle extras = intent.getExtras();
-		GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
-		String messageType = gcm.getMessageType(intent);
-		
-		Log.w("PushIntentSerivce", extras.toString());
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        Bundle extras = intent.getExtras();
+        GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
+        String messageType = gcm.getMessageType(intent);
 
-		if (!extras.isEmpty()) {
-			String from = extras.getString("from");
+        Log.w("PushIntentSerivce", extras.toString());
 
-			if (!from.equals("google.com/iid") && GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
-				createNotification(extras);
-			}
-		}
+        if (!extras.isEmpty()) {
+            String from = extras.getString("from");
 
-		PushNotificationBroadcastReceiver.completeWakefulIntent(intent);
-	}
+            if (!from.equals("google.com/iid") && GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
+                createNotification(extras);
+            }
+        }
 
-	/**
-	 * Create notification after push received.
-	 * 
-	 * @param extras
-	 */
-	private void createNotification(Bundle extras) {
-		String message = extras.getString("collapse_key");
-		notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        PushNotificationBroadcastReceiver.completeWakefulIntent(intent);
+    }
 
-		Intent notificationIntent = new Intent(this, MainActivity.class);
-		notificationIntent.putExtras(extras);
+    /**
+     * Create notification after push received.
+     *
+     * @param extras
+     */
+    private void createNotification(Bundle extras) {
+        String message = extras.getString("collapse_key");
+        notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
 
-		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        notificationIntent.putExtras(extras);
 
-		NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this).setSmallIcon(R.mipmap.ic_logo).setContentTitle("Geleceði Yazanlar").setContentText(message);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-		notificationBuilder.setContentIntent(contentIntent);
-		notificationBuilder.setAutoCancel(true);
-		Notification notification = notificationBuilder.build();
-		notification.defaults |= Notification.DEFAULT_VIBRATE;
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this).setSmallIcon(R.mipmap.ic_logo).setContentTitle("Geleceði Yazanlar").setContentText(message);
 
-		notificationManager.notify(notificationId, notification);
-		notificationId++;
-	}
+        notificationBuilder.setContentIntent(contentIntent);
+        notificationBuilder.setAutoCancel(true);
+        Notification notification = notificationBuilder.build();
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+        notificationManager.notify(notificationId, notification);
+        notificationId++;
+    }
 }

@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.turkcell.gelecegiyazanlar.Model.DrawerItems;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.model.DrawerItems;
 
 import java.util.ArrayList;
 
@@ -19,8 +19,8 @@ public class ListDrawerAdapter extends BaseAdapter {
 
     ArrayList<DrawerItems> drawerItemList;
 
-    public ListDrawerAdapter( ArrayList<DrawerItems> drawerItemList) {
-    this.drawerItemList=drawerItemList;
+    public ListDrawerAdapter(ArrayList<DrawerItems> drawerItemList) {
+        this.drawerItemList = drawerItemList;
     }
 
     @Override
@@ -40,14 +40,14 @@ public class ListDrawerAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
+        if (convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-            convertView = layoutInflater.inflate(R.layout.drawer_list_item,parent,false);
+            convertView = layoutInflater.inflate(R.layout.drawer_list_item, parent, false);
         }
 
-        DrawerItems drawerItems=drawerItemList.get(position);
-        ImageView icon= (ImageView) convertView.findViewById(R.id.icon);
-        TextView textView=(TextView)convertView.findViewById(R.id.drawerText);
+        DrawerItems drawerItems = drawerItemList.get(position);
+        ImageView icon = (ImageView) convertView.findViewById(R.id.icon);
+        TextView textView = (TextView) convertView.findViewById(R.id.drawerText);
 
         icon.setImageResource(drawerItems.getIcon());
         textView.setText(drawerItems.getText());

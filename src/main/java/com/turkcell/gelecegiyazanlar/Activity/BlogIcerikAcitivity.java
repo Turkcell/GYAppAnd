@@ -1,4 +1,4 @@
-package com.turkcell.gelecegiyazanlar.Activity;
+package com.turkcell.gelecegiyazanlar.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -18,10 +18,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
-import com.turkcell.gelecegiyazanlar.Configuration.AppController;
-import com.turkcell.gelecegiyazanlar.Configuration.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.Utility.YuklenmeEkran;
+import com.turkcell.gelecegiyazanlar.configuration.AppController;
+import com.turkcell.gelecegiyazanlar.configuration.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.utility.YuklenmeEkran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,34 +30,36 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class BlogIcerikAcitivity extends AppCompatActivity {
 
-    String url ;
-    String avatar="";
+    String url;
+    String avatar = "";
     RequestQueue queue;
     ImageRequest imageRequest;
     //JsonObjectRequest jsonObjectRequest;
     JsonArrayRequest stringRequest;
-    String txtBaslik ="";
+    String txtBaslik = "";
     YuklenmeEkran ekran;
     String nodeID;
     CircleImageView circleImageView;
 
-    TextView yazar,yazarID,yorum;
+    TextView yazar, yazarID, yorum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog_icerik_acitivity);
 
-        Mint.initAndStartSession(BlogIcerikAcitivity.this, "75ff8154");
+        Mint.initAndStartSession(BlogIcerikAcitivity.this, GYConfiguration.SPLUNK_ID);
 
-        url= GYConfiguration.getDomain()+"article_content/retrieve?nodeID=";
-        ekran=new YuklenmeEkran(BlogIcerikAcitivity.this);
-         yazar=(TextView)findViewById(R.id.yazarIsim);
-         yazarID=(TextView)findViewById(R.id.yazarID);
-        yorum=(TextView)findViewById(R.id.txtYorum);
+        url = GYConfiguration.getDomain() + "article_content/retrieve?nodeID=";
+        ekran = new YuklenmeEkran(BlogIcerikAcitivity.this);
+        yazar = (TextView) findViewById(R.id.yazarIsim);
+        yazarID = (TextView) findViewById(R.id.yazarID);
+        yorum = (TextView) findViewById(R.id.txtYorum);
 
-        Bundle exras=getIntent().getExtras();
-        nodeID=exras.getString("blogID");
+        Bundle exras = getIntent().getExtras();
+        nodeID = exras.getString("blogID");
         Log.d("xx:", nodeID);
+
 
         yorum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,15 +70,16 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
             }
         });
 
-        if(GYConfiguration.checkInternetConnectionShowDialog(BlogIcerikAcitivity.this)){
+        if (GYConfiguration.checkInternetConnectionShowDialog(BlogIcerikAcitivity.this)) {
             ekran.surecBasla();
         }
 
-        stringRequest = new JsonArrayRequest(Request.Method.GET, url+nodeID, null, new Response.Listener<JSONArray>() {
+
+        stringRequest = new JsonArrayRequest(Request.Method.GET, url + nodeID, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                Log.d("json:",response.toString());
+                Log.d("json:", response.toString());
                 WebView webView = (WebView) findViewById(R.id.blogDetay);
                 webView.getSettings().setJavaScriptEnabled(true);
                 ekran.surecDurdur();
@@ -87,15 +90,15 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
                     txtBaslik = response.getJSONObject(0).getString("title");
                     baslik.setText(txtBaslik);
 
-                    String yazarIsim=response.getJSONObject(0).getString("adSoyad");
-                    String authorID=response.getJSONObject(0).getString("authorID");
+                    String yazarIsim = response.getJSONObject(0).getString("adSoyad");
+                    String authorID = response.getJSONObject(0).getString("authorID");
 
                     yazar.setText(yazarIsim);
                     yazarID.setText(authorID);
                     //Avatar baþlangýç
-                     circleImageView=(CircleImageView) findViewById(R.id.avatar);
-                    avatar=response.getJSONObject(0).getString("authorAvatarUrl");
-                      AvatarYukle(avatar);
+                    circleImageView = (CircleImageView) findViewById(R.id.avatar);
+                    avatar = response.getJSONObject(0).getString("authorAvatarUrl");
+                    AvatarYukle(avatar);
 
                     //Avatar bitiþ
 
@@ -114,7 +117,6 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
 
                         }
                     });
-
 
 
                     //Blog içerik baþlangýç
@@ -151,11 +153,11 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
 
     }
 
-    public void AvatarYukle(String avatar){
-        imageRequest=new ImageRequest(avatar, new Response.Listener<Bitmap>() {
+    public void AvatarYukle(String avatar) {
+        imageRequest = new ImageRequest(avatar, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-                  circleImageView.setImageBitmap(response);
+                circleImageView.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override
@@ -169,9 +171,9 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(yazarID.getText()!=null){
-                    Intent i = new Intent(BlogIcerikAcitivity.this,ProfilActivity.class);
-                    i.putExtra("id",yazarID.getText());
+                if (yazarID.getText() != null) {
+                    Intent i = new Intent(BlogIcerikAcitivity.this, ProfilActivity.class);
+                    i.putExtra("id", yazarID.getText());
                     startActivity(i);
                 }
             }

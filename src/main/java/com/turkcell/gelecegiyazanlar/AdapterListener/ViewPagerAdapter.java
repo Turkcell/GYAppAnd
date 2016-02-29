@@ -1,22 +1,23 @@
-package com.turkcell.gelecegiyazanlar.AdapterListener;
+package com.turkcell.gelecegiyazanlar.adapterlistener;
 
 /**
  * Created by asus on 24.8.2015.
  */
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 
-import com.turkcell.gelecegiyazanlar.Fragment.MobilFragment;
-import com.turkcell.gelecegiyazanlar.Fragment.OyunFragment;
-import com.turkcell.gelecegiyazanlar.Fragment.WebFragment;
 import com.turkcell.gelecegiyazanlar.R;
+import com.turkcell.gelecegiyazanlar.fragment.MobilFragment;
+import com.turkcell.gelecegiyazanlar.fragment.OyunFragment;
+import com.turkcell.gelecegiyazanlar.fragment.WebFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
 
-    private static int[] ICONS = new int[] {
+    private static int[] ICONS = new int[]{
             R.drawable.mobil_gri,
             R.drawable.web_gri,
             R.drawable.oyun_gri
@@ -25,8 +26,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     int NumbOfTabs; //  Tabs ta kaç eleman olduðunu gösterir
 
 
-
-    public ViewPagerAdapter(FragmentManager fm,CharSequence mTitles[], int mNumbOfTabsumb) {
+    public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
 
         this.Titles = mTitles;
@@ -38,26 +38,23 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Log.d("log egitim", String.valueOf(position));
-        if(position == 0)
-        {
+        if (position == 0) {
 
             MobilFragment tab1 = new MobilFragment();
             return tab1;
 
-        }
-        else if(position==1)            //Örnek Tab
+        } else if (position == 1)            //Örnek Tab
         {
             WebFragment tab2 = new WebFragment();
             return tab2;
-        }else{
+        } else {
 
-                OyunFragment tab3 = new OyunFragment();
+            OyunFragment tab3 = new OyunFragment();
             return tab3;
         }
 
 
     }
-
 
 
     @Override
