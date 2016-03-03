@@ -1,7 +1,6 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.animation.Animator;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -48,7 +47,6 @@ public class BlogEtkinlikListeFragment extends Fragment {
     LinearLayout layout;
     Toolbar toolbar;
     RecyclerAdapterBlog recyclerAdapterBlog;
-    Bitmap avatarIcon;
     int a = 0;
     private int index = -1;
     private int maksSize;

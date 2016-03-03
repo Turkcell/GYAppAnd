@@ -100,7 +100,7 @@ public class RecyclerAdapterEtkinlik extends RecyclerView.Adapter<RecyclerView.V
             TextView titleTextView = (TextView) parent.findViewById(R.id.titleTextView);
             TextView startDateTextView = (TextView) parent.findViewById(R.id.startDateTextView);
             TextView endDateTextView = (TextView) parent.findViewById(R.id.endDateTextView);
-            NetworkImageView imageView = (NetworkImageView) parent.findViewById(R.id.imageView);
+            NetworkImageView imageView = (NetworkImageView) parent.findViewById(R.id.bannerImageView);
             TextView Profilid = (TextView) parent.findViewById(R.id.etkinlikId);
             TextView kalanGun = (TextView) parent.findViewById(R.id.kalan_gun);
 

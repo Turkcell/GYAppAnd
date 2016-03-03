@@ -17,19 +17,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:textIsSelectable="true"
             android:textColor="@color/child_renk"
+            android:textIsSelectable="true"
             android:textSize="14sp"
             android:textStyle="bold"
             android:visibility="gone"/>
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/tvChildParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:textIsSelectable="true"
             android:textColor="@color/child_renk"
+            android:textIsSelectable="true"
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>

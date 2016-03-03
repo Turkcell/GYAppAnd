@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
@@ -35,9 +34,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
 
     String url;
     String avatar = "";
-    RequestQueue queue;
     ImageRequest imageRequest;
-    //JsonObjectRequest jsonObjectRequest;
     JsonArrayRequest stringRequest;
     String txtBaslik = "";
     YuklenmeEkran ekran;

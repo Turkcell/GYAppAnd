@@ -10,51 +10,51 @@
     <TextView
 
         android:id="@+id/etkinlikId"
-        android:visibility="gone"
-        android:textColor="@android:color/white"
-        android:textSize="23sp"
+        style="@style/Base.TextAppearance.AppCompat.Body2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:paddingTop="4dp"
-        style="@style/Base.TextAppearance.AppCompat.Body2"/>
+        android:textColor="@android:color/white"
+        android:textSize="23sp"
+        android:visibility="gone" />
 
 
 
     <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/bannerImageView"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/imageView"/>
+        android:layout_height="match_parent" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/seffaf_koyu_renk"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:background="@color/seffaf_koyu_renk">
     <TextView
 
         android:id="@+id/titleTextView"
-        android:text=""
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
+        style="@style/Base.TextAppearance.AppCompat.Body2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:paddingTop="4dp"
-        style="@style/Base.TextAppearance.AppCompat.Body2"/>
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:layout_below="@+id/titleTextView"
+    android:layout_marginBottom="5dp"
     android:layout_marginLeft="20dp"
-    android:layout_marginBottom="5dp">
+    android:orientation="horizontal">
     <TextView
         android:id="@+id/startDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:text=""
         android:textColor="@android:color/white"
-        android:layout_gravity="bottom"
         android:textSize="12sp"
 
         />
@@ -62,11 +62,11 @@
         android:id="@+id/araCizgiTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:text=" - "
         android:textColor="@android:color/white"
-        android:layout_gravity="bottom"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
         android:textSize="12sp"
 
         />
@@ -75,9 +75,9 @@
         android:id="@+id/endDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:text=""
         android:textColor="@android:color/white"
-        android:layout_gravity="bottom"
         android:textSize="12sp"
         />
 
@@ -85,35 +85,35 @@
 
     </RelativeLayout>
     <LinearLayout
+        android:id="@+id/layout_gun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_gravity="right|top"
         android:background="@drawable/etkinlik_gun"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="@dimen/sol_margin_olcu_on"
-        android:id="@+id/layout_gun"
         >
 
         <TextView
+            android:id="@+id/kalan_gun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/kalan_gun"
             android:text="-"
-            android:textSize="17sp"
-            android:textColor="@color/beyaz_renk"/>
+            android:textColor="@color/beyaz_renk"
+            android:textSize="17sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/gun"
-            android:textSize="15sp"
-            android:textColor="@color/beyaz_renk"/>
+            android:textColor="@color/beyaz_renk"
+            android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/kaldi"
-            android:textSize="12sp"
-            android:textColor="@color/beyaz_renk"/>
+            android:textColor="@color/beyaz_renk"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

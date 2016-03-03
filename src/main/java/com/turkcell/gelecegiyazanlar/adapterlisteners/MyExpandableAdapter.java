@@ -50,7 +50,7 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.kategori_child_item, null);
         }
 
-        textView = (TextView) convertView.findViewById(R.id.textView1);
+        textView = (TextView) convertView.findViewById(R.id.tvChildParent);
         final TextView nodeChild = (TextView) convertView.findViewById(R.id.nodeID);
         textView.setText(child.get(childPosition));
         nodeChild.setText(childId.get(childPosition));
@@ -89,8 +89,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.kategori_parent_item, null);
         }
 
-        ((CheckedTextView) convertView.findViewById(R.id.textView1)).setText(parentItems.get(groupPosition));
-        ((CheckedTextView) convertView.findViewById(R.id.textView1)).setChecked(isExpanded);
+        ((CheckedTextView) convertView.findViewById(R.id.tvChildParent)).setText(parentItems.get(groupPosition));
+        ((CheckedTextView) convertView.findViewById(R.id.tvChildParent)).setChecked(isExpanded);
         final TextView id = ((TextView) convertView.findViewById(R.id.id));
         id.setText(nodeIDGroup.get(groupPosition));
 

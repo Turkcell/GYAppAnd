@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static int save = -1;
-    View egitimView;
     android.support.v7.widget.Toolbar toolbar;
     String mTitle;
     ArrayList<DrawerItems> drawerList = new ArrayList<>();

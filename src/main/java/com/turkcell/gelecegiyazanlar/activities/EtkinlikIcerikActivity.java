@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
@@ -30,9 +29,6 @@ import org.json.JSONException;
 public class EtkinlikIcerikActivity extends ActionBarActivity {
 
     String url;
-
-    ImageRequest imageRequest;
-    //JsonObjectRequest jsonObjectRequest;
     JsonArrayRequest stringRequest;
     String txtBaslik = "";
     TextView title, yorum;

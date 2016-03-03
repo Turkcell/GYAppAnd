@@ -1,6 +1,5 @@
 package com.turkcell.gelecegiyazanlar.activities;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -9,10 +8,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
@@ -33,15 +30,12 @@ public class YorumActivity extends ActionBarActivity {
 
 
     final List<Yorum> yorumlar = new ArrayList<Yorum>();
-    RequestQueue mRequestQueue;
     String url;
 
     String Nodeid;
     JsonArrayRequest request;
     String icon;
-    ImageRequest ir;
     TextView yorumyok;
-    Bitmap bitmapIcon;
 
     ListView listemiz;
 

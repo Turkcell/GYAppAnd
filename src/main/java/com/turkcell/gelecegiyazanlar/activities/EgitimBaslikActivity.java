@@ -1,6 +1,5 @@
 package com.turkcell.gelecegiyazanlar.activities;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,7 +35,6 @@ public class EgitimBaslikActivity extends ActionBarActivity {
     String baslik;
     String renk;
     String nodeIDbyKategori;
-    ProgressDialog pDialog;
     Toolbar toolbar;
     ExpandableListView expandableList;
     YuklenmeEkran yuklenmeEkran;

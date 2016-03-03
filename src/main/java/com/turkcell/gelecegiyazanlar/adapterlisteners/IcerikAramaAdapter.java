@@ -21,7 +21,7 @@ import java.util.List;
  * Created by asus on 30.9.2015.
  */
 public class IcerikAramaAdapter extends BaseAdapter {
-    //ImageLoader image= AppController.getInstance().getImageLoader();
+
     Activity activity;
     private LayoutInflater layoutInflater;
     private List<Icerik> adapterIcerikList;

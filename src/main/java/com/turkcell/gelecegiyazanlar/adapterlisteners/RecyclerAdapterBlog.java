@@ -21,6 +21,7 @@ import com.turkcell.gelecegiyazanlar.activities.BlogIcerikAcitivity;
 import com.turkcell.gelecegiyazanlar.activities.ProfilActivity;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.models.Blog;
+import com.turkcell.gelecegiyazanlar.models.Kisi;
 
 import java.util.List;
 
@@ -117,7 +118,7 @@ public class RecyclerAdapterBlog extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(parent.getContext(), ProfilActivity.class);
-                    i.putExtra("id", profileID.getText());
+                    i.putExtra(Kisi.PROFIL_ID, profileID.getText());
                     parent.getContext().startActivity(i);
                 }
             });

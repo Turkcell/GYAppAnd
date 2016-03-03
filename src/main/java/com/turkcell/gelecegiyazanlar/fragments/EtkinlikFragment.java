@@ -1,9 +1,7 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.animation.Animator;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +15,6 @@ import android.widget.LinearLayout;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.RecyclerAdapterEtkinlik;
@@ -43,21 +40,14 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
 
     JsonArrayRequest request;
-    ImageRequest imageRequest;
-    Bitmap bitmap;
     String url;
-    String Nodeid;
-    String image;
     List<Etkinlik> itemList = new ArrayList<>();
     RecyclerView recyclerView;
     RecyclerAdapterEtkinlik recyclerAdapterEtkinlik;
     String formattedDate;
-    //int current_page=0;
     YuklenmeEkran yukleme;
     TarihCevir tarihCevir;
-    CollapsingToolbarLayout collapsingToolbarLayout;
     LinearLayout layout;
-    LayoutInflater layoutInflater;
     private LinearLayoutManager layoutManager;
     private int index = 0;
     private int maksSize;
