@@ -156,7 +156,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
             yukleme.surecBasla();
         }
 
-        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x), null, new Response.Listener<JSONArray>() {
+        request = new JsonArrayRequest(Request.Method.GET, url + x, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
@@ -220,7 +220,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
         yukleme.surecBasla();
 
-        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x), null, new Response.Listener<JSONArray>() {
+        request = new JsonArrayRequest(Request.Method.GET, url + x, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {

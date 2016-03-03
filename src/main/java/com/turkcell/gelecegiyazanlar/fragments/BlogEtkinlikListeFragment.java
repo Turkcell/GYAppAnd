@@ -91,26 +91,26 @@ public class BlogEtkinlikListeFragment extends Fragment {
                 itemList.clear();
                 switch (position) {
                     case 0:
-                        Listele(718, 0);
+                        Listele(718, -1);
                         Scroll(718);
                         break;
                     case 1:
-                        Listele(31, 0);
+                        Listele(31, -1);
                         Scroll(31);
                         break;
                     case 2:
 
-                        Listele(29, 0);
+                        Listele(29, -1);
                         Scroll(29);
 
                         break;
                     case 3:
-                        Listele(28, 0);
+                        Listele(28, -1);
                         Scroll(28);
 
                         break;
                     case 4:
-                        Listele(738, 0);
+                        Listele(738, -1);
                         Scroll(738);
 
                         break;
