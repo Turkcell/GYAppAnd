@@ -1,13 +1,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.EgitimFragment"
-    tools:layout="@layout/fragment_egitim"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beyaz_renk"
+    android:paddingBottom="2dp"
     android:paddingLeft="@dimen/sol_margin_olcu_onbes"
     android:paddingRight="@dimen/sol_margin_olcu_onbes"
     android:paddingTop="@dimen/sol_margin_olcu_onbes"
-    android:paddingBottom="2dp"
-    android:background="@color/beyaz_renk"
+    tools:layout="@layout/fragment_egitim"
     >
     <LinearLayout
         android:layout_width="fill_parent"
@@ -16,10 +17,10 @@
 
 
         <TextView
-            android:layout_marginLeft="@dimen/margin_bes"
+            style="@style/mobilIcerikBaslik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/mobilIcerikBaslik"
+            android:layout_marginLeft="@dimen/margin_bes"
             android:text="@string/ne_ogrenebilirim"/>
 
         <ScrollView
@@ -35,11 +36,11 @@
                 <!---Android -->
 
                 <LinearLayout
+                    android:id="@+id/android"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/android"
+                    android:orientation="horizontal"
                     >
                     <ImageView
                         android:layout_width="@dimen/ellilikOlcu"
@@ -47,11 +48,11 @@
                         android:src="@drawable/androidlogosu"/>
 
                     <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
+                        style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/android"
                         android:textColor="@color/android_yesil_renk"/>
 
@@ -59,11 +60,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
+                            android:id="@+id/androidsagok"
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/androidsagok"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/sagok" />
                     </RelativeLayout>
 
 
@@ -71,327 +72,327 @@
 
                 <!--Alt Icerik-->
                 <LinearLayout
+                    android:id="@+id/layout_android_icerik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/layout_android_icerik"
                     android:visibility="gone"
                     >
 
                     <!---Android 101-->
                     <LinearLayout
+                        android:id="@+id/layout_android_101"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_android_101"
+                        android:orientation="horizontal"
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/yesildaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_101_android"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_android"
-                                android:layout_toLeftOf="@+id/icon_kep_101_android"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_101_android"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_101_android"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_android"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--Android 101 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_android_101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_android_101"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_marginTop="-15dp"
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_android_101_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_android_101_button"/>
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!---Android 201-->
                     <LinearLayout
+                        android:id="@+id/layout_android_201"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_android_201"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/saridaire"
                             />
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_201_android"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_android"
-                                android:layout_toLeftOf="@+id/icon_kep_201_android"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_201_android"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_201_android"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_android"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <!--Android 201 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_android_201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_android_201"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="-15dp"
+                            android:id="@+id/egitimial_android_201_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_android_201_button"/>
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!---Android 301-->
                     <LinearLayout
+                        android:id="@+id/layout_android_301"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_android_301"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/turuncudaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_301_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_301_android"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_301_android"
-                                android:layout_toLeftOf="@+id/icon_kep_301_android"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_301_android"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_301_android"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_301_android"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--Android 301 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_android_301"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_android_301"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_301_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="-15dp"
+                            android:id="@+id/egitimial_android_301_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_android_301_button"/>
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!---Android 401-->
 
                     <LinearLayout
+                        android:id="@+id/layout_android_401"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_android_401"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/kirmizidaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_401_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_401_android"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_401_android"
-                                android:layout_toLeftOf="@+id/icon_kep_401_android"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_401_android"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_401_android"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_401_android"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--Android 401 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_android_401"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_android_401"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/android_401_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="-15dp"
+                            android:id="@+id/egitimial_android_401_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_android_401_button"/>
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <!---IOS -->
                 <LinearLayout
+                    android:id="@+id/ios"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/ios"
+                    android:orientation="horizontal"
                     >
                     <ImageView
                         android:layout_width="@dimen/ellilikOlcu"
@@ -399,11 +400,11 @@
                         android:src="@drawable/ioslogosu"/>
 
                     <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
+                        style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/ios"
                         android:textColor="@color/ios_siyah_renk"/>
 
@@ -411,219 +412,294 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
+                            android:id="@+id/iossagok"
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/iossagok"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/sagok" />
                     </RelativeLayout>
 
                 </LinearLayout>
 
                 <!--Alt icerik-->
                 <LinearLayout
+                    android:id="@+id/layout_ios_icerik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/layout_ios_icerik"
                     android:visibility="gone"
                     >
 
                     <!---IOS 101-->
                     <LinearLayout
+                        android:id="@+id/layout_ios_101"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_ios_101"
+                        android:orientation="horizontal"
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/yesildaire"
                             />
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_101_ios"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_ios"
-                                android:layout_toLeftOf="@+id/icon_kep_101_ios"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_101_ios"
+                                android:src="@drawable/asagiikon"
                                 />
                             <ImageView
+                                android:id="@+id/icon_kep_101_ios"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_ios"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <!--IOS 101 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_ios_101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_ios_101"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_ios_101_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_ios_101_button"/>
+                            android:src="@drawable/egitimial" />
+                    </LinearLayout>
+
+
+                    <!---IOS 101-->
+                    <LinearLayout
+                        android:id="@+id/layout_ios_102"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/apiios" />
+
+                        <TextView
+                            style="@style/mobilIcerikBaslik"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:text="@string/ios_102_baslik"
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/asagi_image_102_ios"
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_102_ios"
+                                android:src="@drawable/asagiikon" />
+
+                            <ImageView
+                                android:id="@+id/icon_kep_102_ios"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!--IOS 102 alt baslık-->
+                    <LinearLayout
+                        android:id="@+id/egitimal_ios_102"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:text="@string/ios_102_aciklama"
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/egitimial_ios_102_button"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!---IOS 201-->
 
                     <LinearLayout
+                        android:id="@+id/layout_ios_201"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_ios_201"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/saridaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_201_ios"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_ios"
-                                android:layout_toLeftOf="@+id/icon_kep_201_ios"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_201_ios"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_201_ios"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_ios"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <!--IOS 201 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_ios_201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_ios_201"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_ios_201_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_ios_201_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
 
                     <!--IOS 301-->
 
                     <LinearLayout
+                        android:id="@+id/layout_ios_301"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_ios_301"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/turuncudaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_301_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_301_ios"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_301_ios"
-                                android:layout_toLeftOf="@+id/icon_kep_301_ios"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_301_ios"
+                                android:src="@drawable/asagiikon"
                                 />
                             <ImageView
+                                android:id="@+id/icon_kep_301_ios"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_301_ios"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -631,77 +707,77 @@
 
                     <!--IOS 301 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_ios_301"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_ios_301"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_301_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_ios_301_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_ios_301_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!--IOS 401-->
                     <LinearLayout
+                        android:id="@+id/layout_ios_401"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_ios_401"
+                        android:orientation="horizontal"
                         >
 
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/kirmizidaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_401_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_401_ios"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_401_ios"
-                                android:layout_toLeftOf="@+id/icon_kep_401_ios"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_401_ios"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_401_ios"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_401_ios"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -709,30 +785,30 @@
 
                     <!--IOS 401 alt baslIk-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_ios_401"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_ios_401"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/ios_401_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_ios_401_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_ios_401_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -741,11 +817,11 @@
 
                 <!---Windows Phone -->
                 <LinearLayout
+                    android:id="@+id/win"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/win"
+                    android:orientation="horizontal"
 
                     >
                     <ImageView
@@ -754,11 +830,11 @@
                         android:src="@drawable/windowsphonelogosu"/>
 
                     <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
+                        style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/windows"
                         android:textColor="@color/windows_mavi_renk"/>
 
@@ -766,172 +842,172 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
+                            android:id="@+id/windowssagok"
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/windowssagok"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/sagok" />
                     </RelativeLayout>
 
                 </LinearLayout>
                 <!--Alt icerik-->
                 <LinearLayout
+                    android:id="@+id/layout_windows_icerik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/layout_windows_icerik"
                     android:visibility="gone"
                     >
 
                     <!---Windows Phone 101-->
                     <LinearLayout
+                        android:id="@+id/layout_windows_101"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_windows_101"
+                        android:orientation="horizontal"
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/yesildaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/wp_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_101_windows"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_windows"
-                                android:layout_toLeftOf="@+id/icon_kep_101_windows"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_101_windows"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_101_windows"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_windows"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--Windows Phone 101 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_windows_101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_windows_101"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/wp_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_windows_101_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_windows_101_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!--Windows Phone 201-->
 
                     <LinearLayout
+                        android:id="@+id/layout_windows_201"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_windows_201"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/saridaire"
                             />
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/wp_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_201_windows"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_windows"
-                                android:layout_toLeftOf="@+id/icon_kep_201_windows"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_201_windows"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_201_windows"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_windows"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <!--Windows Phone 201 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_windows_201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_windows_201"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/wp_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_windows_201_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_windows_201_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
 
@@ -942,11 +1018,11 @@
 
                 <!---Scratch -->
                 <LinearLayout
+                    android:id="@+id/scratch"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/scratch"
+                    android:orientation="horizontal"
 
                     >
                     <ImageView
@@ -955,11 +1031,11 @@
                         android:src="@drawable/scratchlogosu"/>
 
                     <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
+                        style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/scratch"
                         android:textColor="@color/scratch_turuncu_renk"/>
 
@@ -967,174 +1043,174 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
+                            android:id="@+id/scratchsagok"
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/scratchsagok"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/sagok" />
                     </RelativeLayout>
 
                 </LinearLayout>
 
                 <!--Alt icerik-->
                 <LinearLayout
+                    android:id="@+id/layout_scratch_icerik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/layout_scratch_icerik"
                     android:visibility="gone"
                     >
 
                     <!---Scratch 101-->
                     <LinearLayout
+                        android:id="@+id/layout_scratch_101"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_scratch_101"
+                        android:orientation="horizontal"
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/yesildaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/scratch_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_101_scratch"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_scratch"
-                                android:layout_toLeftOf="@+id/icon_kep_101_scratch"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_101_scratch"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_101_scratch"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_scratch"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!-- scratch 101 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_scratch_101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_scratch_101"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/scratch_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_scratch_101_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_scratch_101_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
 
                     <!-- scratch 201-->
 
                     <LinearLayout
+                        android:id="@+id/layout_scratch_201"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_scratch_201"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/saridaire"
                             />
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/scratch_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_201_scratch"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_scratch"
-                                android:layout_toLeftOf="@+id/icon_kep_201_scratch"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_201_scratch"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_201_scratch"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_scratch"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <!-- scratch 201 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_scratch_201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_scratch_201"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/scratch_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_scratch_201_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_scratch_201_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -1144,11 +1220,11 @@
 
                 <!---App -->
                 <LinearLayout
+                    android:id="@+id/appinventor"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/appinventor"
+                    android:orientation="horizontal"
 
                     >
                     <ImageView
@@ -1157,11 +1233,11 @@
                         android:src="@drawable/appinventorlogosu"/>
 
                     <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
+                        style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/appinventor"
                         android:textColor="@color/app_inventor_kirmizi_renk"/>
 
@@ -1169,251 +1245,329 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
+                            android:id="@+id/appsagok"
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/appsagok"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/sagok" />
                     </RelativeLayout>
 
                 </LinearLayout>
                 <!--Alt õcerik-->
                 <LinearLayout
+                    android:id="@+id/layout_appinventor_icerik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/layout_appinventor_icerik"
                     android:visibility="gone"
                     >
 
                     <!---appinventor 101-->
                     <LinearLayout
+                        android:id="@+id/layout_appinventor_101"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_appinventor_101"
+                        android:orientation="horizontal"
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/yesildaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/appinventor_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_101_appinventor"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_appinventor"
-                                android:layout_toLeftOf="@+id/icon_kep_101_appinventor"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_101_appinventor"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_101_appinventor"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_appinventor"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--appinventor 101 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_appinventor_101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_appinventor_101"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/appinventor_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_appinventor_101_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_appinventor_101_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!--appinventor 201-->
 
                     <LinearLayout
+                        android:id="@+id/layout_appinventor_201"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_appinventor_201"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/saridaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/appinventor_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_201_appinventor"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_appinventor"
-                                android:layout_toLeftOf="@+id/icon_kep_201_appinventor"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_201_appinventor"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_201_appinventor"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_appinventor"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <!--appinventor 201 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_appinventor_201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_appinventor_201"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/appinventor_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_appinventor_201_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_appinventor_201_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!--appinventor 301-->
 
                     <LinearLayout
+                        android:id="@+id/layout_appinventor_301"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_appinventor_301"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/turuncudaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/appinventor_301_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_301_appinventor"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_301_appinventor"
-                                android:layout_toLeftOf="@+id/icon_kep_301_appinventor"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_301_appinventor"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_301_appinventor"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_301_appinventor"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--appinventor 301 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_appinventor_301"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_appinventor_301"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/appinventor_301_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_appinventor_301_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_appinventor_301_button"/>
+                            android:src="@drawable/egitimial" />
+                    </LinearLayout>
+
+                    <!--appinventor 401-->
+
+                    <LinearLayout
+                        android:id="@+id/layout_appinventor_401"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/kirmizidaire" />
+
+                        <TextView
+                            style="@style/mobilIcerikBaslik"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:text="@string/appinventor_401_baslik"
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/asagi_image_401_appinventor"
+                                android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_401_appinventor"
+                                android:src="@drawable/asagiikon" />
+
+                            <ImageView
+                                android:id="@+id/icon_kep_401_appinventor"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--appinventor 401 alt baslık-->
+                    <LinearLayout
+                        android:id="@+id/egitimal_appinventor_401"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
+                            android:text="@string/appinventor_401_aciklama"
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/egitimial_appinventor_401_button"
+                            android:layout_width="@dimen/yuzlukOlcu"
+                            android:layout_height="@dimen/yuzlukOlcu"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-15dp"
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -1423,11 +1577,11 @@
 
                 <!---Arduino -->
                 <LinearLayout
+                    android:id="@+id/arduino"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/arduino"
+                    android:orientation="horizontal"
 
                     >
                     <ImageView
@@ -1436,11 +1590,11 @@
                         android:src="@drawable/arduinologosu"/>
 
                     <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
+                        style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/arduino"
                         android:textColor="@color/arduino_renk"/>
 
@@ -1448,330 +1602,330 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
+                            android:id="@+id/arduinosagok"
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/arduinosagok"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/sagok" />
                     </RelativeLayout>
 
                 </LinearLayout>
                 <!--Alt İcerik-->
                 <LinearLayout
+                    android:id="@+id/layout_arduino_icerik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/layout_arduino_icerik"
                     android:visibility="gone"
                     >
 
                     <!---arduino 101-->
                     <LinearLayout
+                        android:id="@+id/layout_arduino_101"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_arduino_101"
+                        android:orientation="horizontal"
                         >
 
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/yesildaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_101_arduino"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_arduino"
-                                android:layout_toLeftOf="@+id/icon_kep_101_arduino"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_101_arduino"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_101_arduino"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_arduino"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--Arduino 101 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_arduino_101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_arduino_101"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_arduino_101_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_arduino_101_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!--Arduino 201-->
 
 
                     <LinearLayout
+                        android:id="@+id/layout_arduino_201"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_arduino_201"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/saridaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_201_arduino"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_arduino"
-                                android:layout_toLeftOf="@+id/icon_kep_201_arduino"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_201_arduino"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_201_arduino"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_arduino"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
                     </LinearLayout>
                     <!--Arduino 201 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_arduino_201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_arduino_201"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_arduino_201_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_arduino_201_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
 
                     <!--Arduino 301-->
 
                     <LinearLayout
+                        android:id="@+id/layout_arduino_301"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_arduino_301"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/turuncudaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_301_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_301_arduino"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_301_arduino"
-                                android:layout_toLeftOf="@+id/icon_kep_301_arduino"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_301_arduino"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_301_arduino"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_301_arduino"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
                     <!--Arduino 301 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_arduino_301"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_arduino_301"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_301_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_arduino_301_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_arduino_301_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
 
                     <!--Arduino 401-->
 
                     <LinearLayout
+                        android:id="@+id/layout_arduino_401"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_arduino_401"
+                        android:orientation="horizontal"
 
                         >
                         <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
                             android:src="@drawable/kirmizidaire"
                             />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
+                            style="@style/mobilIcerikBaslik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_401_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="@dimen/text_size_onyedi" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/asagi_image_401_arduino"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_401_arduino"
-                                android:layout_toLeftOf="@+id/icon_kep_401_arduino"
                                 android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/icon_kep_401_arduino"
+                                android:src="@drawable/asagiikon"
                                 />
 
                             <ImageView
+                                android:id="@+id/icon_kep_401_arduino"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
-                                android:id="@+id/icon_kep_401_arduino"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/kepikon" />
                         </RelativeLayout>
 
                     </LinearLayout>
 
                     <!--Arduino 401 alt baslık-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/egitimal_arduino_401"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ellilikOlcu"
+                        android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_arduino_401"
                         android:visibility="gone"
                         >
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_bes"
                             android:text="@string/arduino_401_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:textColor="@color/gri_siyah_renk"
+                            android:textSize="12sp" />
 
                         <ImageView
-                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/egitimial_arduino_401_button"
                             android:layout_width="@dimen/yuzlukOlcu"
                             android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="-15dp"
-                            android:id="@+id/egitimial_arduino_401_button"/>
+                            android:src="@drawable/egitimial" />
                     </LinearLayout>
                 </LinearLayout>
 

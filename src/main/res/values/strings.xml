@@ -21,6 +21,7 @@
 
 
     <string name="ios101">81</string>
+    <string name="ios102">30314</string>
     <string name="ios201">82</string>
     <string name="ios301">92</string>
     <string name="ios401">93</string>
@@ -34,12 +35,14 @@
     <string name="web201">21063</string>
     <string name="web301">23339</string>
     <string name="web401">28510</string>
+    <string name="web402">30052</string>
     <string name="web302">23841</string>
     <string name="oyun101">12690</string>
     <string name="oyun201">12710</string>
     <string name="inventor101">23976</string>
     <string name="inventor201">24319</string>
     <string name="inventor301">24730</string>
+    <string name="inventor401">27170</string>
     <string name="scratch101">24418</string>
     <string name="scratch201">24669</string>
     <string name="arduino101">24101</string>
@@ -74,6 +77,7 @@
     <string name="android_301_aciklama">Bu bölümden itibaren Android için mobil uygulama geliştirmenin ilk adımlarını atıyoruz.</string>
     <string name="android_401_aciklama">Artık ileri seviye Android geliştirme sürecine giriyor, uygulamalarımızı hayata geçiriyoruz.</string>
     <string name="ios_101_aciklama">Başlangıç seviyesi derslerde iOS uygulama geliştirme ortamını detaylı olarak inceliyoruz.</string>
+    <string name="ios_102_aciklama">Başlangıç seviyesi derslerde iOS(Swift) uygulama geliştirme ortamını detaylı olarak inceliyoruz.</string>
     <string name="ios_201_aciklama">Bu bölümde basit projelerle iOS uygulamaları geliştirmenin temellerini veriyoruz.</string>
     <string name="ios_301_aciklama">Bu bölümden itibaren iOS geliştirme adımlarına giriş yapıyoruz.</string>
     <string name="ios_401_aciklama">Artık ileri seviye iOS geliştirme sürecine giriyor, uygulamalarımızı hayata geçiriyoruz.</string>
@@ -84,6 +88,7 @@
     <string name="appinventor_101_aciklama">App Inventor\'a giriş yapacağız ve basit uygulamaların nasıl yapıldığını öğreneceğiz.</string>
     <string name="appinventor_201_aciklama">App Inventor ile oyunlar yapmaya başlıyoruz.</string>
     <string name="appinventor_301_aciklama">App Inventor ile uygulama geliştirmeye başlıyoruz.</string>
+    <string name="appinventor_401_aciklama">App Inventor ve Arduino ile uygulamalar geliştiriyoruz.</string>
     <string name="arduino_101_aciklama">Başlangıç seviyesi derslerde Arduino\'ya giriş yapıyoruz.</string>
     <string name="arduino_201_aciklama">Arduino ile yapabileceklerimizi öğreniyoruz.</string>
     <string name="arduino_301_aciklama">Arduino bilgimizi örnek uygulamalarla pekiştiriyoruz.</string>
@@ -91,6 +96,7 @@
     <string name="oyun_101_aciklama">Bir ürün olarak oyunun hazırlık süreci, tasarım ve oyunda sanat konularını işleyeceğiz.</string>
     <string name="oyun_201_aciklama">Bu eğitimde oyun geliştirmedeki teknolojiye, gelir modeline ve medya ilişkilerine değineceğiz.</string>
     <string name="nodejs_401_aciklama">Web programlama eğitimimizin ileri seviyesinde, Node.js öğreniyoruz.</string>
+    <string name="mongodb_402_aciklama">Web programlama eğitimimizin ileri seviyesinde,MongoDB öğreniyoruz.</string>
     <string name="jquery_302_aciklama">Web programlama eğitimimizin orta seviyesinde, JQuery öğreniyoruz.</string>
     <string name="javascript_301_aciklama">Web programlama eğitimimizin orta seviyesinde, JavaScript öğreniyoruz.</string>
     <string name="html_css_201_aciklama">Bu başlangıç seviyesi derslerimizde HTML5 ve CSS ile bilgimizi bir adım öteye taşıyoruz.</string>
@@ -102,6 +108,7 @@
     <string name="android_301_baslik">301:Android\nSeviye:Orta</string>
     <string name="android_401_baslik">401:Android\nSeviye:İleri</string>
     <string name="ios_101_baslik">101:IOS\nSeviye:Başlangıç</string>
+    <string name="ios_102_baslik">102:IOS\nSeviye:Başlangıç</string>
     <string name="ios_201_baslik">201:IOS\nSeviye:Başlangıç</string>
     <string name="ios_301_baslik">301:IOS\nSeviye:Orta</string>
     <string name="ios_401_baslik">401:IOS\nSeviye:İleri</string>
@@ -112,6 +119,7 @@
     <string name="appinventor_101_baslik">101:App Inventor\nSeviye:Başlangıç</string>
     <string name="appinventor_201_baslik">201:App Inventor\nSeviye:Orta</string>
     <string name="appinventor_301_baslik">301:App Invetor\nSeviye:İleri</string>
+    <string name="appinventor_401_baslik">401:App Invetor\nSeviye:İleri</string>
     <string name="arduino_101_baslik">101:Arduino\nSeviye:Başlangıç</string>
     <string name="arduino_201_baslik">201:Arduino\nSeviye:Başlangıç</string>
     <string name="arduino_301_baslik">301:Arduino\nSeviye:Orta</string>
@@ -123,6 +131,7 @@
     <string name="javascript_301_baslik">301:JavaScript\nSeviye:Orta</string>
     <string name="jquery_302_baslik">302:JQuery\nSeviye:Orta</string>
     <string name="nodejs_401_baslik">401:Node.js\nSeviye:İleri</string>
+    <string name="mongodb_402_baslik">402:MongoDB\nSeviye:İleri</string>
 
 
     <!--  Profil Sertifika İsimleri  -->

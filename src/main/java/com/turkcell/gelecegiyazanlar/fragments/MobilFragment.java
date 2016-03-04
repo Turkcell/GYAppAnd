@@ -31,26 +31,26 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
 
 
     LinearLayout android101, android101Layout, android201, android201Layout, android301, android301Layout, android401, android401Layout;
-    LinearLayout ios101, ios101Layout, ios201, ios201Layout, ios301, ios301Layout, ios401, ios401Layout;
+    LinearLayout ios101, ios101Layout, ios102, ios102Layout, ios201, ios201Layout, ios301, ios301Layout, ios401, ios401Layout;
     LinearLayout win101, win101Layout, win201, win201Layout;
-    LinearLayout app101, app101Layout, app201, app201Layout, app301, app301Layout;
+    LinearLayout app101, app101Layout, app201, app201Layout, app301, app301Layout, app401, app401Layout;
     LinearLayout scratch101, scratch101Layout, scratch201, scratch201Layout;
     LinearLayout arduino101, arduino101Layout, arduino201, arduino201Layout, arduino301, arduino301Layout, arduino401, arduino401Layout;
 
 
     SlidingTabLayoutIcon tablar;
     ImageView androidSagOk, android101AsagiOk, android201AsagiOk, android301AsagiOk, android401AsagiOk;
-    ImageView iosSagOk, ios101AsagiOk, ios201AsagiOk, ios301AsagiOk, ios401AsagiOk;
+    ImageView iosSagOk, ios101AsagiOk, ios102AsagiOk, ios201AsagiOk, ios301AsagiOk, ios401AsagiOk;
     ImageView winSagOk, win101AsagiOk, win201AsagiOk;
-    ImageView appSagOk, app101AsagiOk, app201AsagiOk, app301AsagiOk;
+    ImageView appSagOk, app101AsagiOk, app201AsagiOk, app301AsagiOk, app401AsagiOk;
     ImageView scratchSagOk, scratch101AsagiOk, scratch201AsagiOk;
     ImageView arduinoSagOk, arduino101AsagiOk, arduino201AsagiOk, arduino301AsagiOk, arduino401AsagiOk;
 
     ImageView android101Button, android201Button, android301Button, android401Button,
-            ios101Button, ios201Button, ios301Button, ios401Button,
+            ios101Button, ios102Button, ios201Button, ios301Button, ios401Button,
             win101Button, win201Button,
             scratch101Button, scratch201Button,
-            app101Button, app201Button, app301Button,
+            app101Button, app201Button, app301Button, app401Button,
             arduino101Button, arduino201Button, arduino301Button, arduino401Button;
     Toolbar toolbar;
 
@@ -94,6 +94,10 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         ios101 = (LinearLayout) rootView.findViewById(R.id.egitimal_ios_101);
         ios101Layout = (LinearLayout) rootView.findViewById(R.id.layout_ios_101);
 
+        ios102AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_102_ios);
+        ios102 = (LinearLayout) rootView.findViewById(R.id.egitimal_ios_102);
+        ios102Layout = (LinearLayout) rootView.findViewById(R.id.layout_ios_102);
+
         ios201AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_201_ios);
         ios201 = (LinearLayout) rootView.findViewById(R.id.egitimal_ios_201);
         ios201Layout = (LinearLayout) rootView.findViewById(R.id.layout_ios_201);
@@ -135,6 +139,10 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         app301 = (LinearLayout) rootView.findViewById(R.id.egitimal_appinventor_301);
         app301Layout = (LinearLayout) rootView.findViewById(R.id.layout_appinventor_301);
 
+        app401AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_401_appinventor);
+        app401 = (LinearLayout) rootView.findViewById(R.id.egitimal_appinventor_401);
+        app401Layout = (LinearLayout) rootView.findViewById(R.id.layout_appinventor_401);
+
         scratch = (LinearLayout) rootView.findViewById(R.id.scratch);
         scratchIcerik = (LinearLayout) rootView.findViewById(R.id.layout_scratch_icerik);
         scratchSagOk = (ImageView) rootView.findViewById(R.id.scratchsagok);
@@ -173,6 +181,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         android301Button = (ImageView) rootView.findViewById(R.id.egitimial_android_301_button);
         android401Button = (ImageView) rootView.findViewById(R.id.egitimial_android_401_button);
         ios101Button = (ImageView) rootView.findViewById(R.id.egitimial_ios_101_button);
+        ios102Button = (ImageView) rootView.findViewById(R.id.egitimial_ios_102_button);
         ios201Button = (ImageView) rootView.findViewById(R.id.egitimial_ios_201_button);
         ios301Button = (ImageView) rootView.findViewById(R.id.egitimial_ios_301_button);
         ios401Button = (ImageView) rootView.findViewById(R.id.egitimial_ios_401_button);
@@ -183,6 +192,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         app101Button = (ImageView) rootView.findViewById(R.id.egitimial_appinventor_101_button);
         app201Button = (ImageView) rootView.findViewById(R.id.egitimial_appinventor_201_button);
         app301Button = (ImageView) rootView.findViewById(R.id.egitimial_appinventor_301_button);
+        app401Button = (ImageView) rootView.findViewById(R.id.egitimial_appinventor_401_button);
         arduino101Button = (ImageView) rootView.findViewById(R.id.egitimial_arduino_101_button);
         arduino201Button = (ImageView) rootView.findViewById(R.id.egitimial_arduino_201_button);
         arduino301Button = (ImageView) rootView.findViewById(R.id.egitimial_arduino_301_button);
@@ -194,6 +204,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         android301Button.setOnClickListener(this);
         android401Button.setOnClickListener(this);
         ios101Button.setOnClickListener(this);
+        ios102Button.setOnClickListener(this);
         ios201Button.setOnClickListener(this);
         ios301Button.setOnClickListener(this);
         ios401Button.setOnClickListener(this);
@@ -204,6 +215,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         app101Button.setOnClickListener(this);
         app201Button.setOnClickListener(this);
         app301Button.setOnClickListener(this);
+        app401Button.setOnClickListener(this);
         arduino101Button.setOnClickListener(this);
         arduino201Button.setOnClickListener(this);
         arduino301Button.setOnClickListener(this);
@@ -218,6 +230,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
 
         ios.setOnClickListener(this);
         ios101Layout.setOnClickListener(this);
+        ios102Layout.setOnClickListener(this);
         ios201Layout.setOnClickListener(this);
         ios301Layout.setOnClickListener(this);
         ios401Layout.setOnClickListener(this);
@@ -230,6 +243,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         app101Layout.setOnClickListener(this);
         app201Layout.setOnClickListener(this);
         app301Layout.setOnClickListener(this);
+        app401Layout.setOnClickListener(this);
 
         scratch.setOnClickListener(this);
         scratch101Layout.setOnClickListener(this);
@@ -279,7 +293,13 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                 i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.android401));
                 startActivity(i);
                 break;
-
+            case R.id.egitimial_ios_102_button:
+                i = new Intent(getActivity(), EgitimBaslikActivity.class);
+                i.putExtra(Egitim.TITLE_TAG, "IOS 102");
+                i.putExtra(Egitim.COLOR_TAG, "ios");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.ios102));
+                startActivity(i);
+                break;
             case R.id.egitimial_ios_101_button:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "IOS 101");
@@ -343,6 +363,14 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                 i.putExtra(Egitim.TITLE_TAG, "App Inventor 301");
                 i.putExtra(Egitim.COLOR_TAG, "app");
                 i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.inventor301));
+                startActivity(i);
+                break;
+
+            case R.id.egitimial_appinventor_401_button:
+                i = new Intent(getActivity(), EgitimBaslikActivity.class);
+                i.putExtra(Egitim.TITLE_TAG, "App Inventor 401");
+                i.putExtra(Egitim.COLOR_TAG, "app");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.inventor401));
                 startActivity(i);
                 break;
 
@@ -487,6 +515,16 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
 
+            case R.id.layout_ios_102:
+                if (ios102.getVisibility() == View.VISIBLE) {
+                    ios102.setVisibility(View.GONE);
+                    ios102AsagiOk.setImageResource(R.drawable.asagiikon);
+                } else {
+                    ios102.setVisibility(View.VISIBLE);
+                    ios102AsagiOk.setImageResource(R.drawable.yukariikon);
+                }
+                break;
+
             case R.id.layout_ios_201:
                 if (ios201.getVisibility() == View.VISIBLE) {
                     ios201.setVisibility(View.GONE);
@@ -605,6 +643,16 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                 } else {
                     app301.setVisibility(View.VISIBLE);
                     app301AsagiOk.setImageResource(R.drawable.yukariikon);
+                }
+                break;
+
+            case R.id.layout_appinventor_401:
+                if (app401.getVisibility() == View.VISIBLE) {
+                    app401.setVisibility(View.GONE);
+                    app401AsagiOk.setImageResource(R.drawable.asagiikon);
+                } else {
+                    app401.setVisibility(View.VISIBLE);
+                    app401AsagiOk.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 

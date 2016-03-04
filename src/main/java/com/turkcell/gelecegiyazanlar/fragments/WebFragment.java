@@ -29,11 +29,11 @@ public class WebFragment extends Fragment implements View.OnClickListener {
 
     Toolbar toolbar;
 
-    LinearLayout web101, web101Layout, web201, web201Layout, web301, web301Layout, web302, web302Layout, web401, web401Layout;
+    LinearLayout web101, web101Layout, web201, web201Layout, web301, web301Layout, web302, web302Layout, web401, web401Layout, web402, web402Layout;
 
 
     SlidingTabLayoutIcon tablar;
-    ImageView webSagOk, web101AsagiOk, web201AsagiOk, web301AsagiOk, web302AsagiOk, web401AsagiOk;
+    ImageView webSagOk, web101AsagiOk, web201AsagiOk, web301AsagiOk, web302AsagiOk, web401AsagiOk, web402AsagiOk;
 
 
     @Override
@@ -67,6 +67,10 @@ public class WebFragment extends Fragment implements View.OnClickListener {
         web401 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_401);
         web401Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_401);
 
+        web402AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_402_web);
+        web402 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_402);
+        web402Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_402);
+
         ust_layout = (LinearLayout) getActivity().findViewById(R.id.ustekran);
         tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.tabs);
 
@@ -77,12 +81,14 @@ public class WebFragment extends Fragment implements View.OnClickListener {
         web301Layout.setOnClickListener(this);
         web302Layout.setOnClickListener(this);
         web401Layout.setOnClickListener(this);
+        web402Layout.setOnClickListener(this);
 
         web101.setOnClickListener(this);
         web201.setOnClickListener(this);
         web301.setOnClickListener(this);
         web302.setOnClickListener(this);
         web401.setOnClickListener(this);
+        web402.setOnClickListener(this);
 
         return rootView;
     }
@@ -159,6 +165,17 @@ public class WebFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
 
+            case R.id.layout_web_402:
+                if (web402.getVisibility() == View.VISIBLE) {
+                    web402.setVisibility(View.GONE);
+                    web402AsagiOk.setImageResource(R.drawable.asagiikon);
+                } else {
+                    web402.setVisibility(View.VISIBLE);
+                    web402AsagiOk.setImageResource(R.drawable.yukariikon);
+                }
+                break;
+
+
             case R.id.egitimal_web_101:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 101");
@@ -194,6 +211,14 @@ public class WebFragment extends Fragment implements View.OnClickListener {
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 401");
                 i.putExtra(Egitim.COLOR_TAG, "web");
                 i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web401));
+                startActivity(i);
+                break;
+
+            case R.id.egitimal_web_402:
+                i = new Intent(getActivity(), EgitimBaslikActivity.class);
+                i.putExtra(Egitim.TITLE_TAG, "Web Programlama 402");
+                i.putExtra(Egitim.COLOR_TAG, "web");
+                i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web402));
                 startActivity(i);
                 break;
 
