@@ -213,7 +213,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
             drawerLayout.closeDrawers();
+        } else {
+            super.onBackPressed();
         }
+
     }
 
     @Override
