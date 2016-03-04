@@ -121,6 +121,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
             case R.id.btnAra:
                 String link = (urlAramaKullanici + search.getText()).trim();
                 link = link.replace(" ", "%20");
+                kisiList.clear();
                 Listele(link);
                 break;
         }
