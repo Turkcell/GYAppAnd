@@ -128,9 +128,8 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
     public void Listele(int kategori, int x) {
 
-        if (GYConfiguration.checkInternetConnectionShowDialog(getActivity())) {
             yuklenmeEkran.surecBasla();
-        }
+
 
         Log.d("urlBlog:", url + (1 + x) + "&kategoriID=" + kategori);
         request = new JsonArrayRequest(Request.Method.GET, url + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
