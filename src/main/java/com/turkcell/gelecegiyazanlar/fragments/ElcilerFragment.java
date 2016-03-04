@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.ProfilActivity;
+import com.turkcell.gelecegiyazanlar.models.Kisi;
 
 
 public class ElcilerFragment extends android.support.v4.app.Fragment {
@@ -47,7 +48,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "59885";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
 
             }
@@ -60,7 +61,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "21294";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
@@ -71,7 +72,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "36644";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
@@ -82,7 +83,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "17846";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
@@ -94,7 +95,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "10678";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
@@ -105,7 +106,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "7934";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
@@ -117,7 +118,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "35522";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
@@ -128,7 +129,7 @@ public class ElcilerFragment extends android.support.v4.app.Fragment {
                 id = "2681";
 
                 Intent intent = new Intent(getActivity(), ProfilActivity.class);
-                intent.putExtra(getResources().getString(R.string.profilID), id);
+                intent.putExtra(Kisi.PROFIL_ID, id);
                 startActivity(intent);
             }
         });
