@@ -9,9 +9,7 @@ import android.support.v7.app.AlertDialog;
 
 import com.turkcell.gelecegiyazanlar.R;
 
-/**
- * Created by asus on 3.12.2015.
- */
+
 enum Domain {
     TESTOZGUR, TESTTURKCELL, PRP, PROD
 };
@@ -19,9 +17,9 @@ enum Domain {
 
 public class GYConfiguration {
 
+    public static String SPLUNK_ID = "75ff8154";
     //Dinamik
     static Domain domain = Domain.PROD;
-    public static String SPLUNK_ID="75ff8154";
 
     public static String getDomain() {
 

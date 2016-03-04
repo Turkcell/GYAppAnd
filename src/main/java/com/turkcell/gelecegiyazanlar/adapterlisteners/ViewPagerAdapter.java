@@ -17,20 +17,20 @@ import com.turkcell.gelecegiyazanlar.fragments.WebFragment;
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
 
-    private static int[] ICONS = new int[]{
+    private static int[] icons = new int[]{
             R.drawable.mobil_gri,
             R.drawable.web_gri,
             R.drawable.oyun_gri
     };
-    CharSequence Titles[]; //ViewPager deðiþtiði zaman baþlýklarý depolar
-    int NumbOfTabs; //  Tabs ta kaç eleman olduðunu gösterir
+    CharSequence[] titles; //ViewPager deðiþtiði zaman baþlýklarý depolar
+    int numbOfTabs; //  Tabs ta kaç eleman olduðunu gösterir
 
 
     public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
 
-        this.Titles = mTitles;
-        this.NumbOfTabs = mNumbOfTabsumb;
+        this.titles = mTitles;
+        this.numbOfTabs = mNumbOfTabsumb;
 
     }
 
@@ -64,10 +64,10 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return ICONS.length;
+        return icons.length;
     }
 
     public int getDrawableId(int position) {
-        return ICONS[position];
+        return icons[position];
     }
 }

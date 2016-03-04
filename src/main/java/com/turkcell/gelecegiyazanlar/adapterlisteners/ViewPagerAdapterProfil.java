@@ -9,16 +9,16 @@ import com.turkcell.gelecegiyazanlar.fragments.ProfilFragment;
 
 public class ViewPagerAdapterProfil extends FragmentStatePagerAdapter {
 
-    CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
-    int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
+    CharSequence titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
+    int numbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
 
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
     public ViewPagerAdapterProfil(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
 
-        this.Titles = mTitles;
-        this.NumbOfTabs = mNumbOfTabsumb;
+        this.titles = mTitles;
+        this.numbOfTabs = mNumbOfTabsumb;
 
     }
 
@@ -35,13 +35,13 @@ public class ViewPagerAdapterProfil extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return Titles[position];
+        return titles[position];
     }
 
     // This method return the Number of tabs for the tabs Strip
 
     @Override
     public int getCount() {
-        return NumbOfTabs;
+        return numbOfTabs;
     }
 }

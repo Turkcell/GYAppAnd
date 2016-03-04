@@ -33,7 +33,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
     private static int save = -1;
     android.support.v7.widget.Toolbar toolbar;
     String mTitle;

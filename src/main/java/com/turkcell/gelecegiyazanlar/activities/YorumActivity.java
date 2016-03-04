@@ -32,10 +32,10 @@ public class YorumActivity extends ActionBarActivity {
     final List<Yorum> yorumlar = new ArrayList<Yorum>();
     String url;
 
-    String Nodeid;
+    String nodeID;
     JsonArrayRequest request;
     String icon;
-    TextView yorumyok;
+    TextView yorumYok;
 
     ListView listemiz;
 
@@ -54,12 +54,12 @@ public class YorumActivity extends ActionBarActivity {
 
         listemiz = (ListView) findViewById(R.id.liste);
 
-        yorumyok = (TextView) findViewById(R.id.yorumyok);
+        yorumYok = (TextView) findViewById(R.id.yorumyok);
 
         Bundle bundle = getIntent().getExtras();
-        Nodeid = bundle.getString(Yorum.YORUM_ID);
+        nodeID = bundle.getString(Yorum.YORUM_ID);
 
-        Goruntule(Nodeid);
+        Goruntule(nodeID);
 
 
     }
@@ -76,7 +76,7 @@ public class YorumActivity extends ActionBarActivity {
 
 
                     if (response.length() == 0) {
-                        yorumyok.setVisibility(View.VISIBLE);
+                        yorumYok.setVisibility(View.VISIBLE);
 
                     } else {
                         for (int i = 0; i < response.length(); i++) {

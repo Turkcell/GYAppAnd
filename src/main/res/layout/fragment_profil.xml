@@ -1,9 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/frameLay"
     tools:context="com.example.utku.gyprofil.Profil">
 
     <!-- TODO: Update blank fragment layout -->
@@ -19,11 +19,11 @@
     <!--DÜZ ÇİZGİ-->
 
     <LinearLayout
-        android:layout_marginLeft="35dp"
+        android:id="@+id/hakkindaCizgi"
         android:layout_width="1dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="35dp"
         android:background="@color/profil_arkaplan_renk"
-        android:id="@+id/hakkindaCizgi"
         android:orientation="horizontal"
         >
 
@@ -34,13 +34,13 @@
         android:id="@+id/hakkindaLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
     <ImageView
 
-        android:layout_marginLeft="25dp"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginLeft="25dp"
         android:background="@drawable/daire"/>
 
 <ScrollView
@@ -49,11 +49,11 @@
 
     <TextView
 
-        android:layout_marginLeft="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/hakkinda"
         style="@style/mobilIcerikBaslik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:textSize="17sp"
         />
 
@@ -66,83 +66,86 @@
 
     <!--DÜZ ÇİZGİ-->
     <LinearLayout
-        android:layout_marginLeft="15dp"
+        android:id="@+id/basaribelgeleriCizgi"
         android:layout_width="1dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
         android:background="@color/profil_arkaplan_renk"
-        android:id="@+id/basaribelgeleriCizgi"
         android:orientation="horizontal"
         android:visibility="gone"
         >
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/basariBelgeleriLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
         android:visibility="gone">
 
 
 
 
         <RelativeLayout
+            android:id="@+id/Android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Android">
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/android_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/android_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/android401s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/android401s" />
+                android:background="@drawable/d401s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/android401"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d401"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/android301s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/android401s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d301s" />
 
             <ImageView
                 android:id="@+id/android301"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301"
-                android:layout_toLeftOf="@+id/android401s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/android401s"
+                android:background="@drawable/d301"
                 android:visibility="invisible"/>
 
 
@@ -151,94 +154,94 @@
                 android:id="@+id/android201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/android301s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d201s" />
 
             <ImageView
                 android:id="@+id/android201"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_toLeftOf="@+id/android301s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/android301s"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/android101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/android201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/android101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/android201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/android201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
         </RelativeLayout>
 
 
         <RelativeLayout
+            android:id="@+id/iOS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/iOS">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ios_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/ios_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/ios401s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/ios401s" />
+                android:background="@drawable/d401s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/ios401"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d401"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/ios301s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/ios401s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d301s" />
 
             <ImageView
                 android:id="@+id/ios301"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301"
-                android:layout_toLeftOf="@+id/ios401s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/ios401s"
+                android:background="@drawable/d301"
                 android:visibility="invisible"/>
 
 
@@ -247,93 +250,93 @@
                 android:id="@+id/ios201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/ios301s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d201s" />
 
             <ImageView
                 android:id="@+id/ios201"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_toLeftOf="@+id/ios301s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/ios301s"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/ios101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/ios201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/ios101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/ios201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/ios201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/WindowsPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/WindowsPhone">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/wp_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/wp_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/wp201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/wp201s" />
+                android:background="@drawable/d201s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/wp201"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/wp101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/wp201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/wp101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/wp201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/wp201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
 
@@ -341,60 +344,60 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/MobilOyun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/MobilOyun">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mobil_oyun_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/mobil_oyun_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/mobiloyun201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/mobiloyun201s" />
+                android:background="@drawable/d201s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/mobiloyun201"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/mobiloyun101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/mobiloyun201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/mobiloyun101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/mobiloyun201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/mobiloyun201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
 
@@ -403,60 +406,60 @@
 
 
         <RelativeLayout
+            android:id="@+id/WebProgramlama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/WebProgramlama">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/web_programlama_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/web_programlama_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/web401s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/web401s" />
+                android:background="@drawable/d401s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/web401"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d401"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/web301s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/web401s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d301s" />
 
             <ImageView
                 android:id="@+id/web301"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301"
-                android:layout_toLeftOf="@+id/web401s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/web401s"
+                android:background="@drawable/d301"
                 android:visibility="invisible"/>
 
 
@@ -465,93 +468,93 @@
                 android:id="@+id/web201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/web301s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d201s" />
 
             <ImageView
                 android:id="@+id/web201"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_toLeftOf="@+id/web301s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/web301s"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/web101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/web201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/web101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/web201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/web201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/Scratch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/Scratch">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/scratch_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/scratch_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/scratch201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/scratch201s" />
+                android:background="@drawable/d201s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/scratch201"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/scratch101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/scratch201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/scratch101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/scratch201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/scratch201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
 
@@ -560,60 +563,60 @@
 
 
         <RelativeLayout
+            android:id="@+id/AppInventor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/AppInventor">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_inventor_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/app_inventor_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/ai301s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/ai301s" />
+                android:background="@drawable/d301s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/ai301"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d301"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/ai201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/ai301s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d201s" />
 
             <ImageView
                 android:id="@+id/ai201"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_toLeftOf="@+id/ai301s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/ai301s"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
 
@@ -622,77 +625,77 @@
                 android:id="@+id/ai101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/ai201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/ai101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/ai201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/ai201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
 
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/Arduino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:id="@+id/Arduino">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/fragment_profil_arkaplan_renk"></LinearLayout>
 
             <TextView
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/arduino_ismi"
-                android:textSize="20sp"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
-                style="@style/mobilIcerikBaslik"/>
+                android:gravity="center"
+                android:text="@string/arduino_ismi"
+                android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/arduino401s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401s"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:layout_marginRight="15dp"
-                android:id="@+id/arduino401s" />
+                android:background="@drawable/d401s" />
 
             <ImageView
-                android:layout_width="@dimen/seviye_daireler"
-                android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d401"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
                 android:id="@+id/arduino401"
+                android:layout_width="@dimen/seviye_daireler"
+                android:layout_height="@dimen/seviye_daireler"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/d401"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/arduino301s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/arduino401s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d301s" />
 
             <ImageView
                 android:id="@+id/arduino301"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d301"
-                android:layout_toLeftOf="@+id/arduino401s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/arduino401s"
+                android:background="@drawable/d301"
                 android:visibility="invisible"/>
 
 
@@ -701,39 +704,40 @@
                 android:id="@+id/arduino201s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/arduino301s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d201s" />
 
             <ImageView
                 android:id="@+id/arduino201"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d201"
-                android:layout_toLeftOf="@+id/arduino301s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/arduino301s"
+                android:background="@drawable/d201"
                 android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/arduino101s"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101s"
+                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/arduino201s"
-                android:layout_marginRight="5dp"/>
+                android:background="@drawable/d101s" />
 
             <ImageView
                 android:id="@+id/arduino101"
                 android:layout_width="@dimen/seviye_daireler"
                 android:layout_height="@dimen/seviye_daireler"
-                android:background="@drawable/d101"
-                android:layout_toLeftOf="@+id/arduino201s"
                 android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/arduino201s"
+                android:background="@drawable/d101"
                 android:visibility="invisible"/>
 
         </RelativeLayout>
 
     </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -758,8 +762,8 @@
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/facebook_normal_renk"
                 fab:fab_colorPressed="@color/facebook_koyu_renk"
-                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/face_icon"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_size="mini"
                 fab:fab_title="Facebook" />
 
@@ -769,8 +773,8 @@
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/twitter_normal_renk"
                 fab:fab_colorPressed="@color/twitter_koyu_renk"
-                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/twitter_icon"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_size="mini"
                 fab:fab_title="Twitter" />
 
@@ -780,8 +784,8 @@
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/youtube_normal_renk"
                 fab:fab_colorPressed="@color/youtube_koyu_renk"
-                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/googleplus"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_size="mini"
                 fab:fab_title="Google Plus" />
 
@@ -791,8 +795,8 @@
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/linkedin_normal_renk"
                 fab:fab_colorPressed="@color/linkedin_koyu_renk"
-                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_icon="@drawable/linkedin"
+                fab:fab_plusIconColor="@color/beyaz_renk"
                 fab:fab_size="mini"
                 fab:fab_title="Linkedin" />
 

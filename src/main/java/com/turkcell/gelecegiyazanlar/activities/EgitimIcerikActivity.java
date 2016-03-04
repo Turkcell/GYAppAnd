@@ -34,7 +34,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
     final Egitim egitim = new Egitim();
     WebView webIcerik;
     TextView yazarIsim;
-    CircleImageView ResimAvatar;
+    CircleImageView resimAvatar;
     String icerikYazi = "", yazarYazi, resimUrl, title;
     Toolbar toolbar;
     String dugumID, dugumBaslik, authorID;
@@ -50,7 +50,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
 
         yazarIsim = (TextView) findViewById(R.id.yazar);
         webIcerik = (WebView) findViewById(R.id.web);
-        ResimAvatar = (CircleImageView) findViewById(R.id.profile_image);
+        resimAvatar = (CircleImageView) findViewById(R.id.profile_image);
         webIcerik.getSettings().setJavaScriptEnabled(true);
         webIcerik.getSettings().setUseWideViewPort(true);
         webIcerik.getSettings().setSupportZoom(true);
@@ -162,7 +162,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
         ImageRequest image = new ImageRequest(resimUrl, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-                ResimAvatar.setImageBitmap(response);
+                resimAvatar.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override

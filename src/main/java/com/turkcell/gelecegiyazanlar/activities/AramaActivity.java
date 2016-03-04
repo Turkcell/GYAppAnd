@@ -13,7 +13,6 @@ import android.view.View;
 
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
-import com.turkcell.gelecegiyazanlar.adapterlisteners.ViewPagerAdapterArama;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.fragments.AramaFragment;
 import com.turkcell.gelecegiyazanlar.fragments.IcerikAramaFragment;
@@ -23,7 +22,6 @@ public class AramaActivity extends AppCompatActivity {
     public TabLayout tabs;
 
     ViewPager pager;
-    ViewPagerAdapterArama adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

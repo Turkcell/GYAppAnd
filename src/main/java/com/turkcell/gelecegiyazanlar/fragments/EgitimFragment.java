@@ -25,7 +25,7 @@ public class EgitimFragment extends Fragment {
     ViewPager pager;
     ViewPagerAdapter adapter;
     CharSequence[] titles;
-    int Numboftabs = 3;
+    int numbOfTabs = 3;
     ImageView ust_logo;
 
     public EgitimFragment() {
@@ -49,7 +49,7 @@ public class EgitimFragment extends Fragment {
         ust_logo.setImageResource(R.drawable.mobil_ust_logo);
 
         // Baþlýklarý,tab sayýsýný adapterda tanýmlar
-        adapter = new ViewPagerAdapter(getFragmentManager(), titles, Numboftabs);
+        adapter = new ViewPagerAdapter(getFragmentManager(), titles, numbOfTabs);
 
 
         pager = (ViewPager) rootView.findViewById(R.id.pager);

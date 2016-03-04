@@ -16,7 +16,7 @@ public class BlogFragment extends android.support.v4.app.Fragment {
     public SlidingTabLayout tabs;
     Toolbar toolbar;
     CharSequence titles[];
-    int Numboftabs = 5;
+    int numbOfTabs = 5;
 
     ViewPager pager;
     ViewPagerAdapterBlogEtkinlik adapter;
@@ -36,7 +36,7 @@ public class BlogFragment extends android.support.v4.app.Fragment {
         };
 
         // Baþlýklarý,tab sayýsýný adapterda tanýmlar
-        adapter = new ViewPagerAdapterBlogEtkinlik(getFragmentManager(), titles, Numboftabs);
+        adapter = new ViewPagerAdapterBlogEtkinlik(getFragmentManager(), titles, numbOfTabs);
 
 
         pager = (ViewPager) rootView.findViewById(R.id.pagerBlog);

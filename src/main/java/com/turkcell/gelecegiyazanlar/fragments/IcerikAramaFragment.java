@@ -15,19 +15,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.AramaActivity;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.IcerikAramaAdapter;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.models.Icerik;
-import com.turkcell.gelecegiyazanlar.models.Kisi;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
 import org.json.JSONArray;
@@ -49,12 +45,8 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     ListView listView;
     TextView tvSonuc;
 
-    Kisi tempKisi;
     //Volley deðiþkenleri
     JsonArrayRequest jsonArrayRequest;
-    JsonObjectRequest jsonObjectRequest;
-    RequestQueue requestQueue;
-    ImageRequest imageRequest;
     String url;
     int sayfaNumarasi=1;
 

@@ -9,8 +9,8 @@ import com.turkcell.gelecegiyazanlar.fragments.AramaFragment;
 
 public class ViewPagerAdapterArama extends FragmentStatePagerAdapter {
 
-    CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
-    int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
+    CharSequence Titles[];
+    int numbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
 
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
@@ -18,7 +18,7 @@ public class ViewPagerAdapterArama extends FragmentStatePagerAdapter {
         super(fm);
 
         this.Titles = mTitles;
-        this.NumbOfTabs = mNumbOfTabsumb;
+        this.numbOfTabs = mNumbOfTabsumb;
 
     }
 
@@ -43,6 +43,6 @@ public class ViewPagerAdapterArama extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return NumbOfTabs;
+        return numbOfTabs;
     }
 }

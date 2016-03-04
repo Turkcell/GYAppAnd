@@ -19,12 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.turkcell.gelecegiyazanlar.R;
@@ -40,10 +38,8 @@ import org.json.JSONObject;
 
 public class ProfilFragment extends Fragment implements View.OnClickListener {
 
-    RequestQueue requestQueue;
+
     JsonObjectRequest jsonObjectRequest;
-    StringRequest stringRequest;
-    ImageRequest imageRequest;
     String kategori;
     String hakkindaTemiz;
 
@@ -60,7 +56,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
             ,wp101,wp201,mobiloyun101,mobiloyun201,web101,web201,web301,web401,scratch101,scratch201,ai101,ai201,ai301,arduino101
             ,arduino201,arduino301,arduino401;
 
-    String Url ;
+    String url;
 
     FloatingActionButton facebook,google,twitter,linkedin;
 
@@ -80,7 +76,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
 
         View rootView= inflater.inflate(R.layout.fragment_profil, container, false);
 
-        Url= GYConfiguration.getDomain()+"profil/retrieve?userID=";
+        url = GYConfiguration.getDomain() + "profil/retrieve?userID=";
 
         yuklenmeEkran=new YuklenmeEkran(getActivity());
 
@@ -211,8 +207,8 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
     public void EkleYazi(String id){
 
         yuklenmeEkran.surecBasla();
-Log.d("profil:",Url+id);
-        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, Url+id, null, new Response.Listener<JSONObject>() {
+        Log.d("profil:", url + id);
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url + id, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 
