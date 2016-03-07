@@ -129,7 +129,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
                                 yazarIsim.setText(egitim.getYazar());
                                 webIcerik.loadDataWithBaseURL("", egitim.getIcerik(), "text/html", "UTF-8", "");
                             }
-                            CurioClient.getInstance(getApplicationContext()).sendEvent("Egitim Ýçerik>" + dugumBaslik, title);
+                            CurioClient.getInstance(getApplicationContext()).sendEvent("Egitim Ä°Ã§erik>" + dugumBaslik, title);
                             time = System.currentTimeMillis();
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -182,7 +182,7 @@ public class EgitimIcerikActivity extends ActionBarActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        CurioClient.getInstance(getApplicationContext()).endEvent("Egitim Ýçerik>" + dugumBaslik, title, System.currentTimeMillis() - time);
+        CurioClient.getInstance(getApplicationContext()).endEvent("Egitim Ä°Ã§erik>" + dugumBaslik, title, System.currentTimeMillis() - time);
 
     }
 }
