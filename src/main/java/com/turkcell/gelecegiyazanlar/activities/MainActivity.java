@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //Liste doldurma metodumuz
         Yukle();
 
-        // Baþlangýç ekran fragmentý
+        // Baï¿½langï¿½ï¿½ ekran fragmentï¿½
         FragmentManager ft = getSupportFragmentManager();
         ft.beginTransaction()
                 .replace(R.id.fragment, new EgitimFragment())
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Menü Listesi Oluþturma
+        //Menï¿½ Listesi Oluï¿½turma
         leftDrawerList = (ListView) findViewById(R.id.left_drawer);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         navigationDrawerAdapter = new ListDrawerAdapter(drawerList);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         GYConfiguration.checkInternetConnectionShowDialog(MainActivity.this);
 
         /**
-         * liste itemlarýna týklanma ve geçiþ için kullanýlan kýsým.
+         * liste itemlarï¿½na tï¿½klanma ve geï¿½iï¿½ iï¿½in kullanï¿½lan kï¿½sï¿½m.
          */
         leftDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Liste elemanlarýný doldurduk.
+     * Liste elemanlarï¿½nï¿½ doldurduk.
      */
     public void Yukle() {
         drawerList.add(new DrawerItems(R.drawable.egitimicon, getString(R.string.sol_menu_egitim)));
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        CurioClient.getInstance(getApplicationContext()).startScreen(MainActivity.this, "Eðitimler", "sample");
+        CurioClient.getInstance(getApplicationContext()).startScreen(MainActivity.this, "EÄŸitimler", "sample");
 
         super.onStart();
     }

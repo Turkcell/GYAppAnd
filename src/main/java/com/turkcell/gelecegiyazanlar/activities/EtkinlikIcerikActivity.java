@@ -85,7 +85,7 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
                         @Override
                         public void onPageFinished(WebView view, String url) {
                             super.onPageFinished(view, url);
-                            //Toast.makeText(getApplicationContext(), "Sayfa yüklendi", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Sayfa yÃ¼klendi", Toast.LENGTH_SHORT).show();
                             ekran.surecDurdur();
                         }
 
@@ -98,9 +98,9 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
 
                     txtBaslik = response.getJSONObject(0).getString("title");
                     title.setText(txtBaslik);
-                    //Etkinlik baþlýðý bitiþ
+                    //Etkinlik baÅŸlama bitti
 
-                    webView.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
+                    webView.getSettings().setBuiltInZoomControls(true); //zoom yapÄ±lmasÄ±na izin verir
                     webView.getSettings().setSupportZoom(true);
                     webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
                     webView.getSettings().setAllowFileAccess(true);
@@ -111,11 +111,11 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
                     webView.getSettings().setDefaultFontSize(40);
 
 
-                    //Etkinlik içerik baþlangýç
+                    //Etkinlik iÃ§erik baÄŸlandÄ±
 
                     webView.loadData(response.getJSONObject(0).getString("content")
                             , "text/html; charset=utf-8", null);
-                    //Etkinlik içerik bitiþ
+                    //Etkinlik iÃ§erik bitiï¿½
 
 
                 } catch (JSONException e) {
