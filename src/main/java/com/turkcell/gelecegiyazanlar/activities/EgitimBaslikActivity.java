@@ -57,7 +57,7 @@ public class EgitimBaslikActivity extends ActionBarActivity {
         toolbar.setTitle(baslik);
         setSupportActionBar(toolbar);
 
-        ActionbarTasarým();
+        ActionbarTasarim();
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -187,7 +187,7 @@ public class EgitimBaslikActivity extends ActionBarActivity {
     }
 
 
-    private void ActionbarTasarým() {
+    private void ActionbarTasarim() {
 
         if (renk.equals("android")) {
             toolbar.setBackgroundColor(getResources().getColor(R.color.android_yesil_renk));
