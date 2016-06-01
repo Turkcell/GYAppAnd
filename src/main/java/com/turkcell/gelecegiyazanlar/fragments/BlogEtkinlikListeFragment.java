@@ -24,6 +24,7 @@ import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
 import com.turkcell.gelecegiyazanlar.models.Blog;
+import com.turkcell.gelecegiyazanlar.models.BlogKategori;
 import com.turkcell.gelecegiyazanlar.utilities.TarihCevir;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
@@ -38,7 +39,8 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
     JsonArrayRequest request;
 
-    String url;
+    String url = GYConfiguration.getDomain() + "article/retrieve?nitems=10&index=";
+
     YuklenmeEkran yuklenmeEkran;
     TarihCevir tarihCevir;
 
@@ -50,6 +52,8 @@ public class BlogEtkinlikListeFragment extends Fragment {
     int a = 0;
     private int index = -1;
     private int maksSize;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,14 +72,15 @@ public class BlogEtkinlikListeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        url = GYConfiguration.getDomain() + "article/retrieve?nitems=10&index=";
+
         yuklenmeEkran = new YuklenmeEkran(getActivity());
         tarihCevir = new TarihCevir();
 
 
+        //açýlýþta tüm blog yazýlarýný listele
         if (viewPager.getCurrentItem() == 0) {
-            Listele(718, -1);
-            Scroll(718);
+            Listele(BlogKategori.TUMU, -1);
+            Scroll(BlogKategori.TUMU);
         }
         Log.d("log1", String.valueOf(viewPager.getCurrentItem()));
         tabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -89,28 +94,36 @@ public class BlogEtkinlikListeFragment extends Fragment {
                 itemList.clear();
                 switch (position) {
                     case 0:
-                        Listele(718, -1);
-                        Scroll(718);
+                        Listele(BlogKategori.TUMU, -1);
+                        Scroll(BlogKategori.TUMU);
                         break;
                     case 1:
-                        Listele(31, -1);
-                        Scroll(31);
+                        Listele(BlogKategori.GY, -1);
+                        Scroll(BlogKategori.GY);
                         break;
                     case 2:
-
-                        Listele(29, -1);
-                        Scroll(29);
-
+                        Listele(BlogKategori.MOBIL, -1);
+                        Scroll(BlogKategori.MOBIL);
                         break;
                     case 3:
-                        Listele(28, -1);
-                        Scroll(28);
-
+                        Listele(BlogKategori.ANDROID, -1);
+                        Scroll(BlogKategori.ANDROID);
                         break;
                     case 4:
-                        Listele(738, -1);
-                        Scroll(738);
-
+                        Listele(BlogKategori.IOS, -1);
+                        Scroll(BlogKategori.IOS);
+                        break;
+                    case 5:
+                        Listele(BlogKategori.WP,-1);
+                        Scroll(BlogKategori.WP);
+                        break;
+                    case 6:
+                        Listele(BlogKategori.OYUN,-1);
+                        Scroll(BlogKategori.OYUN);
+                        break;
+                    case 7:
+                        Listele(BlogKategori.TASARIM,-1);
+                        Scroll(BlogKategori.TASARIM);
                         break;
                 }
             }
@@ -132,7 +145,10 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
 
         Log.d("urlBlog:", url + (1 + x) + "&kategoriID=" + kategori);
-        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
+        request = new JsonArrayRequest(Request.Method.GET,
+                url + (1 + x) + "&kategoriID=" + kategori,
+                null,
+                new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -249,7 +265,9 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
     public void Scroll(final int kategori) {
 
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        //setOnScrollListener deprecated.
+        // bkz: http://developer.android.com/reference/android/support/v7/widget/RecyclerView.OnScrollListener.html
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 /**
