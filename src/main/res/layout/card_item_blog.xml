@@ -7,98 +7,95 @@
     android:layout_margin="8dp"
     card_view:cardCornerRadius="4dp">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/profilID"
-    android:visibility="gone"/>
-
     <TextView
+        android:id="@+id/profilID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/blogID"
-        android:visibility="gone"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/categories"
             android:layout_width="1dp"
             android:layout_height="1dp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/tasarim"
-            android:id="@+id/categories"
             android:layout_gravity="right"
+            android:text="@string/tasarim"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:visibility="invisible" />
 
         <LinearLayout
+            android:id="@+id/profilLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/profilLayout"
             android:layout_marginTop="10dp"
-            >
+            android:orientation="horizontal">
 
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="5dp"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="5dp"
                 android:scaleType="centerCrop"
-                app:border_width="1dp"
-                app:border_color="@color/card_blog_border_renk"/>
+                app:border_color="@color/card_blog_border_renk"
+                app:border_width="1dp" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
+                    android:layout_gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:layout_gravity="center_vertical">
+                    android:paddingTop="10dp">
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="15dp"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical"
                         android:id="@+id/profilIsim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text=""
                         android:textColor="@color/card_blog_yazi_renk"
-                        />
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
 
 
                     <TextView
 
-                        android:layout_toRightOf="@id/profilLayout"
+                        android:id="@+id/blogTarih"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
-                        android:text=""
-                        android:textSize="11dp"
-                        android:paddingTop="5dp"
-                        android:id="@+id/blogTarih"
-                        android:textColor="@color/card_blog_tarih_renk"
-                        android:paddingLeft="10dp"
                         android:layout_centerVertical="true"
-                        />
+                        android:layout_toRightOf="@id/profilLayout"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:text=""
+                        android:textColor="@color/card_blog_tarih_renk"
+                        android:textSize="11dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="350dp"
                     android:layout_height="1dp"
-                    android:background="@color/blog_item_arkaplan_renk"></LinearLayout>
+                    android:background="@color/blog_item_arkaplan_renk"
+                    android:orientation="vertical" />
             </LinearLayout>
 
         </LinearLayout>
@@ -110,47 +107,47 @@
             android:orientation="horizontal">
 
             <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/image"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:scaleType="fitXY"
 
-                android:id="@+id/image"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/image"
                 android:layout_toRightOf="@+id/image"
-                android:layout_toEndOf="@+id/image">
+                android:orientation="vertical">
 
                 <TextView
 
                     android:id="@+id/itemBaslik"
+                    style="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.22"
+                    android:paddingLeft="5dp"
                     android:text=""
                     android:textColor="@color/card_blog_yazi_renk"
-                    android:textSize="18sp"
-                    android:paddingLeft="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Base.TextAppearance.AppCompat.Body2"
-                    android:layout_weight="0.22" />
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:layout_centerVertical="true"
                     android:id="@+id/itemOzet"
-                    android:text=""
-                    android:textColor="@color/blog_item_ozet_renk"
-                    android:textSize="13sp"
-                    android:paddingLeft="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    style="@style/Base.TextAppearance.AppCompat.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/Base.TextAppearance.AppCompat.Body2"/>
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/blog_item_ozet_renk"
+                    android:textSize="13sp" />
 
 
             </LinearLayout>

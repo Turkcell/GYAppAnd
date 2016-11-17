@@ -1,79 +1,75 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.turkcell.gelecegiyazanlar.fragments.ElcilerFragment">
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.utku.gyprofil.Elciler">
 
-        <RelativeLayout
-            android:layout_height="match_parent"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="match_parent"
             android:background="#e4e3db"
-            android:gravity="center"
-            >
+            android:gravity="center">
+
             <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fadeScrollbars="true"
-                >
+                android:fadeScrollbars="true">
 
-                <GridLayout
-                    android:paddingTop="10dp"
-                    android:rowCount="8"
-                    android:columnCount="2"
+                <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    >
+                    android:columnCount="2"
+                    android:paddingTop="10dp"
+                    android:rowCount="8">
 
                     <!--Feyza BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/feyza"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/feyza"
+                        android:orientation="vertical">
 
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/feyza"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/feyza"
 
 
                             />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Feyza Okumuş"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Yıldız Teknik Üniversitesi"
                                 android:padding="5dp"
+                                android:text="Yıldız Teknik Üniversitesi"
                                 android:textSize="12dp"
 
                                 />
@@ -85,47 +81,41 @@
 
                     <!--DOĞUKAN YILDIRIM BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/dogukanYildirim"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/dogukanYildirim"
-                        >
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/dogukanyildirim2"
                             android:layout_gravity="center_horizontal"
-                            />
+                            android:paddingTop="10dp"
+                            android:src="@drawable/dogukanyildirim2" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Doğukan Yıldırım"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Pamukkale Üniversitesi"
                                 android:padding="5dp"
-                                android:textSize="12dp"
-
-                                />
+                                android:text="Pamukkale Üniversitesi"
+                                android:textSize="12dp" />
 
                         </LinearLayout>
 
@@ -133,49 +123,42 @@
                     <!--DOĞUKAN YILDIRIM BİTİŞ-->
 
 
-
                     <!--GİZEM NUR YURDAGÜL BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/gizemYurdagul"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/gizemYurdagul"
+                        android:orientation="vertical">
 
-
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/gizemnuryurdagul"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/gizemnuryurdagul" />
 
-
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Gizem Nur Yurdagül"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Çankaya Üniversitesi"
                                 android:padding="5dp"
+                                android:text="Çankaya Üniversitesi"
                                 android:textSize="12dp"
 
                                 />
@@ -188,46 +171,40 @@
 
                     <!--HACI ABDULLAH SARIKAYA BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/abdullahSarikaya"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/abdullahSarikaya"
+                        android:orientation="vertical">
 
-
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/haciabdullah"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/haciabdullah" />
 
-
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Hacı Abdullah Sarıkaya"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Kocaeli Üniversitesi"
                                 android:padding="5dp"
+                                android:text="Kocaeli Üniversitesi"
                                 android:textSize="12dp"
 
                                 />
@@ -239,47 +216,40 @@
 
                     <!--KADİRHAN EKMEKÇİOĞLU BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/kadirhanEkmekcioglu"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/kadirhanEkmekcioglu"
+                        android:orientation="vertical">
 
-
-
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/kadirhan"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/kadirhan" />
 
-
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Kadirhan Ekmekçioğlu"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Dumlupınar Üniversitesi"
                                 android:padding="5dp"
+                                android:text="Dumlupınar Üniversitesi"
                                 android:textSize="12dp"
 
                                 />
@@ -290,53 +260,43 @@
                     <!--KADİRHAN EKMEKÇİOĞLU BİTİŞ-->
 
 
-
-
                     <!--TANER UTKU BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/tanerUtku"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/tanerUtku"
+                        android:orientation="vertical">
 
-
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/tanerutku"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/tanerutku" />
 
-
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Taner Utku"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Maltepe Üniversitesi"
                                 android:padding="5dp"
-                                android:textSize="12dp"
-
-                                />
+                                android:text="Maltepe Üniversitesi"
+                                android:textSize="12dp" />
 
                         </LinearLayout>
 
@@ -344,51 +304,43 @@
                     <!--TANER UTKU BİTİŞ-->
 
 
-         <!--YUSUF EREN UTKU BAŞLANGIÇ-->
+                    <!--YUSUF EREN UTKU BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/erenUtku"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/erenUtku"
+                        android:orientation="vertical">
 
-
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/yusuferenutku"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/yusuferenutku" />
 
-
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Yusuf Eren Utku"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Selçuk Üniversitesi"
                                 android:padding="5dp"
-                                android:textSize="12dp"
-
-                                />
+                                android:text="Selçuk Üniversitesi"
+                                android:textSize="12dp" />
 
                         </LinearLayout>
 
@@ -398,49 +350,41 @@
 
                     <!--VOLKAN KILIÇ BAŞLANGIÇ-->
                     <LinearLayout
-                        android:layout_marginBottom="5dp"
+                        android:id="@+id/volkanKilic"
                         android:layout_width="170dp"
                         android:layout_height="160dp"
+                        android:layout_marginBottom="5dp"
                         android:background="#fff"
-                        android:orientation="vertical"
                         android:gravity="center_horizontal"
-                        android:id="@+id/volkanKilic"
+                        android:orientation="vertical">
 
-
-                        >
                         <ImageView
-                            android:paddingTop="10dp"
                             android:layout_width="95dp"
                             android:layout_height="95dp"
-                            android:src="@drawable/volkankilic"
                             android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/volkankilic" />
 
-
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical"
+                            android:orientation="vertical">
 
-                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
                                 android:text="Volkan Kılıç"
                                 android:textSize="16dp"
-                                android:paddingTop="15dp"
-                                android:textStyle="bold"
-                                />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Korkut Ata Üniversitesi"
                                 android:padding="5dp"
-                                android:textSize="12dp"
-
-                                />
+                                android:text="Korkut Ata Üniversitesi"
+                                android:textSize="12dp" />
 
                         </LinearLayout>
 

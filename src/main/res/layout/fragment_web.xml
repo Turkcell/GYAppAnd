@@ -6,8 +6,8 @@
     android:background="@color/beyaz_renk"
     android:padding="@dimen/sol_margin_olcu_onbes"
     android:paddingBottom="0dp"
-    tools:layout="@layout/fragment_web"
-    >
+    tools:layout="@layout/fragment_web">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_bes"
-            android:text="@string/ne_ogrenebilirim"/>
+            android:text="@string/ne_ogrenebilirim" />
 
         <ScrollView
             android:layout_width="fill_parent"
@@ -38,12 +38,12 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="@dimen/ellilikOlcu"
                         android:layout_height="@dimen/ellilikOlcu"
-                        android:src="@drawable/webprogramlamaicon"/>
+                        android:src="@drawable/webprogramlamaicon" />
 
                     <TextView
                         style="@style/mobilIcerikBaslik"
@@ -52,11 +52,12 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/margin_bes"
                         android:text="@string/web"
-                        android:textColor="@color/web_renk"/>
+                        android:textColor="@color/web_renk" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <ImageView
                             android:id="@+id/websagok"
                             android:layout_width="@dimen/ellilikOlcu"
@@ -74,8 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="visible"
-                    >
+                    android:visibility="visible">
 
                     <!---web 101-->
                     <LinearLayout
@@ -83,15 +83,14 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/yesildaire"
-                            />
+                            android:src="@drawable/yesildaire" />
 
                         <TextView
                             style="@style/mobilIcerikBaslik"
@@ -102,17 +101,18 @@
                             android:text="@string/html_101_baslik"
                             android:textColor="@color/gri_siyah_renk"
                             android:textSize="@dimen/text_size_onyedi" />
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/asagi_image_101_web"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
                                 android:layout_centerVertical="true"
                                 android:layout_toLeftOf="@+id/icon_kep_101_web"
-                                android:src="@drawable/asagiikon"
-                                />
+                                android:src="@drawable/asagiikon" />
 
                             <ImageView
                                 android:id="@+id/icon_kep_101_web"
@@ -132,8 +132,8 @@
                         android:layout_marginLeft="@dimen/ellilikOlcu"
                         android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        >
+                        android:visibility="gone">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -161,13 +161,13 @@
                         android:orientation="horizontal"
 
                         >
+
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/saridaire"
-                            />
+                            android:src="@drawable/saridaire" />
 
                         <TextView
                             style="@style/mobilIcerikBaslik"
@@ -182,14 +182,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/asagi_image_201_web"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
                                 android:layout_centerVertical="true"
                                 android:layout_toLeftOf="@+id/icon_kep_201_web"
-                                android:src="@drawable/asagiikon"
-                                />
+                                android:src="@drawable/asagiikon" />
 
                             <ImageView
                                 android:id="@+id/icon_kep_201_web"
@@ -208,8 +208,8 @@
                         android:layout_marginLeft="@dimen/ellilikOlcu"
                         android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        >
+                        android:visibility="gone">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -237,13 +237,13 @@
                         android:orientation="horizontal"
 
                         >
+
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/turuncudaire"
-                            />
+                            android:src="@drawable/turuncudaire" />
 
                         <TextView
                             style="@style/mobilIcerikBaslik"
@@ -258,14 +258,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/asagi_image_301_android"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
                                 android:layout_centerVertical="true"
                                 android:layout_toLeftOf="@+id/icon_kep_301_web"
-                                android:src="@drawable/asagiikon"
-                                />
+                                android:src="@drawable/asagiikon" />
 
                             <ImageView
                                 android:id="@+id/icon_kep_301_web"
@@ -285,8 +285,8 @@
                         android:layout_marginLeft="@dimen/ellilikOlcu"
                         android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        >
+                        android:visibility="gone">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -315,13 +315,13 @@
                         android:orientation="horizontal"
 
                         >
+
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/kirmizidaire"
-                            />
+                            android:src="@drawable/kirmizidaire" />
 
                         <TextView
                             style="@style/mobilIcerikBaslik"
@@ -336,14 +336,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/asagi_image_302_web"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
                                 android:layout_centerVertical="true"
                                 android:layout_toLeftOf="@+id/icon_kep_302_web"
-                                android:src="@drawable/asagiikon"
-                                />
+                                android:src="@drawable/asagiikon" />
 
                             <ImageView
                                 android:id="@+id/icon_kep_302_web"
@@ -363,8 +363,8 @@
                         android:layout_marginLeft="@dimen/ellilikOlcu"
                         android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        >
+                        android:visibility="gone">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -392,13 +392,13 @@
                         android:orientation="horizontal"
 
                         >
+
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/apiweb401"
-                            />
+                            android:src="@drawable/apiweb401" />
 
                         <TextView
                             style="@style/mobilIcerikBaslik"
@@ -413,14 +413,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/asagi_image_401_web"
                                 android:layout_width="@dimen/sol_margin_olcu_onbes"
                                 android:layout_height="@dimen/sol_margin_olcu_onbes"
                                 android:layout_centerVertical="true"
                                 android:layout_toLeftOf="@+id/icon_kep_401_web"
-                                android:src="@drawable/asagiikon"
-                                />
+                                android:src="@drawable/asagiikon" />
 
                             <ImageView
                                 android:id="@+id/icon_kep_401_web"
@@ -440,8 +440,8 @@
                         android:layout_marginLeft="@dimen/ellilikOlcu"
                         android:layout_marginTop="@dimen/margin_bes"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        >
+                        android:visibility="gone">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

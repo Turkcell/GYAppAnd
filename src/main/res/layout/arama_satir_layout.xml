@@ -2,10 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-android:orientation="horizontal"
+    android:background="@color/beyaz_renk"
+    android:orientation="horizontal"
     android:paddingBottom="@dimen/sol_margin_olcu_onbes"
-    android:paddingTop="@dimen/sol_margin_olcu_onbes"
-    android:background="@color/beyaz_renk">
+    android:paddingTop="@dimen/sol_margin_olcu_onbes">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -13,64 +13,60 @@ android:orientation="horizontal"
         android:orientation="horizontal">
 
 
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/ivsimge"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="@dimen/sol_margin_olcu_on"
-        android:background="@drawable/resim_default"
-        />
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_gravity="center_vertical">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <TextView
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/ivsimge"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/sol_margin_olcu_on"
+            android:background="@drawable/resim_default" />
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
-        android:textStyle="bold"
-        android:text="@string/isim"
-        />
-
-    <TextView
-        android:id="@+id/tvisimsoyisim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_bes"
-        />
-
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-        <TextView
-
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
-            android:textStyle="bold"
-            android:text="@string/kullanici_adi"
-            />
-        <TextView
-            android:id="@+id/tvkullanici"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="@dimen/margin_bes"
-            />
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
+                    android:text="@string/isim"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvisimsoyisim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_bes" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sol_margin_olcu_onbes"
+                    android:text="@string/kullanici_adi"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvkullanici"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_bes" />
+            </LinearLayout>
         </LinearLayout>
-</LinearLayout>
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar
-    android:layout_height="wrap_content"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/ColorPrimary"
     android:elevation="2dp"
-    android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
 
 
     <TextView
+        android:id="@+id/titleCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text=""
-        android:textSize="@dimen/text_size_yirmibes"
-        android:id="@+id/titleCenter"
-        android:textColor="@color/beyaz_renk" />
+        android:textColor="@color/beyaz_renk"
+        android:textSize="@dimen/text_size_yirmibes" />
 
 </android.support.v7.widget.Toolbar>

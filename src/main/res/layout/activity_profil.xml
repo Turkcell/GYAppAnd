@@ -1,25 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/beyaz_renk"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <include
         android:id="@+id/tool_bar_back"
         layout="@layout/toolbar"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/beyaz_renk"></LinearLayout>
+            android:background="@color/beyaz_renk"/>
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="@dimen/ust_bosluk_yukseklik"
@@ -27,24 +29,23 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/avatar"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/defaultimage"
-                app:border_width="3dp"
-                app:border_color="@color/tab_default_renk"/>
+                app:border_color="@color/tab_default_renk"
+                app:border_width="3dp" />
 
 
             <TextView
+                android:id="@+id/adSoyad"
+                style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:id="@+id/adSoyad"
-                android:textSize="25sp"
                 android:textColor="@color/beyaz_renk"
-                style="@style/mobilIcerikBaslik"/>
+                android:textSize="25sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -55,50 +56,46 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:background="@drawable/egitimkep"/>
+                    android:background="@drawable/egitimkep" />
 
                 <TextView
                     android:id="@+id/universite"
+                    style="@style/mobilIcerikBaslik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
                     android:text=""
-                    style="@style/mobilIcerikBaslik"
                     android:textColor="@color/beyaz_renk"
-                    android:textSize="15sp"
-                    android:layout_marginLeft="3dp"/>
+                    android:textSize="15sp" />
 
                 <ImageView
 
                     android:layout_width="10dp"
                     android:layout_height="12dp"
-                    android:background="@drawable/konum"
-                    android:layout_marginLeft="6dp"/>
+                    android:layout_marginLeft="6dp"
+                    android:background="@drawable/konum" />
 
                 <TextView
                     android:id="@+id/konum"
+                    style="@style/mobilIcerikBaslik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
                     android:text=""
-                    style="@style/mobilIcerikBaslik"
                     android:textColor="@color/beyaz_renk"
-                    android:textSize="15sp"
-                    android:layout_marginLeft="3dp"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>
 
 
-
-
         <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
+            android:id="@+id/tabsBlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/tab_default_renk"
-            android:id="@+id/tabsBlog"
 
             />
 
@@ -111,12 +108,11 @@
 
 
         <android.support.v4.view.ViewPager
-            android:layout_marginTop="3dp"
             android:id="@+id/pagerProfil"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            ></android.support.v4.view.ViewPager>
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"/>
 
 
     </LinearLayout>

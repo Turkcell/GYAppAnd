@@ -6,12 +6,13 @@
     android:clickable="true"
     android:orientation="vertical"
     android:paddingLeft="40dp"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center_vertical">
+
         <TextView
             android:id="@+id/nodeID"
             android:layout_width="wrap_content"
@@ -21,7 +22,7 @@
             android:textIsSelectable="true"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvChildParent"

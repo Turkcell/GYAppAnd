@@ -1,51 +1,49 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="match_parent"
-    >
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbaretkinlik"
-        android:minHeight="?attr/actionBarSize"
-        android:background="@color/blog_icerik_arkaplan_renk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/txtBaslik"
-            android:layout_height="wrap_content"
-            android:layout_width="250dp"
-            android:text=""
-            style="@style/mobilIcerikBaslik"
-            android:textColor="@color/beyaz_renk"
-            />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbaretkinlik"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/mobilIcerikBaslik"
-            android:textSize="12sp"
-            android:id="@+id/txtYorum"
-            android:text="@string/yorumlar"
-            android:textColor="@color/beyaz_renk"
-            android:layout_marginRight="15dp"
-            android:layout_centerVertical="true"/>
-</RelativeLayout>
-    </android.support.v7.widget.Toolbar>
+            android:background="@color/blog_icerik_arkaplan_renk"
+            android:minHeight="?attr/actionBarSize">
 
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/etkinlikDetay"
-        android:layout_below="@+id/toolbaretkinlik"
-        />
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtBaslik"
+                    style="@style/mobilIcerikBaslik"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/beyaz_renk" />
+
+                <TextView
+                    android:id="@+id/txtYorum"
+                    style="@style/mobilIcerikBaslik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/yorumlar"
+                    android:textColor="@color/beyaz_renk"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <WebView
+            android:id="@+id/etkinlikDetay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbaretkinlik" />
+    </RelativeLayout>
 </LinearLayout>
