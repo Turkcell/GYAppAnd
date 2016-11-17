@@ -8,9 +8,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -44,11 +46,11 @@ import java.util.List;
 
 public class AramaFragment extends Fragment implements View.OnClickListener, AramaActivity.IArama {
 
-    EditText search;
+    EditText searchEditText;
 
     ImageView btnAra;
     ListView listView;
-    TextView tvSonuc;
+    TextView sonucTextView;
 
     Kisi tempKisi;
     //Volley deðiþkenleri
@@ -87,11 +89,11 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
         urlAramaKullanici = GYConfiguration.getDomain() + "usersearch/retrieve?keyword=";
         urlIcerik = GYConfiguration.getDomain() + "contentsearch/retrieve?";
 
-        search = (EditText) toolbar.findViewById(R.id.etSearch);
+        searchEditText = (EditText) toolbar.findViewById(R.id.etSearch);
 
         listView = (ListView) rootView.findViewById(R.id.lvliste);
 
-        tvSonuc = (TextView) rootView.findViewById(R.id.tvSonuc);
+        sonucTextView = (TextView) rootView.findViewById(R.id.tvSonuc);
         btnAra = (ImageView) toolbar.findViewById(R.id.btnAra);
 
         ekran = new YuklenmeEkran(getActivity());
@@ -110,6 +112,17 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
             }
         });
 
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    performSearch();
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
         return rootView;
     }
@@ -119,14 +132,16 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnAra:
-                String link = (urlAramaKullanici + search.getText()).trim();
-                link = link.replace(" ", "%20");
-                kisiList.clear();
-                Listele(link);
+                performSearch();
                 break;
         }
+    }
 
-
+    private void performSearch() {
+        String link = (urlAramaKullanici + searchEditText.getText()).trim();
+        link = link.replace(" ", "%20");
+        kisiList.clear();
+        Listele(link);
     }
 
     public void Listele(String url) {
@@ -170,8 +185,8 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
 
                 Log.d("parse islemi bitti:", "girildi");
                 if (kisiList.isEmpty())
-                    tvSonuc.setVisibility(View.VISIBLE);
-                else tvSonuc.setVisibility(View.GONE);
+                    sonucTextView.setVisibility(View.VISIBLE);
+                else sonucTextView.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -186,7 +201,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
 
 
     }

@@ -16,8 +16,9 @@
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:background="@drawable/arama_background"
-            android:hint="Ara.."
+            android:hint="@string/search"
             android:inputType="text"
+            android:imeOptions="actionSearch"
             android:padding="3dp"
             android:textColor="@color/ColorPrimary"
             android:textColorHint="@color/hint_yazi_renk" />
