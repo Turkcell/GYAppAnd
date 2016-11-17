@@ -45,9 +45,6 @@ public class EgitimFragment extends Fragment {
 
         ust_logo = (ImageView) rootView.findViewById(R.id.logo_ust_ekran);
 
-        //Baslangýc resmi
-        ust_logo.setImageResource(R.drawable.mobil_ust_logo);
-
         // Baþlýklarý,tab sayýsýný adapterda tanýmlar
         adapter = new ViewPagerAdapter(getFragmentManager(), titles, numbOfTabs);
 

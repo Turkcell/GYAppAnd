@@ -117,7 +117,7 @@ public class SlidingTabLayoutIcon extends HorizontalScrollView {
         imageView.setPadding(padding - 8, padding, padding - 8, padding);
 
 
-        int width = (int) (getResources().getDisplayMetrics().widthPixels / mViewPager.getAdapter().getCount());
+        int width = getResources().getDisplayMetrics().widthPixels / mViewPager.getAdapter().getCount();
         imageView.setMinimumWidth(width - 120);
 
         return imageView;

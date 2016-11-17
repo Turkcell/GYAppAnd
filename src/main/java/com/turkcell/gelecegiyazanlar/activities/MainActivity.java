@@ -99,8 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
                 save = position;
 
-                // view.setBackgroundColor(getResources().getColor(R.color.drawer_color_selected));
-
                 FragmentManager ft = getSupportFragmentManager();
                 switch (position) {
                     case 0:
@@ -188,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent i = new Intent(MainActivity.this, AramaActivity.class);
             startActivity(i);
