@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -81,8 +82,7 @@ public class AramaActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.left_back));
+        toolbar.setNavigationIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.left_back, null));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +102,7 @@ public class AramaActivity extends AppCompatActivity {
             aramaFragment.onPageActivated();
     }
 
-    public static interface IArama {
+    public interface IArama {
         void onPageActivated();
     }
 

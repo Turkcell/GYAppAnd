@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -104,12 +105,12 @@ public class WebFragment extends Fragment implements View.OnClickListener {
                     webIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    webSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    webSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     webIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    webSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    webSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
                 }
                 break;
 

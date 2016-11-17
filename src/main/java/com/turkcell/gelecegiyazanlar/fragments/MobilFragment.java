@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -424,12 +425,12 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     androidIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    androidSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    androidSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     androidIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    androidSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    androidSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
 
                     iosIcerik.setVisibility(View.GONE);
                     winIcerik.setVisibility(View.GONE);
@@ -489,12 +490,12 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     iosIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    iosSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    iosSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     iosIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    iosSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    iosSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
 
                     androidIcerik.setVisibility(View.GONE);
                     winIcerik.setVisibility(View.GONE);
@@ -561,12 +562,12 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     winIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    winSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    winSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     winIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    winSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    winSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
 
                     iosIcerik.setVisibility(View.GONE);
                     androidIcerik.setVisibility(View.GONE);
@@ -601,12 +602,12 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     appinventorIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    appSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    appSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     appinventorIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    appSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    appSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
 
                     iosIcerik.setVisibility(View.GONE);
                     winIcerik.setVisibility(View.GONE);
@@ -662,12 +663,12 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     scratchIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    scratchSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    scratchSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     scratchIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    scratchSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    scratchSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
 
 
                     iosIcerik.setVisibility(View.GONE);
@@ -703,12 +704,12 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
                     arduinoIcerik.setVisibility(View.GONE);
                     goster();
                     tablar.setVisibility(View.VISIBLE);
-                    arduinoSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    arduinoSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
                     arduinoIcerik.setVisibility(View.VISIBLE);
                     sakla();
                     tablar.setVisibility(View.GONE);
-                    arduinoSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    arduinoSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
 
                     iosIcerik.setVisibility(View.GONE);
                     winIcerik.setVisibility(View.GONE);
