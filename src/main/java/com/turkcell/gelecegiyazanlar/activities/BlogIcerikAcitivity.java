@@ -1,6 +1,7 @@
 package com.turkcell.gelecegiyazanlar.activities;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -20,6 +19,7 @@ import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.ActivityBlogIcerikAcitivityBinding;
 import com.turkcell.gelecegiyazanlar.models.Blog;
 import com.turkcell.gelecegiyazanlar.models.Kisi;
 import com.turkcell.gelecegiyazanlar.models.Yorum;
@@ -28,110 +28,96 @@ import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class BlogIcerikAcitivity extends AppCompatActivity {
 
-    String url;
-    String avatar = "";
-    ImageRequest imageRequest;
-    JsonArrayRequest stringRequest;
-    String txtBaslik = "";
-    YuklenmeEkran ekran;
-    String nodeID;
-    CircleImageView circleImageView;
+    private ActivityBlogIcerikAcitivityBinding activityBlogIcerikAcitivityBinding;
 
-    TextView yazar, yazarID, yorum;
+    private String urlString;
+    private ImageRequest imageRequest;
+    private  JsonArrayRequest jsonArrayRequest;
+    private String baslikString = "";
+    private YuklenmeEkran yuklenmeEkran;
+    private String nodeIDString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blog_icerik_acitivity);
+
+        activityBlogIcerikAcitivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_blog_icerik_acitivity);
 
         Mint.initAndStartSession(BlogIcerikAcitivity.this, GYConfiguration.SPLUNK_ID);
 
-        url = GYConfiguration.getDomain() + "article_content/retrieve?nodeID=";
-        ekran = new YuklenmeEkran(BlogIcerikAcitivity.this);
-        yazar = (TextView) findViewById(R.id.yazarIsim);
-        yazarID = (TextView) findViewById(R.id.yazarID);
-        yorum = (TextView) findViewById(R.id.txtYorum);
+        urlString = GYConfiguration.getDomain() + "article_content/retrieve?nodeID=";
+        yuklenmeEkran = new YuklenmeEkran(BlogIcerikAcitivity.this);
 
         Bundle exras = getIntent().getExtras();
-        nodeID = exras.getString(Blog.BLOG_ID);
-        Log.d("xx:", nodeID);
+        nodeIDString = exras.getString(Blog.BLOG_ID);
 
 
-        yorum.setOnClickListener(new View.OnClickListener() {
+        activityBlogIcerikAcitivityBinding.textViewYorum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BlogIcerikAcitivity.this, YorumActivity.class);
-                i.putExtra(Yorum.YORUM_ID, nodeID);
+                i.putExtra(Yorum.YORUM_ID, nodeIDString);
                 startActivity(i);
             }
         });
 
         if (GYConfiguration.checkInternetConnectionShowDialog(BlogIcerikAcitivity.this)) {
-            ekran.surecBasla();
+            yuklenmeEkran.surecBasla();
         }
 
 
-        stringRequest = new JsonArrayRequest(Request.Method.GET, url + nodeID, null, new Response.Listener<JSONArray>() {
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlString + nodeIDString, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                Log.d("json:", response.toString());
-                WebView webView = (WebView) findViewById(R.id.blogDetay);
-                webView.getSettings().setJavaScriptEnabled(true);
-                ekran.surecDurdur();
-                try {
 
+                activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setJavaScriptEnabled(true);
+                yuklenmeEkran.surecDurdur();
+                try {
                     //Blog baþlýðý baþlangýç
-                    TextView baslik = (TextView) findViewById(R.id.txtBaslik);
-                    txtBaslik = response.getJSONObject(0).getString("title");
-                    baslik.setText(txtBaslik);
+                    baslikString = response.getJSONObject(0).getString("title");
+                    activityBlogIcerikAcitivityBinding.textViewBaslik.setText(baslikString);
 
                     String yazarIsim = response.getJSONObject(0).getString("adSoyad");
                     String authorID = response.getJSONObject(0).getString("authorID");
 
-                    yazar.setText(yazarIsim);
-                    yazarID.setText(authorID);
+                    activityBlogIcerikAcitivityBinding.textViewYazarIsim.setText(yazarIsim);
+                    activityBlogIcerikAcitivityBinding.textViewYazarID.setText(authorID);
                     //Avatar baþlangýç
-                    circleImageView = (CircleImageView) findViewById(R.id.avatar);
-                    avatar = response.getJSONObject(0).getString("authorAvatarUrl");
-                    AvatarYukle(avatar);
+
+                    AvatarYukle(response.getJSONObject(0).getString("authorAvatarUrl"));
 
                     //Avatar bitiþ
 
-
-                    webView.setWebViewClient(new WebViewClient() {
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.setWebViewClient(new WebViewClient() {
 
                         @Override
                         public void onPageFinished(WebView view, String url) {
                             super.onPageFinished(view, url);
-                            //Toast.makeText(getApplicationContext(), "Sayfa yüklendi", Toast.LENGTH_SHORT).show();
-
                         }
 
                         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                            Toast.makeText(getApplicationContext(),R.string.hata_olustu_mesaji, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.hata_olustu_mesaji, Toast.LENGTH_SHORT).show();
 
                         }
                     });
 
 
                     //Blog içerik baþlangýç
-                    webView.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
-                    webView.getSettings().setSupportZoom(true);
-                    webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-                    webView.getSettings().setAllowFileAccess(true);
-                    webView.getSettings().setDomStorageEnabled(true);
-                    webView.getSettings().setJavaScriptEnabled(true);
-                    webView.getSettings().setUseWideViewPort(true);
-                    webView.getSettings().setLoadWithOverviewMode(true);
-                    webView.getSettings().setDefaultFontSize(40);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setSupportZoom(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setAllowFileAccess(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setDomStorageEnabled(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setJavaScriptEnabled(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setUseWideViewPort(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setLoadWithOverviewMode(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setDefaultFontSize(40);
 
                     Log.d("TAG", response.getJSONObject(0).getString("content"));
-                    webView.loadData(response.getJSONObject(0).getString("content")
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.loadData(response.getJSONObject(0).getString("content")
                             , "text/html; charset=utf-8", null);
                     //Blog içerik bitiþ
 
@@ -149,7 +135,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
                     }
                 });
 
-        AppController.getInstance().addToRequestQueue(stringRequest);
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 
@@ -157,7 +143,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         imageRequest = new ImageRequest(avatar, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-                circleImageView.setImageBitmap(response);
+                activityBlogIcerikAcitivityBinding.circleImageViewAvatar.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override
@@ -168,12 +154,12 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(imageRequest);
 
 
-        circleImageView.setOnClickListener(new View.OnClickListener() {
+        activityBlogIcerikAcitivityBinding.circleImageViewAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (yazarID.getText() != null) {
+                if (activityBlogIcerikAcitivityBinding.textViewYazarID.getText() != null) {
                     Intent i = new Intent(BlogIcerikAcitivity.this, ProfilActivity.class);
-                    i.putExtra(Kisi.PROFIL_ID, yazarID.getText());
+                    i.putExtra(Kisi.PROFIL_ID, activityBlogIcerikAcitivityBinding.textViewYazarID.getText());
                     startActivity(i);
                 }
             }

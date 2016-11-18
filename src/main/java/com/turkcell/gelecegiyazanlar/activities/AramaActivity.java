@@ -1,8 +1,8 @@
 package com.turkcell.gelecegiyazanlar.activities;
 
 import android.content.DialogInterface;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.res.ResourcesCompat;
@@ -15,19 +15,19 @@ import android.view.View;
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.ActivityAramaBinding;
 import com.turkcell.gelecegiyazanlar.fragments.AramaFragment;
 import com.turkcell.gelecegiyazanlar.fragments.IcerikAramaFragment;
 
 public class AramaActivity extends AppCompatActivity {
 
-    public TabLayout tabs;
-
-    ViewPager pager;
+    private ActivityAramaBinding activityAramaBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arama);
+
+        activityAramaBinding = DataBindingUtil.setContentView(this,R.layout.activity_arama);
 
         Mint.initAndStartSession(AramaActivity.this, GYConfiguration.SPLUNK_ID);
 
@@ -51,9 +51,7 @@ public class AramaActivity extends AppCompatActivity {
             alertDialog.show();
         }
 
-
-        pager = (ViewPager) findViewById(R.id.pagerArama);
-        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        activityAramaBinding.viewPagerPagerArama.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 managePageChanged();
@@ -70,14 +68,12 @@ public class AramaActivity extends AppCompatActivity {
             }
         });
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        pager.setAdapter(pagerAdapter);
+        activityAramaBinding.viewPagerPagerArama.setAdapter(pagerAdapter);
+
+        activityAramaBinding.tabLayoutTabsArama.setTabsFromPagerAdapter(pagerAdapter);
 
 
-        tabs = (TabLayout) findViewById(R.id.tabsArama);
-        tabs.setTabsFromPagerAdapter(pagerAdapter);
-
-
-        tabs.setupWithViewPager(pager);
+        activityAramaBinding.tabLayoutTabsArama.setupWithViewPager(activityAramaBinding.viewPagerPagerArama);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -92,7 +88,7 @@ public class AramaActivity extends AppCompatActivity {
     }
 
     public Fragment getCurrentFragment() {
-        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pagerArama + ":" + pager.getCurrentItem());
+        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewPagerPagerArama + ":" + activityAramaBinding.viewPagerPagerArama.getCurrentItem());
         return page;
     }
 

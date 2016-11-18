@@ -1,39 +1,42 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/beyaz_renk"
-    android:orientation="vertical"
-    tools:context="com.turkcell.gelecegiyazanlar.activities.AramaActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include
-        android:id="@+id/tool_bar_ara"
-        layout="@layout/aramabar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="@color/arama_arkaplan_renk"/>
-
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabsArama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/tab_default_renk"
-        app:tabGravity="center"
-        app:tabIndicatorColor="@color/selector"
-        app:tabSelectedTextColor="@color/beyaz_renk"
-        app:tabTextColor="@color/beyaz_renk" />
-
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pagerArama"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
-        android:layout_weight="1"/>
-</LinearLayout>
+        android:background="@color/beyaz_renk"
+        android:orientation="vertical"
+        tools:context="com.turkcell.gelecegiyazanlar.activities.AramaActivity">
+
+        <include
+            android:id="@+id/tool_bar_ara"
+            layout="@layout/aramabar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/arama_arkaplan_renk" />
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayoutTabsArama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tab_default_renk"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/selector"
+            app:tabSelectedTextColor="@color/beyaz_renk"
+            app:tabTextColor="@color/beyaz_renk" />
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPagerPagerArama"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</layout>

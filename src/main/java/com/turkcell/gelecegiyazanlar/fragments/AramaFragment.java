@@ -83,7 +83,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        viewPager = (ViewPager) getActivity().findViewById(R.id.pagerArama);
+        viewPager = (ViewPager) getActivity().findViewById(R.id.viewPagerPagerArama);
         toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar_ara);
         View rootView = inflater.inflate(R.layout.fragment_arama, container, false);
         urlAramaKullanici = GYConfiguration.getDomain() + "usersearch/retrieve?keyword=";
