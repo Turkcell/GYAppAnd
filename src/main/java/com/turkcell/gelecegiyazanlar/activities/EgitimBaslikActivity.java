@@ -3,16 +3,16 @@ package com.turkcell.gelecegiyazanlar.activities;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ExpandableListView;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,6 +22,7 @@ import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.MyExpandableAdapter;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.ActivityEgitimBaslikBinding;
 import com.turkcell.gelecegiyazanlar.models.Egitim;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
@@ -31,42 +32,47 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 
-public class EgitimBaslikActivity extends ActionBarActivity {
+public class EgitimBaslikActivity extends AppCompatActivity {
 
-    String baslik;
-    String renk;
-    String nodeIDbyKategori;
-    Toolbar toolbar;
-    ExpandableListView expandableList;
-    YuklenmeEkran yuklenmeEkran;
-    private ArrayList<String> parentItems;
-    private ArrayList<Object> childItems;
-    private ArrayList<String> nodeIDGroup;
-    private ArrayList<Object> nodeIDChild;
+    private ActivityEgitimBaslikBinding activityEgitimBaslikBinding;
+
+    private String baslikString;
+    private String renkString;
+    private String nodeIDbyKategoriString;
+    private Toolbar toolbar;
+    private YuklenmeEkran yuklenmeEkran;
+    private ArrayList<String> parentItemStringArrayList;
+    private ArrayList<Object> childItemObjectArrayList;
+    private ArrayList<String> nodeIDGroupStringArrayList;
+    private ArrayList<Object> nodeIDChildObjectArrayList;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_egitim_baslik);
+
+         activityEgitimBaslikBinding = DataBindingUtil.setContentView(this,R.layout.activity_egitim_baslik);
+
         Mint.initAndStartSession(EgitimBaslikActivity.this, GYConfiguration.SPLUNK_ID);
         Bundle i = getIntent().getExtras();
-        baslik = i.getString(Egitim.TITLE_TAG);
-        renk = i.getString(Egitim.COLOR_TAG);
-        nodeIDbyKategori = i.getString(Egitim.NODE_ID);
+        baslikString = i.getString(Egitim.TITLE_TAG);
+        renkString = i.getString(Egitim.COLOR_TAG);
+        nodeIDbyKategoriString = i.getString(Egitim.NODE_ID);
         toolbar = (Toolbar) findViewById(R.id.tool_bar2);
-        toolbar.setTitle(baslik);
+        toolbar.setTitle(baslikString);
         setSupportActionBar(toolbar);
 
         ActionbarTasarým();
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        parentItems = new ArrayList<String>();
-        childItems = new ArrayList<Object>();
-        nodeIDGroup = new ArrayList<String>();
-        nodeIDChild = new ArrayList<Object>();
+
+        parentItemStringArrayList = new ArrayList<String>();
+        childItemObjectArrayList = new ArrayList<Object>();
+        nodeIDGroupStringArrayList = new ArrayList<String>();
+        nodeIDChildObjectArrayList = new ArrayList<Object>();
 
         toolbar.setNavigationIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.backarrow, null));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -76,10 +82,8 @@ public class EgitimBaslikActivity extends ActionBarActivity {
             }
         });
 
-        expandableList = (ExpandableListView) findViewById(R.id.list);
-
-        expandableList.setDividerHeight(2);
-        expandableList.setGroupIndicator(null);
+        activityEgitimBaslikBinding.expendableListViewList.setDividerHeight(2);
+        activityEgitimBaslikBinding.expendableListViewList.setGroupIndicator(null);
 
         if (!GYConfiguration.isNetworkAvailable(EgitimBaslikActivity.this)) {
             final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -98,17 +102,17 @@ public class EgitimBaslikActivity extends ActionBarActivity {
         }
 
 
-        setKategori(nodeIDbyKategori);
+        setKategori(nodeIDbyKategoriString);
 
-        expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+        activityEgitimBaslikBinding.expendableListViewList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
 
             @Override
             public boolean onGroupClick(ExpandableListView listview, View view,
                                         int group_pos, long id) {
 
                 Intent i = new Intent(EgitimBaslikActivity.this, EgitimIcerikActivity.class);
-                i.putExtra(Egitim.NODE_ID_EGITIM, nodeIDGroup.get(group_pos));
-                i.putExtra(Egitim.NODE_TITLE, baslik);
+                i.putExtra(Egitim.NODE_ID_EGITIM, nodeIDGroupStringArrayList.get(group_pos));
+                i.putExtra(Egitim.NODE_TITLE, baslikString);
                 startActivity(i);
                 return false;
             }
@@ -120,14 +124,10 @@ public class EgitimBaslikActivity extends ActionBarActivity {
     public void setKategori(final String nodeIDbyKategori) {
         yuklenmeEkran = new YuklenmeEkran(this);
         yuklenmeEkran.surecBasla();
-        Log.d("xx", GYConfiguration.getDomain() + "egitim_baslik/retrieve?nodeID=" + nodeIDbyKategori);
 
         JsonArrayRequest movieReq = new JsonArrayRequest(Request.Method.GET, GYConfiguration.getDomain() + "egitim_baslik/retrieve?nodeID=" + nodeIDbyKategori, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
-                Log.d("json:", GYConfiguration.getDomain() + "egitim_baslik/retrieve?nodeID=" + nodeIDbyKategori);
-
 
                 try {
                     JSONArray belowArray = response.getJSONObject(0).getJSONArray("below");
@@ -135,12 +135,12 @@ public class EgitimBaslikActivity extends ActionBarActivity {
                     for (int i = 0; i < belowArray.length(); i++) {
                         String anaBaslik = belowArray.getJSONObject(i).getString("title");
                         String node = belowArray.getJSONObject(i).getString("nodeID");
-                        Log.d("title:", anaBaslik + "\n");
-                        parentItems.add(anaBaslik);
-                        nodeIDGroup.add(node);
+
+                        parentItemStringArrayList.add(anaBaslik);
+                        nodeIDGroupStringArrayList.add(node);
 
                         JSONArray underBelowArray = belowArray.getJSONObject(i).getJSONArray("below");
-                        Log.d("size:", String.valueOf(underBelowArray.length()));
+
                         if (underBelowArray != null) {
                             ArrayList<String> child = new ArrayList<String>();
                             ArrayList<String> childId = new ArrayList<String>();
@@ -148,31 +148,30 @@ public class EgitimBaslikActivity extends ActionBarActivity {
 
                             for (int j = 0; j < underBelowArray.length(); j++) {
                                 String nodeChild = underBelowArray.getJSONObject(j).getString("nodeID");
-                                Log.d("childTitle:", underBelowArray.getJSONObject(j).getString("title") + " " + nodeChild + "\n");
+
                                 child.add(underBelowArray.getJSONObject(j).getString("title"));
                                 childId.add(nodeChild);
                             }
 
-                            childItems.add(child);
-                            nodeIDChild.add(childId);
+                            childItemObjectArrayList.add(child);
+                            nodeIDChildObjectArrayList.add(childId);
 
                         }
 
                     }
 
-                    MyExpandableAdapter adapter = new MyExpandableAdapter(parentItems, childItems, nodeIDChild, nodeIDGroup);
+                    MyExpandableAdapter adapter = new MyExpandableAdapter(parentItemStringArrayList, childItemObjectArrayList, nodeIDChildObjectArrayList, nodeIDGroupStringArrayList);
 
 
                     adapter.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE), EgitimBaslikActivity.this);
-                    expandableList.setAdapter(adapter);
+                    activityEgitimBaslikBinding.expendableListViewList.setAdapter(adapter);
                     for (int a = 0; a < adapter.getGroupCount(); a++)
-                        expandableList.expandGroup(a);
+                        activityEgitimBaslikBinding.expendableListViewList.expandGroup(a);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 yuklenmeEkran.surecDurdur();
-                Log.d("size parent:", String.valueOf(parentItems.size()));
-                Log.d("size parent:", String.valueOf(childItems.size()));
+
 
             }
         }, new Response.ErrorListener() {
@@ -190,20 +189,20 @@ public class EgitimBaslikActivity extends ActionBarActivity {
 
     private void ActionbarTasarým() {
 
-        if (renk.equals("android")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.android_yesil_renk));
-        } else if (renk.equals("ios")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.ios_siyah_renk));
-        } else if (renk.equals("win")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.windows_mavi_renk));
-        } else if (renk.equals("web")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.web_renk));
-        } else if (renk.equals("app")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.app_inventor_kirmizi_renk));
-        } else if (renk.equals("scratch")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.scratch_turuncu_renk));
-        } else if (renk.equals("arduino")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.arduino_renk));
+        if (renkString.equals("android")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.android_yesil_renk));
+        } else if (renkString.equals("ios")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.ios_siyah_renk));
+        } else if (renkString.equals("win")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.windows_mavi_renk));
+        } else if (renkString.equals("web")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.web_renk));
+        } else if (renkString.equals("app")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.app_inventor_kirmizi_renk));
+        } else if (renkString.equals("scratch")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.scratch_turuncu_renk));
+        } else if (renkString.equals("arduino")) {
+            toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.arduino_renk));
         }
     }
 

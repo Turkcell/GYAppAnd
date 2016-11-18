@@ -1,27 +1,31 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include
-        android:id="@+id/tool_bar2"
-        layout="@layout/toolbar"
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ScrollView
-        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tool_bar2"
-        android:fillViewport="true">
+        tools:context="com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity">
 
-        <ExpandableListView
-            android:id="@+id/list"
+        <include
+            android:id="@+id/tool_bar2"
+            layout="@layout/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:groupIndicator="@null"/>
+            android:layout_below="@id/tool_bar2"
+            android:fillViewport="true">
 
-    </ScrollView>
+            <ExpandableListView
+                android:id="@+id/expendableListViewList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:groupIndicator="@null" />
 
-</RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>
