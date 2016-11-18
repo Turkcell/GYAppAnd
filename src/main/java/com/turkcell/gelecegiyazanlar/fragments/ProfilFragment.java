@@ -48,17 +48,15 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
 
     String id;
 
-    LinearLayout basariBelgeleriLayout,hakkindaLayout,basariBelgeleriCizgi,hakkindaCizgi;
+    LinearLayout basariBelgeleriLayout, hakkindaLayout, basariBelgeleriCizgi, hakkindaCizgi;
 
-    TextView isim,yasadigiSegir,universite,hakkinda;
+    TextView isim, yasadigiSegir, universite, hakkinda;
 
-    ImageView avatar,android101,android201,android301,android401,ios101,ios201,ios301,ios401
-            ,wp101,wp201,mobiloyun101,mobiloyun201,web101,web201,web301,web401,scratch101,scratch201,ai101,ai201,ai301,arduino101
-            ,arduino201,arduino301,arduino401;
+    ImageView avatar, android101, android201, android301, android401, ios101, ios201, ios301, ios401, wp101, wp201, mobiloyun101, mobiloyun201, web101, web201, web301, web401, scratch101, scratch201, ai101, ai201, ai301, arduino101, arduino201, arduino301, arduino401;
 
     String url;
 
-    FloatingActionButton facebook,google,twitter,linkedin;
+    FloatingActionButton facebook, google, twitter, linkedin;
 
     String facebookUrl;
     String twitterUrl;
@@ -74,24 +72,24 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
 
-        View rootView= inflater.inflate(R.layout.fragment_profil, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profil, container, false);
 
         url = GYConfiguration.getDomain() + "profil/retrieve?userID=";
 
-        yuklenmeEkran=new YuklenmeEkran(getActivity());
+        yuklenmeEkran = new YuklenmeEkran(getActivity());
 
-         basariBelgeleriLayout = (LinearLayout) rootView.findViewById(R.id.basariBelgeleriLayout);
-          hakkindaLayout = (LinearLayout) rootView.findViewById(R.id.hakkindaLayout);
-         basariBelgeleriCizgi = (LinearLayout) rootView.findViewById(R.id.basaribelgeleriCizgi);
-         hakkindaCizgi = (LinearLayout) rootView.findViewById(R.id.hakkindaCizgi);
+        basariBelgeleriLayout = (LinearLayout) rootView.findViewById(R.id.basariBelgeleriLayout);
+        hakkindaLayout = (LinearLayout) rootView.findViewById(R.id.hakkindaLayout);
+        basariBelgeleriCizgi = (LinearLayout) rootView.findViewById(R.id.basaribelgeleriCizgi);
+        hakkindaCizgi = (LinearLayout) rootView.findViewById(R.id.hakkindaCizgi);
 
-          isim = (TextView) getActivity().findViewById(R.id.adSoyad);
-        yasadigiSegir = (TextView) getActivity().findViewById(R.id.konum);
-         universite = (TextView) getActivity().findViewById(R.id.universite);
-         hakkinda = (TextView) rootView.findViewById(R.id.hakkinda);
-          avatar = (ImageView) getActivity().findViewById(R.id.avatar);
+        isim = (TextView) getActivity().findViewById(R.id.textViewAdSoyad);
+        yasadigiSegir = (TextView) getActivity().findViewById(R.id.textViewKonum);
+        universite = (TextView) getActivity().findViewById(R.id.textViewUniversite);
+        hakkinda = (TextView) rootView.findViewById(R.id.hakkinda);
+        avatar = (ImageView) getActivity().findViewById(R.id.circleImageViewAvatar);
 
-         android101 = (ImageView) rootView.findViewById(R.id.android101);
+        android101 = (ImageView) rootView.findViewById(R.id.android101);
         android201 = (ImageView) rootView.findViewById(R.id.android201);
         android301 = (ImageView) rootView.findViewById(R.id.android301);
         android401 = (ImageView) rootView.findViewById(R.id.android401);
@@ -125,15 +123,15 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         arduino301 = (ImageView) rootView.findViewById(R.id.arduino301);
         arduino401 = (ImageView) rootView.findViewById(R.id.arduino401);
 
-        SlidingTabLayout tabs= (SlidingTabLayout) getActivity().findViewById(R.id.tabsBlog);
+        SlidingTabLayout tabs = (SlidingTabLayout) getActivity().findViewById(R.id.tabsBlog);
 
-        final FrameLayout frameLayout=(FrameLayout)rootView.findViewById(R.id.frameLay);
+        final FrameLayout frameLayout = (FrameLayout) rootView.findViewById(R.id.frameLay);
         final FloatingActionsMenu fabMenu = (FloatingActionsMenu) rootView.findViewById(R.id.fab_menu);
 
-        facebook=(FloatingActionButton)rootView.findViewById(R.id.fab_face);
-        twitter=(FloatingActionButton)rootView.findViewById(R.id.fab_twitter);
-        linkedin=(FloatingActionButton)rootView.findViewById(R.id.fab_linkedin);
-        google=(FloatingActionButton)rootView.findViewById(R.id.fab_google);
+        facebook = (FloatingActionButton) rootView.findViewById(R.id.fab_face);
+        twitter = (FloatingActionButton) rootView.findViewById(R.id.fab_twitter);
+        linkedin = (FloatingActionButton) rootView.findViewById(R.id.fab_linkedin);
+        google = (FloatingActionButton) rootView.findViewById(R.id.fab_google);
 
         facebook.setOnClickListener(this);
         twitter.setOnClickListener(this);
@@ -164,47 +162,47 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         });
 
 
-        Bundle extra=getActivity().getIntent().getExtras();
+        Bundle extra = getActivity().getIntent().getExtras();
         id = extra.getString(Kisi.PROFIL_ID);
 
-tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
+            }
 
-    @Override
-    public void onPageSelected(int position) {
+            @Override
+            public void onPageSelected(int position) {
 
-        if(position == 1){
-            basariBelgeleriLayout.setVisibility(View.VISIBLE);
-            basariBelgeleriCizgi.setVisibility(View.VISIBLE);
-            hakkindaLayout.setVisibility(View.INVISIBLE);
-            hakkindaCizgi.setVisibility(View.INVISIBLE);
-            fabMenu.setVisibility(View.GONE);
-        } else {
-            basariBelgeleriLayout.setVisibility(View.INVISIBLE);
-            basariBelgeleriCizgi.setVisibility(View.INVISIBLE);
-            hakkindaLayout.setVisibility(View.VISIBLE);
-            hakkindaCizgi.setVisibility(View.VISIBLE);
-        }
-    }
+                if (position == 1) {
+                    basariBelgeleriLayout.setVisibility(View.VISIBLE);
+                    basariBelgeleriCizgi.setVisibility(View.VISIBLE);
+                    hakkindaLayout.setVisibility(View.INVISIBLE);
+                    hakkindaCizgi.setVisibility(View.INVISIBLE);
+                    fabMenu.setVisibility(View.GONE);
+                } else {
+                    basariBelgeleriLayout.setVisibility(View.INVISIBLE);
+                    basariBelgeleriCizgi.setVisibility(View.INVISIBLE);
+                    hakkindaLayout.setVisibility(View.VISIBLE);
+                    hakkindaCizgi.setVisibility(View.VISIBLE);
+                }
+            }
 
-    @Override
-    public void onPageScrollStateChanged(int state) {
+            @Override
+            public void onPageScrollStateChanged(int state) {
 
-    }
-});
+            }
+        });
 
 
-   EkleYazi(id);
+        EkleYazi(id);
 
         // Inflate the layout for this fragm
         return rootView;
     }
 
 
-    public void EkleYazi(String id){
+    public void EkleYazi(String id) {
 
         yuklenmeEkran.surecBasla();
         Log.d("profil:", url + id);
@@ -231,105 +229,102 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     hakkindaTemiz = hakkindaTemiz.replace("&amp", "&");
                     hakkindaTemiz = hakkindaTemiz.replace(";amp;", " ");
                     hakkindaTemiz = hakkindaTemiz.replace("&quot;", "\"");
-                    if(hakkindaTemiz != "null") {
+                    if (hakkindaTemiz != "null") {
                         hakkinda.setText(hakkindaTemiz);
-                    }else
+                    } else
                         hakkinda.setText("");
 
-                    for(int i=0; i < response.getJSONObject("basariBelgeleri").length(); i++){
+                    for (int i = 0; i < response.getJSONObject("basariBelgeleri").length(); i++) {
                         Log.i("sayisi: ", Integer.toString(response.getJSONObject("basariBelgeleri").length()));
-                        Log.i("kategori: " ,response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("kategori") );
+                        Log.i("kategori: ", response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("kategori"));
                         Log.i("seviye: ", response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi"));
 
 
+                        kategori = response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("kategori");
 
-
-                        kategori = response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("kategori");
-
-                        if(  kategori.equals("Android")){
+                        if (kategori.equals("Android")) {
                             Log.i("ife", "girdi");
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 Log.i("içteki ife", "girdi");
                                 android101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 android201.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("301")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("301")) {
                                 android301.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("401")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("401")) {
                                 android401.setVisibility(View.VISIBLE);
                             }
 
-                        } else if(  kategori.equals("iOS")){
+                        } else if (kategori.equals("iOS")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 ios101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 ios201.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("301")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("301")) {
                                 ios301.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("401")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("401")) {
                                 ios401.setVisibility(View.VISIBLE);
                             }
 
-                        } else if(  kategori.equals("Windows Phone")){
+                        } else if (kategori.equals("Windows Phone")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 wp101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 wp201.setVisibility(View.VISIBLE);
                             }
 
-                        } else if(  kategori.equals("Mobil Oyun")){
+                        } else if (kategori.equals("Mobil Oyun")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 mobiloyun101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 mobiloyun201.setVisibility(View.VISIBLE);
                             }
 
-                        } else if(  kategori.equals("Web Programlama")){
+                        } else if (kategori.equals("Web Programlama")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 web101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 web201.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("301")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("301")) {
                                 web301.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("401")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("401")) {
                                 web401.setVisibility(View.VISIBLE);
                             }
 
-                        } else if(  kategori.equals("Scratch")){
+                        } else if (kategori.equals("Scratch")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 scratch101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 scratch201.setVisibility(View.VISIBLE);
                             }
 
-                        } else if(  kategori.equals("App Inventor")){
+                        } else if (kategori.equals("App Inventor")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 ai101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 ai201.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("301")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("301")) {
                                 ai301.setVisibility(View.VISIBLE);
                             }
-                        } else if(  kategori.equals("Arduino")){
+                        } else if (kategori.equals("Arduino")) {
 
-                            if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("101")){
+                            if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("101")) {
                                 arduino101.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("201")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("201")) {
                                 arduino201.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("301")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("301")) {
                                 arduino301.setVisibility(View.VISIBLE);
-                            } else if(response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i+1)).getString("zorlukSeviyesi").equals("401")){
+                            } else if (response.getJSONObject("basariBelgeleri").getJSONObject(Integer.toString(i + 1)).getString("zorlukSeviyesi").equals("401")) {
                                 arduino401.setVisibility(View.VISIBLE);
                             }
 
                         }
-
 
 
                     }
@@ -344,7 +339,6 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 }
 
 
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -353,10 +347,10 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             }
         });
 
-        AppController.getInstance().addToRequestQueue(jsonObjectRequest,"profilTag");
+        AppController.getInstance().addToRequestQueue(jsonObjectRequest, "profilTag");
     }
 
-    public void ResimGetir(){
+    public void ResimGetir() {
 
 
         //Resmi Alıcaz.
@@ -373,7 +367,7 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             }
         });
 
-       AppController.getInstance().addToRequestQueue(requestImage,"profilResimTag");
+        AppController.getInstance().addToRequestQueue(requestImage, "profilResimTag");
 
     }
 
@@ -385,10 +379,10 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
     }
 
 
-    private void SosyalPlatformAc(String platform,String Url) {
+    private void SosyalPlatformAc(String platform, String Url) {
 
 
-        if(Url != "null") {
+        if (Url != "null") {
             String SosyalUrl = Url;
             String[] userID = SosyalUrl.split(".com/");
 
@@ -462,26 +456,26 @@ tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             }
         } else {
-            Toast.makeText(getActivity(), "Kullanicinin "+platform + " hesabi kayitli degil.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Kullanicinin " + platform + " hesabi kayitli degil.", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.fab_face:
-                SosyalPlatformAc("facebook",facebookUrl);
+                SosyalPlatformAc("facebook", facebookUrl);
                 break;
 
             case R.id.fab_google:
-                SosyalPlatformAc("googleplus",googleplusUrl);
+                SosyalPlatformAc("googleplus", googleplusUrl);
                 break;
 
             case R.id.fab_linkedin:
-                SosyalPlatformAc("linkedin",linkedinUrl);
+                SosyalPlatformAc("linkedin", linkedinUrl);
                 break;
             case R.id.fab_twitter:
-                SosyalPlatformAc("twitter",twitterUrl);
+                SosyalPlatformAc("twitter", twitterUrl);
                 break;
         }
     }

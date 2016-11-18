@@ -1,29 +1,32 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="5dp"
-    android:paddingRight="3dp"
-    android:paddingTop="3dp"
-    tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListView
-        android:id="@+id/liste"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/yorum_divider_renk"
-        android:dividerHeight="2dp"
-        android:elevation="3dp"/>
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="3dp"
+        android:paddingTop="3dp"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/yorumyok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/yorum_yok_metni"
-        android:textColor="@color/yorum_yazi_renk"
-        android:textSize="25dp"
-        android:visibility="invisible"/>
+        <ListView
+            android:id="@+id/listViewListe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/yorum_divider_renk"
+            android:dividerHeight="2dp"
+            android:elevation="3dp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textViewYorumyok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/yorum_yok_metni"
+            android:textColor="@color/yorum_yazi_renk"
+            android:textSize="25dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+</layout>

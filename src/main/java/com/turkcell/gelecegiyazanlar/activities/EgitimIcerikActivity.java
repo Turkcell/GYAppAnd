@@ -6,13 +6,9 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -31,7 +27,6 @@ import com.turkcell.gelecegiyazanlar.models.Kisi;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EgitimIcerikActivity extends AppCompatActivity {
 

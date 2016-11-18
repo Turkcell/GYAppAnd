@@ -1,120 +1,122 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/beyaz_renk"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include
-        android:id="@+id/tool_bar_back"
-        layout="@layout/toolbar"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:background="@color/beyaz_renk"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        <include
+            android:id="@+id/tool_bar_back"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/beyaz_renk"/>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/ust_bosluk_yukseklik"
-            android:background="@color/ColorPrimary"
-            android:gravity="center"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/avatar"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/defaultimage"
-                app:border_color="@color/tab_default_renk"
-                app:border_width="3dp" />
-
-
-            <TextView
-                android:id="@+id/adSoyad"
-                style="@style/mobilIcerikBaslik"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="@color/beyaz_renk"
-                android:textSize="25sp" />
+                android:background="@color/beyaz_renk" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/ust_bosluk_yukseklik"
+                android:background="@color/ColorPrimary"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/egitimkep" />
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/circleImageViewAvatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/defaultimage"
+                    app:border_color="@color/tab_default_renk"
+                    app:border_width="3dp" />
+
 
                 <TextView
-                    android:id="@+id/universite"
+                    android:id="@+id/textViewAdSoyad"
                     style="@style/mobilIcerikBaslik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
                     android:text=""
                     android:textColor="@color/beyaz_renk"
-                    android:textSize="15sp" />
+                    android:textSize="25sp" />
 
-                <ImageView
-
-                    android:layout_width="10dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="6dp"
-                    android:background="@drawable/konum" />
-
-                <TextView
-                    android:id="@+id/konum"
-                    style="@style/mobilIcerikBaslik"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:text=""
-                    android:textColor="@color/beyaz_renk"
-                    android:textSize="15sp" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/egitimkep" />
+
+                    <TextView
+                        android:id="@+id/textViewUniversite"
+                        style="@style/mobilIcerikBaslik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text=""
+                        android:textColor="@color/beyaz_renk"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/konum" />
+
+                    <TextView
+                        android:id="@+id/textViewKonum"
+                        style="@style/mobilIcerikBaslik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text=""
+                        android:textColor="@color/beyaz_renk"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
 
+            <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
+                android:id="@+id/slidingTabLayoutTabsBlog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/tab_default_renk"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/profil_arkaplan_renk">
+
+            </LinearLayout>
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPagerPagerProfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1" />
+
+
         </LinearLayout>
-
-
-        <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
-            android:id="@+id/tabsBlog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/tab_default_renk"
-
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="@color/profil_arkaplan_renk">
-
-        </LinearLayout>
-
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pagerProfil"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"/>
-
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>

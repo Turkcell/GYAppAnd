@@ -1,8 +1,10 @@
 package com.turkcell.gelecegiyazanlar.activities;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.ActivityEtkinlikIcerikBinding;
 import com.turkcell.gelecegiyazanlar.models.Etkinlik;
 import com.turkcell.gelecegiyazanlar.models.Yorum;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
@@ -26,94 +29,89 @@ import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class EtkinlikIcerikActivity extends ActionBarActivity {
+public class EtkinlikIcerikActivity extends AppCompatActivity {
 
-    String url;
-    JsonArrayRequest stringRequest;
-    String txtBaslik = "";
-    TextView title, yorum;
-    String id;
+    private ActivityEtkinlikIcerikBinding activityEtkinlikIcerikBinding;
 
-    YuklenmeEkran ekran;
+    private String urlString;
+    private JsonArrayRequest jsonArrayRequest;
+    private String baslikString = "";
+    private String idString;
+
+    private YuklenmeEkran yuklenmeEkran;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_etkinlik_icerik);
+
+        activityEtkinlikIcerikBinding = DataBindingUtil.setContentView(this,R.layout.activity_etkinlik_icerik);
 
         Mint.initAndStartSession(EtkinlikIcerikActivity.this, GYConfiguration.SPLUNK_ID);
 
-        ekran = new YuklenmeEkran(EtkinlikIcerikActivity.this);
+        yuklenmeEkran = new YuklenmeEkran(EtkinlikIcerikActivity.this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaretkinlik);
-        title = (TextView) toolbar.findViewById(R.id.txtBaslik);
-        yorum = (TextView) toolbar.findViewById(R.id.txtYorum);
 
-
-        url = GYConfiguration.getDomain() + "etkinlik_content/retrieve?nodeID=";
+        urlString = GYConfiguration.getDomain() + "etkinlik_content/retrieve?nodeID=";
 
         Bundle extras = getIntent().getExtras();
-        id = extras.getString(Etkinlik.ETKINLIK_ID);
+        idString = extras.getString(Etkinlik.ETKINLIK_ID);
 
-        yorum.setOnClickListener(new View.OnClickListener() {
+        activityEtkinlikIcerikBinding.textViewYorum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EtkinlikIcerikActivity.this, YorumActivity.class);
-                i.putExtra(Yorum.YORUM_ID, id);
+                i.putExtra(Yorum.YORUM_ID, idString);
                 startActivity(i);
             }
         });
 
-        Log.d("tag", url + id);
 
         if (GYConfiguration.checkInternetConnectionShowDialog(EtkinlikIcerikActivity.this)) {
-            ekran.surecBasla();
+            yuklenmeEkran.surecBasla();
         }
 
-        stringRequest = new JsonArrayRequest(Request.Method.GET, url + id, null, new Response.Listener<JSONArray>() {
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlString + idString, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                Log.d("json:", response.toString());
-                WebView webView = (WebView) findViewById(R.id.etkinlikDetay);
-                webView.getSettings().setJavaScriptEnabled(true);
+
+                activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setJavaScriptEnabled(true);
+
                 try {
-
-
-                    webView.setWebViewClient(new WebViewClient() {
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.setWebViewClient(new WebViewClient() {
 
                         @Override
                         public void onPageFinished(WebView view, String url) {
                             super.onPageFinished(view, url);
-                            //Toast.makeText(getApplicationContext(), "Sayfa yüklendi", Toast.LENGTH_SHORT).show();
-                            ekran.surecDurdur();
+                            yuklenmeEkran.surecDurdur();
                         }
 
                         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                             Toast.makeText(getApplicationContext(), R.string.hata_olustu_mesaji, Toast.LENGTH_SHORT).show();
-                            ekran.surecDurdur();
+                            yuklenmeEkran.surecDurdur();
                         }
                     });
 
 
-                    txtBaslik = response.getJSONObject(0).getString("title");
-                    title.setText(txtBaslik);
+                    baslikString = response.getJSONObject(0).getString("title");
+                    activityEtkinlikIcerikBinding.textViewBaslik.setText(baslikString);
                     //Etkinlik baþlýðý bitiþ
 
-                    webView.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
-                    webView.getSettings().setSupportZoom(true);
-                    webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-                    webView.getSettings().setAllowFileAccess(true);
-                    webView.getSettings().setDomStorageEnabled(true);
-                    webView.getSettings().setJavaScriptEnabled(true);
-                    webView.getSettings().setUseWideViewPort(true);
-                    webView.getSettings().setLoadWithOverviewMode(true);
-                    webView.getSettings().setDefaultFontSize(40);
-
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setSupportZoom(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setAllowFileAccess(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setDomStorageEnabled(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setJavaScriptEnabled(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setUseWideViewPort(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setLoadWithOverviewMode(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setDefaultFontSize(40);
 
                     //Etkinlik içerik baþlangýç
 
-                    webView.loadData(response.getJSONObject(0).getString("content")
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.loadData(response.getJSONObject(0).getString("content")
                             , "text/html; charset=utf-8", null);
                     //Etkinlik içerik bitiþ
 
@@ -131,7 +129,7 @@ public class EtkinlikIcerikActivity extends ActionBarActivity {
                     }
                 });
 
-        AppController.getInstance().addToRequestQueue(stringRequest);
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 
