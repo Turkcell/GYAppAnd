@@ -5,7 +5,6 @@ import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.splunk.mint.Mint;
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        textView = (TextView) findViewById(R.id.titleCenter);
+        textView = (TextView) findViewById(R.id.textViewTitle);
         textView.setText(mTitleString);
 
         //Liste doldurma metodumuz

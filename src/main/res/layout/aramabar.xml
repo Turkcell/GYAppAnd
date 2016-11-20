@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/etSearch"
+            android:id="@+id/editTextSearch"
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:background="@drawable/arama_background"
@@ -24,7 +24,7 @@
             android:textColorHint="@color/hint_yazi_renk" />
 
         <ImageView
-            android:id="@+id/btnAra"
+            android:id="@+id/imageViewSearchBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center_vertical"

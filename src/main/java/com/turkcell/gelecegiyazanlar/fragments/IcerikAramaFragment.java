@@ -73,11 +73,11 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
 
         url = GYConfiguration.getDomain()+"contentsearch/retrieve?";
 
-        search=(EditText)toolbar.findViewById(R.id.etSearch);
+        search=(EditText)toolbar.findViewById(R.id.editTextSearch);
 
         listView = (ListView) rootView.findViewById(R.id.lvliste);
         tvSonuc = (TextView) rootView.findViewById(R.id.tvSonuc);
-        btnAra = (ImageView) toolbar.findViewById(R.id.btnAra);
+        btnAra = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtn);
 
         ekran=new YuklenmeEkran(getActivity());
 
@@ -103,7 +103,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnAra:
+            case R.id.imageViewSearchBtn:
                 String URL = (url +"keyword="+search.getText()+"&page="+sayfaNumarasi+"&nodeType=article").trim();
                 URL = URL.replace(" ", "%20");
                 Listele(URL);

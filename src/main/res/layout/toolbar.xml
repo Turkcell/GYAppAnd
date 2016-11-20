@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/titleCenter"
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
