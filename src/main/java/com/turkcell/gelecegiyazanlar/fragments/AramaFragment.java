@@ -69,8 +69,8 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
 
         urlAramaKullaniciString = GYConfiguration.getDomain() + "usersearch/retrieve?keyword=";
 
-        searchEditText = (EditText) toolbar.findViewById(R.id.editTextSearch);
-        searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtn);
+        searchEditText = (EditText) toolbar.findViewById(R.id.editTextSearchAramabar);
+        searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtnAramabar);
 
         yuklenmeEkran = new YuklenmeEkran(getActivity());
 
@@ -107,7 +107,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.imageViewSearchBtn:
+            case R.id.imageViewSearchBtnAramabar:
                 performSearch();
                 break;
         }

@@ -56,15 +56,15 @@ public class EgitimIcerikActivity extends AppCompatActivity {
 
         Mint.initAndStartSession(EgitimIcerikActivity.this, GYConfiguration.SPLUNK_ID);
 
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setJavaScriptEnabled(true);
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setUseWideViewPort(true);
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setSupportZoom(true);
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setDisplayZoomControls(true);
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setBuiltInZoomControls(true);
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setDefaultFontSize(40);
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setJavaScriptEnabled(true);
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setUseWideViewPort(true);
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setSupportZoom(true);
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setDisplayZoomControls(true);
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setBuiltInZoomControls(true);
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setDefaultFontSize(40);
 
-        activityEgitimIcerikBinding.webViewWebIcerik.getSettings().setLoadWithOverviewMode(true);
-        activityEgitimIcerikBinding.textViewYazarIsim.setOnClickListener(new View.OnClickListener() {
+        activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.getSettings().setLoadWithOverviewMode(true);
+        activityEgitimIcerikBinding.textViewYazarIsimEgitimIcerikActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EgitimIcerikActivity.this, ProfilActivity.class);
@@ -74,7 +74,7 @@ public class EgitimIcerikActivity extends AppCompatActivity {
         });
 
 
-        toolbar = (Toolbar) findViewById(R.id.tool_bar2);
+        toolbar = (Toolbar) findViewById(R.id.toolbarEgitimIcerikActivity);
         setSupportActionBar(toolbar);
         Bundle extras = getIntent().getExtras();
         dugumIDString = extras.getString(Egitim.NODE_ID_EGITIM);
@@ -130,8 +130,8 @@ public class EgitimIcerikActivity extends AppCompatActivity {
 
                             if (yazarYaziString != null || icerikYaziString != null) {
                                 ResimGetir();
-                                activityEgitimIcerikBinding.textViewYazarIsim.setText(egitim.getYazar());
-                                activityEgitimIcerikBinding.webViewWebIcerik.loadDataWithBaseURL("", egitim.getIcerik(), "text/html", "UTF-8", "");
+                                activityEgitimIcerikBinding.textViewYazarIsimEgitimIcerikActivity.setText(egitim.getYazar());
+                                activityEgitimIcerikBinding.webViewWebIcerikEgitimIcerikActivity.loadDataWithBaseURL("", egitim.getIcerik(), "text/html", "UTF-8", "");
                             }
                             CurioClient.getInstance(getApplicationContext()).sendEvent("Egitim Ýçerik>" + dugumBaslikString, titleString);
                             timeALong = System.currentTimeMillis();
@@ -165,7 +165,7 @@ public class EgitimIcerikActivity extends AppCompatActivity {
         ImageRequest image = new ImageRequest(resimUrlString, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-                activityEgitimIcerikBinding.circleImageViewProfileImage.setImageBitmap(response);
+                activityEgitimIcerikBinding.circleImageViewProfileImageEgitimIcerikActivity.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override

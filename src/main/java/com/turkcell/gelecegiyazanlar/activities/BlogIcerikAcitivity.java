@@ -54,7 +54,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         nodeIDString = exras.getString(Blog.BLOG_ID);
 
 
-        activityBlogIcerikAcitivityBinding.textViewYorum.setOnClickListener(new View.OnClickListener() {
+        activityBlogIcerikAcitivityBinding.textViewYorumBlogIcerikActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BlogIcerikAcitivity.this, YorumActivity.class);
@@ -73,25 +73,25 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setJavaScriptEnabled(true);
+                activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setJavaScriptEnabled(true);
                 yuklenmeEkran.surecDurdur();
                 try {
                     //Blog baþlýðý baþlangýç
                     baslikString = response.getJSONObject(0).getString("title");
-                    activityBlogIcerikAcitivityBinding.textViewBaslik.setText(baslikString);
+                    activityBlogIcerikAcitivityBinding.textViewBaslikBlogIcerikActivity.setText(baslikString);
 
                     String yazarIsim = response.getJSONObject(0).getString("adSoyad");
                     String authorID = response.getJSONObject(0).getString("authorID");
 
-                    activityBlogIcerikAcitivityBinding.textViewYazarIsim.setText(yazarIsim);
-                    activityBlogIcerikAcitivityBinding.textViewYazarID.setText(authorID);
+                    activityBlogIcerikAcitivityBinding.textViewYazarIsimBlogIcerikActivity.setText(yazarIsim);
+                    activityBlogIcerikAcitivityBinding.textViewYazarIDBlogIcerikActivity.setText(authorID);
                     //Avatar baþlangýç
 
                     AvatarYukle(response.getJSONObject(0).getString("authorAvatarUrl"));
 
                     //Avatar bitiþ
 
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.setWebViewClient(new WebViewClient() {
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.setWebViewClient(new WebViewClient() {
 
                         @Override
                         public void onPageFinished(WebView view, String url) {
@@ -106,18 +106,18 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
 
 
                     //Blog içerik baþlangýç
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setSupportZoom(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setAllowFileAccess(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setDomStorageEnabled(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setJavaScriptEnabled(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setUseWideViewPort(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setLoadWithOverviewMode(true);
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.getSettings().setDefaultFontSize(40);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setSupportZoom(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setAllowFileAccess(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setDomStorageEnabled(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setJavaScriptEnabled(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setUseWideViewPort(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setLoadWithOverviewMode(true);
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.getSettings().setDefaultFontSize(40);
 
                     Log.d("TAG", response.getJSONObject(0).getString("content"));
-                    activityBlogIcerikAcitivityBinding.webViewBlogDetay.loadData(response.getJSONObject(0).getString("content")
+                    activityBlogIcerikAcitivityBinding.webViewBlogDetayBlogIcerikActivity.loadData(response.getJSONObject(0).getString("content")
                             , "text/html; charset=utf-8", null);
                     //Blog içerik bitiþ
 
@@ -143,7 +143,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         imageRequest = new ImageRequest(avatar, new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
-                activityBlogIcerikAcitivityBinding.circleImageViewAvatar.setImageBitmap(response);
+                activityBlogIcerikAcitivityBinding.circleImageViewAvatarBlogIcerikActivity.setImageBitmap(response);
             }
         }, 0, 0, null, new Response.ErrorListener() {
             @Override
@@ -154,12 +154,12 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(imageRequest);
 
 
-        activityBlogIcerikAcitivityBinding.circleImageViewAvatar.setOnClickListener(new View.OnClickListener() {
+        activityBlogIcerikAcitivityBinding.circleImageViewAvatarBlogIcerikActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (activityBlogIcerikAcitivityBinding.textViewYazarID.getText() != null) {
+                if (activityBlogIcerikAcitivityBinding.textViewYazarIDBlogIcerikActivity.getText() != null) {
                     Intent i = new Intent(BlogIcerikAcitivity.this, ProfilActivity.class);
-                    i.putExtra(Kisi.PROFIL_ID, activityBlogIcerikAcitivityBinding.textViewYazarID.getText());
+                    i.putExtra(Kisi.PROFIL_ID, activityBlogIcerikAcitivityBinding.textViewYazarIDBlogIcerikActivity.getText());
                     startActivity(i);
                 }
             }

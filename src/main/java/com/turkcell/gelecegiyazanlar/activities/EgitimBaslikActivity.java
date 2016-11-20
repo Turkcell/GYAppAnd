@@ -60,7 +60,7 @@ public class EgitimBaslikActivity extends AppCompatActivity {
         baslikString = i.getString(Egitim.TITLE_TAG);
         renkString = i.getString(Egitim.COLOR_TAG);
         nodeIDbyKategoriString = i.getString(Egitim.NODE_ID);
-        toolbar = (Toolbar) findViewById(R.id.tool_bar2);
+        toolbar = (Toolbar) findViewById(R.id.toolbarEgitimBaslikActivity);
         toolbar.setTitle(baslikString);
         setSupportActionBar(toolbar);
 
@@ -82,8 +82,8 @@ public class EgitimBaslikActivity extends AppCompatActivity {
             }
         });
 
-        activityEgitimBaslikBinding.expendableListViewList.setDividerHeight(2);
-        activityEgitimBaslikBinding.expendableListViewList.setGroupIndicator(null);
+        activityEgitimBaslikBinding.expendableListViewListEgitimBaslikActivity.setDividerHeight(2);
+        activityEgitimBaslikBinding.expendableListViewListEgitimBaslikActivity.setGroupIndicator(null);
 
         if (!GYConfiguration.isNetworkAvailable(EgitimBaslikActivity.this)) {
             final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -104,7 +104,7 @@ public class EgitimBaslikActivity extends AppCompatActivity {
 
         setKategori(nodeIDbyKategoriString);
 
-        activityEgitimBaslikBinding.expendableListViewList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+        activityEgitimBaslikBinding.expendableListViewListEgitimBaslikActivity.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
 
             @Override
             public boolean onGroupClick(ExpandableListView listview, View view,
@@ -164,9 +164,9 @@ public class EgitimBaslikActivity extends AppCompatActivity {
 
 
                     adapter.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE), EgitimBaslikActivity.this);
-                    activityEgitimBaslikBinding.expendableListViewList.setAdapter(adapter);
+                    activityEgitimBaslikBinding.expendableListViewListEgitimBaslikActivity.setAdapter(adapter);
                     for (int a = 0; a < adapter.getGroupCount(); a++)
-                        activityEgitimBaslikBinding.expendableListViewList.expandGroup(a);
+                        activityEgitimBaslikBinding.expendableListViewListEgitimBaslikActivity.expandGroup(a);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

@@ -51,7 +51,7 @@ public class AramaActivity extends AppCompatActivity {
             alertDialog.show();
         }
 
-        activityAramaBinding.viewPagerPagerArama.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        activityAramaBinding.viewPagerPagerAramaActivity.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 managePageChanged();
@@ -68,12 +68,12 @@ public class AramaActivity extends AppCompatActivity {
             }
         });
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        activityAramaBinding.viewPagerPagerArama.setAdapter(pagerAdapter);
+        activityAramaBinding.viewPagerPagerAramaActivity.setAdapter(pagerAdapter);
 
-        activityAramaBinding.tabLayoutTabsArama.setTabsFromPagerAdapter(pagerAdapter);
+        activityAramaBinding.tabLayoutTabsAramaActivity.setTabsFromPagerAdapter(pagerAdapter);
 
 
-        activityAramaBinding.tabLayoutTabsArama.setupWithViewPager(activityAramaBinding.viewPagerPagerArama);
+        activityAramaBinding.tabLayoutTabsAramaActivity.setupWithViewPager(activityAramaBinding.viewPagerPagerAramaActivity);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -88,7 +88,7 @@ public class AramaActivity extends AppCompatActivity {
     }
 
     public Fragment getCurrentFragment() {
-        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewPagerPagerArama + ":" + activityAramaBinding.viewPagerPagerArama.getCurrentItem());
+        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewPagerPagerAramaActivity + ":" + activityAramaBinding.viewPagerPagerAramaActivity.getCurrentItem());
         return page;
     }
 

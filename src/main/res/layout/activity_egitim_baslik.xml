@@ -8,7 +8,7 @@
         tools:context="com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity">
 
         <include
-            android:id="@+id/tool_bar2"
+            android:id="@+id/toolbarEgitimBaslikActivity"
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -16,11 +16,11 @@
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/tool_bar2"
+            android:layout_below="@id/toolbarEgitimBaslikActivity"
             android:fillViewport="true">
 
             <ExpandableListView
-                android:id="@+id/expendableListViewList"
+                android:id="@+id/expendableListViewListEgitimBaslikActivity"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:groupIndicator="@null" />

@@ -8,7 +8,7 @@
 
 
         <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarBlogIcerikActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blog_icerik_arkaplan_renk"
@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textViewBaslik"
+                    android:id="@+id/textViewBaslikBlogIcerikActivity"
                     style="@style/mobilIcerikBaslik"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
                     android:textColor="@color/beyaz_renk" />
 
                 <TextView
-                    android:id="@+id/textViewYorum"
+                    android:id="@+id/textViewYorumBlogIcerikActivity"
                     style="@style/mobilIcerikBaslik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             />
 
             <TextView
-                android:id="@+id/textViewYazarID"
+                android:id="@+id/textViewYazarIDBlogIcerikActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -60,12 +60,12 @@
             android:padding="5dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageViewAvatar"
+                android:id="@+id/circleImageViewAvatarBlogIcerikActivity"
                 android:layout_width="44dp"
                 android:layout_height="match_parent" />
 
             <TextView
-                android:id="@+id/textViewYazarIsim"
+                android:id="@+id/textViewYazarIsimBlogIcerikActivity"
                 style="@style/mobilIcerikBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
         </LinearLayout>
 
         <WebView
-            android:id="@+id/webViewBlogDetay"
+            android:id="@+id/webViewBlogDetayBlogIcerikActivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
