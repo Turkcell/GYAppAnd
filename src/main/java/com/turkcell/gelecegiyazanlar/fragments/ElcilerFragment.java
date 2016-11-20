@@ -2,6 +2,7 @@ package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,34 +13,33 @@ import com.turkcell.gelecegiyazanlar.activities.ProfilActivity;
 import com.turkcell.gelecegiyazanlar.models.Kisi;
 
 
-public class ElcilerFragment extends android.support.v4.app.Fragment {
+public class ElcilerFragment extends Fragment {
 
-    LinearLayout lyDogukanYildirim;
-    LinearLayout lyGizemYurdagul;
-    LinearLayout lyAbdullahSarikaya;
-    LinearLayout lyKadirhanEkmekcioglu;
-    LinearLayout lyTanerUtku;
-    LinearLayout lyErenUtku;
-    LinearLayout lyVolkanKilic;
-    LinearLayout lyFeyzaOkumus;
-    String id;
+    private LinearLayout lyDogukanYildirim;
+    private LinearLayout lyGizemYurdagul;
+    private LinearLayout lyAbdullahSarikaya;
+    private LinearLayout lyKadirhanEkmekcioglu;
+    private LinearLayout lyTanerUtku;
+    private LinearLayout lyErenUtku;
+    private LinearLayout lyVolkanKilic;
+    private LinearLayout lyFeyzaOkumus;
+    private String id;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View rootView = inflater.inflate(R.layout.fragment_gelistiriciler, container, false);
 
-
-        lyFeyzaOkumus = (LinearLayout) rootView.findViewById(R.id.feyza);
-        lyDogukanYildirim = (LinearLayout) rootView.findViewById(R.id.dogukanYildirim);
-        lyGizemYurdagul = (LinearLayout) rootView.findViewById(R.id.gizemYurdagul);
-        lyAbdullahSarikaya = (LinearLayout) rootView.findViewById(R.id.abdullahSarikaya);
-        lyKadirhanEkmekcioglu = (LinearLayout) rootView.findViewById(R.id.kadirhanEkmekcioglu);
-        lyTanerUtku = (LinearLayout) rootView.findViewById(R.id.tanerUtku);
-        lyErenUtku = (LinearLayout) rootView.findViewById(R.id.erenUtku);
-        lyVolkanKilic = (LinearLayout) rootView.findViewById(R.id.volkanKilic);
+        lyFeyzaOkumus = (LinearLayout) rootView.findViewById(R.id.linearLayoutFeyza);
+        lyDogukanYildirim = (LinearLayout) rootView.findViewById(R.id.linearLayoutDogukanYildirim);
+        lyGizemYurdagul = (LinearLayout) rootView.findViewById(R.id.linearLayoutGizemYurdagul);
+        lyAbdullahSarikaya = (LinearLayout) rootView.findViewById(R.id.linearLayoutAbdullahSarikaya);
+        lyKadirhanEkmekcioglu = (LinearLayout) rootView.findViewById(R.id.linearLayoutKadirhanEkmekcioglu);
+        lyTanerUtku = (LinearLayout) rootView.findViewById(R.id.linearLayoutTanerUtku);
+        lyErenUtku = (LinearLayout) rootView.findViewById(R.id.linearLayoutErenUtku);
+        lyVolkanKilic = (LinearLayout) rootView.findViewById(R.id.linearLayoutVolkanKilic);
 
 
         lyFeyzaOkumus.setOnClickListener(new View.OnClickListener() {
