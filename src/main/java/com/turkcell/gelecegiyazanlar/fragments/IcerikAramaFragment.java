@@ -1,6 +1,7 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
@@ -25,6 +26,7 @@ import com.turkcell.gelecegiyazanlar.activities.AramaActivity;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.IcerikAramaAdapter;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentAramaBinding;
 import com.turkcell.gelecegiyazanlar.models.Icerik;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
@@ -39,11 +41,11 @@ import java.util.List;
  */
 public class IcerikAramaFragment extends Fragment implements View.OnClickListener,AramaActivity.IArama {
 
+    private FragmentAramaBinding fragmentAramaBinding;
+
     private List<Icerik> icerikArrayList = new ArrayList<Icerik>();
     private EditText searchEditText;
     private ImageView searchImageView;
-    private ListView listView;
-    private TextView sonucTextView;
     private JsonArrayRequest jsonArrayRequest;
     private String urlString;
     private int sayfaNumarasiAnInt = 1;
@@ -62,7 +64,11 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
 
         toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar_ara);
-        View rootView= inflater.inflate(R.layout.fragment_arama, container, false);
+
+        fragmentAramaBinding = DataBindingUtil.inflate(
+
+                inflater, R.layout.fragment_arama, container, false);
+        View rootView = fragmentAramaBinding.getRoot();
 
         urlString = GYConfiguration.getDomain()+"contentsearch/retrieve?";
 
@@ -138,13 +144,13 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
                 }
 
                 IcerikAramaAdapter adapter = new IcerikAramaAdapter(getActivity(), icerikArrayList);
-                listView.setAdapter(adapter);
+                fragmentAramaBinding.listViewliste.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
 
                 if (icerikArrayList.isEmpty())
-                    sonucTextView.setVisibility(View.VISIBLE);
-                else sonucTextView.setVisibility(View.GONE);
+                    fragmentAramaBinding.textViewSonuc.setVisibility(View.VISIBLE);
+                else fragmentAramaBinding.textViewSonuc.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
