@@ -1,7 +1,9 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.animation.Animator;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +22,7 @@ import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.RecyclerAdapterEtkinlik;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentEtkinlikBinding;
 import com.turkcell.gelecegiyazanlar.models.Etkinlik;
 import com.turkcell.gelecegiyazanlar.utilities.TarihCevir;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
@@ -33,74 +36,65 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class EtkinlikFragment extends android.support.v4.app.Fragment {
+public class EtkinlikFragment extends Fragment {
 
+    private FragmentEtkinlikBinding fragmentEtkinlikBinding;
 
-    Toolbar toolbar;
-
-
-    JsonArrayRequest request;
-    String url;
-    List<Etkinlik> itemList = new ArrayList<>();
-    RecyclerView recyclerView;
-    RecyclerAdapterEtkinlik recyclerAdapterEtkinlik;
-    String formattedDate;
-    YuklenmeEkran yukleme;
-    TarihCevir tarihCevir;
-    LinearLayout layout;
+    private JsonArrayRequest jsonArrayRequest;
+    private String urlString;
+    private List<Etkinlik> etkinlikArrayList = new ArrayList<>();
+    private RecyclerAdapterEtkinlik recyclerAdapterEtkinlik;
+    private String formattedDateString;
+    private YuklenmeEkran yuklemeEkran;
+    private TarihCevir tarihCevir;
     private LinearLayoutManager layoutManager;
-    private int index = 0;
-    private int maksSize;
+    private int indexAnInt = 0;
+    private int maksSizeAnInt;
+    private Toolbar toolbar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
 
-        final View rootView = inflater.inflate(R.layout.fragment_etkinlik, container, false);
-
+        fragmentEtkinlikBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_etkinlik, container, false);
 
         toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
 
+        View rootView = fragmentEtkinlikBinding.getRoot();
 
-        yukleme = new YuklenmeEkran(getActivity());
+        yuklemeEkran = new YuklenmeEkran(getActivity());
         tarihCevir = new TarihCevir();
 
-        layout = (LinearLayout) rootView.findViewById(R.id.layout_ust);
         layoutManager = new LinearLayoutManager(getActivity());
 
-        url = GYConfiguration.getDomain() + "etkinlik/retrieve?nitems=10&index=";
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(layoutManager);
+        urlString = GYConfiguration.getDomain() + "etkinlik/retrieve?nitems=10&index=";
+        fragmentEtkinlikBinding.recyclerViewEtkinlikFragment.setHasFixedSize(true);
+        fragmentEtkinlikBinding.recyclerViewEtkinlikFragment.setLayoutManager(layoutManager);
 
         SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
-        formattedDate = currentDate.format(todayDate);
-
-        Log.d("time_current:", formattedDate);
-
+        formattedDateString = currentDate.format(todayDate);
 
         Listele(0);
 
-
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        fragmentEtkinlikBinding.recyclerViewEtkinlikFragment.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 /**
                  * Sürüklenme bittiðinde
                  */
                 if (!recyclerView.canScrollVertically(1)) {
-                    index++;
-                    dahaFazla(index);
+                    indexAnInt++;
+                    dahaFazla(indexAnInt);
 
                     /**
                      * Aþaðý Sürüklendiðinde
                      */
                 } else if (dy > 0) {
-                    layout.animate()
-                            .translationY(-layout.getBottom() - toolbar.getBottom())
+                    fragmentEtkinlikBinding.linearLayoutUstEkranEtkinlikFragment.animate()
+                            .translationY(-fragmentEtkinlikBinding.linearLayoutUstEkranEtkinlikFragment.getBottom() - toolbar.getBottom())
                             .setInterpolator(new AccelerateInterpolator(2))
                             .setListener(new Animator.AnimatorListener() {
                                 @Override
@@ -110,7 +104,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                    layout.setVisibility(View.GONE);
+                                    fragmentEtkinlikBinding.linearLayoutUstEkranEtkinlikFragment.setVisibility(View.GONE);
                                 }
 
                                 @Override
@@ -143,14 +137,14 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
 
         if (GYConfiguration.checkInternetConnectionShowDialog(getActivity())) {
-            yukleme.surecBasla();
+            yuklemeEkran.surecBasla();
         }
 
-        request = new JsonArrayRequest(Request.Method.GET, url + x, null, new Response.Listener<JSONArray>() {
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlString + x, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                yukleme.surecDurdur();
+                yuklemeEkran.surecDurdur();
 
 
                 for (int i = 0; i < response.length(); i++) {
@@ -166,12 +160,12 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                         String gercekBitisTarih = tarihCevir.Cevir(endDate);
 
 
-                        String kalanGun = Long.toString(Math.abs(farkAl(formattedDate, gercekBaslamaTarih)));
+                        String kalanGun = Long.toString(Math.abs(farkAl(formattedDateString, gercekBaslamaTarih)));
 
-                        if (farkAl(formattedDate, gercekBaslamaTarih) <= 0) {
-                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, kalanGun));
+                        if (farkAl(formattedDateString, gercekBaslamaTarih) <= 0) {
+                            etkinlikArrayList.add(i + maksSizeAnInt, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, kalanGun));
                         } else {
-                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, "-"));
+                            etkinlikArrayList.add(i + maksSizeAnInt, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, "-"));
                         }
 
                     } catch (JSONException e) {
@@ -180,11 +174,11 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                         e.printStackTrace();
                     }
                 }
-                maksSize = itemList.size();
+                maksSizeAnInt = etkinlikArrayList.size();
                 recyclerAdapterEtkinlik =
-                        new RecyclerAdapterEtkinlik(itemList, getActivity());
+                        new RecyclerAdapterEtkinlik(etkinlikArrayList, getActivity());
 
-                recyclerView.setAdapter(recyclerAdapterEtkinlik);
+                fragmentEtkinlikBinding.recyclerViewEtkinlikFragment.setAdapter(recyclerAdapterEtkinlik);
 
             }
 
@@ -196,7 +190,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        AppController.getInstance().addToRequestQueue(request);
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 
@@ -208,13 +202,13 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
     public void dahaFazla(int x) {
 
 
-        yukleme.surecBasla();
+        yuklemeEkran.surecBasla();
 
-        request = new JsonArrayRequest(Request.Method.GET, url + x, null, new Response.Listener<JSONArray>() {
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlString + x, null, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
-                yukleme.surecDurdur();
+                yuklemeEkran.surecDurdur();
 
                 for (int i = 0; i < response.length(); i++) {
                     try {
@@ -227,11 +221,11 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                         String gercekBaslamaTarih = tarihCevir.Cevir(startDate);
                         String gercekBitisTarih = tarihCevir.Cevir(endDate);
 
-                        String kalanGun = Long.toString(Math.abs(farkAl(formattedDate, gercekBaslamaTarih)));
-                        if (farkAl(formattedDate, gercekBaslamaTarih) <= 0) {
-                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, kalanGun));
+                        String kalanGun = Long.toString(Math.abs(farkAl(formattedDateString, gercekBaslamaTarih)));
+                        if (farkAl(formattedDateString, gercekBaslamaTarih) <= 0) {
+                            etkinlikArrayList.add(i + maksSizeAnInt, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, kalanGun));
                         } else {
-                            itemList.add(i + maksSize, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, "-"));
+                            etkinlikArrayList.add(i + maksSizeAnInt, new Etkinlik(nodeID, title, gercekBaslamaTarih, gercekBitisTarih, thumbnail, "-"));
                         }
 
                     } catch (JSONException e) {
@@ -241,7 +235,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
                     }
                 }
 
-                maksSize = maksSize + 10;
+                maksSizeAnInt = maksSizeAnInt + 10;
                 recyclerAdapterEtkinlik.notifyDataSetChanged();
 
             }
@@ -254,7 +248,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        AppController.getInstance().addToRequestQueue(request);
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 
@@ -264,16 +258,11 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
 
         SimpleDateFormat dates = new SimpleDateFormat("dd/MM/yyyy");
 
-
         date1 = dates.parse(d1);
         date2 = dates.parse(d2);
 
-
         long difference = date1.getTime() - date2.getTime();
         long differenceDates = difference / (24 * 60 * 60 * 1000);
-
-
-        //String dayDifference = Long.toString(differenceDates);
 
         return differenceDates;
     }

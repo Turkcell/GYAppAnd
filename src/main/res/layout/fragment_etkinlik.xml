@@ -1,46 +1,47 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.turkcell.gelecegiyazanlar.Fragmentlar.EtkinlikFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <FrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.turkcell.gelecegiyazanlar.Fragmentlar.EtkinlikFragment">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height=".2dp"
-            android:background="@color/beyaz_renk"></LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/layout_ust"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/ust_bosluk_yukseklik"
-            android:background="@color/ColorPrimary"
-            android:gravity="center">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height=".2dp"
+                android:background="@color/beyaz_renk"/>
 
-            <ImageView
-                android:id="@+id/logo_ust_ekran"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/etkinliklogosu" />
+            <LinearLayout
+                android:id="@+id/linearLayoutUstEkranEtkinlikFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/ust_bosluk_yukseklik"
+                android:background="@color/ColorPrimary"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageViewLogoUstEkranEtkinlikFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/etkinliklogosu" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewEtkinlikFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
 
         </LinearLayout>
 
-
-        <android.support.v7.widget.RecyclerView
-
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            ></android.support.v7.widget.RecyclerView>
-
-
-    </LinearLayout>
-
-</FrameLayout>
+    </FrameLayout>
+</layout>
