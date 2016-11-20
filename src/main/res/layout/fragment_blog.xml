@@ -1,51 +1,54 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/profil_arkaplan_renk"
-    tools:context="com.turkcell.gelecegiyazanlar.Fragmentlar.BlogFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/profil_arkaplan_renk"
+        tools:context="com.turkcell.gelecegiyazanlar.Fragmentlar.BlogFragment">
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height=".2dp"
-            android:background="@color/beyaz_renk"></LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/ust_blok"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/ust_bosluk_yukseklik"
-            android:background="@color/ColorPrimary"
-            android:gravity="center">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height=".2dp"
+                android:background="@color/beyaz_renk" />
 
-            <ImageView
-                android:id="@+id/logo_ust_ekran"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearLayoutUstBlokBlogFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/ust_bosluk_yukseklik"
+                android:background="@color/ColorPrimary"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageViewLogoUstEkranBlogFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/bloglogo" />
+
+            </LinearLayout>
+
+
+            <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
+                android:id="@+id/slidingTabLayoutTabsBlogFragment"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/bloglogo" />
+                android:background="@color/tab_default_renk" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPagerBlogFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1" />
+
 
         </LinearLayout>
-
-
-        <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
-            android:id="@+id/tabsBlog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/tab_default_renk" />
-
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pagerBlog"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"/>
-
-
-    </LinearLayout>
-</FrameLayout>
+    </FrameLayout>
+</layout>

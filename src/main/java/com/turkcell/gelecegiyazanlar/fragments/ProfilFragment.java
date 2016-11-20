@@ -123,7 +123,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         arduino301 = (ImageView) rootView.findViewById(R.id.arduino301);
         arduino401 = (ImageView) rootView.findViewById(R.id.arduino401);
 
-        SlidingTabLayout tabs = (SlidingTabLayout) getActivity().findViewById(R.id.tabsBlog);
+        SlidingTabLayout tabs = (SlidingTabLayout) getActivity().findViewById(R.id.slidingTabLayoutTabsBlogFragment);
 
         final FrameLayout frameLayout = (FrameLayout) rootView.findViewById(R.id.frameLay);
         final FloatingActionsMenu fabMenu = (FloatingActionsMenu) rootView.findViewById(R.id.fab_menu);

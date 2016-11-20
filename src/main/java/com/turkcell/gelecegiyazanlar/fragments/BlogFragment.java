@@ -1,33 +1,35 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.ViewPagerAdapterBlogEtkinlik;
-import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentBlogBinding;
 
 
-public class BlogFragment extends android.support.v4.app.Fragment {
-    public SlidingTabLayout tabs;
-    Toolbar toolbar;
-    CharSequence titles[];
-    int numbOfTabs = 5;
+public class BlogFragment extends Fragment {
+    private FragmentBlogBinding fragmentBlogBinding;
 
-    ViewPager pager;
-    ViewPagerAdapterBlogEtkinlik adapter;
+    private CharSequence titlesCharSequences[];
+    private int numbOfTabsAnInt = 5;
+    private ViewPagerAdapterBlogEtkinlik viewPagerAdapterBlogEtkinlik;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
         View rootView = inflater.inflate(R.layout.fragment_blog, container, false);
-        titles = new CharSequence[]{
+
+        fragmentBlogBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_blog, container, false);
+
+
+        titlesCharSequences = new CharSequence[]{
                 getString(R.string.blog_kategori_gelecegi_yazanlar),
                 getString(R.string.blog_kategori_mobil),
                 getString(R.string.blog_kategori_android),
@@ -35,19 +37,12 @@ public class BlogFragment extends android.support.v4.app.Fragment {
                 getString(R.string.blog_kategori_wp)
         };
 
-        // Baþlýklarý,tab sayýsýný adapterda tanýmlar
-        adapter = new ViewPagerAdapterBlogEtkinlik(getFragmentManager(), titles, numbOfTabs);
+        viewPagerAdapterBlogEtkinlik = new ViewPagerAdapterBlogEtkinlik(getFragmentManager(), titlesCharSequences, numbOfTabsAnInt);
 
-
-        pager = (ViewPager) rootView.findViewById(R.id.pagerBlog);
-        pager.setAdapter(adapter);
-
-
-        tabs = (SlidingTabLayout) rootView.findViewById(R.id.tabsBlog);
-        tabs.setDistributeEvenly(true); // tablarýn düzenlenebilir olmasýný saðlar
-        tabs.setSelectedIndicatorColors(getResources().getColor(R.color.beyaz_renk));
-
-        tabs.setViewPager(pager);
+        fragmentBlogBinding.viewPagerBlogFragment.setAdapter(viewPagerAdapterBlogEtkinlik);
+        fragmentBlogBinding.slidingTabLayoutTabsBlogFragment.setDistributeEvenly(true);
+        fragmentBlogBinding.slidingTabLayoutTabsBlogFragment.setSelectedIndicatorColors(ContextCompat.getColor(getActivity(), R.color.beyaz_renk));
+        fragmentBlogBinding.slidingTabLayoutTabsBlogFragment.setViewPager(fragmentBlogBinding.viewPagerBlogFragment);
 
 
         return rootView;
