@@ -2,6 +2,7 @@ package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.animation.Animator;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentOyunBinding;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
 import com.turkcell.gelecegiyazanlar.models.Egitim;
 
@@ -25,14 +27,10 @@ import com.turkcell.gelecegiyazanlar.models.Egitim;
 
 public class OyunFragment extends Fragment implements View.OnClickListener {
 
-
-    LinearLayout ust_layout, oyun, oyunIcerik;
-
-
-    LinearLayout oyun101, oyun101Layout, oyun201, oyun201Layout;
-
-    SlidingTabLayoutIcon tablar;
-    ImageView oyunSagOk, oyun101AsagiOk, oyun201AsagiOk, egitimiAl101, egitimiAl201;
+    private FragmentOyunBinding fragmentOyunBinding;
+    
+    private LinearLayout linearLayoutUstEkran;
+    private SlidingTabLayoutIcon slidingTabLayoutIcon;
     Toolbar toolbar;
 
 
@@ -41,30 +39,22 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
-        View rootView = inflater.inflate(R.layout.fragment_oyun, container, false);
 
-        oyun = (LinearLayout) rootView.findViewById(R.id.oyun);
-        oyunIcerik = (LinearLayout) rootView.findViewById(R.id.layout_oyun_icerik);
-        oyunSagOk = (ImageView) rootView.findViewById(R.id.oyunsagok);
+        fragmentOyunBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_oyun, container, false);
 
-        oyun101AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_101_oyun);
-        oyun101 = (LinearLayout) rootView.findViewById(R.id.egitimal_oyun_101);
-        oyun101Layout = (LinearLayout) rootView.findViewById(R.id.layout_oyun_101);
-
-        oyun201AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_201_oyun);
-        oyun201 = (LinearLayout) rootView.findViewById(R.id.egitimal_oyun_201);
-        oyun201Layout = (LinearLayout) rootView.findViewById(R.id.layout_oyun_201);
+        View rootView = fragmentOyunBinding.getRoot();
 
 
-        ust_layout = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstEkranEgitimFragment);
-        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.slidingTabLayoutIconEgitimFragment);
+        linearLayoutUstEkran = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstEkranEgitimFragment);
+        slidingTabLayoutIcon = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.slidingTabLayoutIconEgitimFragment);
 
 
-        oyun.setOnClickListener(this);
-        oyun101Layout.setOnClickListener(this);
-        oyun201Layout.setOnClickListener(this);
-        oyun101.setOnClickListener(this);
-        oyun201.setOnClickListener(this);
+        fragmentOyunBinding.linearLayoutOyunOyunFragment.setOnClickListener(this);
+        fragmentOyunBinding.linearLayoutOyun101OyunFragment.setOnClickListener(this);
+        fragmentOyunBinding.linearLayoutOyun201OyunFragment.setOnClickListener(this);
+        fragmentOyunBinding.linearLayoutEgitimalOyun101OyunFragment.setOnClickListener(this);
+        fragmentOyunBinding.linearLayoutEgitimalOyun201OyunFragment.setOnClickListener(this);
 
         return rootView;
     }
@@ -75,41 +65,41 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
         Intent i = null;
         switch (v.getId()) {
 
-            case R.id.oyun:
-                if (oyunIcerik.getVisibility() == View.VISIBLE) {
-                    oyunIcerik.setVisibility(View.GONE);
+            case R.id.linearLayoutOyunOyunFragment:
+                if (fragmentOyunBinding.linearLayoutOyunIcerikOyunFragment.getVisibility() == View.VISIBLE) {
+                    fragmentOyunBinding.linearLayoutOyunIcerikOyunFragment.setVisibility(View.GONE);
                     goster();
-                    tablar.setVisibility(View.VISIBLE);
-                    oyunSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
+                    slidingTabLayoutIcon.setVisibility(View.VISIBLE);
+                    fragmentOyunBinding.imageViewOyunsagokOyunFragment.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
-                    oyunIcerik.setVisibility(View.VISIBLE);
+                    fragmentOyunBinding.linearLayoutOyunIcerikOyunFragment.setVisibility(View.VISIBLE);
                     sakla();
-                    tablar.setVisibility(View.GONE);
-                    oyunSagOk.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
+                    slidingTabLayoutIcon.setVisibility(View.GONE);
+                    fragmentOyunBinding.imageViewOyunsagokOyunFragment.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
                 }
                 break;
 
 
-            case R.id.layout_oyun_101:
-                if (oyun101.getVisibility() == View.VISIBLE) {
-                    oyun101.setVisibility(View.GONE);
-                    oyun101AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutOyun101OyunFragment:
+                if (fragmentOyunBinding.linearLayoutEgitimalOyun101OyunFragment.getVisibility() == View.VISIBLE) {
+                    fragmentOyunBinding.linearLayoutEgitimalOyun101OyunFragment.setVisibility(View.GONE);
+                    fragmentOyunBinding.imageViewAsagiImage101OyunOyunFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    oyun101.setVisibility(View.VISIBLE);
-                    oyun101AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentOyunBinding.linearLayoutEgitimalOyun101OyunFragment.setVisibility(View.VISIBLE);
+                    fragmentOyunBinding.imageViewAsagiImage101OyunOyunFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
-            case R.id.layout_oyun_201:
-                if (oyun201.getVisibility() == View.VISIBLE) {
-                    oyun201.setVisibility(View.GONE);
-                    oyun201AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutOyun201OyunFragment:
+                if (fragmentOyunBinding.linearLayoutEgitimalOyun201OyunFragment.getVisibility() == View.VISIBLE) {
+                    fragmentOyunBinding.linearLayoutEgitimalOyun201OyunFragment.setVisibility(View.GONE);
+                    fragmentOyunBinding.imageViewAsagiImage201OyunOyunFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    oyun201.setVisibility(View.VISIBLE);
-                    oyun201AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentOyunBinding.linearLayoutEgitimalOyun201OyunFragment.setVisibility(View.VISIBLE);
+                    fragmentOyunBinding.imageViewAsagiImage201OyunOyunFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
-            case R.id.egitimal_oyun_101:
+            case R.id.linearLayoutEgitimalOyun101OyunFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Oyun Geliþtirme 101");
                 i.putExtra(Egitim.COLOR_TAG, "oyun");
@@ -117,7 +107,7 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
                 startActivity(i);
                 break;
 
-            case R.id.egitimal_oyun_201:
+            case R.id.linearLayoutEgitimalOyun201OyunFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Oyun Geliþtirme 201");
                 i.putExtra(Egitim.COLOR_TAG, "oyun");
@@ -131,7 +121,7 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
     }
 
     public void sakla() {
-        ust_layout.animate().translationY(-ust_layout.getBottom() - toolbar.getBottom()).setInterpolator(new AccelerateInterpolator(2))
+        linearLayoutUstEkran.animate().translationY(-linearLayoutUstEkran.getBottom() - toolbar.getBottom()).setInterpolator(new AccelerateInterpolator(2))
                 .setListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -140,7 +130,7 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
 
                     @Override
                     public void onAnimationEnd(Animator animation) {
-                        ust_layout.setVisibility(View.GONE);
+                        linearLayoutUstEkran.setVisibility(View.GONE);
                     }
 
                     @Override
@@ -156,11 +146,11 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
     }
 
     public void goster() {
-        ust_layout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2))
+        linearLayoutUstEkran.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2))
                 .setListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
-                        ust_layout.setVisibility(View.VISIBLE);
+                        linearLayoutUstEkran.setVisibility(View.VISIBLE);
                     }
 
                     @Override
