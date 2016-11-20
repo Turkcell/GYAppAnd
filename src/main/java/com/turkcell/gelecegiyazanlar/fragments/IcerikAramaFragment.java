@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,26 +39,18 @@ import java.util.List;
  */
 public class IcerikAramaFragment extends Fragment implements View.OnClickListener,AramaActivity.IArama {
 
-    //List<Kisi> icerikList = new ArrayList<Kisi>();
-    List<Icerik> icerikList = new ArrayList<Icerik>();
-    EditText search;
-
-    ImageView btnAra;
-    ListView listView;
-    TextView tvSonuc;
-
-    //Volley deðiþkenleri
-    JsonArrayRequest jsonArrayRequest;
-    String url;
-    int sayfaNumarasi=1;
-
-    YuklenmeEkran ekran ;
-
-    Toolbar toolbar;
+    private List<Icerik> icerikArrayList = new ArrayList<Icerik>();
+    private EditText searchEditText;
+    private ImageView searchImageView;
+    private ListView listView;
+    private TextView sonucTextView;
+    private JsonArrayRequest jsonArrayRequest;
+    private String urlString;
+    private int sayfaNumarasiAnInt = 1;
+    private YuklenmeEkran yuklenmeEkran ;
+    private Toolbar toolbar;
 
     public IcerikAramaFragment() {
-
-        Log.d("arama:","Icerik");
     }
 
     public static IcerikAramaFragment newInstance() {
@@ -67,34 +61,27 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar_ara);
         View rootView= inflater.inflate(R.layout.fragment_arama, container, false);
 
-        url = GYConfiguration.getDomain()+"contentsearch/retrieve?";
+        urlString = GYConfiguration.getDomain()+"contentsearch/retrieve?";
 
-        search=(EditText)toolbar.findViewById(R.id.editTextSearch);
+        searchEditText=(EditText)toolbar.findViewById(R.id.editTextSearch);
+        searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtn);
 
-        listView = (ListView) rootView.findViewById(R.id.lvliste);
-        tvSonuc = (TextView) rootView.findViewById(R.id.tvSonuc);
-        btnAra = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtn);
-
-        ekran=new YuklenmeEkran(getActivity());
+        yuklenmeEkran = new YuklenmeEkran(getActivity());
 
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (icerikList.get(position) != null) {
-//                    Kisi kisi = new Kisi();
-//                    kisi.setKullaniciAdi(icerikList.get(position).getKullaniciID());
-//                    Intent i=new Intent(getActivity(), ProfilActivity.class);
-//                    i.putExtra(Kisi.PROFIL_ID,kisi.getKullaniciAdi());
-//                    startActivity(i);
-//                }
-//            }
-//        });
-
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    performSearch();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         return rootView;
     }
@@ -104,26 +91,29 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.imageViewSearchBtn:
-                String URL = (url +"keyword="+search.getText()+"&page="+sayfaNumarasi+"&nodeType=article").trim();
-                URL = URL.replace(" ", "%20");
-                Listele(URL);
+                performSearch();
                 break;
 
         }
 
     }
+    private void performSearch() {
+        String URL = (urlString +"keyword="+searchEditText.getText()+"&page="+sayfaNumarasiAnInt+"&nodeType=article").trim();
+        URL = URL.replace(" ", "%20");
+        Listele(URL);
+    }
 
     public void Listele(String url) {
-        ekran.surecBasla();
-        Log.d("icerikUrl:",url);
+
+        yuklenmeEkran.surecBasla();
 
         jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
-                ekran.surecDurdur();
+                yuklenmeEkran.surecDurdur();
 
-                icerikList.clear();
+                icerikArrayList.clear();
 
 
                 for (int i = 0; i < response.length(); i++) {
@@ -137,7 +127,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
                         tempIcerik.setExcerpt(response.getJSONObject(i).getString("excerpt"));
                         Log.d("TAG", "onResponse: " + tempIcerik.getNodeID());
 
-                        icerikList.add(tempIcerik);
+                        icerikArrayList.add(tempIcerik);
 
 
                     } catch (JSONException e) {
@@ -147,15 +137,14 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
 
                 }
 
-                IcerikAramaAdapter adapter = new IcerikAramaAdapter(getActivity(), icerikList);
+                IcerikAramaAdapter adapter = new IcerikAramaAdapter(getActivity(), icerikArrayList);
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
 
-                Log.d("parse islemi bitti:", "girildi");
-                if (icerikList.isEmpty())
-                    tvSonuc.setVisibility(View.VISIBLE);
-                else tvSonuc.setVisibility(View.GONE);
+                if (icerikArrayList.isEmpty())
+                    sonucTextView.setVisibility(View.VISIBLE);
+                else sonucTextView.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -170,7 +159,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
 
 
     }
@@ -178,8 +167,8 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onPageActivated() {
-        btnAra.setOnClickListener(this);
+        searchImageView.setOnClickListener(this);
     }
 
-    }
+}
 

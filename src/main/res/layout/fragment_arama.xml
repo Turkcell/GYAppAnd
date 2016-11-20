@@ -1,24 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/profil_arkaplan_renk"
-    tools:context="com.turkcell.gelecegiyazanlar.fragments.AramaFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListView
-        android:id="@+id/lvliste"
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/profil_arkaplan_renk"
+        tools:context="com.turkcell.gelecegiyazanlar.fragments.AramaFragment">
 
-    <TextView
-        android:id="@+id/tvSonuc"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:text="@string/sonuc_bulunamadi"
-        android:textColor="@color/aramatv_sonuc_renk"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        <ListView
+            android:id="@+id/listViewliste"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/textViewSonuc"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/sonuc_bulunamadi"
+            android:textColor="@color/aramatv_sonuc_renk"
+            android:textStyle="bold"
+            android:visibility="gone" />
 
 
-</FrameLayout>
+    </FrameLayout>
+</layout>
