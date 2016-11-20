@@ -56,8 +56,8 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
         oyun201Layout = (LinearLayout) rootView.findViewById(R.id.layout_oyun_201);
 
 
-        ust_layout = (LinearLayout) getActivity().findViewById(R.id.ustekran);
-        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.tabs);
+        ust_layout = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstEkranEgitimFragment);
+        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.slidingTabLayoutIconEgitimFragment);
 
 
         oyun.setOnClickListener(this);

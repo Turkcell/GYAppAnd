@@ -72,8 +72,8 @@ public class WebFragment extends Fragment implements View.OnClickListener {
         web402 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_402);
         web402Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_402);
 
-        ust_layout = (LinearLayout) getActivity().findViewById(R.id.ustekran);
-        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.tabs);
+        ust_layout = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstEkranEgitimFragment);
+        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.slidingTabLayoutIconEgitimFragment);
 
 
         web.setOnClickListener(this);

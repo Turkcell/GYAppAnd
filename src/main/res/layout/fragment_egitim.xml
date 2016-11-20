@@ -1,55 +1,58 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/profil_arkaplan_renk"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height=".2dp"
-        android:background="@color/beyaz_renk"></LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ustekran"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/ust_bosluk_yukseklik"
-        android:background="@color/ColorPrimary"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/logo_ust_ekran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/mobil_ust_logo" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/tab_default_renk"
-        android:gravity="center_horizontal">
-
-        <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon
-            android:id="@+id/tabs"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/tab_yukseklik"
-            android:background="@android:color/transparent"
-            android:elevation="1dp"
-            android:fillViewport="false" />
-
-    </LinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
-        android:layout_weight="1"></android.support.v4.view.ViewPager>
+        android:background="@color/profil_arkaplan_renk"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height=".2dp"
+            android:background="@color/beyaz_renk" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutUstEkranEgitimFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/ust_bosluk_yukseklik"
+            android:background="@color/ColorPrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewLogoUstEkranEgitimFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/mobil_ust_logo" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tab_default_renk"
+            android:gravity="center_horizontal">
+
+            <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon
+                android:id="@+id/slidingTabLayoutIconEgitimFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/tab_yukseklik"
+                android:background="@android:color/transparent"
+                android:elevation="1dp"
+                android:fillViewport="false" />
+
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPagerEgitimFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>

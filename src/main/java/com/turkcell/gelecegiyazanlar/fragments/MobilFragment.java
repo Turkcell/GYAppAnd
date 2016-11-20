@@ -83,8 +83,8 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         android401 = (LinearLayout) rootView.findViewById(R.id.egitimal_android_401);
         android401Layout = (LinearLayout) rootView.findViewById(R.id.layout_android_401);
 
-        ust_layout = (LinearLayout) getActivity().findViewById(R.id.ustekran);
-        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.tabs);
+        ust_layout = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstEkranEgitimFragment);
+        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.slidingTabLayoutIconEgitimFragment);
 
 
         ios = (LinearLayout) rootView.findViewById(R.id.ios);

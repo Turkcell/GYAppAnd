@@ -1,17 +1,16 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
-import android.content.SharedPreferences;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.ViewPagerAdapter;
-import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentEgitimBinding;
 
 
 /**
@@ -19,14 +18,10 @@ import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
  */
 public class EgitimFragment extends Fragment {
 
-    public SlidingTabLayoutIcon tabs;
-    SharedPreferences preferences;
-    android.support.v7.widget.Toolbar toolbar;
-    ViewPager pager;
-    ViewPagerAdapter adapter;
-    CharSequence[] titles;
-    int numbOfTabs = 3;
-    ImageView ust_logo;
+    private FragmentEgitimBinding fragmentEgitimBinding;
+
+    private CharSequence[] titlesCharSequences;
+    private int numbOfTabsAnInt = 3;
 
     public EgitimFragment() {
     }
@@ -35,31 +30,30 @@ public class EgitimFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_egitim, container, false);
 
-        titles = new CharSequence[]{
+        fragmentEgitimBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_egitim, container, false);
+
+        View rootView = fragmentEgitimBinding.getRoot();
+
+        titlesCharSequences = new CharSequence[]{
                 getString(R.string.egitim_kategori_mobil),
                 getString(R.string.egitim_kategori_web),
                 getString(R.string.egitim_kategori_oyun)
         };
 
-        ust_logo = (ImageView) rootView.findViewById(R.id.logo_ust_ekran);
-
         // Baþlýklarý,tab sayýsýný adapterda tanýmlar
-        adapter = new ViewPagerAdapter(getFragmentManager(), titles, numbOfTabs);
-
-
-        pager = (ViewPager) rootView.findViewById(R.id.pager);
-        pager.setAdapter(adapter);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), titlesCharSequences, numbOfTabsAnInt);
+        fragmentEgitimBinding.viewPagerEgitimFragment.setAdapter(viewPagerAdapter);
 
         // Tablarýn görünüm menüsü
-        tabs = (SlidingTabLayoutIcon) rootView.findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(true); // tablarýn düzenlenebilir olmasýný saðlar
 
-        tabs.setSelectedIndicatorColors(getResources().getColor(R.color.selector));
+        fragmentEgitimBinding.slidingTabLayoutIconEgitimFragment.setDistributeEvenly(true); // tablarýn düzenlenebilir olmasýný saðlar
+
+        fragmentEgitimBinding.slidingTabLayoutIconEgitimFragment.setSelectedIndicatorColors(ContextCompat.getColor(getActivity(), R.color.selector));
 
         // pagerý tablara baðladýk.
-        tabs.setViewPager(pager);
+        fragmentEgitimBinding.slidingTabLayoutIconEgitimFragment.setViewPager(fragmentEgitimBinding.viewPagerEgitimFragment);
 
         resimDegisikligiTabDinleyici();
 
@@ -70,7 +64,7 @@ public class EgitimFragment extends Fragment {
      * Resim deðiþikliði saðlar..
      */
     public void resimDegisikligiTabDinleyici() {
-        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        fragmentEgitimBinding.slidingTabLayoutIconEgitimFragment.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -80,13 +74,13 @@ public class EgitimFragment extends Fragment {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        ust_logo.setImageResource(R.drawable.mobil_ust_logo);
+                        fragmentEgitimBinding.imageViewLogoUstEkranEgitimFragment.setImageResource(R.drawable.mobil_ust_logo);
                         break;
                     case 1:
-                        ust_logo.setImageResource(R.drawable.web_ust_logo);
+                        fragmentEgitimBinding.imageViewLogoUstEkranEgitimFragment.setImageResource(R.drawable.web_ust_logo);
                         break;
                     case 2:
-                        ust_logo.setImageResource(R.drawable.oyun_ust_logo);
+                        fragmentEgitimBinding.imageViewLogoUstEkranEgitimFragment.setImageResource(R.drawable.oyun_ust_logo);
                         break;
                 }
             }
