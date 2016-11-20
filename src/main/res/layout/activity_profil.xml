@@ -9,7 +9,7 @@
         tools:context=".MainActivity">
 
         <include
-            android:id="@+id/tool_bar_back"
+            android:id="@+id/toolbarProfilActivity"
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -32,7 +32,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/circleImageViewAvatar"
+                    android:id="@+id/circleImageViewAvatarProfilActivity"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/defaultimage"
@@ -41,7 +41,7 @@
 
 
                 <TextView
-                    android:id="@+id/textViewAdSoyad"
+                    android:id="@+id/textViewAdSoyadProfilActivity"
                     style="@style/mobilIcerikBaslik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                         android:background="@drawable/egitimkep" />
 
                     <TextView
-                        android:id="@+id/textViewUniversite"
+                        android:id="@+id/textViewUniversiteProfilActivity"
                         style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                         android:background="@drawable/konum" />
 
                     <TextView
-                        android:id="@+id/textViewKonum"
+                        android:id="@+id/textViewKonumProfilActivity"
                         style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
 
 
             <com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout
-                android:id="@+id/slidingTabLayoutTabsBlog"
+                android:id="@+id/slidingTabLayoutTabsProfilActivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/tab_default_renk"
@@ -109,7 +109,7 @@
 
 
             <android.support.v4.view.ViewPager
-                android:id="@+id/viewPagerPagerProfil"
+                android:id="@+id/viewPagerPagerProfilActivity"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="3dp"

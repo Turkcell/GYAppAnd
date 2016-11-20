@@ -25,7 +25,7 @@ public class BlogFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
         View rootView = inflater.inflate(R.layout.fragment_blog, container, false);
         titles = new CharSequence[]{
                 getString(R.string.blog_kategori_gelecegi_yazanlar),

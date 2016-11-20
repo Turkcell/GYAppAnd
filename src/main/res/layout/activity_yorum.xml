@@ -11,7 +11,7 @@
         tools:context=".MainActivity">
 
         <ListView
-            android:id="@+id/listViewListe"
+            android:id="@+id/listViewListeYorumActivity"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:divider="@color/yorum_divider_renk"
@@ -19,7 +19,7 @@
             android:elevation="3dp" />
 
         <TextView
-            android:id="@+id/textViewYorumyok"
+            android:id="@+id/textViewYorumyokYorumActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

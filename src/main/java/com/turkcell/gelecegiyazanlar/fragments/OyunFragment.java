@@ -40,7 +40,7 @@ public class OyunFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
         View rootView = inflater.inflate(R.layout.fragment_oyun, container, false);
 
         oyun = (LinearLayout) rootView.findViewById(R.id.oyun);

@@ -8,12 +8,12 @@
         tools:context="com.turkcell.gelecegiyazanlar.fragments.AramaFragment">
 
         <ListView
-            android:id="@+id/listViewliste"
+            android:id="@+id/listViewlisteAramaFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <TextView
-            android:id="@+id/textViewSonuc"
+            android:id="@+id/textViewSonucAramaFragment"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center"

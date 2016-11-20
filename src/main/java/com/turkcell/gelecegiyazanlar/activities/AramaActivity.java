@@ -31,7 +31,7 @@ public class AramaActivity extends AppCompatActivity {
 
         Mint.initAndStartSession(AramaActivity.this, GYConfiguration.SPLUNK_ID);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar_ara);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAramaActivity);
         setSupportActionBar(toolbar);
 
 

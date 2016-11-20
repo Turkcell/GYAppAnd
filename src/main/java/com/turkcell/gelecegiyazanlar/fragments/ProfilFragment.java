@@ -83,11 +83,11 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         basariBelgeleriCizgi = (LinearLayout) rootView.findViewById(R.id.basaribelgeleriCizgi);
         hakkindaCizgi = (LinearLayout) rootView.findViewById(R.id.hakkindaCizgi);
 
-        isim = (TextView) getActivity().findViewById(R.id.textViewAdSoyad);
-        yasadigiSegir = (TextView) getActivity().findViewById(R.id.textViewKonum);
-        universite = (TextView) getActivity().findViewById(R.id.textViewUniversite);
+        isim = (TextView) getActivity().findViewById(R.id.textViewAdSoyadProfilActivity);
+        yasadigiSegir = (TextView) getActivity().findViewById(R.id.textViewKonumProfilActivity);
+        universite = (TextView) getActivity().findViewById(R.id.textViewUniversiteProfilActivity);
         hakkinda = (TextView) rootView.findViewById(R.id.hakkinda);
-        avatar = (ImageView) getActivity().findViewById(R.id.circleImageViewAvatar);
+        avatar = (ImageView) getActivity().findViewById(R.id.circleImageViewAvatarProfilActivity);
 
         android101 = (ImageView) rootView.findViewById(R.id.android101);
         android201 = (ImageView) rootView.findViewById(R.id.android201);

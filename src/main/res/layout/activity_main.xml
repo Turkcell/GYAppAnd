@@ -9,20 +9,20 @@
         tools:context=".MainActivity">
 
         <include
-            android:id="@+id/tool_bar"
+            android:id="@+id/toolbarMainActivity"
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
 
         <android.support.v4.widget.DrawerLayout
-            android:id="@+id/drawerLayout"
+            android:id="@+id/drawerLayoutMainActivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/fragment"
+                android:id="@+id/fragmentMainActivity"
                 android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.EgitimFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -36,7 +36,7 @@
                 android:background="@color/beyaz_renk">
 
                 <ListView
-                    android:id="@+id/listViewLeftlist"
+                    android:id="@+id/listViewLeftlistMainActivity"
                     android:layout_width="@dimen/sol_menu_genislik"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"

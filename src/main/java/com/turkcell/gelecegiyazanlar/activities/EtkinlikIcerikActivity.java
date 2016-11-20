@@ -51,14 +51,14 @@ public class EtkinlikIcerikActivity extends AppCompatActivity {
 
         yuklenmeEkran = new YuklenmeEkran(EtkinlikIcerikActivity.this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaretkinlik);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarEtkinlikIcerikActivity);
 
         urlString = GYConfiguration.getDomain() + "etkinlik_content/retrieve?nodeID=";
 
         Bundle extras = getIntent().getExtras();
         idString = extras.getString(Etkinlik.ETKINLIK_ID);
 
-        activityEtkinlikIcerikBinding.textViewYorum.setOnClickListener(new View.OnClickListener() {
+        activityEtkinlikIcerikBinding.textViewYorumEtkinlikIcerikActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EtkinlikIcerikActivity.this, YorumActivity.class);
@@ -77,10 +77,10 @@ public class EtkinlikIcerikActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setJavaScriptEnabled(true);
+                activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setJavaScriptEnabled(true);
 
                 try {
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.setWebViewClient(new WebViewClient() {
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.setWebViewClient(new WebViewClient() {
 
                         @Override
                         public void onPageFinished(WebView view, String url) {
@@ -96,22 +96,22 @@ public class EtkinlikIcerikActivity extends AppCompatActivity {
 
 
                     baslikString = response.getJSONObject(0).getString("title");
-                    activityEtkinlikIcerikBinding.textViewBaslik.setText(baslikString);
+                    activityEtkinlikIcerikBinding.textViewBaslikEtkinlikIcerikActivity.setText(baslikString);
                     //Etkinlik baþlýðý bitiþ
 
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setSupportZoom(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setAllowFileAccess(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setDomStorageEnabled(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setJavaScriptEnabled(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setUseWideViewPort(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setLoadWithOverviewMode(true);
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.getSettings().setDefaultFontSize(40);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setBuiltInZoomControls(true); //zoom yapýlmasýna izin verir
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setSupportZoom(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setAllowFileAccess(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setDomStorageEnabled(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setJavaScriptEnabled(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setUseWideViewPort(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setLoadWithOverviewMode(true);
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.getSettings().setDefaultFontSize(40);
 
                     //Etkinlik içerik baþlangýç
 
-                    activityEtkinlikIcerikBinding.webViewEtkinlikDetay.loadData(response.getJSONObject(0).getString("content")
+                    activityEtkinlikIcerikBinding.webViewEtkinlikDetayEtkinlikIcerikActivity.loadData(response.getJSONObject(0).getString("content")
                             , "text/html; charset=utf-8", null);
                     //Etkinlik içerik bitiþ
 

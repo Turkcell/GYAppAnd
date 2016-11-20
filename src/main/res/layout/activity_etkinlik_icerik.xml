@@ -11,7 +11,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/toolbaretkinlik"
+                android:id="@+id/toolbarEtkinlikIcerikActivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/blog_icerik_arkaplan_renk"
@@ -22,7 +22,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/textViewBaslik"
+                        android:id="@+id/textViewBaslikEtkinlikIcerikActivity"
                         style="@style/mobilIcerikBaslik"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
                         android:textColor="@color/beyaz_renk" />
 
                     <TextView
-                        android:id="@+id/textViewYorum"
+                        android:id="@+id/textViewYorumEtkinlikIcerikActivity"
                         style="@style/mobilIcerikBaslik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -44,10 +44,10 @@
             </android.support.v7.widget.Toolbar>
 
             <WebView
-                android:id="@+id/webViewEtkinlikDetay"
+                android:id="@+id/webViewEtkinlikDetayEtkinlikIcerikActivity"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/toolbaretkinlik" />
+                android:layout_below="@+id/toolbarEtkinlikIcerikActivity" />
         </RelativeLayout>
     </LinearLayout>
 </layout>

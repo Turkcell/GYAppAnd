@@ -49,7 +49,6 @@ public class YorumActivity extends AppCompatActivity {
 
         activityYorumBinding = DataBindingUtil.setContentView(this,R.layout.activity_yorum);
 
-
         Mint.initAndStartSession(YorumActivity.this, GYConfiguration.SPLUNK_ID);
         urlString = GYConfiguration.getDomain() + "yorumlar/retrieve?nodeID=";
 
@@ -76,7 +75,7 @@ public class YorumActivity extends AppCompatActivity {
 
 
                     if (response.length() == 0) {
-                        activityYorumBinding.textViewYorumyok.setVisibility(View.VISIBLE);
+                        activityYorumBinding.textViewYorumyokYorumActivity.setVisibility(View.VISIBLE);
 
                     } else {
                         for (int i = 0; i < response.length(); i++) {
@@ -97,7 +96,7 @@ public class YorumActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 ListViewAdapterYorum listViewAdapterYorum = new ListViewAdapterYorum(YorumActivity.this, yorumList);
-                activityYorumBinding.listViewListe.setAdapter(listViewAdapterYorum);
+                activityYorumBinding.listViewListeYorumActivity.setAdapter(listViewAdapterYorum);
 
             }
 

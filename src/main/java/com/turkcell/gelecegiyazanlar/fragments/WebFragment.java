@@ -41,7 +41,7 @@ public class WebFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
         View rootView = inflater.inflate(R.layout.fragment_web, container, false);
 
         web = (LinearLayout) rootView.findViewById(R.id.web);

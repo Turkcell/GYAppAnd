@@ -32,7 +32,7 @@ public class ProfilActivity extends AppCompatActivity {
         activityProfilBinding = DataBindingUtil.setContentView(this,R.layout.activity_profil);
 
         Mint.initAndStartSession(ProfilActivity.this, GYConfiguration.SPLUNK_ID);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar_back);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarProfilActivity);
         setSupportActionBar(toolbar);
 
         titleCharSequences = new CharSequence[]{getString(R.string.profil_baslik_hakkinda),
@@ -40,12 +40,12 @@ public class ProfilActivity extends AppCompatActivity {
 
         viewPagerAdapterProfil = new ViewPagerAdapterProfil(getSupportFragmentManager(), titleCharSequences, tabSayisiAnInt);
 
-        activityProfilBinding.viewPagerPagerProfil.setAdapter(viewPagerAdapterProfil);
+        activityProfilBinding.viewPagerPagerProfilActivity.setAdapter(viewPagerAdapterProfil);
 
-        activityProfilBinding.slidingTabLayoutTabsBlog.setDistributeEvenly(true);
-        activityProfilBinding.slidingTabLayoutTabsBlog.setSelectedIndicatorColors(ContextCompat.getColor(getApplicationContext(), R.color.beyaz_renk));
+        activityProfilBinding.slidingTabLayoutTabsProfilActivity.setDistributeEvenly(true);
+        activityProfilBinding.slidingTabLayoutTabsProfilActivity.setSelectedIndicatorColors(ContextCompat.getColor(getApplicationContext(), R.color.beyaz_renk));
 
-        activityProfilBinding.slidingTabLayoutTabsBlog.setViewPager(activityProfilBinding.viewPagerPagerProfil);
+        activityProfilBinding.slidingTabLayoutTabsProfilActivity.setViewPager(activityProfilBinding.viewPagerPagerProfilActivity);
     }
 
 

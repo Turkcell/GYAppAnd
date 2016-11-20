@@ -61,7 +61,7 @@ public class EtkinlikFragment extends android.support.v4.app.Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_etkinlik, container, false);
 
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
 
 
         yukleme = new YuklenmeEkran(getActivity());

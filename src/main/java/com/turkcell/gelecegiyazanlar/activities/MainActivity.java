@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         CurioClient.getInstance(this).startSession();
 
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) findViewById(R.id.toolbarMainActivity);
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         // Baþlangýç ekran fragmentý
         FragmentManager ft = getSupportFragmentManager();
         ft.beginTransaction()
-                .replace(R.id.fragment, new EgitimFragment())
+                .replace(R.id.fragmentMainActivity, new EgitimFragment())
                 .commit();
 
         //Menü Listesi Oluþturma
 
         navigationDrawerAdapter = new ListDrawerAdapter(drawerItemsArrayList);
-        activityMainBinding.listViewLeftlist.setAdapter(navigationDrawerAdapter);
+        activityMainBinding.listViewLeftlistMainActivity.setAdapter(navigationDrawerAdapter);
         initDrawer();
 
         GYConfiguration.checkInternetConnectionShowDialog(MainActivity.this);
@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         /**
          * liste itemlarýna týklanma ve geçiþ için kullanýlan kýsým.
          */
-        activityMainBinding.listViewLeftlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        activityMainBinding.listViewLeftlistMainActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                activityMainBinding.drawerLayout.closeDrawers();
+                activityMainBinding.drawerLayoutMainActivity.closeDrawers();
 
                 parent.getChildAt(position).setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                         mTitleString = getString(R.string.sayfa_baslik_egitim);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new EgitimFragment())
+                                .replace(R.id.fragmentMainActivity, new EgitimFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                         mTitleString = getString(R.string.sayfa_baslik_blog);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new BlogFragment())
+                                .replace(R.id.fragmentMainActivity, new BlogFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         mTitleString = getString(R.string.sayfa_baslik_etkinlik);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new EtkinlikFragment())
+                                .replace(R.id.fragmentMainActivity, new EtkinlikFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         mTitleString = getString(R.string.sayfa_baslik_gelistirici);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new ElcilerFragment())
+                                .replace(R.id.fragmentMainActivity, new ElcilerFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDrawer() {
 
-        drawerToggle = new ActionBarDrawerToggle(this, activityMainBinding.drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+        drawerToggle = new ActionBarDrawerToggle(this, activityMainBinding.drawerLayoutMainActivity, toolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
-        activityMainBinding.drawerLayout.setDrawerListener(drawerToggle);
+        activityMainBinding.drawerLayoutMainActivity.setDrawerListener(drawerToggle);
     }
 
     @Override
@@ -205,8 +205,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (activityMainBinding.drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-            activityMainBinding.drawerLayout.closeDrawers();
+        if (activityMainBinding.drawerLayoutMainActivity.isDrawerOpen(Gravity.LEFT)) {
+            activityMainBinding.drawerLayoutMainActivity.closeDrawers();
         } else {
             super.onBackPressed();
         }

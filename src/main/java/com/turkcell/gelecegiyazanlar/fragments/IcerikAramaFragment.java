@@ -50,7 +50,6 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     private String urlString;
     private int sayfaNumarasiAnInt = 1;
     private YuklenmeEkran yuklenmeEkran ;
-    private Toolbar toolbar;
 
     public IcerikAramaFragment() {
     }
@@ -63,7 +62,10 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar=(Toolbar)getActivity().findViewById(R.id.tool_bar_ara);
+        Toolbar toolbar = (Toolbar)getActivity().findViewById(R.id.toolbarAramaActivity);
+        searchEditText=(EditText)toolbar.findViewById(R.id.editTextSearchAramabar);
+        searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtnAramabar);
+
 
         fragmentAramaBinding = DataBindingUtil.inflate(
 
@@ -71,9 +73,6 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
         View rootView = fragmentAramaBinding.getRoot();
 
         urlString = GYConfiguration.getDomain()+"contentsearch/retrieve?";
-
-        searchEditText=(EditText)toolbar.findViewById(R.id.editTextSearchAramabar);
-        searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtnAramabar);
 
         yuklenmeEkran = new YuklenmeEkran(getActivity());
 
@@ -144,13 +143,13 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
                 }
 
                 IcerikAramaAdapter adapter = new IcerikAramaAdapter(getActivity(), icerikArrayList);
-                fragmentAramaBinding.listViewliste.setAdapter(adapter);
+                fragmentAramaBinding.listViewlisteAramaFragment.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
 
                 if (icerikArrayList.isEmpty())
-                    fragmentAramaBinding.textViewSonuc.setVisibility(View.VISIBLE);
-                else fragmentAramaBinding.textViewSonuc.setVisibility(View.GONE);
+                    fragmentAramaBinding.textViewSonucAramaFragment.setVisibility(View.VISIBLE);
+                else fragmentAramaBinding.textViewSonucAramaFragment.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {

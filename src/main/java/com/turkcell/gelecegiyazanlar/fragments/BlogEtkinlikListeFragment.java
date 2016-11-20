@@ -59,7 +59,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
         ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.pagerBlog);
         SlidingTabLayout tabLayout = (SlidingTabLayout) getActivity().findViewById(R.id.tabsBlog);
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
         layout = (LinearLayout) getActivity().findViewById(R.id.ust_blok);
         View rootView = inflater.inflate(R.layout.fragment_blog_liste, container, false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
