@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        mTitleString=getResources().getString(R.string.sayfa_baslik_gelecegi_yazanlar);
+        mTitleString = getResources().getString(R.string.sayfa_baslik_gelecegi_yazanlar);
 
         Mint.initAndStartSession(MainActivity.this, GYConfiguration.SPLUNK_ID);
 

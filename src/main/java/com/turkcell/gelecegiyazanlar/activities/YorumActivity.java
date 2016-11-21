@@ -47,7 +47,7 @@ public class YorumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityYorumBinding = DataBindingUtil.setContentView(this,R.layout.activity_yorum);
+        activityYorumBinding = DataBindingUtil.setContentView(this, R.layout.activity_yorum);
 
         Mint.initAndStartSession(YorumActivity.this, GYConfiguration.SPLUNK_ID);
         urlString = GYConfiguration.getDomain() + "yorumlar/retrieve?nodeID=";

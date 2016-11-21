@@ -27,7 +27,7 @@ public class AramaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityAramaBinding = DataBindingUtil.setContentView(this,R.layout.activity_arama);
+        activityAramaBinding = DataBindingUtil.setContentView(this, R.layout.activity_arama);
 
         Mint.initAndStartSession(AramaActivity.this, GYConfiguration.SPLUNK_ID);
 

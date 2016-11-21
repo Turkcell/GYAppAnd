@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * Created by asus on 30.9.2015.
  */
-public class IcerikAramaFragment extends Fragment implements View.OnClickListener,AramaActivity.IArama {
+public class IcerikAramaFragment extends Fragment implements View.OnClickListener, AramaActivity.IArama {
 
     private FragmentAramaBinding fragmentAramaBinding;
 
@@ -49,7 +49,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     private JsonArrayRequest jsonArrayRequest;
     private String urlString;
     private int sayfaNumarasiAnInt = 1;
-    private YuklenmeEkran yuklenmeEkran ;
+    private YuklenmeEkran yuklenmeEkran;
 
     public IcerikAramaFragment() {
     }
@@ -62,8 +62,8 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Toolbar toolbar = (Toolbar)getActivity().findViewById(R.id.toolbarAramaActivity);
-        searchEditText=(EditText)toolbar.findViewById(R.id.editTextSearchAramabar);
+        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarAramaActivity);
+        searchEditText = (EditText) toolbar.findViewById(R.id.editTextSearchAramabar);
         searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtnAramabar);
 
 
@@ -72,7 +72,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
                 inflater, R.layout.fragment_arama, container, false);
         View rootView = fragmentAramaBinding.getRoot();
 
-        urlString = GYConfiguration.getDomain()+"contentsearch/retrieve?";
+        urlString = GYConfiguration.getDomain() + "contentsearch/retrieve?";
 
         yuklenmeEkran = new YuklenmeEkran(getActivity());
 
@@ -94,7 +94,7 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.imageViewSearchBtnAramabar:
                 performSearch();
                 break;
@@ -102,8 +102,9 @@ public class IcerikAramaFragment extends Fragment implements View.OnClickListene
         }
 
     }
+
     private void performSearch() {
-        String URL = (urlString +"keyword="+searchEditText.getText()+"&page="+sayfaNumarasiAnInt+"&nodeType=article").trim();
+        String URL = (urlString + "keyword=" + searchEditText.getText() + "&page=" + sayfaNumarasiAnInt + "&nodeType=article").trim();
         URL = URL.replace(" ", "%20");
         Listele(URL);
     }

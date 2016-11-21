@@ -28,7 +28,7 @@ import com.turkcell.gelecegiyazanlar.models.Egitim;
 public class OyunFragment extends Fragment implements View.OnClickListener {
 
     private FragmentOyunBinding fragmentOyunBinding;
-    
+
     private LinearLayout linearLayoutUstEkran;
     private SlidingTabLayoutIcon slidingTabLayoutIcon;
     Toolbar toolbar;

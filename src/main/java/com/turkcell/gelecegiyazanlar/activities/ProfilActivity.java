@@ -29,7 +29,7 @@ public class ProfilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityProfilBinding = DataBindingUtil.setContentView(this,R.layout.activity_profil);
+        activityProfilBinding = DataBindingUtil.setContentView(this, R.layout.activity_profil);
 
         Mint.initAndStartSession(ProfilActivity.this, GYConfiguration.SPLUNK_ID);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarProfilActivity);

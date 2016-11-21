@@ -52,7 +52,7 @@ public class EgitimIcerikActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityEgitimIcerikBinding = DataBindingUtil.setContentView(this,R.layout.activity_egitim_icerik);
+        activityEgitimIcerikBinding = DataBindingUtil.setContentView(this, R.layout.activity_egitim_icerik);
 
         Mint.initAndStartSession(EgitimIcerikActivity.this, GYConfiguration.SPLUNK_ID);
 
@@ -97,7 +97,6 @@ public class EgitimIcerikActivity extends AppCompatActivity {
         }
 
     }
-
 
 
     public void getEgitimIcerik(final String dugumID) {

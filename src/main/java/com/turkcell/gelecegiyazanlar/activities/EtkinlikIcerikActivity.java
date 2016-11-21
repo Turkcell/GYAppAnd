@@ -45,7 +45,7 @@ public class EtkinlikIcerikActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityEtkinlikIcerikBinding = DataBindingUtil.setContentView(this,R.layout.activity_etkinlik_icerik);
+        activityEtkinlikIcerikBinding = DataBindingUtil.setContentView(this, R.layout.activity_etkinlik_icerik);
 
         Mint.initAndStartSession(EtkinlikIcerikActivity.this, GYConfiguration.SPLUNK_ID);
 

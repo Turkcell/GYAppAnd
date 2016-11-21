@@ -5,7 +5,7 @@ import android.view.View;
 
 /**
  * Bu sýnýftaki kodlar http://developer.android.com/intl/es/training/animation/screen-slide.html sitesinden
- *   alýnmýþtýr
+ * alýnmýþtýr
  */
 public class DerinSayfaDegisimi implements ViewPager.PageTransformer {
     private static float MIN_SCALE = 0.75f;

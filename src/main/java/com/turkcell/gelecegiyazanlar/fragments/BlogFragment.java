@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.ViewPagerAdapterBlogEtkinlik;
 import com.turkcell.gelecegiyazanlar.databinding.FragmentBlogBinding;

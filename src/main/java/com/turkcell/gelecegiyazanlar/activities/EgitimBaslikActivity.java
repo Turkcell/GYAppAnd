@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ExpandableListView;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -47,13 +48,12 @@ public class EgitimBaslikActivity extends AppCompatActivity {
     private ArrayList<Object> nodeIDChildObjectArrayList;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-         activityEgitimBaslikBinding = DataBindingUtil.setContentView(this,R.layout.activity_egitim_baslik);
+        activityEgitimBaslikBinding = DataBindingUtil.setContentView(this, R.layout.activity_egitim_baslik);
 
         Mint.initAndStartSession(EgitimBaslikActivity.this, GYConfiguration.SPLUNK_ID);
         Bundle i = getIntent().getExtras();

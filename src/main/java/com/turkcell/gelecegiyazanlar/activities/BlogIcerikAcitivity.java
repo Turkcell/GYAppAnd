@@ -10,6 +10,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -34,7 +35,7 @@ public class BlogIcerikAcitivity extends AppCompatActivity {
 
     private String urlString;
     private ImageRequest imageRequest;
-    private  JsonArrayRequest jsonArrayRequest;
+    private JsonArrayRequest jsonArrayRequest;
     private String baslikString = "";
     private YuklenmeEkran yuklenmeEkran;
     private String nodeIDString;

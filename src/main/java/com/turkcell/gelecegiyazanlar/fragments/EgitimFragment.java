@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.ViewPagerAdapter;
 import com.turkcell.gelecegiyazanlar.databinding.FragmentEgitimBinding;

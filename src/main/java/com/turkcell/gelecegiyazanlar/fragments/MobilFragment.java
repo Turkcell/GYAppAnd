@@ -123,67 +123,67 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.imageViewEgitimialAndroid101BtnMobilFragment:
-                openEgitimBaslikActivity("Android 101","android",getResources().getString(R.string.android101));
+                openEgitimBaslikActivity("Android 101", "android", getResources().getString(R.string.android101));
                 break;
             case R.id.imageViewEgitimialAndroid201BtnMobilFragment:
-                openEgitimBaslikActivity("Android 201","android",getResources().getString(R.string.android201));
+                openEgitimBaslikActivity("Android 201", "android", getResources().getString(R.string.android201));
                 break;
             case R.id.imageViewEgitimialAndroid301BtnMobilFragment:
-                openEgitimBaslikActivity( "Android 301", "android" , getResources().getString(R.string.android301));
+                openEgitimBaslikActivity("Android 301", "android", getResources().getString(R.string.android301));
                 break;
             case R.id.imageViewEgitimialAndroid401BtnMobilFragment:
-                openEgitimBaslikActivity( "Android 401", "android" , getResources().getString(R.string.android401));
+                openEgitimBaslikActivity("Android 401", "android", getResources().getString(R.string.android401));
                 break;
             case R.id.imageViewEgitimialIos102BtnMobilFragment:
-                openEgitimBaslikActivity( "IOS 102", "ios" , getResources().getString(R.string.ios102));
+                openEgitimBaslikActivity("IOS 102", "ios", getResources().getString(R.string.ios102));
                 break;
             case R.id.imageViewEgitimialIos101BtnMobilFragment:
-                openEgitimBaslikActivity("IOS 101" , "ios" ,  getResources().getString(R.string.ios101));
+                openEgitimBaslikActivity("IOS 101", "ios", getResources().getString(R.string.ios101));
                 break;
             case R.id.imageViewEgitimialIos201BtnMobilFragment:
-                openEgitimBaslikActivity("IOS 201" , "ios" , getResources().getString(R.string.ios201) );
+                openEgitimBaslikActivity("IOS 201", "ios", getResources().getString(R.string.ios201));
                 break;
             case R.id.imageViewEgitimialIos301BtnMobilFragment:
-                openEgitimBaslikActivity("IOS 301" , "ios" , getResources().getString(R.string.ios301));
+                openEgitimBaslikActivity("IOS 301", "ios", getResources().getString(R.string.ios301));
                 break;
             case R.id.imageViewEgitimialIos401BtnMobilFragment:
-                openEgitimBaslikActivity( "IOS 401", "ios" ,  getResources().getString(R.string.ios401));
+                openEgitimBaslikActivity("IOS 401", "ios", getResources().getString(R.string.ios401));
                 break;
             case R.id.imageViewEgitimialWindows101BtnMobilFragment:
-                openEgitimBaslikActivity("Windows Phone 101" , "win" ,getResources().getString(R.string.win101) );
+                openEgitimBaslikActivity("Windows Phone 101", "win", getResources().getString(R.string.win101));
                 break;
             case R.id.imageViewEgitimialWindows201BtnMobilFragment:
-                openEgitimBaslikActivity("Windows Phone 201" , "win" , getResources().getString(R.string.win201));
+                openEgitimBaslikActivity("Windows Phone 201", "win", getResources().getString(R.string.win201));
                 break;
             case R.id.imageViewEgitimialAppinventor101BtnMobilFragment:
-                openEgitimBaslikActivity("App Inventor 101" , "app" , getResources().getString(R.string.inventor101));
+                openEgitimBaslikActivity("App Inventor 101", "app", getResources().getString(R.string.inventor101));
                 break;
             case R.id.imageViewEgitimialAppinventor201BtnMobilFragment:
-                openEgitimBaslikActivity( "App Inventor 201", "app" , getResources().getString(R.string.inventor201));
+                openEgitimBaslikActivity("App Inventor 201", "app", getResources().getString(R.string.inventor201));
                 break;
             case R.id.imageViewEgitimialAppinventor301BtnMobilFragment:
-                openEgitimBaslikActivity( "App Inventor 301",  "app", getResources().getString(R.string.inventor301));
+                openEgitimBaslikActivity("App Inventor 301", "app", getResources().getString(R.string.inventor301));
                 break;
             case R.id.imageViewEgitimialAppinventor401BtnMobilFragment:
-                openEgitimBaslikActivity( "App Inventor 401", "app" , getResources().getString(R.string.inventor401));
+                openEgitimBaslikActivity("App Inventor 401", "app", getResources().getString(R.string.inventor401));
                 break;
             case R.id.imageViewEgitimialArduino101BtnMobilFragment:
-                openEgitimBaslikActivity( "Arduino 101", "arduino" , getResources().getString(R.string.arduino101));
+                openEgitimBaslikActivity("Arduino 101", "arduino", getResources().getString(R.string.arduino101));
                 break;
             case R.id.imageViewEgitimialArduino201BtnMobilFragment:
-                openEgitimBaslikActivity( "Arduino 201",  "arduino", getResources().getString(R.string.arduino201));
+                openEgitimBaslikActivity("Arduino 201", "arduino", getResources().getString(R.string.arduino201));
                 break;
             case R.id.imageViewEgitimialArduino301BtnMobilFragment:
-                openEgitimBaslikActivity( "Arduino 301", "arduino" , getResources().getString(R.string.arduino301));
+                openEgitimBaslikActivity("Arduino 301", "arduino", getResources().getString(R.string.arduino301));
                 break;
             case R.id.imageViewEgitimialArduino401BtnMobilFragment:
-                openEgitimBaslikActivity( "Arduino 401",  "arduino", getResources().getString(R.string.arduino401));
+                openEgitimBaslikActivity("Arduino 401", "arduino", getResources().getString(R.string.arduino401));
                 break;
             case R.id.imageViewEgitimialScratch101BtnMobilFragment:
-                openEgitimBaslikActivity( "Scratch 101", "scratch" ,  getResources().getString(R.string.scratch101));
+                openEgitimBaslikActivity("Scratch 101", "scratch", getResources().getString(R.string.scratch101));
                 break;
             case R.id.imageViewEgitimialScratch201BtnMobilFragment:
-                openEgitimBaslikActivity( "Scratch 201", "scratch" , getResources().getString(R.string.scratch201));
+                openEgitimBaslikActivity("Scratch 201", "scratch", getResources().getString(R.string.scratch201));
                 break;
 
             case R.id.linearLayoutAndroidMobilFragment:
@@ -530,7 +530,7 @@ public class MobilFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void openEgitimBaslikActivity(String titleTag,String colorTag, String nodeId) {
+    private void openEgitimBaslikActivity(String titleTag, String colorTag, String nodeId) {
 
         Intent i = new Intent(getActivity(), EgitimBaslikActivity.class);
         i.putExtra(Egitim.TITLE_TAG, titleTag);
