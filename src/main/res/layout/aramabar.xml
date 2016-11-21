@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar
-    android:layout_height="wrap_content"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/beyaz_renk"
-    android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="match_parent"
-   >
-    <EditText
-        android:id="@+id/etSearch"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
-        android:inputType="text"
-        android:textColor="@color/ColorPrimary"
-        android:hint="Ara.."
-        android:padding="3dp"
-        android:textColorHint="@color/hint_yazi_renk"
-        android:background="@drawable/arama_background"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/btnAra"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="-30dp"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/arama" />
+        <EditText
+            android:id="@+id/editTextSearchAramabar"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/arama_background"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:padding="3dp"
+            android:textColor="@color/ColorPrimary"
+            android:textColorHint="@color/hint_yazi_renk" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imageViewSearchBtnAramabar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="-30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/arama" />
+
+    </LinearLayout>
 </android.support.v7.widget.Toolbar>

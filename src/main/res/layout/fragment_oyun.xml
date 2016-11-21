@@ -1,241 +1,241 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.OyunFragment"
-    tools:layout="@layout/fragment_web"
-    android:padding="@dimen/sol_margin_olcu_onbes"
-    android:paddingBottom="0dp"
-    android:background="@color/beyaz_renk"
-    >
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+        android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.OyunFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/beyaz_renk"
+        android:padding="@dimen/sol_margin_olcu_onbes"
+        android:paddingBottom="0dp"
+        tools:layout="@layout/fragment_web">
 
-        <TextView
-            android:layout_marginLeft="@dimen/margin_bes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/mobilIcerikBaslik"
-            android:text="@string/ne_ogrenebilirim"/>
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                style="@style/mobilIcerikBaslik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_bes"
+                android:text="@string/ne_ogrenebilirim" />
+
+            <ScrollView
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!---OYUN -->
+                android:scrollbars="none">
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                    android:id="@+id/oyun"
-                    >
-                    <ImageView
-                        android:layout_width="@dimen/ellilikOlcu"
-                        android:layout_height="@dimen/ellilikOlcu"
-                        android:src="@drawable/oyungelistirmeikon"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_marginLeft="@dimen/margin_bes"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
+                    <!---OYUN -->
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutOyunOyunFragment"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        style="@style/mobilIcerikBaslik"
-                        android:text="@string/oyun"
-                        android:textColor="@color/oyun_renk"/>
+                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                        android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
                         <ImageView
                             android:layout_width="@dimen/ellilikOlcu"
                             android:layout_height="@dimen/ellilikOlcu"
-                            android:src="@drawable/sagok"
-                            android:id="@+id/oyunsagok"
-                            android:layout_alignParentRight="true"/>
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
-                <!--Alt Icerik-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/layout_oyun_icerik"
-                    android:visibility="visible"
-                    >
-
-                    <!---oyun 101-->
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_oyun_101"
-                        >
-
-                        <ImageView
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/yesildaire"
-                            />
+                            android:src="@drawable/oyungelistirmeikon" />
 
                         <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
-                            android:text="@string/oyun_101_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_width="@dimen/sol_margin_olcu_onbes"
-                                android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_101_oyun"
-                                android:layout_toLeftOf="@+id/icon_kep_101_oyun"
-                                android:layout_centerVertical="true"
-                                />
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:id="@+id/icon_kep_101_oyun"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                    <!--oyun 101 alt basl˝k-->
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:id="@+id/egitimal_oyun_101"
-                        android:visibility="gone"
-                        >
-                        <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="12sp"
-                            android:text="@string/oyun_101_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
-
-                        <ImageView
-                            android:layout_marginTop="-15dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="@dimen/yuzlukOlcu"
-                            android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_web_101_button"/>
-                    </LinearLayout>
-
-                    <!---oyun 201-->
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
-                        android:id="@+id/layout_oyun_201"
-
-                        >
-                        <ImageView
                             android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/saridaire"
-                            />
-
-                        <TextView
                             android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/mobilIcerikBaslik"
-                            android:textSize="@dimen/text_size_onyedi"
-                            android:text="@string/oyun_201_baslik"
-                            android:textColor="@color/gri_siyah_renk"/>
+                            android:text="@string/oyun"
+                            android:textColor="@color/oyun_renk" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_width="@dimen/sol_margin_olcu_onbes"
-                                android:layout_height="@dimen/sol_margin_olcu_onbes"
-                                android:src="@drawable/asagiikon"
-                                android:id="@+id/asagi_image_201_oyun"
-                                android:layout_toLeftOf="@+id/icon_kep_201_oyun"
-                                android:layout_centerVertical="true"
-                                />
 
                             <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:id="@+id/icon_kep_201_oyun"
-                                android:src="@drawable/kepikon"
-                                android:layout_alignParentRight="true"/>
+                                android:id="@+id/imageViewOyunsagokOyunFragment"
+                                android:layout_width="@dimen/ellilikOlcu"
+                                android:layout_height="@dimen/ellilikOlcu"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/sagok" />
                         </RelativeLayout>
+
+
                     </LinearLayout>
 
-                    <!--oyun 201 alt basl˝k-->
+                    <!--Alt Icerik-->
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/ellilikOlcu"
-                        android:layout_marginTop="@dimen/margin_bes"
+                        android:id="@+id/linearLayoutOyunIcerikOyunFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:id="@+id/egitimal_oyun_201"
-                        android:visibility="gone"
-                        >
-                        <TextView
-                            android:layout_marginLeft="@dimen/margin_bes"
-                            android:layout_gravity="center_vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12sp"
-                            android:text="@string/oyun_201_aciklama"
-                            android:textColor="@color/gri_siyah_renk"/>
+                        android:visibility="visible">
 
-                        <ImageView
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="-15dp"
-                            android:layout_width="@dimen/yuzlukOlcu"
-                            android:layout_height="@dimen/yuzlukOlcu"
-                            android:src="@drawable/egitimial"
-                            android:id="@+id/egitimial_oyun_201_button"/>
+                        <!---oyun 101-->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutOyun101OyunFragment"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/yesildaire" />
+
+                            <TextView
+                                style="@style/mobilIcerikBaslik"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_bes"
+                                android:text="@string/oyun_101_baslik"
+                                android:textColor="@color/gri_siyah_renk"
+                                android:textSize="@dimen/text_size_onyedi" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imageViewAsagiImage101OyunOyunFragment"
+                                    android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                    android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@+id/imageViewIconKep101OyunOyunFragment"
+                                    android:src="@drawable/asagiikon" />
+
+                                <ImageView
+                                    android:id="@+id/imageViewIconKep101OyunOyunFragment"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/kepikon" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <!--oyun 101 alt basl˝k-->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutEgitimalOyun101OyunFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ellilikOlcu"
+                            android:layout_marginTop="@dimen/margin_bes"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_bes"
+                                android:text="@string/oyun_101_aciklama"
+                                android:textColor="@color/gri_siyah_renk"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/imageViewEgitimialWeb101ButtonOyunFragment"
+                                android:layout_width="@dimen/yuzlukOlcu"
+                                android:layout_height="@dimen/yuzlukOlcu"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="-15dp"
+                                android:src="@drawable/egitimial" />
+                        </LinearLayout>
+
+                        <!---oyun 201-->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutOyun201OyunFragment"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sol_margin_olcu_onbes"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/saridaire" />
+
+                            <TextView
+                                style="@style/mobilIcerikBaslik"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_bes"
+                                android:text="@string/oyun_201_baslik"
+                                android:textColor="@color/gri_siyah_renk"
+                                android:textSize="@dimen/text_size_onyedi" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imageViewAsagiImage201OyunOyunFragment"
+                                    android:layout_width="@dimen/sol_margin_olcu_onbes"
+                                    android:layout_height="@dimen/sol_margin_olcu_onbes"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@+id/imageViewIconKep201OyunOyunFragment"
+                                    android:src="@drawable/asagiikon" />
+
+                                <ImageView
+                                    android:id="@+id/imageViewIconKep201OyunOyunFragment"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/kepikon" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <!--oyun 201 alt basl˝k-->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutEgitimalOyun201OyunFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/ellilikOlcu"
+                            android:layout_marginTop="@dimen/margin_bes"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_bes"
+                                android:text="@string/oyun_201_aciklama"
+                                android:textColor="@color/gri_siyah_renk"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/imageViewEgitimialOyun201ButtonOyunFragment"
+                                android:layout_width="@dimen/yuzlukOlcu"
+                                android:layout_height="@dimen/yuzlukOlcu"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="-15dp"
+                                android:src="@drawable/egitimial" />
+                        </LinearLayout>
+
+
                     </LinearLayout>
 
-
-
-
-
                 </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
 
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-
-</FrameLayout>
+    </FrameLayout>
+</layout>

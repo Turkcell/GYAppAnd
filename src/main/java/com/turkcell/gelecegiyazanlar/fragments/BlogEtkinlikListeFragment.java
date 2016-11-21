@@ -1,6 +1,7 @@
 package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.animation.Animator;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -22,6 +23,7 @@ import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.RecyclerAdapterBlog;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentBlogListeBinding;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
 import com.turkcell.gelecegiyazanlar.models.Blog;
 import com.turkcell.gelecegiyazanlar.utilities.TarihCevir;
@@ -35,40 +37,40 @@ import java.util.List;
 
 
 public class BlogEtkinlikListeFragment extends Fragment {
+    private FragmentBlogListeBinding fragmentBlogListeBinding;
 
-    JsonArrayRequest request;
-
-    String url;
-    YuklenmeEkran yuklenmeEkran;
-    TarihCevir tarihCevir;
-
-    List<Blog> itemList = new ArrayList<>();
-    RecyclerView recyclerView;
-    LinearLayout layout;
-    Toolbar toolbar;
-    RecyclerAdapterBlog recyclerAdapterBlog;
-    int a = 0;
-    private int index = -1;
-    private int maksSize;
+    private JsonArrayRequest jsonArrayRequest;
+    private String urlString;
+    private YuklenmeEkran yuklenmeEkran;
+    private TarihCevir tarihCevir;
+    private List<Blog> blogArrayList = new ArrayList<>();
+    private LinearLayout linearLayout;
+    private Toolbar toolbar;
+    private RecyclerAdapterBlog recyclerAdapterBlog;
+    private int indexAnInt = -1;
+    private int maksSizeAnInt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.viewPagerBlogFragment);
+        SlidingTabLayout tabLayout = (SlidingTabLayout) getActivity().findViewById(R.id.slidingTabLayoutTabsBlogFragment);
 
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
+        linearLayout = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstBlokBlogFragment);
 
-        ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.pagerBlog);
-        SlidingTabLayout tabLayout = (SlidingTabLayout) getActivity().findViewById(R.id.tabsBlog);
-
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
-        layout = (LinearLayout) getActivity().findViewById(R.id.ust_blok);
         View rootView = inflater.inflate(R.layout.fragment_blog_liste, container, false);
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        url = GYConfiguration.getDomain() + "article/retrieve?nitems=10&index=";
+
+        fragmentBlogListeBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_blog_liste, container, false);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
+        fragmentBlogListeBinding.recyclerViewBlogListeFragment.setLayoutManager(linearLayoutManager);
+        fragmentBlogListeBinding.recyclerViewBlogListeFragment.setHasFixedSize(true);
+        fragmentBlogListeBinding.recyclerViewBlogListeFragment.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        urlString = GYConfiguration.getDomain() + "article/retrieve?nitems=10&index=";
         yuklenmeEkran = new YuklenmeEkran(getActivity());
         tarihCevir = new TarihCevir();
 
@@ -86,7 +88,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                itemList.clear();
+                blogArrayList.clear();
                 switch (position) {
                     case 0:
                         Listele(718, -1);
@@ -128,11 +130,11 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
     public void Listele(int kategori, int x) {
 
-            yuklenmeEkran.surecBasla();
+        yuklenmeEkran.surecBasla();
 
 
-        Log.d("urlBlog:", url + (1 + x) + "&kategoriID=" + kategori);
-        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
+        Log.d("urlBlog:", urlString + (1 + x) + "&kategoriID=" + kategori);
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlString + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -161,7 +163,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
                         String tarih = tarihCevir.Cevir(date);
 
-                        itemList.add(i, new Blog(title, tarih, author, excerpt, categories, authorUrl, image, profilID, blogID));
+                        blogArrayList.add(i, new Blog(title, tarih, author, excerpt, categories, authorUrl, image, profilID, blogID));
 
 
                     } catch (JSONException e) {
@@ -169,9 +171,9 @@ public class BlogEtkinlikListeFragment extends Fragment {
                     }
                 }
                 recyclerAdapterBlog =
-                        new RecyclerAdapterBlog(itemList, getActivity());
-                recyclerView.setAdapter(recyclerAdapterBlog);
-                maksSize = itemList.size();
+                        new RecyclerAdapterBlog(blogArrayList, getActivity());
+                fragmentBlogListeBinding.recyclerViewBlogListeFragment.setAdapter(recyclerAdapterBlog);
+                maksSizeAnInt = blogArrayList.size();
                 recyclerAdapterBlog.notifyDataSetChanged();
 
             }
@@ -183,7 +185,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
                 Log.d("Json:", "hata");
             }
         });
-        AppController.getInstance().addToRequestQueue(request);
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 
@@ -192,8 +194,8 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
         yuklenmeEkran.surecBasla();
 
-        Log.d("urlDaha:", url + (1 + x) + "&kategoriID=" + kategori);
-        request = new JsonArrayRequest(Request.Method.GET, url + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
+        Log.d("urlDaha:", urlString + (1 + x) + "&kategoriID=" + kategori);
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlString + (1 + x) + "&kategoriID=" + kategori, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -222,7 +224,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
                         String tarih = tarihCevir.Cevir(date);
 
-                        itemList.add(i + maksSize, new Blog(title, tarih, author, excerpt, categories, authorUrl, image, profilID, blogID));
+                        blogArrayList.add(i + maksSizeAnInt, new Blog(title, tarih, author, excerpt, categories, authorUrl, image, profilID, blogID));
 
 
                     } catch (JSONException e) {
@@ -230,7 +232,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
                     }
                 }
 
-                maksSize = maksSize + 10;
+                maksSizeAnInt = maksSizeAnInt + 10;
                 recyclerAdapterBlog.notifyDataSetChanged();
 
 
@@ -243,28 +245,28 @@ public class BlogEtkinlikListeFragment extends Fragment {
                 Log.d("Json:", "hata");
             }
         });
-        AppController.getInstance().addToRequestQueue(request);
+        AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 
     public void Scroll(final int kategori) {
 
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        fragmentBlogListeBinding.recyclerViewBlogListeFragment.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 /**
                  * Sürüklenme bittiðinde
                  */
                 if (!recyclerView.canScrollVertically(1)) {
-                    index++;
-                    dahaFazla(kategori, index);
+                    indexAnInt++;
+                    dahaFazla(kategori, indexAnInt);
 
                     /**
                      * Aþaðý Sürüklendiðinde
                      */
                 } else if (dy > 0) {
-                    layout.animate()
-                            .translationY(-layout.getBottom() - toolbar.getBottom())
+                    linearLayout.animate()
+                            .translationY(-linearLayout.getBottom() - toolbar.getBottom())
                             .setInterpolator(new AccelerateInterpolator(2))
                             .setListener(new Animator.AnimatorListener() {
                                 @Override
@@ -274,7 +276,7 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                    layout.setVisibility(View.GONE);
+                                    linearLayout.setVisibility(View.GONE);
                                 }
 
                                 @Override
@@ -289,7 +291,6 @@ public class BlogEtkinlikListeFragment extends Fragment {
                             })
                             .start();
 
-
                 }
             }
         });
@@ -297,5 +298,3 @@ public class BlogEtkinlikListeFragment extends Fragment {
 
 
 }
-
-

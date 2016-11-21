@@ -1,49 +1,51 @@
 package com.turkcell.gelecegiyazanlar.activities;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.splunk.mint.Mint;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.ViewPagerAdapterProfil;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.ActivityProfilBinding;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayout;
 
-public class ProfilActivity extends ActionBarActivity {
+public class ProfilActivity extends AppCompatActivity {
 
-    public SlidingTabLayout tabs;
-    CharSequence titles[];
-    int tabSayisi = 2;
+    private ActivityProfilBinding activityProfilBinding;
 
-    ViewPager pager;
-    ViewPagerAdapterProfil adapter;
+    private CharSequence titleCharSequences[];
+    private int tabSayisiAnInt = 2;
+
+    private ViewPagerAdapterProfil viewPagerAdapterProfil;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profil);
+
+        activityProfilBinding = DataBindingUtil.setContentView(this, R.layout.activity_profil);
+
         Mint.initAndStartSession(ProfilActivity.this, GYConfiguration.SPLUNK_ID);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar_back);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarProfilActivity);
         setSupportActionBar(toolbar);
 
-
-        titles = new CharSequence[]{getString(R.string.profil_baslik_hakkinda),
+        titleCharSequences = new CharSequence[]{getString(R.string.profil_baslik_hakkinda),
                 getString(R.string.profil_baslik_basari_belgeleri)};
 
-        adapter = new ViewPagerAdapterProfil(getSupportFragmentManager(), titles, tabSayisi);
+        viewPagerAdapterProfil = new ViewPagerAdapterProfil(getSupportFragmentManager(), titleCharSequences, tabSayisiAnInt);
 
-        pager = (ViewPager) findViewById(R.id.pagerProfil);
-        pager.setAdapter(adapter);
+        activityProfilBinding.viewPagerPagerProfilActivity.setAdapter(viewPagerAdapterProfil);
 
+        activityProfilBinding.slidingTabLayoutTabsProfilActivity.setDistributeEvenly(true);
+        activityProfilBinding.slidingTabLayoutTabsProfilActivity.setSelectedIndicatorColors(ContextCompat.getColor(getApplicationContext(), R.color.beyaz_renk));
 
-        tabs = (SlidingTabLayout) findViewById(R.id.tabsBlog);
-        tabs.setDistributeEvenly(true); // tablar?n d?zenlenebilir olmas?n? sa?lar
-        tabs.setSelectedIndicatorColors(getResources().getColor(R.color.beyaz_renk));
-
-        tabs.setViewPager(pager);
+        activityProfilBinding.slidingTabLayoutTabsProfilActivity.setViewPager(activityProfilBinding.viewPagerPagerProfilActivity);
     }
 
 

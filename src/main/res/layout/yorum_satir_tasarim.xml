@@ -3,58 +3,53 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal"
-    android:paddingTop="3dp"
-    >
+    android:paddingTop="3dp">
 
 
     <RelativeLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
         android:id="@+id/avatar_layout"
-        >
+        android:layout_width="70dp"
+        android:layout_height="70dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/simge"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:border_width="2dp"
-            app:border_color="@color/yorum_renk"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            app:border_color="@color/yorum_renk"
+            app:border_width="2dp" />
 
     </RelativeLayout>
 
 
     <TextView
+        android:id="@+id/tarih"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:id="@+id/tarih"
-        android:textSize="10dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentTop="true"
+        android:textSize="10dp" />
 
     <TextView
+        android:id="@+id/isimsoyisim"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:id="@+id/isimsoyisim"
-        android:textSize="15dp"
-
-        android:textColor="@color/yorum_renk"
         android:layout_alignTop="@+id/avatar_layout"
+        android:layout_toEndOf="@+id/avatar_layout"
         android:layout_toRightOf="@+id/avatar_layout"
-        android:layout_toEndOf="@+id/avatar_layout" />
+        android:textColor="@color/yorum_renk"
+        android:textSize="15dp" />
 
 
     <TextView
+        android:id="@+id/yorum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/yorum"
-
         android:layout_below="@+id/isimsoyisim"
-        android:layout_toRightOf="@+id/avatar_layout"
-        android:layout_toEndOf="@+id/avatar_layout" />
+        android:layout_toEndOf="@+id/avatar_layout"
+        android:layout_toRightOf="@+id/avatar_layout" />
 
 
 </RelativeLayout>

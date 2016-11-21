@@ -51,7 +51,7 @@ EtkinlikFragment gibi diğer sayfalara geçişler sağlanmaktadır. Ayrıca aram
 
 Uygulamamız Google’ın son çıkardığı design yani Material Design kullanımına uyumludur.
 
-Bunu yapabilmek için ise kütüphane olarak ‘com.android.support:design:22.2.0’
+Bunu yapabilmek için ise kütüphane olarak ‘com.android.support:design:23.0.0’
 
 kütüphanesini projemize ekledik.
 

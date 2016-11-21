@@ -2,19 +2,21 @@ package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.animation.Animator;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentWebBinding;
 import com.turkcell.gelecegiyazanlar.designs.SlidingTabLayoutIcon;
 import com.turkcell.gelecegiyazanlar.models.Egitim;
 
@@ -24,71 +26,41 @@ import com.turkcell.gelecegiyazanlar.models.Egitim;
 
 public class WebFragment extends Fragment implements View.OnClickListener {
 
+    private FragmentWebBinding fragmentWebBinding;
 
-    LinearLayout ust_layout, web, webIcerik;
-
-    Toolbar toolbar;
-
-    LinearLayout web101, web101Layout, web201, web201Layout, web301, web301Layout, web302, web302Layout, web401, web401Layout, web402, web402Layout;
-
-
-    SlidingTabLayoutIcon tablar;
-    ImageView webSagOk, web101AsagiOk, web201AsagiOk, web301AsagiOk, web302AsagiOk, web401AsagiOk, web402AsagiOk;
+    private LinearLayout ustEkranLinearLayout;
+    private Toolbar toolbar;
+    private SlidingTabLayoutIcon slidingTabLayoutIcon;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar);
-        View rootView = inflater.inflate(R.layout.fragment_web, container, false);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMainActivity);
 
-        web = (LinearLayout) rootView.findViewById(R.id.web);
-        webIcerik = (LinearLayout) rootView.findViewById(R.id.layout_web_icerik);
-        webSagOk = (ImageView) rootView.findViewById(R.id.websagok);
+        fragmentWebBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_web, container, false);
+        View rootView = fragmentWebBinding.getRoot();
 
-        web101AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_101_web);
-        web101 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_101);
-        web101Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_101);
-
-        web201AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_201_web);
-        web201 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_201);
-        web201Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_201);
-
-        web301AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_301_android);
-        web301 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_301);
-        web301Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_301);
-
-        web302AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_302_web);
-        web302 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_302);
-        web302Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_302);
-
-        web401AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_401_web);
-        web401 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_401);
-        web401Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_401);
-
-        web402AsagiOk = (ImageView) rootView.findViewById(R.id.asagi_image_402_web);
-        web402 = (LinearLayout) rootView.findViewById(R.id.egitimal_web_402);
-        web402Layout = (LinearLayout) rootView.findViewById(R.id.layout_web_402);
-
-        ust_layout = (LinearLayout) getActivity().findViewById(R.id.ustekran);
-        tablar = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.tabs);
+        ustEkranLinearLayout = (LinearLayout) getActivity().findViewById(R.id.linearLayoutUstEkranEgitimFragment);
+        slidingTabLayoutIcon = (SlidingTabLayoutIcon) getActivity().findViewById(R.id.slidingTabLayoutIconEgitimFragment);
 
 
-        web.setOnClickListener(this);
-        web101Layout.setOnClickListener(this);
-        web201Layout.setOnClickListener(this);
-        web301Layout.setOnClickListener(this);
-        web302Layout.setOnClickListener(this);
-        web401Layout.setOnClickListener(this);
-        web402Layout.setOnClickListener(this);
+        fragmentWebBinding.linearLayotWebWebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutWeb101WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutWeb201WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutWeb301WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutWeb302WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutWeb401WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutWeb402WebFragment.setOnClickListener(this);
 
-        web101.setOnClickListener(this);
-        web201.setOnClickListener(this);
-        web301.setOnClickListener(this);
-        web302.setOnClickListener(this);
-        web401.setOnClickListener(this);
-        web402.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutEgitimAlWeb101WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutEgitimAlWeb201WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutEgitimAlWeb301WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutEgitimAlWeb302WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutEgitimAlWeb401WebFragment.setOnClickListener(this);
+        fragmentWebBinding.linearLayoutEgitimAlWeb402WebFragment.setOnClickListener(this);
 
         return rootView;
     }
@@ -99,98 +71,98 @@ public class WebFragment extends Fragment implements View.OnClickListener {
         Intent i = null;
         switch (v.getId()) {
 
-            case R.id.web:
-                if (webIcerik.getVisibility() == View.VISIBLE) {
-                    webIcerik.setVisibility(View.GONE);
+            case R.id.linearLayotWebWebFragment:
+                if (fragmentWebBinding.linearLayoutWebIcerikWebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutWebIcerikWebFragment.setVisibility(View.GONE);
                     goster();
-                    tablar.setVisibility(View.VISIBLE);
-                    webSagOk.setImageDrawable(getResources().getDrawable(R.drawable.sagok));
+                    slidingTabLayoutIcon.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewWebSagokWebFragment.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.sagok, null));
                 } else {
-                    webIcerik.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.linearLayoutWebIcerikWebFragment.setVisibility(View.VISIBLE);
                     sakla();
-                    tablar.setVisibility(View.GONE);
-                    webSagOk.setImageDrawable(getResources().getDrawable(R.drawable.asagiok));
+                    slidingTabLayoutIcon.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewWebSagokWebFragment.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.asagiok, null));
                 }
                 break;
 
 
-            case R.id.layout_web_101:
-                if (web101.getVisibility() == View.VISIBLE) {
-                    web101.setVisibility(View.GONE);
-                    web101AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutWeb101WebFragment:
+                if (fragmentWebBinding.linearLayoutEgitimAlWeb101WebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutEgitimAlWeb101WebFragment.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewAsagiImage101WebFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    web101.setVisibility(View.VISIBLE);
-                    web101AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentWebBinding.linearLayoutEgitimAlWeb101WebFragment.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewAsagiImage101WebFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
-            case R.id.layout_web_201:
-                if (web201.getVisibility() == View.VISIBLE) {
-                    web201.setVisibility(View.GONE);
-                    web201AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutWeb201WebFragment:
+                if (fragmentWebBinding.linearLayoutEgitimAlWeb201WebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutEgitimAlWeb201WebFragment.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewAsagiImage201WebFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    web201.setVisibility(View.VISIBLE);
-                    web201AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentWebBinding.linearLayoutEgitimAlWeb201WebFragment.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewAsagiImage201WebFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
-            case R.id.layout_web_301:
-                if (web301.getVisibility() == View.VISIBLE) {
-                    web301.setVisibility(View.GONE);
-                    web301AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutWeb301WebFragment:
+                if (fragmentWebBinding.linearLayoutEgitimAlWeb301WebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutEgitimAlWeb301WebFragment.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewAsagiImage301WebFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    web301.setVisibility(View.VISIBLE);
-                    web301AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentWebBinding.linearLayoutEgitimAlWeb301WebFragment.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewAsagiImage301WebFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
-            case R.id.layout_web_302:
-                if (web302.getVisibility() == View.VISIBLE) {
-                    web302.setVisibility(View.GONE);
-                    web302AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutWeb302WebFragment:
+                if (fragmentWebBinding.linearLayoutEgitimAlWeb302WebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutEgitimAlWeb302WebFragment.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewAsagiImage302WebFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    web302.setVisibility(View.VISIBLE);
-                    web302AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentWebBinding.linearLayoutEgitimAlWeb302WebFragment.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewAsagiImage302WebFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
 
-            case R.id.layout_web_401:
-                if (web401.getVisibility() == View.VISIBLE) {
-                    web401.setVisibility(View.GONE);
-                    web401AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutWeb401WebFragment:
+                if (fragmentWebBinding.linearLayoutEgitimAlWeb401WebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutEgitimAlWeb401WebFragment.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewAsagiImage401WebFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    web401.setVisibility(View.VISIBLE);
-                    web401AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentWebBinding.linearLayoutEgitimAlWeb401WebFragment.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewAsagiImage401WebFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
-            case R.id.layout_web_402:
-                if (web402.getVisibility() == View.VISIBLE) {
-                    web402.setVisibility(View.GONE);
-                    web402AsagiOk.setImageResource(R.drawable.asagiikon);
+            case R.id.linearLayoutWeb402WebFragment:
+                if (fragmentWebBinding.linearLayoutEgitimAlWeb402WebFragment.getVisibility() == View.VISIBLE) {
+                    fragmentWebBinding.linearLayoutEgitimAlWeb402WebFragment.setVisibility(View.GONE);
+                    fragmentWebBinding.imageViewAsagiImage402WebFragment.setImageResource(R.drawable.asagiikon);
                 } else {
-                    web402.setVisibility(View.VISIBLE);
-                    web402AsagiOk.setImageResource(R.drawable.yukariikon);
+                    fragmentWebBinding.linearLayoutEgitimAlWeb402WebFragment.setVisibility(View.VISIBLE);
+                    fragmentWebBinding.imageViewAsagiImage402WebFragment.setImageResource(R.drawable.yukariikon);
                 }
                 break;
 
 
-            case R.id.egitimal_web_101:
+            case R.id.linearLayoutEgitimAlWeb101WebFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 101");
                 i.putExtra(Egitim.COLOR_TAG, "web");
                 i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web101));
                 startActivity(i);
                 break;
-            case R.id.egitimal_web_201:
+            case R.id.linearLayoutEgitimAlWeb201WebFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 201");
                 i.putExtra(Egitim.COLOR_TAG, "web");
                 i.putExtra(Egitim.NODE_ID, getResources().getString(R.string.web201));
                 startActivity(i);
                 break;
-            case R.id.egitimal_web_301:
+            case R.id.linearLayoutEgitimAlWeb301WebFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 301");
                 i.putExtra(Egitim.COLOR_TAG, "web");
@@ -198,7 +170,7 @@ public class WebFragment extends Fragment implements View.OnClickListener {
                 startActivity(i);
                 break;
 
-            case R.id.egitimal_web_302:
+            case R.id.linearLayoutEgitimAlWeb302WebFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 302");
                 i.putExtra(Egitim.COLOR_TAG, "web");
@@ -206,7 +178,7 @@ public class WebFragment extends Fragment implements View.OnClickListener {
                 startActivity(i);
                 break;
 
-            case R.id.egitimal_web_401:
+            case R.id.linearLayoutEgitimAlWeb401WebFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 401");
                 i.putExtra(Egitim.COLOR_TAG, "web");
@@ -214,7 +186,7 @@ public class WebFragment extends Fragment implements View.OnClickListener {
                 startActivity(i);
                 break;
 
-            case R.id.egitimal_web_402:
+            case R.id.linearLayoutEgitimAlWeb402WebFragment:
                 i = new Intent(getActivity(), EgitimBaslikActivity.class);
                 i.putExtra(Egitim.TITLE_TAG, "Web Programlama 402");
                 i.putExtra(Egitim.COLOR_TAG, "web");
@@ -227,7 +199,7 @@ public class WebFragment extends Fragment implements View.OnClickListener {
     }
 
     public void sakla() {
-        ust_layout.animate().translationY(-ust_layout.getBottom() - toolbar.getBottom()).setInterpolator(new AccelerateInterpolator(2))
+        ustEkranLinearLayout.animate().translationY(-ustEkranLinearLayout.getBottom() - toolbar.getBottom()).setInterpolator(new AccelerateInterpolator(2))
                 .setListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -236,7 +208,7 @@ public class WebFragment extends Fragment implements View.OnClickListener {
 
                     @Override
                     public void onAnimationEnd(Animator animation) {
-                        ust_layout.setVisibility(View.GONE);
+                        ustEkranLinearLayout.setVisibility(View.GONE);
                     }
 
                     @Override
@@ -252,11 +224,11 @@ public class WebFragment extends Fragment implements View.OnClickListener {
     }
 
     public void goster() {
-        ust_layout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2))
+        ustEkranLinearLayout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2))
                 .setListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
-                        ust_layout.setVisibility(View.VISIBLE);
+                        ustEkranLinearLayout.setVisibility(View.VISIBLE);
                     }
 
                     @Override

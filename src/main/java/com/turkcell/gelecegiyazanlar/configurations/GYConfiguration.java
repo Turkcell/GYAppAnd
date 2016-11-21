@@ -12,7 +12,7 @@ import com.turkcell.gelecegiyazanlar.R;
 
 enum Domain {
     TESTOZGUR, TESTTURKCELL, PRP, PROD
-};
+}
 
 
 public class GYConfiguration {
@@ -73,7 +73,6 @@ public class GYConfiguration {
 
 
     }
-
 
 
 }

@@ -1,50 +1,51 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:animateLayoutChanges="true"
-    >
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/toolbar"
-        android:layout_height="wrap_content"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        />
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <include
+            android:id="@+id/toolbarMainActivity"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
-    <android.support.v4.widget.DrawerLayout
-        android:layout_width="match_parent"
-        android:id="@+id/drawerLayout"
-        android:layout_height="match_parent">
-
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment"
-            android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.EgitimFragment"
-            tools:layout="@layout/fragment_egitim" android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-
-
-        <RelativeLayout
-            android:layout_gravity="left|start"
-            android:layout_width="wrap_content"
-            android:background="@color/beyaz_renk"
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawerLayoutMainActivity"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ListView
-                android:layout_marginTop="10dp"
-                android:id="@+id/left_drawer"
-                android:layout_width="@dimen/sol_menu_genislik"
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/fragmentMainActivity"
+                android:name="com.turkcell.gelecegiyazanlar.Fragmentlar.EgitimFragment"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/divider_renk"
-                android:background="@color/beyaz_renk"
-                android:dividerHeight="0.5dp"
-                />
-        </RelativeLayout>
+                tools:layout="@layout/fragment_egitim" />
 
-    </android.support.v4.widget.DrawerLayout>
 
-</LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|start"
+                android:background="@color/beyaz_renk">
+
+                <ListView
+                    android:id="@+id/listViewLeftlistMainActivity"
+                    android:layout_width="@dimen/sol_menu_genislik"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beyaz_renk"
+                    android:divider="@color/divider_renk"
+                    android:dividerHeight="0.5dp" />
+            </RelativeLayout>
+
+        </android.support.v4.widget.DrawerLayout>
+
+    </LinearLayout>
+</layout>

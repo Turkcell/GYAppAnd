@@ -1,25 +1,31 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity">
-    <include
-        android:id="@+id/tool_bar2"
-        layout="@layout/toolbar"
-        android:layout_height="wrap_content"
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        />
-
-    <ScrollView
-        android:layout_below="@id/tool_bar2"
-        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-        <ExpandableListView
+        tools:context="com.turkcell.gelecegiyazanlar.activities.EgitimBaslikActivity">
+
+        <include
+            android:id="@+id/toolbarEgitimBaslikActivity"
+            layout="@layout/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:groupIndicator="@null"
-            android:id="@+id/list"></ExpandableListView>
+            android:layout_below="@id/toolbarEgitimBaslikActivity"
+            android:fillViewport="true">
 
-    </ScrollView>
+            <ExpandableListView
+                android:id="@+id/expendableListViewListEgitimBaslikActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:groupIndicator="@null" />
 
-</RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

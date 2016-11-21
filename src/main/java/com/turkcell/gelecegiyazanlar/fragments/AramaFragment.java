@@ -2,36 +2,33 @@ package com.turkcell.gelecegiyazanlar.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.activities.AramaActivity;
 import com.turkcell.gelecegiyazanlar.activities.ProfilActivity;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.KullaniciAramaAdapter;
 import com.turkcell.gelecegiyazanlar.configurations.AppController;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
-import com.turkcell.gelecegiyazanlar.models.Icerik;
+import com.turkcell.gelecegiyazanlar.databinding.FragmentAramaBinding;
 import com.turkcell.gelecegiyazanlar.models.Kisi;
 import com.turkcell.gelecegiyazanlar.utilities.YuklenmeEkran;
 
@@ -44,33 +41,16 @@ import java.util.List;
 
 public class AramaFragment extends Fragment implements View.OnClickListener, AramaActivity.IArama {
 
-    EditText search;
+    private FragmentAramaBinding fragmentAramaBinding;
 
-    ImageView btnAra;
-    ListView listView;
-    TextView tvSonuc;
-
-    Kisi tempKisi;
-    //Volley deðiþkenleri
-    JsonArrayRequest jsonArrayRequest, jsonArrayRequestIcerik;
-    JsonObjectRequest jsonObjectRequest;
-    RequestQueue requestQueue;
-    ImageRequest imageRequest;
-    String urlAramaKullanici, urlIcerik;
-    TabLayout tabs;
-
-    List<Icerik> icerikList = new ArrayList<Icerik>();
-    List<Kisi> kisiList = new ArrayList<Kisi>();
-
-    int sayfaNumarasi = 1;
-
-    YuklenmeEkran ekran;
-    ViewPager viewPager;
-    Toolbar toolbar;
+    private EditText searchEditText;
+    private ImageView searchImageView;
+    private JsonArrayRequest jsonArrayRequest;
+    private String urlAramaKullaniciString;
+    private List<Kisi> kisiArrayList = new ArrayList<Kisi>();
+    private YuklenmeEkran yuklenmeEkran;
 
     public AramaFragment() {
-        // Required empty public constructor
-        Log.d("arama:", "Kullanýcý");
     }
 
     public static AramaFragment newInstance() {
@@ -81,32 +61,40 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        viewPager = (ViewPager) getActivity().findViewById(R.id.pagerArama);
-        toolbar = (Toolbar) getActivity().findViewById(R.id.tool_bar_ara);
-        View rootView = inflater.inflate(R.layout.fragment_arama, container, false);
-        urlAramaKullanici = GYConfiguration.getDomain() + "usersearch/retrieve?keyword=";
-        urlIcerik = GYConfiguration.getDomain() + "contentsearch/retrieve?";
+        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarAramaActivity);
+        searchEditText = (EditText) toolbar.findViewById(R.id.editTextSearchAramabar);
+        searchImageView = (ImageView) toolbar.findViewById(R.id.imageViewSearchBtnAramabar);
 
-        search = (EditText) toolbar.findViewById(R.id.etSearch);
+        fragmentAramaBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_arama, container, false);
+        View rootView = fragmentAramaBinding.getRoot();
 
-        listView = (ListView) rootView.findViewById(R.id.lvliste);
+        urlAramaKullaniciString = GYConfiguration.getDomain() + "usersearch/retrieve?keyword=";
 
-        tvSonuc = (TextView) rootView.findViewById(R.id.tvSonuc);
-        btnAra = (ImageView) toolbar.findViewById(R.id.btnAra);
-
-        ekran = new YuklenmeEkran(getActivity());
+        yuklenmeEkran = new YuklenmeEkran(getActivity());
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        fragmentAramaBinding.listViewlisteAramaFragment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (kisiList.get(position) != null) {
+                if (kisiArrayList.get(position) != null) {
                     Kisi kisi = new Kisi();
-                    kisi.setKullaniciAdi(kisiList.get(position).getKullaniciID());
+                    kisi.setKullaniciAdi(kisiArrayList.get(position).getKullaniciID());
                     Intent i = new Intent(getActivity(), ProfilActivity.class);
                     i.putExtra(Kisi.PROFIL_ID, kisi.getKullaniciAdi());
                     startActivity(i);
                 }
+            }
+        });
+
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    performSearch();
+                    return true;
+                }
+                return false;
             }
         });
 
@@ -118,28 +106,29 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnAra:
-                String link = (urlAramaKullanici + search.getText()).trim();
-                link = link.replace(" ", "%20");
-                kisiList.clear();
-                Listele(link);
+            case R.id.imageViewSearchBtnAramabar:
+                performSearch();
                 break;
         }
+    }
 
-
+    private void performSearch() {
+        String link = (urlAramaKullaniciString + searchEditText.getText()).trim();
+        link = link.replace(" ", "%20");
+        kisiArrayList.clear();
+        Listele(link);
     }
 
     public void Listele(String url) {
 
-        ekran.surecBasla();
+        yuklenmeEkran.surecBasla();
 
 
         jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
-                ekran.surecDurdur();
-
+                yuklenmeEkran.surecDurdur();
 
                 for (int i = 0; i < response.length(); i++) {
 
@@ -152,7 +141,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
                             tempKisi.setKullaniciAvatarUrl(response.getJSONObject(i).getString("kullaniciAvatarUrl"));
                             Log.d("TAG", "onResponse: " + tempKisi.getKullaniciAvatarUrl());
 
-                            kisiList.add(tempKisi);
+                            kisiArrayList.add(tempKisi);
 
 
                         }
@@ -163,15 +152,13 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
 
                 }
 
-                KullaniciAramaAdapter adapter = new KullaniciAramaAdapter(getActivity(), kisiList);
-                listView.setAdapter(adapter);
+                KullaniciAramaAdapter adapter = new KullaniciAramaAdapter(getActivity(), kisiArrayList);
+                fragmentAramaBinding.listViewlisteAramaFragment.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
-
-                Log.d("parse islemi bitti:", "girildi");
-                if (kisiList.isEmpty())
-                    tvSonuc.setVisibility(View.VISIBLE);
-                else tvSonuc.setVisibility(View.GONE);
+                if (kisiArrayList.isEmpty())
+                    fragmentAramaBinding.textViewSonucAramaFragment.setVisibility(View.VISIBLE);
+                else fragmentAramaBinding.textViewSonucAramaFragment.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -186,7 +173,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
 
 
     }
@@ -194,7 +181,7 @@ public class AramaFragment extends Fragment implements View.OnClickListener, Ara
 
     @Override
     public void onPageActivated() {
-        btnAra.setOnClickListener(this);
+        searchImageView.setOnClickListener(this);
     }
 }
 

@@ -1,20 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="turkcell.com.myproject.fragment_etkinlik">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-    <android.support.v7.widget.RecyclerView
-
-        android:id="@+id/recyclerView"
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context="turkcell.com.myproject.fragment_etkinlik">
 
-        ></android.support.v7.widget.RecyclerView>
+        <!-- TODO: Update blank fragment layout -->
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewBlogListeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
-    </RelativeLayout>
-</FrameLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

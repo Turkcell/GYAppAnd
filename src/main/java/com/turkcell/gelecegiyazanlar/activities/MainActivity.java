@@ -2,19 +2,17 @@ package com.turkcell.gelecegiyazanlar.activities;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.splunk.mint.Mint;
@@ -22,6 +20,7 @@ import com.turkcell.curio.CurioClient;
 import com.turkcell.gelecegiyazanlar.R;
 import com.turkcell.gelecegiyazanlar.adapterlisteners.ListDrawerAdapter;
 import com.turkcell.gelecegiyazanlar.configurations.GYConfiguration;
+import com.turkcell.gelecegiyazanlar.databinding.ActivityMainBinding;
 import com.turkcell.gelecegiyazanlar.fragments.BlogFragment;
 import com.turkcell.gelecegiyazanlar.fragments.EgitimFragment;
 import com.turkcell.gelecegiyazanlar.fragments.ElcilerFragment;
@@ -33,35 +32,36 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding activityMainBinding;
+
     private static int save = -1;
-    android.support.v7.widget.Toolbar toolbar;
-    String mTitle;
-    ArrayList<DrawerItems> drawerList = new ArrayList<>();
+    private Toolbar toolbar;
+    private String mTitleString;
+    private ArrayList<DrawerItems> drawerItemsArrayList = new ArrayList<>();
     TextView textView;
-    private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
-    private ListView leftDrawerList;
     private ListDrawerAdapter navigationDrawerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mTitle=getResources().getString(R.string.sayfa_baslik_gelecegi_yazanlar);
+
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        mTitleString = getResources().getString(R.string.sayfa_baslik_gelecegi_yazanlar);
+
         Mint.initAndStartSession(MainActivity.this, GYConfiguration.SPLUNK_ID);
 
         CurioClient.getInstance(this).getPushData(getIntent());
 
         CurioClient.getInstance(this).startSession();
 
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar = (Toolbar) findViewById(R.id.toolbarMainActivity);
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        textView = (TextView) findViewById(R.id.titleCenter);
-        textView.setText(mTitle);
-
-        Log.d("conf", GYConfiguration.getDomain());
+        textView = (TextView) findViewById(R.id.textViewTitle);
+        textView.setText(mTitleString);
 
         //Liste doldurma metodumuz
         Yukle();
@@ -69,16 +69,13 @@ public class MainActivity extends AppCompatActivity {
         // Baþlangýç ekran fragmentý
         FragmentManager ft = getSupportFragmentManager();
         ft.beginTransaction()
-                .replace(R.id.fragment, new EgitimFragment())
+                .replace(R.id.fragmentMainActivity, new EgitimFragment())
                 .commit();
 
-
-
         //Menü Listesi Oluþturma
-        leftDrawerList = (ListView) findViewById(R.id.left_drawer);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        navigationDrawerAdapter = new ListDrawerAdapter(drawerList);
-        leftDrawerList.setAdapter(navigationDrawerAdapter);
+
+        navigationDrawerAdapter = new ListDrawerAdapter(drawerItemsArrayList);
+        activityMainBinding.listViewLeftlistMainActivity.setAdapter(navigationDrawerAdapter);
         initDrawer();
 
         GYConfiguration.checkInternetConnectionShowDialog(MainActivity.this);
@@ -86,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         /**
          * liste itemlarýna týklanma ve geçiþ için kullanýlan kýsým.
          */
-        leftDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        activityMainBinding.listViewLeftlistMainActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                drawerLayout.closeDrawers();
+                activityMainBinding.drawerLayoutMainActivity.closeDrawers();
 
                 parent.getChildAt(position).setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
 
@@ -99,39 +96,37 @@ public class MainActivity extends AppCompatActivity {
 
                 save = position;
 
-                // view.setBackgroundColor(getResources().getColor(R.color.drawer_color_selected));
-
                 FragmentManager ft = getSupportFragmentManager();
                 switch (position) {
                     case 0:
-                        mTitle = getString(R.string.sayfa_baslik_egitim);
+                        mTitleString = getString(R.string.sayfa_baslik_egitim);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new EgitimFragment())
+                                .replace(R.id.fragmentMainActivity, new EgitimFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 1:
-                        mTitle = getString(R.string.sayfa_baslik_blog);
+                        mTitleString = getString(R.string.sayfa_baslik_blog);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new BlogFragment())
+                                .replace(R.id.fragmentMainActivity, new BlogFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 2:
-                        mTitle = getString(R.string.sayfa_baslik_etkinlik);
+                        mTitleString = getString(R.string.sayfa_baslik_etkinlik);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new EtkinlikFragment())
+                                .replace(R.id.fragmentMainActivity, new EtkinlikFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
                     case 3:
-                        mTitle = getString(R.string.sayfa_baslik_gelistirici);
+                        mTitleString = getString(R.string.sayfa_baslik_gelistirici);
 
                         ft.beginTransaction()
-                                .replace(R.id.fragment, new ElcilerFragment())
+                                .replace(R.id.fragmentMainActivity, new ElcilerFragment())
                                 .commit();
                         view.setBackgroundColor(getResources().getColor(R.color.drawer_secilen_renk));
                         break;
@@ -139,14 +134,14 @@ public class MainActivity extends AppCompatActivity {
                         view.setBackgroundColor(getResources().getColor(android.R.color.white));
                         break;
                 }
-                textView.setText(mTitle);
+                textView.setText(mTitleString);
             }
         });
     }
 
     private void initDrawer() {
 
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+        drawerToggle = new ActionBarDrawerToggle(this, activityMainBinding.drawerLayoutMainActivity, toolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -160,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
-        drawerLayout.setDrawerListener(drawerToggle);
+        activityMainBinding.drawerLayoutMainActivity.setDrawerListener(drawerToggle);
     }
 
     @Override
@@ -188,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent i = new Intent(MainActivity.this, AramaActivity.class);
             startActivity(i);
@@ -203,16 +197,16 @@ public class MainActivity extends AppCompatActivity {
      * Liste elemanlarýný doldurduk.
      */
     public void Yukle() {
-        drawerList.add(new DrawerItems(R.drawable.egitimicon, getString(R.string.sol_menu_egitim)));
-        drawerList.add(new DrawerItems(R.drawable.blogicon, getString(R.string.sol_menu_blog)));
-        drawerList.add(new DrawerItems(R.drawable.etkinlikicon, getString(R.string.sol_menu_etkinlik)));
-        drawerList.add(new DrawerItems(R.drawable.gelistiriciicon, getString(R.string.sol_menu_gelistirici)));
+        drawerItemsArrayList.add(new DrawerItems(R.drawable.egitimicon, getString(R.string.sol_menu_egitim)));
+        drawerItemsArrayList.add(new DrawerItems(R.drawable.blogicon, getString(R.string.sol_menu_blog)));
+        drawerItemsArrayList.add(new DrawerItems(R.drawable.etkinlikicon, getString(R.string.sol_menu_etkinlik)));
+        drawerItemsArrayList.add(new DrawerItems(R.drawable.gelistiriciicon, getString(R.string.sol_menu_gelistirici)));
     }
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-            drawerLayout.closeDrawers();
+        if (activityMainBinding.drawerLayoutMainActivity.isDrawerOpen(Gravity.LEFT)) {
+            activityMainBinding.drawerLayoutMainActivity.closeDrawers();
         } else {
             super.onBackPressed();
         }
